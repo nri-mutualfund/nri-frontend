@@ -39,7 +39,7 @@ const Header = () => {
               FAQ
             </Link>
             <Link
-              href={"/"}
+              href={"/blog"}
               className="cursor-pointer font-lato hover:text-gray-900"
             >
               Blog
@@ -59,7 +59,7 @@ const Header = () => {
           className={
             isMenuOpen
               ? "fixed top-0 left-0 w-[300px] bg-white lg:hidden h-screen p-10 ease-in-out duration-1000 z-50"
-              : "fixed left-[-100%] top-0 p-10 ease-in-out duration-500"
+              : "fixed left-[-100%] top-0 p-10 ease-in-out duration-1000"
           }
         >
           <Link href={"/"} onClick={handleNav}>
@@ -68,24 +68,28 @@ const Header = () => {
           <ul className="flex flex-col gap-10 my-10">
             <Link
               href={"/"}
+              onClick={handleNav}
               className="cursor-pointer font-lato hover:text-gray-900"
             >
               Home
             </Link>
             <Link
               href={"/"}
+              onClick={handleNav}
               className="cursor-pointer font-lato hover:text-gray-900"
             >
               Join the Community
             </Link>
             <Link
               href={"/"}
+              onClick={handleNav}
               className="cursor-pointer font-lato hover:text-gray-900"
             >
               FAQ
             </Link>
             <Link
               href={"/"}
+              onClick={handleNav}
               className="cursor-pointer font-lato hover:text-gray-900"
             >
               Blog
