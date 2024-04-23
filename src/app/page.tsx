@@ -10,7 +10,14 @@ import Image from "next/image";
 import { Menu, Transition } from "@headlessui/react";
 import DropdownMenu from "@/components/DropDown";
 const Page = () => {
-  const [menu, setMenu] = useState("Options");
+  const [index, setIndex] = useState(0);
+  const products = [
+    "Mutual Funds",
+    "Fixed Deposits",
+    "Commercial Real Estate",
+    "PMS",
+    "Bond",
+  ];
   const options = ["How secure is this?"];
   const options2 = ["Is this actually legal?"];
   const options3 = ["What happens if Vested shuts down?"];
@@ -22,47 +29,40 @@ const Page = () => {
     <>
       {/* sectin 1 */}
       <section className="flex-col px-2 pt-16">
-        <div className="flex justify-center align-middle py-14">
-          <div className="text-center  w-[80%] md:w-2/3">
-            <h1 className="text-gray-800 mx-auto text-[64px] font-semibold ">
+        <div className="flex justify-center align-middle pt-14">
+          <div className="text-center  w-[80%] md:w-[70%] lg:w-[40%]">
+            <h1 className="text-gray-800 mx-auto text-[38px] md:text-[44px] lg:text-[48px] font-semibold leading-h1">
               The easiest and fastest way to{" "}
               <span className="text-primary">Invest</span> in India
             </h1>
           </div>
         </div>
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <p className=" w-[80%] md:w-2/3 lg:w-1/3 text-center leading-8">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
             mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem
             ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur{" "}
           </p>
-        </div>
+        </div> */}
         <div className="flex justify-center mt-10">
-          <div className="bg-gray-100 flex justify-between rounded-lg mt-3 w-[90%] md:w-1/2 lg:w-1/4  pl-4 pr-2 py-2">
-            <input
-              className="bg-transparent text-black placeholder-black outline-none"
-              type="text"
-              placeholder="Enter your email"
-            />
-            <button className="bg-primary text-white px-4 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-              {" "}
-              Get Started
-            </button>
-          </div>
+          <button className="bg-primary text-white px-16 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+            {" "}
+            Get Started
+          </button>
         </div>
       </section>
       {/* section 2 */}
       <section className="flex flex-wrap px-4 md:px-20 lg:px-40 gap-20 lg:gap-0  justify-between mt-24">
         <div className="w-full lg:w-[48%]">
-          <h1 className="text-gray-800 mx-auto text-[64px] font-bold ">
+          <h1 className="text-gray-800 mx-auto text-[38px] md:text-[44px] lg:text-[48px] font-semibold leading-h1">
             A one-stop <span className="text-primary">Indian</span> Expacts
           </h1>
-          <p className=" text">
+          <p className="text-sm font-light my-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
             mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem
             ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur{" "}
           </p>
-          <div className="flex gap-4 mt-3 items-start">
+          <div className="flex gap-4 mt-8 items-start">
             <div className="text-primary bg-green-100 rounded-full text-4xl p-4">
               <TbDeviceMobileDown />
             </div>
@@ -77,7 +77,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 mt-3 items-start">
+          <div className="flex gap-4 mt-8 items-start">
             <div className="text-primary bg-green-100 rounded-full text-4xl p-4">
               <FaRegUser />
             </div>
@@ -92,7 +92,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 mt-3 items-start">
+          <div className="flex gap-4 mt-8 items-start">
             <div className="text-primary bg-green-100 rounded-full text-4xl p-4">
               <RiBankFill />
             </div>
@@ -107,7 +107,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 mt-3 items-start">
+          <div className="flex gap-4 mt-8 items-start">
             <div className="text-primary bg-green-100 rounded-full text-4xl p-4">
               <PiCurrencyDollarSimpleBold />
             </div>
@@ -134,26 +134,36 @@ const Page = () => {
       </section>
       {/* section 3 */}
       <section className="flex flex-col justify-center mt-24 px-4 md:px-20 lg:px-40">
-        <h1 className="text-gray-800 mx-auto text-[64px] font-semibold ">
+        <h1 className="text-gray-800 mx-auto text-[38px] md:text-[44px] lg:text-[48px] font-semibold leading-h1">
           Serving <span className="text-primary">NRI</span> from across
           countries
         </h1>
         <Image
           src="/assets/world.png"
           alt="Your Image Alt Text"
-          className="rounded-md"
+          className="rounded-md mt-10"
           width={1454}
           height={604}
         />
       </section>
       {/* section 4 */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
-        <h1 className="text-gray-800 mx-auto text-[64px] font-bold ">
+        <h1 className="text-gray-800 mx-auto text-[38px] md:text-[44px] lg:text-[48px] font-semibold leading-h1">
           Product <span className="text-primary">We offer</span>
         </h1>
         <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between mt-10">
           <div className="w-full lg:w-[48%] flex flex-col gap-6">
-            <div className="flex gap-10 w-full bg-[#F2F8F2] items-center px-8 py-4 rounded-lg drop-shadow-sm">
+            <div
+              // className=`flex gap-10 w-full indexbg-[#F2F8F2] items-center px-8 py-4 rounded-lg drop-shadow-sm`
+              className={`flex gap-10 w-full ${
+                index === 0 ? "bg-[#F2F8F2]" : "bg-[#F7F6F4]"
+              } items-center px-8 py-4 rounded-lg ${
+                index === 0 ? "drop-shadow-sm" : "drop-shadow-lg"
+              }`}
+              onMouseEnter={() => {
+                setIndex(0);
+              }}
+            >
               <Image
                 src="/assets/money1.png"
                 alt="Your Image Alt Text"
@@ -168,7 +178,16 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div className="flex gap-10 w-full bg-[#F7F6F4] items-center px-8 py-4 rounded-lg drop-shadow-sm">
+            <div
+              className={`flex gap-10 w-full ${
+                index === 1 ? "bg-[#F2F8F2]" : "bg-[#F7F6F4]"
+              } items-center px-8 py-4 rounded-lg ${
+                index === 1 ? "drop-shadow-sm" : "drop-shadow-lg"
+              }`}
+              onMouseEnter={() => {
+                setIndex(1);
+              }}
+            >
               <Image
                 src="/assets/deposit.png"
                 alt="Your Image Alt Text"
@@ -183,7 +202,16 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div className="flex gap-10 w-full bg-[#F7F6F4] items-center px-8 py-4 rounded-lg drop-shadow-sm">
+            <div
+              className={`flex gap-10 w-full ${
+                index === 2 ? "bg-[#F2F8F2]" : "bg-[#F7F6F4]"
+              } items-center px-8 py-4 rounded-lg ${
+                index === 2 ? "drop-shadow-sm" : "drop-shadow-lg"
+              }`}
+              onMouseEnter={() => {
+                setIndex(2);
+              }}
+            >
               <Image
                 src="/assets/house.png"
                 alt="Your Image Alt Text"
@@ -198,7 +226,16 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div className="flex gap-10 w-full bg-[#F7F6F4] items-center px-8 py-4 rounded-lg drop-shadow-sm">
+            <div
+              className={`flex gap-10 w-full ${
+                index === 3 ? "bg-[#F2F8F2]" : "bg-[#F7F6F4]"
+              } items-center px-8 py-4 rounded-lg ${
+                index === 3 ? "drop-shadow-sm" : "drop-shadow-lg"
+              }`}
+              onMouseEnter={() => {
+                setIndex(3);
+              }}
+            >
               <Image
                 src="/assets/saving.png"
                 alt="Your Image Alt Text"
@@ -213,7 +250,16 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div className="flex gap-10 w-full bg-[#F7F6F4] items-center px-8 py-4 rounded-lg drop-shadow-sm">
+            <div
+              className={`flex gap-10 w-full ${
+                index === 4 ? "bg-[#F2F8F2]" : "bg-[#F7F6F4]"
+              } items-center px-8 py-4 rounded-lg ${
+                index === 4 ? "drop-shadow-sm" : "drop-shadow-lg"
+              }`}
+              onMouseEnter={() => {
+                setIndex(4);
+              }}
+            >
               <Image
                 src="/assets/bond.png"
                 alt="Your Image Alt Text"
@@ -239,7 +285,7 @@ const Page = () => {
                 height={1}
               />
               <div className=" py-10 px-4">
-                <p className="text-xl font-medium">Mutual Funds</p>
+                <p className="text-xl font-medium">{products[index]}</p>
                 <p className="mt-2 font-light text-sm">
                   A personalised mutual funds portfolio, diversified across
                   equity, debt and gold for long- term growth.
@@ -276,9 +322,11 @@ const Page = () => {
       </section>
       {/* section 5 */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
-        <h1 className="text-gray-800 text-[64px] font-bold w-full lg:w-1/2">
-          Open <span className="text-primary">NRI Bank Account </span>in India
-        </h1>
+        <div className="w-full md:w-[60%] lg:w-[40%]">
+          <h1 className="text-gray-800 mx-auto text-[38px] md:text-[44px] lg:text-[48px] font-semibold leading-h1">
+            Open <span className="text-primary">NRI Bank Account </span>in India
+          </h1>
+        </div>
         <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between mt-10">
           <div className="w-full lg:w-[40%]">
             <p className="font-light">
@@ -351,12 +399,12 @@ const Page = () => {
       {/* section 6 */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <div className="w-full flex justify-center items-center">
-          <h1 className="text-gray-800 mx-auto text-[64px] font-bold">
+          <h1 className="text-gray-800 mx-auto text-[38px] md:text-[44px] lg:text-[48px] font-semibold leading-h1">
             <span className="text-primary">NRI</span> Services
           </h1>
         </div>
 
-        <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between mt-10">
+        <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between mt-20">
           <div className="w-full lg:w-[45%] bg-[#F2F8F2]  rounded-[20px]">
             <div className="py-14 pl-14 pr-20">
               <p className="text-xl font-medium">Taxation</p>
@@ -388,7 +436,13 @@ const Page = () => {
               </p>
             </div>
             <div className="flex justify-between pl-14">
-              <p className="text-lg font-medium">Download</p>
+              <a
+                className="text-lg font-medium"
+                download={true}
+                href="/assets/resume.pdf"
+              >
+                Download
+              </a>
               <Image
                 src="/assets/tax.png"
                 alt="Your Image Alt Text"
@@ -429,7 +483,13 @@ const Page = () => {
               </p>
             </div>
             <div className="flex justify-between pl-14">
-              <p className="text-lg font-medium">Download</p>
+              <a
+                className="text-lg font-medium"
+                download={true}
+                href="/assets/resume.pdf"
+              >
+                Download
+              </a>
               <Image
                 src="/assets/doc.png"
                 alt="Your Image Alt Text"
@@ -444,12 +504,12 @@ const Page = () => {
       {/* {section 7} */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <div className="w-full flex justify-center items-center">
-          <h1 className="text-gray-800 mx-auto text-[64px] font-bold">
+          <h1 className="text-gray-800 mx-auto text-[38px] md:text-[44px] lg:text-[48px] font-semibold leading-h1 text-center">
             What <span className="text-primary">Customers</span> have to say
           </h1>
         </div>
 
-        <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between my-10">
+        <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between my-20">
           <div className="w-full lg:w-[48%] bg-[#F2F8F2]  rounded-[20px] flex gap-10">
             <Image
               src="/assets/customer1.png"
@@ -491,6 +551,87 @@ const Page = () => {
         </div>
       </section>
       {/* {section 8} */}
+      <section className=" px-4 md:px-20 lg:px-40 mt-24">
+        <div className="w-full flex flex-col justify-center items-center gap-10">
+          <h1 className="text-gray-800 mx-auto text-[38px] md:text-[44px] lg:text-[48px] font-semibold leading-h1 text-center">
+            Your money will be{" "}
+            <span className="text-primary">safe & secure</span>
+          </h1>
+          <p className="text-sm font-light text-center">
+            Your money is regulated by mutual fund companies. iNRI doesn’t keep
+            or handle your mponey
+          </p>
+        </div>
+
+        <div className="flex flex-wrap  gap-4 md:gap-0  justify-between my-20 items-start">
+          <div className="w-full md:w-[20%] flex flex-col gap-4 justify-center items-center">
+            <Image
+              src="/assets/dollar.png"
+              alt="Your Image Alt Text"
+              className="w-[60%] lg:w-[73%] transition-all duration-300 hover:scale-105"
+              width={500}
+              height={1}
+            />
+            <p className="font-semibold mt-4 text-center">
+              From your Foreign Bank{" "}
+            </p>
+            <p className="text-sm font-light text-center leading-6 w-2/3 md:w-full">
+              Convert to INR through your preferred remittance partner
+            </p>
+          </div>
+          <div className="w-full md:w-[20%] flex flex-col md:flex-row  gap-2  justify-between items-center mt-0 md:mt-6 lg:mt-12">
+            <div className="border-gray-700 border-2 w-1 h-[100px] md:h-1 md:w-[35%] border-dashed" />
+            <Image
+              src="/assets/lock.png"
+              alt="Your Image Alt Text"
+              className="w-[50px] transition-all duration-300 hover:scale-105"
+              width={500}
+              height={1}
+            />
+            <div className="border-gray-700 border-2 w-1 h-[100px] md:h-1 md:w-[35%] border-dashed" />
+          </div>
+          <div className="w-full md:w-[20%] flex flex-col gap-4 justify-center items-center">
+            <Image
+              src="/assets/currency.png"
+              alt="Your Image Alt Text"
+              className=" w-1/2 lg:w-2/3 transition-all duration-300 hover:scale-105"
+              width={500}
+              height={1}
+            />
+            <p className="font-semibold mt-4 text-center">To NRE/NRO Account</p>
+            <p className="text-sm font-light text-center leading-6 w-2/3 md:w-full">
+              Integrate bank account and pay through net-banking
+            </p>
+          </div>
+          <div className="w-full md:w-[20%] flex flex-col md:flex-row  gap-2  justify-between items-center mt-0 md:mt-6 lg:mt-12">
+            <div className="border-gray-700 border-2 w-1 h-[100px] md:h-1 md:w-[35%] border-dashed" />
+            <Image
+              src="/assets/shield.png"
+              alt="Your Image Alt Text"
+              className="w-[50px] transition-all duration-300 hover:scale-105"
+              width={500}
+              height={1}
+            />
+            <div className="border-gray-700 border-2 w-1 h-[100px] md:h-1 md:w-[35%] border-dashed" />
+          </div>
+          <div className="w-full md:w-[20%] flex flex-col gap-4 justify-center items-center">
+            <Image
+              src="/assets/funds.png"
+              alt="Your Image Alt Text"
+              className=" w-1/2 lg:w-2/3 transition-all duration-300 hover:scale-105"
+              width={500}
+              height={1}
+            />
+            <p className="font-semibold mt-[35px] text-center">
+              To Mutual Funds
+            </p>
+            <p className="text-sm font-light text-center leading-6 w-2/3 md:w-full">
+              Invest directly in your selected mutual funds
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* {section 9} */}
       <section className=" px-4 md:px-20 lg:px-40 mt-40">
         <div className="w-full flex flex-col justify-center items-center">
           <h3 className="text-gray-800 mx-auto text-[30px] font-extralight">
@@ -521,7 +662,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      {/* {section 9} */}
+      {/* {section 10} */}
       <section className=" px-4 md:px-20 lg:px-40 mt-40  mb-40">
         <div className="w-full bg-[#F2F8F2] px-4 rounded-[20px] py-20 relative overflow-hidden">
           <div className="absolute inset-0 z-0 w-[80%] mx-auto">
@@ -534,7 +675,7 @@ const Page = () => {
             />
           </div>
           <div className="w-[80%] lg:w-[70%] mx-auto relative z-10">
-            <h1 className="text-gray-800 mx-auto text-[50px] font-bold text-center">
+            <h1 className="text-gray-800 mx-auto text-[38px] md:text-[44px] lg:text-[48px] font-bold text-center">
               Get in touch <span className="text-primary">NRI website</span> and
               invest in your future Product
             </h1>
