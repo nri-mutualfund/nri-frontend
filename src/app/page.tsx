@@ -29,9 +29,9 @@ const Page = () => {
     <>
       {/* sectin 1 */}
       <section className="flex-col px-2 pt-16">
-        <div className="flex justify-center align-middle py-14">
-          <div className="text-center  w-[80%] md:w-2/3">
-            <h1 className="text-gray-800 mx-auto  font-semibold ">
+        <div className="flex justify-center align-middle pt-14">
+          <div className="text-center  w-[90%] md:w-2/3 lg:w-[40%]">
+            <h1 className="text-gray-800 mx-auto  font-semibold font-graphik">
               The easiest and fastest way to{" "}
               <span className="text-primary">Invest</span> in India
             </h1>
@@ -53,10 +53,11 @@ const Page = () => {
       </section>
       {/* section 2 */}
       <section className="flex flex-wrap px-4 md:px-20 lg:px-40 gap-20 lg:gap-0  justify-between mt-24">
-        <div className="w-full lg:w-[48%]">
-          <h1 className="text-gray-800 mx-auto  font-bold ">
+        <div className="w-full lg:w-[45%]">
+          <h1 className="text-gray-800 font-semibold w-full lg:w-[80%] font-graphik">
             A one-stop <span className="text-primary">Indian</span> Expacts
           </h1>
+
           <p className="text-sm font-light my-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
             mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem
@@ -122,7 +123,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-[48%] bg-green-100 flex items-center px-4 rounded-[20px] py-20 md:py-40 ">
+        <div className="w-full lg:w-[52%] bg-green-100 flex items-center px-4 rounded-[20px] py-20 md:py-40 ">
           <Image
             src="/assets/investcoin.png"
             alt="Your Image Alt Text"
@@ -134,7 +135,7 @@ const Page = () => {
       </section>
       {/* section 3 */}
       <section className="flex flex-col justify-center mt-24 px-4 md:px-20 lg:px-40">
-        <h1 className="text-gray-800 mx-auto  font-semibold ">
+        <h1 className="text-gray-800 mx-auto font-semibold font-graphik">
           Serving <span className="text-primary">NRI</span> from across
           countries
         </h1>
@@ -148,7 +149,7 @@ const Page = () => {
       </section>
       {/* section 4 */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
-        <h1 className="text-gray-800 mx-auto  font-bold ">
+        <h1 className="text-gray-800 mx-auto  font-semibold font-graphik">
           Product <span className="text-primary">We offer</span>
         </h1>
         <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between mt-10">
@@ -322,7 +323,7 @@ const Page = () => {
       </section>
       {/* section 5 */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
-        <h1 className="text-gray-800  font-bold w-full lg:w-1/2">
+        <h1 className="text-gray-800  font-semibold w-full lg:w-[40%] font-graphik">
           Open <span className="text-primary">NRI Bank Account </span>in India
         </h1>
         <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between mt-10">
@@ -397,7 +398,7 @@ const Page = () => {
       {/* section 6 */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <div className="w-full flex justify-center items-center">
-          <h1 className="text-gray-800 mx-auto  font-bold">
+          <h1 className="text-gray-800 mx-auto  font-semibold font-graphik">
             <span className="text-primary">NRI</span> Services
           </h1>
         </div>
@@ -502,7 +503,7 @@ const Page = () => {
       {/* {section 7} */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <div className="w-full flex justify-center items-center">
-          <h1 className="text-gray-800 mx-auto  font-bold">
+          <h1 className="text-gray-800 mx-auto  font-semibold font-graphik">
             What <span className="text-primary">Customers</span> have to say
           </h1>
         </div>
@@ -551,7 +552,7 @@ const Page = () => {
       {/* {section 8} */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <div className="w-full flex flex-col justify-center items-center gap-10">
-          <h1 className="text-gray-800 mx-auto text-[38px] md:text-[44px] lg:text-[48px] font-semibold leading-h1 text-center">
+          <h1 className="text-gray-800 mx-auto font-semibold font-graphik">
             Your money will be{" "}
             <span className="text-primary">safe & secure</span>
           </h1>
@@ -632,7 +633,9 @@ const Page = () => {
       {/* {section 9} */}
       <section className=" px-4 md:px-20 lg:px-40 mt-40">
         <div className="w-full flex flex-col justify-center items-center">
-          <h3 className="text-gray-800 mx-auto  font-extralight">FAQ</h3>
+          <h3 className="text-gray-800 mx-auto  font-extralight font-graphik">
+            FAQ
+          </h3>
           <p className="font-extralight mt-4">
             Learn about us and check out these frequently asked questions.
           </p>
@@ -671,7 +674,7 @@ const Page = () => {
             />
           </div>
           <div className="w-[80%] lg:w-[70%] mx-auto relative z-10">
-            <h1 className="text-gray-800 mx-auto  font-bold text-center">
+            <h1 className="text-gray-800 mx-auto  font-semibold text-center font-graphik">
               Get in touch <span className="text-primary">NRI website</span> and
               invest in your future Product
             </h1>
