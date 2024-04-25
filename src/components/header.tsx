@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const handleNav = () => {
@@ -11,15 +12,24 @@ const Header = () => {
   };
   return (
     <header className="w-full  text-gray-700 bg-white border-t border-gray-100 shadow-sm body-font">
-      <div className="w-full flex items-start justify-between py-6 lg:px-40 md:px-16 px-10">
-        <a className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0">
+      <div className="max-w-screen-2xl mx-auto flex items-start justify-between py-6 lg:px-40 md:px-16 px-10">
+        <Image
+          src="/assets/122.png"
+          alt="Your Image Alt Text"
+          className="w-[200px] absolute top-0 left-0"
+          width={500}
+          height={1}
+        />
+
+        <a className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0 absolute left-10">
           Logo
         </a>
+        <a className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0"></a>
         <nav className="flex flex-wrap items-center justify-center text-base">
           <Link href={"/"}>
             {/* <Image src={Logo} width={70} alt="logo" /> */}
           </Link>
-          <ul className="gap-12 md:flex hidden">
+          <ul className="gap-12 md:flex hidden ml-28 lg:ml-0">
             <Link
               href={"/"}
               className="cursor-pointer font-lato hover:text-gray-900"
@@ -63,9 +73,19 @@ const Header = () => {
           }
         >
           <Link href={"/"} onClick={handleNav}>
-            {/* <Image src={Logo} width={70} alt="logo" /> */}
+            <Image
+              src="/assets/122.png"
+              alt="Your Image Alt Text"
+              className="w-[200px] absolute top-0 left-0"
+              width={500}
+              height={1}
+            />
+
+            <a className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0 absolute left-10">
+              Logo
+            </a>
           </Link>
-          <ul className="flex flex-col gap-10 my-10">
+          <ul className="flex flex-col gap-10 my-32">
             <Link
               href={"/"}
               onClick={handleNav}
