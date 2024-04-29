@@ -371,7 +371,7 @@ const Page = () => {
               <Image
                 src="/assets/central_bank.png"
                 alt="Your Image Alt Text"
-                className="w-[80%] md:w-full scale-100 lg:scale-125"
+                className="w-[80%] md:w-full"
                 width={2000}
                 height={1}
               />
