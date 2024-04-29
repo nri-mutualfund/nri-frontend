@@ -5,10 +5,8 @@ import { FaRegUser, FaCanadianMapleLeaf } from "react-icons/fa";
 import { RiBankFill } from "react-icons/ri";
 import { PiCurrencyDollarSimpleBold, PiShootingStarThin } from "react-icons/pi";
 import { GoArrowRight } from "react-icons/go";
-import { IoChevronDown } from "react-icons/io5";
 import Image from "next/image";
-import { Menu, Transition } from "@headlessui/react";
-import DropdownMenu from "@/components/DropDown";
+import FAQ from "@/components/FAQ";
 const Page = () => {
   const [index, setIndex] = useState(0);
   const products = [
@@ -650,24 +648,39 @@ const Page = () => {
           </p>
         </div>
         <div className="flex flex-wrap justify-between gap-10 mt-10">
-          <div className="w-full md:w-[45%] text-right ">
-            <DropdownMenu title={options} content={details} />
+          <div className="w-full md:w-[45%] text-right">
+            <div className="flex flex-col gap-10">
+              <FAQ question={options} answer={details} />
+              <FAQ question={options3} answer={details} />
+              <FAQ question={options5} answer={details} />
+            </div>
           </div>
-          <div className="w-full md:w-[45%] text-right ">
-            <DropdownMenu title={options2} content={details} />
+          <div className="w-full md:w-[45%] text-right">
+            <div className="flex flex-col gap-10">
+              <FAQ question={options2} answer={details} />
+              <FAQ question={options4} answer={details} />
+              <FAQ question={options6} answer={details} />
+            </div>
           </div>
-          <div className="w-full md:w-[45%] text-right ">
-            <DropdownMenu title={options3} content={details} />
+
+          {/* <div className="w-full md:w-[45%] text-right">
+            <FAQ question={options} answer={details} />
           </div>
-          <div className="w-full md:w-[45%] text-right ">
-            <DropdownMenu title={options4} content={details} />
+          <div className="w-full md:w-[45%] text-right">
+            <FAQ question={options2} answer={details} />
           </div>
-          <div className="w-full md:w-[45%] text-right ">
-            <DropdownMenu title={options5} content={details} />
+          <div className="w-full md:w-[45%] text-right">
+            <FAQ question={options3} answer={details} />
           </div>
-          <div className="w-full md:w-[45%] text-right ">
-            <DropdownMenu title={options6} content={details} />
+          <div className="w-full md:w-[45%] text-right">
+            <FAQ question={options4} answer={details} />
           </div>
+          <div className="w-full md:w-[45%] text-right">
+            <FAQ question={options5} answer={details} />
+          </div>
+          <div className="w-full md:w-[45%] text-right">
+            <FAQ question={options6} answer={details} />
+          </div> */}
         </div>
       </section>
       {/* {section 10} */}
