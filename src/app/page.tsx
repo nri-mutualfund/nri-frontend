@@ -7,6 +7,7 @@ import { PiCurrencyDollarSimpleBold, PiShootingStarThin } from "react-icons/pi";
 import { GoArrowRight } from "react-icons/go";
 import Image from "next/image";
 import FAQ from "@/components/FAQ";
+import ImageSlider from "@/components/ImageSlider";
 const Page = () => {
   const [index, setIndex] = useState(0);
   const [show, setShow] = useState(false);
@@ -65,25 +66,34 @@ const Page = () => {
       {/* section 2 */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <div className="flex flex-col justify-center items-center  w-full">
-          <h1 className="text-gray-800 font-semibold font-graphik leading-[50px] w-[90%] md:w-2/3 lg:w-[50%] text-center">
+          <h1 className="text-gray-800 font-semibold font-graphik leading-[50px] text-center">
             A one-stop <span className="text-primary">Indian</span> Expacts
           </h1>
-          <p className="text-center text-sm font-light w-full md:w-[70%] mt-6">
+          <p className="text-center text-sm font-light w-full  mt-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
-            mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem
-            ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur
+            mollis aenean sit dictum tincidunt. Ut arcu, susci
           </p>
         </div>
-        <div className="w-full lg:w-[80%] flex flex-wrap  gap-20 md:gap-0  mx-auto justify-between mt-8">
-          <div className="w-full md:w-[45%] flex flex-col gap-20">
-            <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
-              <Image
-                src="/assets/piggy.png"
-                alt="Your Image Alt Text"
-                className="rounded-md mt-10 mx-auto"
-                width="80"
-                height="80"
-              />
+        <div className="w-full lg:w-[80%] flex flex-wrap  gap-12 md:gap-0  mx-auto justify-between mt-8">
+          <div className="w-full md:w-[47%] flex flex-col gap-12">
+            <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white">
+              <div className="flex justify-center">
+                <Image
+                  src="/assets/piggy.png"
+                  alt="Your Image Alt Text"
+                  className="rounded-md mt-10 "
+                  width="80"
+                  height="80"
+                />
+                <Image
+                  src="/assets/shape.png"
+                  alt="shape"
+                  width="200"
+                  height="100"
+                  className="absolute right-0"
+                />
+              </div>
+
               <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
                 Invest reliably with index funds
               </p>
@@ -93,13 +103,23 @@ const Page = () => {
               </p>
             </div>
             <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
-              <Image
-                src="/assets/bank_building.png"
-                alt="Your Image Alt Text"
-                className="rounded-md mt-10 mx-auto"
-                width="80"
-                height="80"
-              />
+              <div className="flex justify-center ">
+                <Image
+                  src="/assets/shape.png"
+                  alt="shape"
+                  width="200"
+                  height="100"
+                  className="absolute left-0"
+                />
+                <Image
+                  src="/assets/bank_building.png"
+                  alt="Your Image Alt Text"
+                  className="rounded-md mt-10 mx-auto"
+                  width="80"
+                  height="80"
+                />
+              </div>
+
               <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
                 Faster account opening processes with trusted banks
               </p>
@@ -109,7 +129,7 @@ const Page = () => {
               </p>
             </div>
           </div>
-          <div className="w-full md:w-[45%] flex flex-col gap-20 mt-0 md:mt-20">
+          <div className="w-full md:w-[47%] flex flex-col gap-12 mt-0 md:mt-20">
             <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
               <Image
                 src="/assets/graph.png"
@@ -128,7 +148,7 @@ const Page = () => {
             </div>
             <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
               <Image
-                src="/assets/bank_building.png"
+                src="/assets/tax2.png"
                 alt="Your Image Alt Text"
                 className="rounded-md mt-10 mx-auto"
                 width="80"
@@ -517,46 +537,17 @@ const Page = () => {
       </section>
       {/* {section 7} */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
-        <div className="w-full flex justify-center items-center">
+        <div className="w-full flex flex-col justify-center items-center">
           <h1 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[50px]">
             What <span className="text-primary">Customers</span> have to say
           </h1>
+          <p className="font-light text-sm mt-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
+            mollis aenean sit dictum tincidunt. Ut arcu,
+          </p>
         </div>
-
-        <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between my-20">
-          <div className="w-full lg:w-[48%] bg-[#F2F8F2]  rounded-[20px] flex gap-10">
-            <Image
-              src="/assets/customer1.png"
-              alt="Your Image Alt Text"
-              className="w-1/2 transition-all duration-300 hover:scale-105"
-              width={500}
-              height={1}
-            />
-            <div className="flex flex-col justify-between p-4">
-              <p className="text-sm font-light text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
-                mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac
-              </p>
-              <p>Tonia Smart</p>
-            </div>
-          </div>
-
-          <div className="w-full lg:w-[48%] bg-[#F2F8F2]  rounded-[20px] flex gap-10">
-            <Image
-              src="/assets/customer2.png"
-              alt="Your Image Alt Text"
-              className="w-1/2 transition-all duration-300 hover:scale-105"
-              width={500}
-              height={1}
-            />
-            <div className="flex flex-col justify-between p-4">
-              <p className="text-sm font-light text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
-                mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac
-              </p>
-              <p>Grace Obi</p>
-            </div>
-          </div>
+        <div className="py-10">
+          <ImageSlider />
         </div>
         <div className=" flex justify-center items-center w-full pb-10">
           <button className="px-12  py-2  text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
