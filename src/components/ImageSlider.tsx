@@ -10,40 +10,53 @@ import "swiper/css/navigation";
 
 // import required modules
 import Image from "next/image";
-import { FaPlay } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa6";
+import { FaChevronRight } from "react-icons/fa6";
 const ImageSlider = () => {
   const swiperRef = useRef<Swiper | null>(null);
+  const swiperRef2 = useRef<Swiper | null>(null);
 
   const handlePrevClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slidePrev(); // Access swiper methods correctly
+      swiperRef.current.swiper.slidePrev();
     }
   };
 
   const handleNextClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext(); // Access swiper methods correctly
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+  const handlePrevClick2 = () => {
+    if (swiperRef2.current && swiperRef2.current.swiper) {
+      swiperRef2.current.swiper.slidePrev();
+    }
+  };
+
+  const handleNextClick2 = () => {
+    if (swiperRef2.current && swiperRef2.current.swiper) {
+      swiperRef2.current.swiper.slideNext();
     }
   };
 
   return (
     <div className="flex gap-4 md:gap-8 items-center justify-center">
-      <button
-        className="h-[50px] md:h-[70px] w-[50px] md:w-[70px] flex justify-center items-center rounded-lg bg-gradient-to-r from-[#0080004D] to-white"
-        onClick={handlePrevClick}
-      >
-        <FaPlay color="#fff" size={30} className="rotate-180" />
+      <button className="flex md:hidden" onClick={handlePrevClick2}>
+        <FaChevronLeft color="#6C6C6C" size={30} />
+      </button>
+      <button className="hidden md:flex " onClick={handlePrevClick}>
+        <FaChevronLeft color="#6C6C6C" size={40} />
       </button>
       <div className="w-[60%] lg:w-1/2  bg-white block md:hidden">
         <Swiper
           slidesPerView={1}
           loop={true}
-          ref={swiperRef}
+          ref={swiperRef2}
           className="mySwiper bg-white"
         >
           {[1, 2, 3, 4, 5, 6, 7, 8, 9]?.map((item, index) => (
             <SwiperSlide className=" bg-white " key={index}>
-              <div className="bg-white rounded-lg py-8 px-6 border-gradient drop-shadow-lg">
+              <div className="bg-white rounded-xl border-2 py-12 px-6 drop-shadow-xl">
                 <Image
                   src={"/assets/cords.png"}
                   alt="cots"
@@ -90,17 +103,17 @@ const ImageSlider = () => {
           ))}
         </Swiper>
       </div>
-      <div className="w-[70%] lg:w-1/2  bg-white hidden md:block">
+      <div className="w-[70%] lg:w-[55%]  bg-white hidden md:block">
         <Swiper
           slidesPerView={2}
           spaceBetween={20}
           loop={true}
           ref={swiperRef}
-          className="mySwiper bg-white"
+          className="mySwiper"
         >
           {[1, 2, 3, 4, 5, 6, 7, 8, 9]?.map((item, index) => (
             <SwiperSlide className=" bg-white " key={index}>
-              <div className="bg-white rounded-lg py-8 px-6 border-gradient drop-shadow-lg">
+              <div className="bg-white rounded-xl border-2 py-12 px-6 drop-shadow-xl">
                 <Image
                   src={"/assets/cords.png"}
                   alt="cots"
@@ -147,11 +160,11 @@ const ImageSlider = () => {
           ))}
         </Swiper>
       </div>
-      <button
-        className="h-[50px] md:h-[70px] w-[50px] md:w-[70px] flex justify-center items-center rounded-lg bg-gradient-to-l from-[#0080004D] to-white"
-        onClick={handleNextClick}
-      >
-        <FaPlay color="#fff" size={30} />
+      <button className="flex md:hidden " onClick={handleNextClick2}>
+        <FaChevronRight color="#6C6C6C" size={30} />
+      </button>
+      <button className="hidden md:flex " onClick={handleNextClick}>
+        <FaChevronRight color="#6C6C6C" size={40} />
       </button>
     </div>
   );
