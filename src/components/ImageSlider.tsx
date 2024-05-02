@@ -40,7 +40,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="flex gap-4 md:gap-8 items-center justify-center">
+    <div className="flex gap-4 md:gap-4 items-center justify-center">
       <button className="flex md:hidden" onClick={handlePrevClick2}>
         <FaChevronLeft color="#6C6C6C" size={30} />
       </button>
