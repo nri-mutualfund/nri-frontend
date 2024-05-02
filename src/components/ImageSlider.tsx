@@ -13,23 +13,41 @@ import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
 const ImageSlider = () => {
   const swiperRef = useRef<Swiper | null>(null);
+  const swiperRef2 = useRef<Swiper | null>(null);
 
   const handlePrevClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slidePrev(); // Access swiper methods correctly
+      swiperRef.current.swiper.slidePrev();
     }
   };
 
   const handleNextClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext(); // Access swiper methods correctly
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+  const handlePrevClick2 = () => {
+    if (swiperRef2.current && swiperRef2.current.swiper) {
+      swiperRef2.current.swiper.slidePrev();
+    }
+  };
+
+  const handleNextClick2 = () => {
+    if (swiperRef2.current && swiperRef2.current.swiper) {
+      swiperRef2.current.swiper.slideNext();
     }
   };
 
   return (
     <div className="flex gap-4 md:gap-8 items-center justify-center">
       <button
-        className="h-[50px] md:h-[70px] w-[50px] md:w-[70px] flex justify-center items-center rounded-lg bg-gradient-to-r from-[#0080004D] to-white"
+        className="h-[50px] w-[50px] flex md:hidden  justify-center items-center rounded-lg bg-gradient-to-r from-[#0080004D] to-white"
+        onClick={handlePrevClick2}
+      >
+        <FaPlay color="#fff" size={30} className="rotate-180" />
+      </button>
+      <button
+        className="h-[70px] w-[70px] hidden md:flex justify-center items-center rounded-lg bg-gradient-to-r from-[#0080004D] to-white"
         onClick={handlePrevClick}
       >
         <FaPlay color="#fff" size={30} className="rotate-180" />
@@ -38,7 +56,7 @@ const ImageSlider = () => {
         <Swiper
           slidesPerView={1}
           loop={true}
-          ref={swiperRef}
+          ref={swiperRef2}
           className="mySwiper bg-white"
         >
           {[1, 2, 3, 4, 5, 6, 7, 8, 9]?.map((item, index) => (
@@ -70,10 +88,10 @@ const ImageSlider = () => {
                     height={1}
                   />
                   <div>
-                    <p className="font-medium text-gray-800">
+                    <p className="font-medium text-gray-800 leading-[18px]">
                       {index % 2 === 0 ? "Navya Roy" : "Siddharth Soni"}
                     </p>
-                    <p className="font-medium text-gray-800 text-sm">
+                    <p className="font-medium text-gray-800 text-sm leading-[16px] mt-2">
                       {index % 2 === 0 ? "Music Enthusiast" : "Audiophile"}
                     </p>
                     <Image
@@ -148,7 +166,13 @@ const ImageSlider = () => {
         </Swiper>
       </div>
       <button
-        className="h-[50px] md:h-[70px] w-[50px] md:w-[70px] flex justify-center items-center rounded-lg bg-gradient-to-l from-[#0080004D] to-white"
+        className="h-[50px]  w-[50px] flex md:hidden justify-center items-center rounded-lg bg-gradient-to-l from-[#0080004D] to-white"
+        onClick={handleNextClick2}
+      >
+        <FaPlay color="#fff" size={30} />
+      </button>
+      <button
+        className="h-[70px] w-[70px] hidden md:flex justify-center items-center rounded-lg bg-gradient-to-l from-[#0080004D] to-white"
         onClick={handleNextClick}
       >
         <FaPlay color="#fff" size={30} />
