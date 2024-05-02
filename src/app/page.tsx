@@ -63,84 +63,86 @@ const Page = () => {
       </section>
 
       {/* section 2 */}
-      <section className="flex flex-wrap px-4 md:px-20 lg:px-40 gap-20 lg:gap-0  justify-between mt-24">
-        <div className="w-full lg:w-[45%]">
-          <h1 className="text-gray-800 font-semibold w-full lg:w-[80%] font-graphik leading-[50px]">
+      <section className=" px-4 md:px-20 lg:px-40 mt-24">
+        <div className="flex flex-col justify-center items-center  w-full">
+          <h1 className="text-gray-800 font-semibold font-graphik leading-[50px] w-[90%] md:w-2/3 lg:w-[50%] text-center">
             A one-stop <span className="text-primary">Indian</span> Expacts
           </h1>
-
-          <p className="text-sm font-light my-4">
+          <p className="text-center text-sm font-light w-full md:w-[70%] mt-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
             mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem
-            ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur{" "}
+            ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur
           </p>
-          <div className="flex gap-4 mt-6 items-start">
-            <div className="text-primary bg-green-100 rounded-full text-4xl p-4">
-              <TbDeviceMobileDown />
-            </div>
-            <div>
-              <h3 className="font-semibold leading-[24px]">
-                Invest reliably with index funds
-              </h3>
-              <p className="text-sm mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut
-                mollis aenean sit dictum tincidunt.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex gap-4 mt-6 items-start">
-            <div className="text-primary bg-green-100 rounded-full text-4xl p-4">
-              <FaRegUser />
-            </div>
-            <div>
-              <h3 className=" font-semibold">
-                Earn high returns with India’s growth
-              </h3>
-              <p className="text-sm mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut
-                mollis aenean sit dictum tincidunt.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex gap-4 mt-6 items-start">
-            <div className="text-primary bg-green-100 rounded-full text-4xl p-4">
-              <RiBankFill />
-            </div>
-            <div>
-              <h3 className="font-semibold leading-[24px]">
-                Faster account opening processes with trusted banks
-              </h3>
-              <p className="text-sm mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut
-                mollis aenean sit dictum tincidunt.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex gap-4 mt-6 items-start">
-            <div className="text-primary bg-green-100 rounded-full text-4xl p-4">
-              <PiCurrencyDollarSimpleBold />
-            </div>
-            <div>
-              <h3 className="font-semibold leading-[24px]">
-                Invest reliably with index funds
-              </h3>
-              <p className="text-sm mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut
-                mollis aenean sit dictum tincidunt.
-              </p>
-            </div>
-          </div>
         </div>
-        <div className="relative w-full lg:w-[52%] h-[600px] lg:h-auto max-h-full">
-          <Image
-            src="/assets/investcoin.png"
-            alt="Your Image Alt Text"
-            className="rounded-md transition-all duration-300 hover:scale-105"
-            fill
-          />
+        <div className="w-full lg:w-[80%] flex flex-wrap  gap-20 md:gap-0  mx-auto justify-between mt-8">
+          <div className="w-full md:w-[45%] flex flex-col gap-20">
+            <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
+              <Image
+                src="/assets/piggy.png"
+                alt="Your Image Alt Text"
+                className="rounded-md mt-10 mx-auto"
+                width="80"
+                height="80"
+              />
+              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
+                Invest reliably with index funds
+              </p>
+              <p className="text-center text-sm font-light  mt-4 px-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
+                mollis aenean sit dictum tincidunt.
+              </p>
+            </div>
+            <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
+              <Image
+                src="/assets/bank_building.png"
+                alt="Your Image Alt Text"
+                className="rounded-md mt-10 mx-auto"
+                width="80"
+                height="80"
+              />
+              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
+                Faster account opening processes with trusted banks
+              </p>
+              <p className="text-center text-sm font-light  mt-4 px-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
+                mollis aenean sit dictum tincidunt.
+              </p>
+            </div>
+          </div>
+          <div className="w-full md:w-[45%] flex flex-col gap-20 mt-0 md:mt-20">
+            <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
+              <Image
+                src="/assets/graph.png"
+                alt="Your Image Alt Text"
+                className="rounded-md mt-10 mx-auto"
+                width="80"
+                height="80"
+              />
+              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
+                Earn high returns with India’s growth
+              </p>
+              <p className="text-center text-sm font-light  mt-4 px-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
+                mollis aenean sit dictum tincidunt.
+              </p>
+            </div>
+            <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
+              <Image
+                src="/assets/bank_building.png"
+                alt="Your Image Alt Text"
+                className="rounded-md mt-10 mx-auto"
+                width="80"
+                height="80"
+              />
+              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
+                Complimentary tax guidance
+              </p>
+              <p className="text-center text-sm font-light  mt-4 px-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
+                mollis aenean sit dictum tincidunt.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       {/* section 3 */}
@@ -384,43 +386,6 @@ const Page = () => {
                 width={2000}
                 height={1}
               />
-              {/* <div className="flex flex-col gap-4 z-10 w-[20%]">
-                <Image
-                  src="/assets/axis_bank.png"
-                  alt="Your Image Alt Text"
-                  className="w-full rounded-lg transition-all duration-300 hover:scale-105"
-                  width={500}
-                  height={1}
-                />
-                <Image
-                  src="/assets/sbi_bank.png"
-                  alt="Your Image Alt Text"
-                  className="w-full rounded-lg transition-all duration-300 hover:scale-105"
-                  width={500}
-                  height={1}
-                />
-                <Image
-                  src="/assets/yes_bank.png"
-                  alt="Your Image Alt Text"
-                  className="w-full rounded-lg transition-all duration-300 hover:scale-105"
-                  width={500}
-                  height={1}
-                />
-                <Image
-                  src="/assets/axis_bank.png"
-                  alt="Your Image Alt Text"
-                  className="w-full rounded-lg transition-all duration-300 hover:scale-105"
-                  width={500}
-                  height={1}
-                />
-                <Image
-                  src="/assets/sbi_bank.png"
-                  alt="Your Image Alt Text"
-                  className="w-full rounded-lg transition-all duration-300 hover:scale-105"
-                  width={500}
-                  height={1}
-                />
-              </div> */}
             </div>
           </div>
         </div>
@@ -435,43 +400,8 @@ const Page = () => {
 
         <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between mt-10">
           <div className="w-full lg:w-[45%] bg-[#F2F8F2]  rounded-[20px]">
-            <div className="py-8 pl-14 pr-20">
+            <div className="flex justify-between items-end pl-14 pr-4 pt-4">
               <p className="text-[30px] font-medium">Taxation</p>
-
-              <p className="font-medium text-sm text-gray-500 mt-4">
-                Personalized consultations with{" "}
-                <span className="text-black">NRI-specialized </span>
-                taxation experts
-              </p>
-              <p className="font-medium text-sm text-gray-500 mt-3">
-                File ITRs hassle-free & maximize the refunds
-              </p>
-              <p className="font-medium text-sm text-gray-500 mt-3">
-                Apply for <span className="text-black">15CA & CB</span> & Make
-                your (NRO-NRE) transfers stress-free
-              </p>
-              <p className="font-medium text-sm text-gray-500 mt-3">
-                <span className="text-black">
-                  {" "}
-                  Apply for Lower TDS certificates
-                </span>{" "}
-                & Reduce TDS deductions on property sales
-              </p>
-              <p className="font-medium text-sm text-black mt-3">
-                {`Received an Income Tax Notice? Don't worry, we're here to help`}
-              </p>
-              <p className="font-medium text-sm text-gray-500 mt-3">
-                Gain More, Pay Less: Top-notch Capital Gain Tax Planning
-              </p>
-            </div>
-            <div className="flex justify-between pl-14">
-              <a
-                className="text-lg font-medium"
-                download={true}
-                href="/assets/resume.pdf"
-              >
-                Download
-              </a>
               <Image
                 src="/assets/tax.png"
                 alt="Your Image Alt Text"
@@ -480,45 +410,55 @@ const Page = () => {
                 height={1}
               />
             </div>
+            <div className="py-8 pl-14 pr-20">
+              <div className="flex gap-2 items-start mt-4">
+                <FaCanadianMapleLeaf size={20} color="gray" />
+                <p className="font-medium text-sm text-gray-500">
+                  Personalized consultations with{" "}
+                  <span className="text-black">NRI-specialized </span>
+                  taxation experts
+                </p>
+              </div>
+              <div className="flex gap-2 items-start mt-3">
+                <PiShootingStarThin size={20} color="gray" />
+                <p className="font-medium text-sm text-gray-500">
+                  File ITRs hassle-free & maximize the refunds
+                </p>
+              </div>
+              <div className="flex gap-2 items-start mt-3">
+                <TbAntennaBars5 size={25} color="gray" />
+                <p className="font-medium text-sm text-gray-500">
+                  Apply for <span className="text-black">15CA & CB</span> & Make
+                  your (NRO-NRE) transfers stress-free
+                </p>
+              </div>
+              <div className="flex gap-2 items-start mt-3">
+                <PiShootingStarThin size={30} color="gray" />
+                <p className="font-medium text-sm text-gray-500">
+                  <span className="text-black">
+                    {" "}
+                    Apply for Lower TDS certificates
+                  </span>{" "}
+                  & Reduce TDS deductions on property sales
+                </p>
+              </div>
+              <div className="flex gap-2 items-start mt-3">
+                <FaCanadianMapleLeaf size={20} color="gray" />
+                <p className="font-medium text-sm text-black">
+                  {`Received an Income Tax Notice? Don't worry, we're here to help`}
+                </p>
+              </div>
+              <div className="flex gap-2 items-start mt-3">
+                <TbAntennaBars5 size={25} color="gray" />
+                <p className="font-medium text-sm text-gray-500 ">
+                  Gain More, Pay Less: Top-notch Capital Gain Tax Planning
+                </p>
+              </div>
+            </div>
           </div>
           <div className="w-full lg:w-[45%] bg-[#F2F8F2]  rounded-[20px]">
-            <div className="py-8 pl-14 pr-20">
+            <div className="flex justify-between items-end pl-14 pr-4 pt-4">
               <p className="text-[30px] font-medium">Documentation</p>
-
-              <p className="font-medium text-sm text-gray-500 mt-4">
-                Personalized consultations with{" "}
-                <span className="text-black">NRI-specialized </span>
-                taxation experts
-              </p>
-              <p className="font-medium text-sm text-gray-500 mt-3">
-                File ITRs hassle-free & maximize the refunds
-              </p>
-              <p className="font-medium text-sm text-gray-500 mt-3">
-                Apply for <span className="text-black">15CA & CB</span> & Make
-                your (NRO-NRE) transfers stress-free
-              </p>
-              <p className="font-medium text-sm text-gray-500 mt-3">
-                <span className="text-black">
-                  {" "}
-                  Apply for Lower TDS certificates
-                </span>{" "}
-                & Reduce TDS deductions on property sales
-              </p>
-              <p className="font-medium text-sm text-black mt-3">
-                {`Received an Income Tax Notice? Don't worry, we're here to help`}
-              </p>
-              <p className="font-medium text-sm text-gray-500 mt-3">
-                Gain More, Pay Less: Top-notch Capital Gain Tax Planning
-              </p>
-            </div>
-            <div className="flex justify-between pl-14">
-              <a
-                className="text-lg font-medium"
-                download={true}
-                href="/assets/resume.pdf"
-              >
-                Download
-              </a>
               <Image
                 src="/assets/doc.png"
                 alt="Your Image Alt Text"
@@ -526,6 +466,51 @@ const Page = () => {
                 width={500}
                 height={1}
               />
+            </div>
+            <div className="py-8 pl-14 pr-20">
+              <div className="flex gap-2 items-start mt-4">
+                <FaCanadianMapleLeaf size={20} color="gray" />
+                <p className="font-medium text-sm text-gray-500">
+                  Personalized consultations with{" "}
+                  <span className="text-black">NRI-specialized </span>
+                  taxation experts
+                </p>
+              </div>
+              <div className="flex gap-2 items-start mt-3">
+                <PiShootingStarThin size={20} color="gray" />
+                <p className="font-medium text-sm text-gray-500">
+                  File ITRs hassle-free & maximize the refunds
+                </p>
+              </div>
+              <div className="flex gap-2 items-start mt-3">
+                <TbAntennaBars5 size={25} color="gray" />
+                <p className="font-medium text-sm text-gray-500">
+                  Apply for <span className="text-black">15CA & CB</span> & Make
+                  your (NRO-NRE) transfers stress-free
+                </p>
+              </div>
+              <div className="flex gap-2 items-start mt-3">
+                <PiShootingStarThin size={30} color="gray" />
+                <p className="font-medium text-sm text-gray-500">
+                  <span className="text-black">
+                    {" "}
+                    Apply for Lower TDS certificates
+                  </span>{" "}
+                  & Reduce TDS deductions on property sales
+                </p>
+              </div>
+              <div className="flex gap-2 items-start mt-3">
+                <FaCanadianMapleLeaf size={20} color="gray" />
+                <p className="font-medium text-sm text-black">
+                  {`Received an Income Tax Notice? Don't worry, we're here to help`}
+                </p>
+              </div>
+              <div className="flex gap-2 items-start mt-3">
+                <TbAntennaBars5 size={25} color="gray" />
+                <p className="font-medium text-sm text-gray-500 ">
+                  Gain More, Pay Less: Top-notch Capital Gain Tax Planning
+                </p>
+              </div>
             </div>
           </div>
         </div>
