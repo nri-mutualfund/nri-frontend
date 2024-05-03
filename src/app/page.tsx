@@ -1,10 +1,16 @@
 "use client";
 import React, { useState } from "react";
 import { TbDeviceMobileDown, TbAntennaBars5 } from "react-icons/tb";
-import { FaRegUser, FaCanadianMapleLeaf } from "react-icons/fa";
-import { RiBankFill } from "react-icons/ri";
-import { PiCurrencyDollarSimpleBold, PiShootingStarThin } from "react-icons/pi";
+import {
+  FaFingerprint,
+  FaCanadianMapleLeaf,
+  FaArrowRight,
+} from "react-icons/fa";
+import { PiShootingStarThin } from "react-icons/pi";
+import { AiOutlineCloudUpload } from "react-icons/ai";
+import { HiArrowPath } from "react-icons/hi2";
 import { GoArrowRight } from "react-icons/go";
+import { IoLockClosedOutline } from "react-icons/io5";
 import Image from "next/image";
 import FAQ from "@/components/FAQ";
 import ImageSlider from "@/components/ImageSlider";
@@ -21,6 +27,32 @@ const Page = () => {
     "PMS",
     "Bond",
   ];
+  const features = [
+    {
+      name: "Invest reliably with index funds",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu, mollis aenean sit dictum tincidunt.",
+      icon: AiOutlineCloudUpload,
+    },
+    {
+      name: "Earn high returns with India’s growth",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu, mollis aenean sit dictum tincidunt.",
+      icon: IoLockClosedOutline,
+    },
+    {
+      name: "Faster account opening processes with trusted banks",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu, mollis aenean sit dictum tincidunt.",
+      icon: HiArrowPath,
+    },
+    {
+      name: "Complimentary tax guidance",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu, mollis aenean sit dictum tincidunt.",
+      icon: FaFingerprint,
+    },
+  ];
   const options = "How secure is this?";
   const options2 = "Is this actually legal?";
   const options3 = "What happens if Vested shuts down?";
@@ -32,29 +64,36 @@ const Page = () => {
   return (
     <div className="max-w-screen-2xl mx-auto">
       {/* sectin 1 */}
-      <Image
+      {/* <Image
         src="/assets/circle.png"
         alt="Your Image Alt Text"
         className="w-[120px] lg:w-[150px] absolute right-0 top-32"
         width={500}
         height={1}
-      />
+      /> */}
       <section className="flex-col px-2 pt-16">
-        <div className="flex justify-center align-middle pt-14">
-          <div className="text-center  w-[90%] md:w-2/3 lg:w-[40%]">
-            <h1 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[50px]">
-              The easiest and fastest way to{" "}
-              <span className="text-primary">Invest</span> in India
+        <div className="flex justify-center align-middle pt-32">
+          <div className="relative text-center max-w-3xl lg:max-w-4xl">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 418 42"
+              className="h-10 w-[400px] fill-[#00800040] absolute top-20 md:top-12 right-0 -z-20"
+              preserveAspectRatio="none"
+            >
+              <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
+            </svg>
+            <h1 className="text-gray-800 mx-auto text-5xl md:text-7xl  font-graphik leading-[50px] md:leading-[80px]">
+              The easiest and <span className="text-primary">fastest way </span>
+              to Invest in India
             </h1>
+            <p className="text-center leading-6 mt-10">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
+              mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem
+              ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur{" "}
+            </p>
           </div>
         </div>
-        {/* <div className="flex justify-center">
-          <p className=" w-[80%] md:w-2/3 lg:w-1/3 text-center leading-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
-            mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem
-            ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur{" "}
-          </p>
-        </div> */}
+
         <div className="flex justify-center mt-10">
           <button className="bg-primary text-white px-16 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
             {" "}
@@ -64,7 +103,7 @@ const Page = () => {
       </section>
 
       {/* section 2 */}
-      <section className=" px-4 md:px-20 lg:px-40 mt-24">
+      {/* <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <div className="flex flex-col justify-center items-center  w-full">
           <h1 className="text-gray-800 font-semibold font-graphik leading-[50px] text-center">
             A one-stop <span className="text-primary">Indian</span> Expacts
@@ -161,6 +200,45 @@ const Page = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
                 mollis aenean sit dictum tincidunt.
               </p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+      <section className="px-4 md:px-20 lg:px-40 mt-24">
+        <div className="bg-white py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-2xl lg:text-center">
+              <h2 className="text-base font-semibold leading-7 text-primary">
+                Deploy faster
+              </h2>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                A one-stop <span className="text-primary">Indian</span> Expats
+              </p>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
+                mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem
+                ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur
+              </p>
+            </div>
+            <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+              <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                {features.map((feature) => (
+                  <div key={feature.name} className="relative pl-16">
+                    <dt className="text-base font-semibold leading-7 text-gray-900">
+                      <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+                        <feature.icon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      {feature.name}
+                    </dt>
+                    <dd className="mt-2 text-base leading-7 text-gray-600">
+                      {feature.description}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
         </div>
@@ -546,11 +624,11 @@ const Page = () => {
             mollis aenean sit dictum tincidunt. Ut arcu,
           </p>
         </div>
-        <div className="py-10">
+        <div className="py-20">
           <ImageSlider />
         </div>
-        <div className=" flex justify-center items-center w-full pb-10">
-          <button className="px-12  py-2  text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+        <div className="flex justify-center">
+          <button className="bg-primary text-white px-16 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
             View All
           </button>
         </div>
@@ -695,98 +773,81 @@ const Page = () => {
           </h1>
         </div>
 
-        <div className="flex flex-wrap  gap-20 md:gap-0  justify-between my-10">
-          <div
-            className="w-full md:w-[30%] bg-white  rounded-[20px] flex flex-col gap-4 hover:drop-shadow-md"
-            onMouseEnter={() => {
-              setShow(true);
-            }}
-            onMouseLeave={() => {
-              setShow(false);
-            }}
-          >
-            <Image
-              src="/assets/blog1.png"
-              alt="Your Image Alt Text"
-              className="w-full transition-all duration-300 hover:scale-105"
-              width={500}
-              height={1}
-            />
-            <div className="flex flex-col justify-between p-4">
-              <p>Lorem ipsum dolor sit amet,</p>
-              <p className="text-sm font-light mt-4 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
-                mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac
-              </p>
-              <a
-                className={`text-blue-600 cursor-pointer mt-4 ${
-                  show ? "block" : "hidden"
-                }`}
-              >
-                Read More
-              </a>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
+          <div>
+            <p className="font-light text-sm">Mar 16, 2020</p>
+            <h2 className="text-gray-800 font-semibold leading-[40px] mt-6">
+              We’re incredibly proud to announce we have secured $75m in Series
+              B
+            </h2>
+            <p className="font-light mt-6 text-lg">
+              Libero neque aenean tincidunt nec consequat tempor. Viverra odio
+              id velit adipiscing id. Nisi vestibulum orci eget bibendum dictum.
+              Velit viverra posuere vulputate volutpat nunc. Nunc netus sit
+              faucibus.
+            </p>
+            <button className="flex items-center gap-2 text-primary mt-6">
+              <p>Continue reading</p>
+              <FaArrowRight />
+            </button>
+            <div className="border-[0.5px] mt-8 hidden lg:block" />
+            <div className="flex items-center gap-4 mt-6">
+              <Image
+                src={"/assets/male.png"}
+                alt="cots"
+                className="w-[30px]"
+                width={500}
+                height={1}
+              />
+              <p className="font-semibold">Michael Foster</p>
             </div>
+            <div className="border-[0.5px] mt-8 block lg:hidden" />
           </div>
-          <div
-            className="w-full md:w-[30%] bg-white  rounded-[20px] flex flex-col gap-4 hover:drop-shadow-md"
-            onMouseEnter={() => {
-              setShow2(true);
-            }}
-            onMouseLeave={() => {
-              setShow2(false);
-            }}
-          >
-            <Image
-              src="/assets/blog2.png"
-              alt="Your Image Alt Text"
-              className="w-full transition-all duration-300 hover:scale-105"
-              width={500}
-              height={1}
-            />
-            <div className="flex flex-col justify-between p-4">
-              <p>Lorem ipsum dolor sit amet,</p>
-              <p className="text-sm font-light mt-4 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
-                mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac
+          <div className="flex flex-col gap-8">
+            <div>
+              <p className="font-light text-sm">Mar 10, 2020</p>
+              <p className="text-gray-800 font-semibold mt-2 text-lg">
+                Boost your conversion rate
               </p>
-              <a
-                className={`text-blue-600 cursor-pointer mt-4 ${
-                  show2 ? "block" : "hidden"
-                }`}
-              >
-                Read More
-              </a>
+              <p className="font-light mt-6">
+                Libero neque aenean tincidunt nec consequat tempor. Viverra odio
+                id velit adipiscing id. Nisi vestibulum orci eget bibendum
+                dictum. Velit viverra posuere vulputate volutpat nunc. Nunc
+                netus sit faucibus.
+              </p>
+              <div className="flex items-center gap-4 mt-6">
+                <Image
+                  src={"/assets/male.png"}
+                  alt="cots"
+                  className="w-[30px]"
+                  width={500}
+                  height={1}
+                />
+                <p className="font-semibold">Michael Foster</p>
+              </div>
             </div>
-          </div>
-          <div
-            className={`w-full md:w-[30%] bg-white  rounded-[20px] flex flex-col gap-4 hover:drop-shadow-md`}
-            onMouseEnter={() => {
-              setShow3(true);
-            }}
-            onMouseLeave={() => {
-              setShow3(false);
-            }}
-          >
-            <Image
-              src="/assets/blog3.png"
-              alt="Your Image Alt Text"
-              className="w-full transition-all duration-300 hover:scale-105"
-              width={500}
-              height={1}
-            />
-            <div className="flex flex-col justify-between p-4">
-              <p>Lorem ipsum dolor sit amet,</p>
-              <p className="text-sm font-light mt-4 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
-                mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac
+            <div className="border-[0.5px]" />
+            <div>
+              <p className="font-light text-sm">Feb 12, 2020</p>
+              <p className="text-gray-800 font-semibold mt-2 text-lg">
+                How to use search engine optimization to drive sales
               </p>
-              <a
-                className={`text-blue-600 cursor-pointer transition-opacity duration-300 mt-4 ${
-                  show3 ? "block" : "hidden"
-                }`}
-              >
-                Read More
-              </a>
+              <p className="font-light mt-6">
+                Libero neque aenean tincidunt nec consequat tempor. Viverra odio
+                id velit adipiscing id. Nisi vestibulum orci eget bibendum
+                dictum. Velit viverra posuere vulputate volutpat nunc. Nunc
+                netus sit faucibus.
+              </p>
+              <div className="flex items-center gap-4 mt-6">
+                <Image
+                  src={"/assets/male.png"}
+                  alt="cots"
+                  className="w-[30px]"
+                  width={500}
+                  height={1}
+                />
+                <p className="font-semibold">Michael Foster</p>
+              </div>
             </div>
           </div>
         </div>
