@@ -31,3 +31,21 @@ body {
     text-wrap: balance;
   }
 } */
+.border-gradient {
+  position: relative;
+  border-radius: 20px; /* Adjust the border radius as needed */
+  overflow: hidden; /* Clip the gradient overflow */
+  border-color: #fff;
+}
+
+.border-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-image: linear-gradient(to bottom, #5afd20, #efff33) 1;
+  border-radius: 20px; /* Same as parent border-radius */
+}
