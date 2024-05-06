@@ -6,7 +6,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className="w-full bg-secondary mt-40">
-      <div className="py-6 lg:px-40 md:px-16 px-10">
+      <div className="max-w-screen-2xl mx-auto py-6 lg:px-40 md:px-16 px-10">
         <div className="w-full flex flex-wrap items-center gap-20 md:gap-10 lg:gap-0 justify-between mt-20">
           <div className="w-full md:w-[45%] lg:w-[25%] px-4">
             <FiBarChart size={30} className="rotate-180" />
@@ -63,7 +63,7 @@ const Footer = () => {
         <div className="w-full flex flex-col md:flex-row flex-wrap gap-4 md:gap-8 justify-between mt-10">
           <div>
             <Link href={"/"} className="text-sm font-light">
-              © 2021 All Rights Reserved
+              © 2024 All Rights Reserved
             </Link>
           </div>
 
