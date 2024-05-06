@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
-const plugin = require("tailwindcss/plugin");
+const plugin = require('tailwindcss/plugin')
+
 
 const config: Config = {
   content: [
@@ -24,14 +25,14 @@ const config: Config = {
         "area-normal": ["area-normal", "sans-serif"],
         inter: ["Inter", "sans-serif"],
         lato: ["Lato", "sans-serif"],
-        graphik: ["Graphik", "sans-serif"],
+        graphik: ['Graphik', 'sans-serif'],
       },
       fontSize: {
-        h1: "48px",
-        h2: "34px",
-        h3: "20px",
-        p: "16px",
-        base: "16px",
+        'h1': "48px",
+        'h2': "34px",
+        'h3': "20px",
+        'p':"16px",
+        'base': "16px",
       },
       // lineHeight: {
       //   'h1': "55px",
@@ -42,11 +43,11 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(({ addBase, theme }: { addBase: any; theme: Function }) => {
+    plugin(({ addBase, theme }: { addBase: any, theme: Function }) => {
       const headingStyles: { [key: string]: any } = {
-        h1: { fontSize: theme("fontSize.h1") },
-        h2: { fontSize: theme("fontSize.h2") },
-        h3: { fontSize: theme("fontSize.h3") },
+        'h1': { fontSize: theme('fontSize.h1') },
+        'h2': { fontSize: theme('fontSize.h2') },
+        'h3': { fontSize: theme('fontSize.h3') },
       };
       addBase(headingStyles);
     }),
