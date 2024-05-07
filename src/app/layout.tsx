@@ -13,19 +13,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  showHeader = true,
-  showFooter = true,
 }: Readonly<{
   children: React.ReactNode;
-  showHeader?: boolean;
-  showFooter?: boolean;
 }>) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      {/* {showHeader && <Header />} */}
+        <Header />
         {children}
-        {/* {showFooter && <Footer />} */}
+        <Footer />
       </body>
     </html>
   );

@@ -84,9 +84,9 @@ const Header = () => {
               height={1}
             />
 
-            <a className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0 absolute left-10">
+            <p className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0 absolute left-10">
               Logo
-            </a>
+            </p>
           </Link>
           <ul className="flex flex-col gap-10 my-32">
             <Link
