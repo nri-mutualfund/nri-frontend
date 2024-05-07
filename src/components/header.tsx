@@ -60,10 +60,11 @@ const Header = () => {
           >
             Sign in
           </Link> */}
-          <Link
-            href={"/login"}>  <button className="px-4 py-2 text-sm font-bold text-white  transition-all duration-300 bg-primary rounded-md shadow active:bg-primary  focus:outline-none ease cursor-pointer hover:shadow-lg hover:-translate-y-1">
-            Sign Up For Free
-          </button></Link>
+          <Link href={"/login"}>
+            <button className="px-4 py-2 text-sm font-bold text-white  transition-all duration-300 bg-primary rounded-md shadow active:bg-primary  focus:outline-none ease cursor-pointer hover:shadow-lg hover:-translate-y-1">
+              Sign Up For Free
+            </button>
+          </Link>
         </div>
 
         <div className="md:hidden" onClick={handleNav}>
@@ -120,9 +121,11 @@ const Header = () => {
             </Link>
           </ul>
           <div className="items-center">
-            <button className="px-4 py-2 text-sm font-bold text-white  transition-all duration-150 bg-primary rounded-md shadow active:bg-primary hover:shadow-md focus:outline-none ease">
-              Sign Up For Free
-            </button>
+            <Link href={"/login"}>
+              <button className="px-4 py-2 text-sm font-bold text-white  transition-all duration-150 bg-primary rounded-md shadow active:bg-primary hover:shadow-md focus:outline-none ease">
+                Sign Up For Free
+              </button>
+            </Link>
           </div>
         </div>
       </div>
