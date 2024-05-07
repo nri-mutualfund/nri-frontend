@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 const plugin = require('tailwindcss/plugin')
-
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 const config: Config = {
   content: [
@@ -25,7 +25,7 @@ const config: Config = {
         "area-normal": ["area-normal", "sans-serif"],
         inter: ["Inter", "sans-serif"],
         lato: ["Lato", "sans-serif"],
-        graphik: ['Graphik', 'sans-serif'],
+        graphik: ['Graphik', "sans-serif"],
       },
       fontSize: {
         'h1': "48px",
