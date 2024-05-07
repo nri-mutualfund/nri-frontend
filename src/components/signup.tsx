@@ -20,11 +20,12 @@ const SignUp: React.FC<SignInProps> = ({ toggleForm }: SignInProps) => {
 </div>
 
     <div className='w-1/2 bg-white rounded-l-xl rounded-r-lg flex justify-center items-center signUp'>
-      <div className='w-full flex flex-col items-center pt-10 gap-8'>
+      <div className='w-full flex flex-col items-center pt-10 gap-4'>
       <div className='bg-gray-300 text-black flex justify-center w-14'>LOGO</div>
     <GoogleAuthButton />
-    <h3>or</h3>
-    
+    <div>
+    <hr className="h-px my-8 border-[#a2a2a2] border-[1.5px] w-[300px]" />
+    </div>
     <div className='w-3/4'>
             <div className="flex items-center justify-between">
               <label  className="block text-md font-medium leading-6 text-gray-900">Your <span className='text-primary'>Name</span></label>
@@ -46,7 +47,7 @@ const SignUp: React.FC<SignInProps> = ({ toggleForm }: SignInProps) => {
     
          
           
-          <div className="text-md pt-20">
+          <div className="text-md pt-10">
                 <a href="#" className="font-semibold text-black">Already have an account? <span className='text-primary' onClick={toggleForm}>Sign in</span></a>
               </div>
     </div>
