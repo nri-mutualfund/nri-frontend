@@ -97,7 +97,8 @@ const Page = () => {
         <div className="flex justify-center mt-10 gap-2">
           <button className=" flex gap-2  items-center bg-primary text-white px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
             {" "}
-            <span>    Schedule a Meeting </span><IoCalendarNumberOutline className="text-xl"/>
+            <span> Schedule a Meeting </span>
+            <IoCalendarNumberOutline className="text-xl" />
           </button>
           <button className="bg-primary text-white px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
             {" "}
@@ -229,7 +230,7 @@ const Page = () => {
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-16">
                     <dt className="text-base font-semibold leading-7 text-gray-900">
-                      <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+                      <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
                         <feature.icon
                           className="h-6 w-6 text-white"
                           aria-hidden="true"
@@ -772,9 +773,9 @@ const Page = () => {
       {/* {section 10} */}
       <section className="bg-secondary px-4 md:px-20 lg:px-40 py-20 mt-10">
         {/* <div className="w-full flex justify-start items-start"> */}
-          <h1 className="text-gray-800 mx-auto font-semibold font-graphik">
-            <span className="text-primary">Blogs</span>
-          </h1>
+        <h1 className="text-gray-800 mx-auto font-semibold font-graphik">
+          <span className="text-primary">Blogs</span>
+        </h1>
         {/* </div> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
