@@ -71,7 +71,7 @@ const Page = () => {
         width={500}
         height={1}
       /> */}
-      <section className="flex-col px-2 pt-16 ">
+      <section className="flex-col px-2 pt-4 ">
         <div className="flex justify-center align-middle pt-32">
           <div className="relative text-center max-w-3xl lg:max-w-4xl">
             <svg
@@ -262,7 +262,7 @@ const Page = () => {
         />
       </section> */}
       {/* section 4 */}
-      <section className=" px-4 md:px-20 lg:px-40 mt-24">
+      <section className=" px-4 md:px-20 lg:px-56 mt-20">
         <h1 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[50px]">
           Product <span className="text-primary">We offer</span>
         </h1>
@@ -391,15 +391,15 @@ const Page = () => {
             </div>
           </div>
           <div className="w-full lg:w-[48%] bg-[#F2F8F2] px-2 rounded-[20px] py-2">
-            <div className="bg-white flex flex-col justify-between rounded-[20px] h-full">
+            <div className="bg-white flex flex-col justify-between items-center rounded-[20px] pt-4 ">
               <Image
                 src="/assets/long-term-wealth.png"
                 alt="Your Image Alt Text"
-                className="rounded-md w-full h-[200px] transition-all duration-300 hover:scale-105"
-                width={500}
+                className="rounded-md  h-[200px] transition-all flex  duration-300 hover:scale-105"
+                width={450}
                 height={1}
               />
-              <div className=" py-10 px-4">
+              <div className=" py-6 px-4">
                 <p className="text-3xl font-medium">{products[index]}</p>
                 <p className="mt-2 font-light text-sm">
                   A personalised mutual funds portfolio, diversified across
@@ -452,25 +452,25 @@ const Page = () => {
                 <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
                   <p>1</p>
                 </div>
-                <p className="font-light">RBI registered banks</p>
+                <p className="font-light text-[18px]">RBI registered banks</p>
               </div>
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
                 <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
                   <p>2</p>
                 </div>
-                <p className="font-light">Robust Netbanking</p>
+                <p className="font-light text-[18px]">Robust Netbanking</p>
               </div>
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
                 <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
                   <p>3</p>
                 </div>
-                <p className="font-light">Earn attractive interest rate*</p>
+                <p className="font-light text-[18px]">Earn attractive interest rate*</p>
               </div>
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
                 <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
                   <p>4</p>
                 </div>
-                <p className="font-light">Withdraw Anytime</p>
+                <p className="font-light text-[18px]">Withdraw Anytime</p>
               </div>
               <div className=" flex  items-start w-full mt-10">
                 <button className="px-8  py-2  text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
@@ -562,7 +562,7 @@ const Page = () => {
             <div className="flex justify-between items-end pl-14 pr-4 pt-4">
               <p className="text-[30px] font-medium">Documentation</p>
               <Image
-                src="/assets/doc.png"
+                src="/assets/notes.png"
                 alt="Your Image Alt Text"
                 className="w-[150px]"
                 width={500}
