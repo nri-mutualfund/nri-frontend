@@ -11,11 +11,12 @@ const SignIn: React.FC<SignInProps> = ({ toggleForm }: SignInProps) => {
     <>
 <div className='flex '>
 <div className='w-1/2 bg-white rounded-r-lg rounded-l-lg flex justify-center items-center signIn'  >
-  <div className='w-full flex flex-col items-center pt-10 gap-6'>
+  <div className='w-full flex flex-col items-center pt-10 gap-4'>
   <div className='bg-gray-300 text-black flex justify-center w-14 p-2 px-32 mb-10'>LOGO</div>
 <GoogleAuthButton />
-<h3>or</h3>
-
+<div>
+    <hr className="h-px my-8 border-[#a2a2a2] border-[1.5px] w-[300px]" />
+    </div>
  <div className='w-3/4'>
         <label  className="block text-md font-medium leading-6 text-gray-900">Your <span className='text-primary'>Email</span> address</label>
         <div className="mt-2 w-full">
@@ -37,10 +38,10 @@ const SignIn: React.FC<SignInProps> = ({ toggleForm }: SignInProps) => {
         <button type="submit" className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-md font-semibold leading-6 text-white shadow-sm ">Sign in</button>
       </div>
       <div className="text-md">
-            <a href="#" className="font-semibold text-black">Forgot password?</a>
+            <a href="#" className="font-semibold text-black ">Forgot password?</a>
           </div>
       <div className="text-md">
-            <a href="#" className="font-semibold text-black">Don{`'`}t? have an account? <span className='text-primary' onClick={toggleForm}>Sign up</span></a>
+            <a href="#" className="font-semibold text-black ">Don{`'`}t? have an account? <span className='text-primary' onClick={toggleForm}>Sign up</span></a>
           </div>
 </div>
 </div>
