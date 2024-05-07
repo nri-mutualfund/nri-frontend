@@ -11,7 +11,7 @@ const Header = () => {
     setMenuOpen(!isMenuOpen);
   };
   return (
-    <header className="w-full  text-gray-700 bg-white border-t body-font sticky">
+    <header className="w-full  text-gray-700 bg-white border-t body-font sticky top-0 z-50">
       <div className="max-w-screen-2xl mx-auto flex items-center justify-between py-6 xl:px-40 md:px-16 px-10">
         {/* <Image
           src="/assets/122.png"
