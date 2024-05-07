@@ -54,15 +54,16 @@ const Header = () => {
           </ul>
         </nav>
         <div className="items-center md:flex hidden gap-12">
-          <Link
+          {/* <Link
             href={"/login"}
             className="cursor-pointer font-lato hover:text-gray-900"
           >
             Sign in
-          </Link>
-          <button className="px-4 py-2 text-sm font-bold text-white  transition-all duration-300 bg-primary rounded-md shadow active:bg-primary  focus:outline-none ease cursor-pointer hover:shadow-lg hover:-translate-y-1">
+          </Link> */}
+          <Link
+            href={"/login"}>  <button className="px-4 py-2 text-sm font-bold text-white  transition-all duration-300 bg-primary rounded-md shadow active:bg-primary  focus:outline-none ease cursor-pointer hover:shadow-lg hover:-translate-y-1">
             Sign Up For Free
-          </button>
+          </button></Link>
         </div>
 
         <div className="md:hidden" onClick={handleNav}>

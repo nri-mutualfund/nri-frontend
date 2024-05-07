@@ -10,7 +10,7 @@ import { PiShootingStarThin } from "react-icons/pi";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { HiArrowPath } from "react-icons/hi2";
 import { GoArrowRight } from "react-icons/go";
-import { IoLockClosedOutline } from "react-icons/io5";
+import { IoCalendarNumberOutline, IoLockClosedOutline } from "react-icons/io5";
 import Image from "next/image";
 import FAQ from "@/components/FAQ";
 import ImageSlider from "@/components/ImageSlider";
@@ -62,7 +62,7 @@ const Page = () => {
   const details =
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
   return (
-    <div className="max-w-screen-2xl mx-auto">
+    <div className="max-w-screen-2xl mx-auto  font-graphik">
       {/* sectin 1 */}
       {/* <Image
         src="/assets/circle.png"
@@ -71,7 +71,7 @@ const Page = () => {
         width={500}
         height={1}
       /> */}
-      <section className="flex-col px-2 pt-16">
+      <section className="flex-col px-2 pt-16 ">
         <div className="flex justify-center align-middle pt-32">
           <div className="relative text-center max-w-3xl lg:max-w-4xl">
             <svg
@@ -82,11 +82,11 @@ const Page = () => {
             >
               <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
             </svg>
-            <h1 className="text-gray-800 mx-auto text-5xl md:text-7xl  font-graphik leading-[50px] md:leading-[80px]">
+            <h1 className="text-gray-800 mx-auto text-5xl md:text-7xl  leading-[50px] md:leading-[80px]">
               The easiest and <span className="text-primary">fastest way </span>
               to Invest in India
             </h1>
-            <p className="text-center leading-6 mt-10">
+            <p className="text-center leading-6 mt-10 mx-auto w-[60%]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
               mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem
               ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur{" "}
@@ -94,10 +94,14 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-10">
-          <button className="bg-primary text-white px-16 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+        <div className="flex justify-center mt-10 gap-2">
+          <button className=" flex gap-2  items-center bg-primary text-white px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
             {" "}
-            Get Started
+            <span>    Schedule a Meeting </span><IoCalendarNumberOutline className="text-xl"/>
+          </button>
+          <button className="bg-primary text-white px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+            {" "}
+            Sign Up
           </button>
         </div>
       </section>
@@ -204,7 +208,7 @@ const Page = () => {
           </div>
         </div>
       </section> */}
-      <section className="px-4 md:px-20 lg:px-40 mt-24">
+      <section className="px-4 md:px-20 lg:px-40 mt-10">
         <div className="bg-white py-24 sm:py-32">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-2xl lg:text-center">
@@ -263,7 +267,7 @@ const Page = () => {
           Product <span className="text-primary">We offer</span>
         </h1>
         <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between mt-8">
-          <div className="w-full lg:w-[48%] flex flex-col gap-6">
+          <div className="w-full lg:w-[48%] flex flex-col gap-4">
             <div
               // className=`flex gap-10 w-full indexbg-[#F2F8F2] items-center px-8 py-4 rounded-lg drop-shadow-sm`
               className={`flex gap-10 w-full ${
@@ -386,7 +390,7 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-[48%] bg-[#F2F8F2] px-4 rounded-[20px] py-4">
+          <div className="w-full lg:w-[48%] bg-[#F2F8F2] px-2 rounded-[20px] py-2">
             <div className="bg-white flex flex-col justify-between rounded-[20px] h-full">
               <Image
                 src="/assets/long-term-wealth.png"
@@ -445,25 +449,25 @@ const Page = () => {
             </p>
             <div className="flex flex-wrap mt-2">
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-4xl flex justify-center h-14 w-14 items-center font-bold">
+                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
                   <p>1</p>
                 </div>
                 <p className="font-light">RBI registered banks</p>
               </div>
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-4xl flex justify-center h-14 w-14 items-center font-bold">
+                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
                   <p>2</p>
                 </div>
                 <p className="font-light">Robust Netbanking</p>
               </div>
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-4xl flex justify-center h-14 w-14 items-center font-bold">
+                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
                   <p>3</p>
                 </div>
                 <p className="font-light">Earn attractive interest rate*</p>
               </div>
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-4xl flex justify-center h-14 w-14 items-center font-bold">
+                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
                   <p>4</p>
                 </div>
                 <p className="font-light">Withdraw Anytime</p>
