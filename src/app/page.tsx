@@ -244,7 +244,7 @@ const Page = () => {
         </div>
       </section>
       {/* section 3 */}
-      <section className="flex flex-col justify-center mt-24 px-4 md:px-20 lg:px-40">
+      {/* <section className="flex flex-col justify-center mt-24 px-4 md:px-20 lg:px-40">
         <h1 className="text-gray-800 mx-auto font-semibold font-graphik leading-[50px]">
           Serving <span className="text-primary">NRI</span> from across
           countries
@@ -256,7 +256,7 @@ const Page = () => {
           width={1454}
           height={604}
         />
-      </section>
+      </section> */}
       {/* section 4 */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <h1 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[50px]">
@@ -278,7 +278,7 @@ const Page = () => {
               <Image
                 src="/assets/money1.png"
                 alt="Your Image Alt Text"
-                className="w-[60px]"
+                className="w-[48px]"
                 width={500}
                 height={1}
               />
@@ -302,7 +302,7 @@ const Page = () => {
               <Image
                 src="/assets/deposit.png"
                 alt="Your Image Alt Text"
-                className="w-[60px]"
+                className="w-[48px]"
                 width={500}
                 height={1}
               />
@@ -326,7 +326,7 @@ const Page = () => {
               <Image
                 src="/assets/house.png"
                 alt="Your Image Alt Text"
-                className="w-[60px]"
+                className="w-[48px]"
                 width={500}
                 height={1}
               />
@@ -350,7 +350,7 @@ const Page = () => {
               <Image
                 src="/assets/saving.png"
                 alt="Your Image Alt Text"
-                className="w-[60px]"
+                className="w-[48px]"
                 width={500}
                 height={1}
               />
@@ -374,7 +374,7 @@ const Page = () => {
               <Image
                 src="/assets/bond.png"
                 alt="Your Image Alt Text"
-                className="w-[60px]"
+                className="w-[48px]"
                 width={500}
                 height={1}
               />
@@ -614,7 +614,7 @@ const Page = () => {
         </div>
       </section>
       {/* {section 7} */}
-      <section className=" px-4 md:px-20 lg:px-40 mt-24">
+      <section className=" px-4 md:px-20 lg:px10 mt-24">
         <div className="w-full flex flex-col justify-center items-center">
           <h1 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[50px]">
             What <span className="text-primary">Customers</span> have to say
@@ -767,11 +767,11 @@ const Page = () => {
       </section>
       {/* {section 10} */}
       <section className="bg-secondary px-4 md:px-20 lg:px-40 py-20 mt-10">
-        <div className="w-full flex justify-center items-center">
+        {/* <div className="w-full flex justify-start items-start"> */}
           <h1 className="text-gray-800 mx-auto font-semibold font-graphik">
             <span className="text-primary">Blogs</span>
           </h1>
-        </div>
+        {/* </div> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
           <div>

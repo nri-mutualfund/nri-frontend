@@ -11,7 +11,7 @@ const Header = () => {
     setMenuOpen(!isMenuOpen);
   };
   return (
-    <header className="w-full  text-gray-700 bg-white border-t body-font">
+    <header className="w-full  text-gray-700 bg-white border-t body-font sticky">
       <div className="max-w-screen-2xl mx-auto flex items-center justify-between py-6 xl:px-40 md:px-16 px-10">
         {/* <Image
           src="/assets/122.png"
@@ -55,7 +55,7 @@ const Header = () => {
         </nav>
         <div className="items-center md:flex hidden gap-12">
           <Link
-            href={"/blog"}
+            href={"/login"}
             className="cursor-pointer font-lato hover:text-gray-900"
           >
             Sign in
