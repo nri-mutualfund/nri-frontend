@@ -23,9 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-      {/* {showHeader && <Header />} */}
+       <Header />
         {children}
-        {/* {showFooter && <Footer />} */}
+        && <Footer />
       </body>
     </html>
   );
