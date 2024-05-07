@@ -13,6 +13,7 @@ const LoginForm = () => {
   };
 
   return (
+
 <div className='container flex justify-center items-center h-screen'>
 <div className={`rounded-lg w-[70%] ${isLoginForm }  child-container`}>        {isLoginForm ? (
           <SignIn toggleForm={toggleForm} />
