@@ -6,6 +6,7 @@ import Footer from "./Footer";
 
 interface ConditionalWrapperProps {
   routeName: string;
+  children: React.ReactNode;
 }
 
 const ConditionalWrapper: React.FC<ConditionalWrapperProps> = ({

@@ -47,9 +47,9 @@ const SignIn: React.FC<SignInProps> = ({ toggleForm }: SignInProps) => {
 </div>
 <div className='relative w-1/2 signUp'  >
 
-  <Image src="/assets/login.png" alt="l,m,.,"layout='responsive' className='rounded-r-lg' width={700} height={300}/>
+  <Image src="/assets/login.png" alt="l,m,.," className='rounded-r-lg h-full' width={700} height={300}/>
   <div className="absolute inset-0 bg-gradient-to-t rounded-l-lg from-transparent to-black opacity-88  text-white flex flex-col justify-center items-center" >
-    <h1 className='text-7xl p-4'>A one-stop
+    <h1 className='  p-4'>A one-stop
         <span className='text-primary font-semibold'>Indian</span> Expats
     </h1>
     <p className='p-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu, mollis aenean sit dictum tincidunt.</p>
