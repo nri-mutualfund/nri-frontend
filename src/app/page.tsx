@@ -82,7 +82,7 @@ const Page = () => {
             >
               <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
             </svg>
-            <h1 className="text-gray-800 mx-auto text-5xl md:text-7xl  leading-[50px] md:leading-[80px]">
+            <h1 className="text-gray-800 mx-auto text-5xl  md:text-7xl   leading-[50px] md:leading-[80px]">
               The easiest and <span className="text-primary">fastest way </span>
               to Invest in India
             </h1>
@@ -98,7 +98,7 @@ const Page = () => {
           <button className=" flex gap-2  items-center bg-primary text-white px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
             {" "}
             <span> Schedule a Meeting </span>
-            <IoCalendarNumberOutline className="text-xl" />
+            <IoCalendarNumberOutline className=" " />
           </button>
           <button className="bg-primary text-white px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
             {" "}
@@ -113,7 +113,7 @@ const Page = () => {
           <h1 className="text-gray-800 font-semibold font-graphik leading-[50px] text-center">
             A one-stop <span className="text-primary">Indian</span> Expacts
           </h1>
-          <p className="text-center text-sm font-light w-full  mt-6">
+          <p className="text-center   font-light w-full  mt-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
             mollis aenean sit dictum tincidunt. Ut arcu, susci
           </p>
@@ -138,10 +138,10 @@ const Page = () => {
                 />
               </div>
 
-              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
+              <p className="text-gray-800 font-medium   text-center mt-4 px-10 leading-[24px]">
                 Invest reliably with index funds
               </p>
-              <p className="text-center text-sm font-light  mt-4 px-10">
+              <p className="text-center   font-light  mt-4 px-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
                 mollis aenean sit dictum tincidunt.
               </p>
@@ -164,10 +164,10 @@ const Page = () => {
                 />
               </div>
 
-              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
+              <p className="text-gray-800 font-medium   text-center mt-4 px-10 leading-[24px]">
                 Faster account opening processes with trusted banks
               </p>
-              <p className="text-center text-sm font-light  mt-4 px-10">
+              <p className="text-center   font-light  mt-4 px-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
                 mollis aenean sit dictum tincidunt.
               </p>
@@ -182,10 +182,10 @@ const Page = () => {
                 width="80"
                 height="80"
               />
-              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
+              <p className="text-gray-800 font-medium   text-center mt-4 px-10 leading-[24px]">
                 Earn high returns with India’s growth
               </p>
-              <p className="text-center text-sm font-light  mt-4 px-10">
+              <p className="text-center   font-light  mt-4 px-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
                 mollis aenean sit dictum tincidunt.
               </p>
@@ -198,10 +198,10 @@ const Page = () => {
                 width="80"
                 height="80"
               />
-              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
+              <p className="text-gray-800 font-medium   text-center mt-4 px-10 leading-[24px]">
                 Complimentary tax guidance
               </p>
-              <p className="text-center text-sm font-light  mt-4 px-10">
+              <p className="text-center   font-light  mt-4 px-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
                 mollis aenean sit dictum tincidunt.
               </p>
@@ -212,19 +212,19 @@ const Page = () => {
       <section className="px-4 md:px-20 lg:px-40 mt-10">
         <div className="bg-white py-24 sm:py-32">
           <div className="mx-auto max-w-7xl">
-            <div className="mx-auto max-w-2xl lg:text-center">
-              <h2 className="text-base font-semibold leading-7 text-primary">
+            
+            <div className="w-full flex flex-col justify-center items-center">
+            <h2 className="text-base font-semibold leading-7 text-primary">
                 Deploy faster
               </h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                A one-stop <span className="text-primary">Indian</span> Expats
-              </p>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
-                mollis aenean sit dictum tincidunt. Ut arcu, suscipit ac etLorem
-                ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur
-              </p>
-            </div>
+          <h1 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[50px]">
+          A one-stop <span className="text-primary">Indian</span> Expats
+          </h1>
+          <p className="font-light mt-1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
+            mollis aenean sit dictum tincidunt. Ut arcu,
+          </p>
+        </div>
             <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
               <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                 {features.map((feature) => (
@@ -288,7 +288,7 @@ const Page = () => {
                 height={1}
               />
               <div className="">
-                <p className="text-2xl font-medium">Mutual Funds</p>
+                <p className="  font-medium">Mutual Funds</p>
                 <p className="mt-2 font-light">
                   Diversified portfolio for long-term growth.
                 </p>
@@ -312,7 +312,7 @@ const Page = () => {
                 height={1}
               />
               <div className="">
-                <p className="text-2xl font-medium">Fixed Deposits</p>
+                <p className="  font-medium">Fixed Deposits</p>
                 <p className="mt-2 font-light">
                   Diversified portfolio for long-term growth.
                 </p>
@@ -336,7 +336,7 @@ const Page = () => {
                 height={1}
               />
               <div className="">
-                <p className="text-2xl font-medium">Commercial Real Estate</p>
+                <p className="  font-medium">Commercial Real Estate</p>
                 <p className="mt-2 font-light">
                   Diversified portfolio for long-term growth.
                 </p>
@@ -360,7 +360,7 @@ const Page = () => {
                 height={1}
               />
               <div className="">
-                <p className="text-2xl font-medium">PMS</p>
+                <p className="  font-medium">PMS</p>
                 <p className="mt-2 font-light">
                   Diversified portfolio for long-term growth.
                 </p>
@@ -384,7 +384,7 @@ const Page = () => {
                 height={1}
               />
               <div className="">
-                <p className="text-2xl font-medium">Bond</p>
+                <p className="  font-medium">Bond</p>
                 <p className="mt-2 font-light">
                   Diversified portfolio for long-term growth.
                 </p>
@@ -401,33 +401,33 @@ const Page = () => {
                 height={1}
               />
               <div className=" py-6 px-4">
-                <p className="text-3xl font-medium">{products[index]}</p>
-                <p className="mt-2 font-light text-sm">
+                <p className="  font-medium">{products[index]}</p>
+                <p className="mt-2 font-light  ">
                   A personalised mutual funds portfolio, diversified across
                   equity, debt and gold for long- term growth.
                 </p>
                 <div className="flex gap-2 items-center mt-4">
                   <TbAntennaBars5 />
 
-                  <p className="text-sm font-light">
+                  <p className="  font-light">
                     10-12% with active growth
                   </p>
                 </div>
                 <div className="flex gap-2 items-center mt-4">
                   <FaCanadianMapleLeaf />
 
-                  <p className="text-sm font-light">
+                  <p className="  font-light">
                     7+ years recommended duration
                   </p>
                 </div>
                 <div className="flex gap-2 items-center mt-4">
                   <PiShootingStarThin />
 
-                  <p className="text-sm font-light">No lock-in</p>
+                  <p className="  font-light">No lock-in</p>
                 </div>
               </div>
               <div className=" flex justify-center items-center w-full pb-10">
-                <button className="w-[80%] flex justify-center items-center gap-3 py-2 text-sm font-medium text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                <button className="w-[80%] flex justify-center items-center gap-3 py-2   font-medium text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
                   Explore
                   <GoArrowRight size={20} />
                 </button>
@@ -450,28 +450,28 @@ const Page = () => {
             </p>
             <div className="flex flex-wrap mt-2">
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
+                <div className="text-primary bg-green-100 rounded-full   flex justify-center h-10 w-10 items-center font-bold">
                   <p>1</p>
                 </div>
-                <p className="font-light text-[18px]">RBI registered banks</p>
+                <p className="font-light ">RBI registered banks</p>
               </div>
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
+                <div className="text-primary bg-green-100 rounded-full   flex justify-center h-10 w-10 items-center font-bold">
                   <p>2</p>
                 </div>
-                <p className="font-light text-[18px]">Robust Netbanking</p>
+                <p className="font-light ">Robust Netbanking</p>
               </div>
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
+                <div className="text-primary bg-green-100 rounded-full   flex justify-center h-10 w-10 items-center font-bold">
                   <p>3</p>
                 </div>
-                <p className="font-light text-[18px]">Earn attractive interest rate*</p>
+                <p className="font-light ">Earn attractive interest rate*</p>
               </div>
               <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
+                <div className="text-primary bg-green-100 rounded-full   flex justify-center h-10 w-10 items-center font-bold">
                   <p>4</p>
                 </div>
-                <p className="font-light text-[18px]">Withdraw Anytime</p>
+                <p className="font-light ">Withdraw Anytime</p>
               </div>
               <div className=" flex  items-start w-full mt-10">
                 <button className="px-8  py-2  text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
@@ -504,7 +504,7 @@ const Page = () => {
         <div className="flex flex-wrap  gap-20 lg:gap-0  justify-between mt-10">
           <div className="w-full lg:w-[45%] bg-[#F2F8F2]  rounded-[20px]">
             <div className="flex justify-between items-end pl-14 pr-4 pt-4">
-              <p className="text-[30px] font-medium">Taxation</p>
+              <p className=" font-medium">Taxation</p>
               <Image
                 src="/assets/tax.png"
                 alt="Your Image Alt Text"
@@ -516,7 +516,7 @@ const Page = () => {
             <div className="py-8 pl-14 pr-20">
               <div className="flex gap-2 items-start mt-4">
                 <FaCanadianMapleLeaf size={20} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+                <p className="font-medium   text-gray-500">
                   Personalized consultations with{" "}
                   <span className="text-black">NRI-specialized </span>
                   taxation experts
@@ -524,20 +524,20 @@ const Page = () => {
               </div>
               <div className="flex gap-2 items-start mt-3">
                 <PiShootingStarThin size={20} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+                <p className="font-medium   text-gray-500">
                   File ITRs hassle-free & maximize the refunds
                 </p>
               </div>
               <div className="flex gap-2 items-start mt-3">
                 <TbAntennaBars5 size={25} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+                <p className="font-medium   text-gray-500">
                   Apply for <span className="text-black">15CA & CB</span> & Make
                   your (NRO-NRE) transfers stress-free
                 </p>
               </div>
               <div className="flex gap-2 items-start mt-3">
                 <PiShootingStarThin size={30} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+                <p className="font-medium   text-gray-500">
                   <span className="text-black">
                     {" "}
                     Apply for Lower TDS certificates
@@ -547,13 +547,13 @@ const Page = () => {
               </div>
               <div className="flex gap-2 items-start mt-3">
                 <FaCanadianMapleLeaf size={20} color="gray" />
-                <p className="font-medium text-sm text-black">
+                <p className="font-medium   text-black">
                   {`Received an Income Tax Notice? Don't worry, we're here to help`}
                 </p>
               </div>
               <div className="flex gap-2 items-start mt-3">
                 <TbAntennaBars5 size={25} color="gray" />
-                <p className="font-medium text-sm text-gray-500 ">
+                <p className="font-medium   text-gray-500 ">
                   Gain More, Pay Less: Top-notch Capital Gain Tax Planning
                 </p>
               </div>
@@ -561,7 +561,7 @@ const Page = () => {
           </div>
           <div className="w-full lg:w-[45%] bg-[#F2F8F2]  rounded-[20px]">
             <div className="flex justify-between items-end pl-14 pr-4 pt-4">
-              <p className="text-[30px] font-medium">Documentation</p>
+              <p className=" font-medium">Documentation</p>
               <Image
                 src="/assets/notes.png"
                 alt="Your Image Alt Text"
@@ -573,7 +573,7 @@ const Page = () => {
             <div className="py-8 pl-14 pr-20">
               <div className="flex gap-2 items-start mt-4">
                 <FaCanadianMapleLeaf size={20} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+                <p className="font-medium   text-gray-500">
                   Personalized consultations with{" "}
                   <span className="text-black">NRI-specialized </span>
                   taxation experts
@@ -581,20 +581,20 @@ const Page = () => {
               </div>
               <div className="flex gap-2 items-start mt-3">
                 <PiShootingStarThin size={20} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+                <p className="font-medium   text-gray-500">
                   File ITRs hassle-free & maximize the refunds
                 </p>
               </div>
               <div className="flex gap-2 items-start mt-3">
                 <TbAntennaBars5 size={25} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+                <p className="font-medium   text-gray-500">
                   Apply for <span className="text-black">15CA & CB</span> & Make
                   your (NRO-NRE) transfers stress-free
                 </p>
               </div>
               <div className="flex gap-2 items-start mt-3">
                 <PiShootingStarThin size={30} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+                <p className="font-medium   text-gray-500">
                   <span className="text-black">
                     {" "}
                     Apply for Lower TDS certificates
@@ -604,13 +604,13 @@ const Page = () => {
               </div>
               <div className="flex gap-2 items-start mt-3">
                 <FaCanadianMapleLeaf size={20} color="gray" />
-                <p className="font-medium text-sm text-black">
+                <p className="font-medium   text-black">
                   {`Received an Income Tax Notice? Don't worry, we're here to help`}
                 </p>
               </div>
               <div className="flex gap-2 items-start mt-3">
                 <TbAntennaBars5 size={25} color="gray" />
-                <p className="font-medium text-sm text-gray-500 ">
+                <p className="font-medium   text-gray-500 ">
                   Gain More, Pay Less: Top-notch Capital Gain Tax Planning
                 </p>
               </div>
@@ -624,7 +624,7 @@ const Page = () => {
           <h1 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[50px]">
             What <span className="text-primary">Customers</span> have to say
           </h1>
-          <p className="font-light text-sm mt-4">
+          <p className="font-light mt-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
             mollis aenean sit dictum tincidunt. Ut arcu,
           </p>
@@ -645,7 +645,7 @@ const Page = () => {
             Your money will be{" "}
             <span className="text-primary">safe & secure</span>
           </h1>
-          <p className="text-sm font-light text-center mt-1">
+          <p className="  font-light text-center mt-1">
             Your money is regulated by mutual fund companies. iNRI doesn’t keep
             or handle your mponey
           </p>
@@ -663,7 +663,7 @@ const Page = () => {
             <p className="font-semibold mt-4 text-center">
               From your Foreign Bank{" "}
             </p>
-            <p className="text-sm font-light text-center leading-6 w-2/3 md:w-full">
+            <p className="  font-light text-center leading-6 w-2/3 md:w-full">
               Convert to INR through your preferred remittance partner
             </p>
           </div>
@@ -687,7 +687,7 @@ const Page = () => {
               height={1}
             />
             <p className="font-semibold mt-4 text-center">To NRE/NRO Account</p>
-            <p className="text-sm font-light text-center leading-6 w-2/3 md:w-full">
+            <p className="  font-light text-center leading-6 w-2/3 md:w-full">
               Integrate bank account and pay through net-banking
             </p>
           </div>
@@ -713,7 +713,7 @@ const Page = () => {
             <p className="font-semibold mt-[35px] text-center">
               To Mutual Funds
             </p>
-            <p className="text-sm font-light text-center leading-6 w-2/3 md:w-full">
+            <p className="  font-light text-center leading-6 w-2/3 md:w-full">
               Invest directly in your selected mutual funds
             </p>
           </div>
@@ -780,12 +780,12 @@ const Page = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
           <div>
-            <p className="font-light text-sm">Mar 16, 2020</p>
+            <p className="font-light  ">Mar 16, 2020</p>
             <h2 className="text-gray-800 font-semibold leading-[40px] mt-6">
               We’re incredibly proud to announce we have secured $75m in Series
               B
             </h2>
-            <p className="font-light mt-6 text-lg">
+            <p className="font-light mt-6  ">
               Libero neque aenean tincidunt nec consequat tempor. Viverra odio
               id velit adipiscing id. Nisi vestibulum orci eget bibendum dictum.
               Velit viverra posuere vulputate volutpat nunc. Nunc netus sit
@@ -810,8 +810,8 @@ const Page = () => {
           </div>
           <div className="flex flex-col gap-8">
             <div>
-              <p className="font-light text-sm">Mar 10, 2020</p>
-              <p className="text-gray-800 font-semibold mt-2 text-lg">
+              <p className="font-light  ">Mar 10, 2020</p>
+              <p className="text-gray-800 font-semibold mt-2  ">
                 Boost your conversion rate
               </p>
               <p className="font-light mt-6">
@@ -833,8 +833,8 @@ const Page = () => {
             </div>
             <div className="border-[0.5px]" />
             <div>
-              <p className="font-light text-sm">Feb 12, 2020</p>
-              <p className="text-gray-800 font-semibold mt-2 text-lg">
+              <p className="font-light  ">Feb 12, 2020</p>
+              <p className="text-gray-800 font-semibold mt-2  ">
                 How to use search engine optimization to drive sales
               </p>
               <p className="font-light mt-6">

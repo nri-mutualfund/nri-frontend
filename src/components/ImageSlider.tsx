@@ -13,8 +13,8 @@ import Image from "next/image";
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
 const ImageSlider = () => {
-  const swiperRef = useRef<Swiper | null>(null);
-  const swiperRef2 = useRef<Swiper | null>(null);
+  const swiperRef = useRef<any>(null);
+  const swiperRef2 = useRef<any>(null);
 
   const handlePrevClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -64,11 +64,10 @@ const ImageSlider = () => {
                   width={500}
                   height={1}
                 />
-                <p className="font-light text-sm mt-4 leading-[16px]">
+                <p className="font-light   mt-4 ">
                   Lorem ipsum dolor sit amet consectetur. Massa commodo gravida
                   urna vel mattis. Lorem ipsum dolor sit amet consectetur. Massa
-                  commodo gravida urna vel mattis. Lorem ipsum dolor sit amet
-                  consectetur.
+                  commodo gravida urna vel mattis.
                 </p>
                 <div className="flex gap-4 items-center mt-10">
                   <Image
@@ -86,7 +85,7 @@ const ImageSlider = () => {
                     <p className="font-medium text-gray-800">
                       {index % 2 === 0 ? "Navya Roy" : "Siddharth Soni"}
                     </p>
-                    <p className="font-medium text-gray-800 text-sm">
+                    <p className="font-medium text-gray-800  ">
                       {index % 2 === 0 ? "Music Enthusiast" : "Audiophile"}
                     </p>
                     <Image
@@ -121,7 +120,7 @@ const ImageSlider = () => {
                   width={500}
                   height={1}
                 />
-                <p className="font-light text-sm mt-4 leading-[16px]">
+                <p className="font-light   mt-4 ">
                   Lorem ipsum dolor sit amet consectetur. Massa commodo gravida
                   urna vel mattis. Lorem ipsum dolor sit amet consectetur. Massa
                   commodo gravida urna vel mattis. Lorem ipsum dolor sit amet
@@ -143,7 +142,7 @@ const ImageSlider = () => {
                     <p className="font-medium text-gray-800">
                       {index % 2 === 0 ? "Navya Roy" : "Siddharth Soni"}
                     </p>
-                    <p className="font-medium text-gray-800 text-sm">
+                    <p className="font-medium text-gray-800  ">
                       {index % 2 === 0 ? "Music Enthusiast" : "Audiophile"}
                     </p>
                     <Image
