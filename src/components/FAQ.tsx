@@ -22,10 +22,10 @@ const FAQ = ({ question, answer }: FAQProps) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center border px-6 py-2  rounded-md hover:shadow-2xl bg-white">
+    <div className="flex flex-col items-center justify-center border-t px-6 bg-white">
       <div onClick={toggleAccordion} className="cursor-pointer w-full">
-        <div className="flex items-start justify-between text-left">
-          <span className="text-[16px] font-light">{question}</span>
+        <div className="flex items-start justify-between text-left mt-6">
+          <span className="text-lg">{question}</span>
 
           <div
             className={`transform transition-transform duration-500 ${
