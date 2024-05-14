@@ -14,9 +14,11 @@ import { IoCalendarNumberOutline, IoLockClosedOutline } from "react-icons/io5";
 import Image from "next/image";
 import FAQ from "@/components/FAQ";
 import ImageSlider from "@/components/ImageSlider";
+import Link from "next/link";
 const Page = () => {
   const [index, setIndex] = useState(0);
   const [expandIndex, setExpand] = useState(6);
+  const [showArrow, setShowArrow] = useState(false);
 
   const products = [
     "Mutual Funds",
@@ -98,10 +100,12 @@ const Page = () => {
             <span> Schedule a Meeting </span>
             <IoCalendarNumberOutline className="text-xl" />
           </button>
-          <button className="bg-primary text-white px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-            {" "}
-            Sign Up
-          </button>
+          <Link href={"/login"}>
+            <button className="bg-white text-primary border-primary border px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+              {" "}
+              Sign Up
+            </button>
+          </Link>
         </div>
       </section>
 
@@ -283,7 +287,7 @@ const Page = () => {
                     height={1}
                   />
                   <div className=" py-10 px-4">
-                    <p className="text-3xl font-medium">Mutual Funds</p>
+                    <p className="text-2xl font-medium">Mutual Funds</p>
                     <p className="mt-2 font-light text-sm">
                       A personalised mutual funds portfolio, diversified across
                       equity, debt and gold for long- term growth.
@@ -331,12 +335,12 @@ const Page = () => {
                 <Image
                   src="/assets/money1.png"
                   alt="Your Image Alt Text"
-                  className="w-[48px]"
+                  className="w-[40px] sm:w-[48px]"
                   width={500}
                   height={1}
                 />
                 <div className="">
-                  <p className="text-2xl font-medium">Mutual Funds</p>
+                  <p className="text-xl font-medium">Mutual Funds</p>
                   <p className="mt-2 font-light">
                     Diversified portfolio for long-term growth.
                   </p>
@@ -358,8 +362,8 @@ const Page = () => {
                     width={500}
                     height={1}
                   />
-                  <div className=" py-10 px-4">
-                    <p className="text-3xl font-medium">Fixed Deposits</p>
+                  <div className="py-10 px-4">
+                    <p className="text-2xl font-medium">Fixed Deposits</p>
                     <p className="mt-2 font-light text-sm">
                       A personalised mutual funds portfolio, diversified across
                       equity, debt and gold for long- term growth.
@@ -406,12 +410,12 @@ const Page = () => {
                 <Image
                   src="/assets/deposit.png"
                   alt="Your Image Alt Text"
-                  className="w-[48px]"
+                  className="w-[40px] sm:w-[48px]"
                   width={500}
                   height={1}
                 />
                 <div className="">
-                  <p className="text-2xl font-medium">Fixed Deposits</p>
+                  <p className="text-xl font-medium">Fixed Deposits</p>
                   <p className="mt-2 font-light">
                     Diversified portfolio for long-term growth.
                   </p>
@@ -434,7 +438,7 @@ const Page = () => {
                     height={1}
                   />
                   <div className=" py-10 px-4">
-                    <p className="text-3xl font-medium">
+                    <p className="text-2xl font-medium">
                       Commercial Real Estate
                     </p>
                     <p className="mt-2 font-light text-sm">
@@ -483,12 +487,12 @@ const Page = () => {
                 <Image
                   src="/assets/house.png"
                   alt="Your Image Alt Text"
-                  className="w-[48px]"
+                  className="w-[40px] sm:w-[48px]"
                   width={500}
                   height={1}
                 />
                 <div className="">
-                  <p className="text-2xl font-medium">Commercial Real Estate</p>
+                  <p className="text-xl font-medium">Commercial Real Estate</p>
                   <p className="mt-2 font-light">
                     Diversified portfolio for long-term growth.
                   </p>
@@ -511,7 +515,7 @@ const Page = () => {
                     height={1}
                   />
                   <div className=" py-10 px-4">
-                    <p className="text-3xl font-medium">PMS</p>
+                    <p className="text-2xl font-medium">PMS</p>
                     <p className="mt-2 font-light text-sm">
                       A personalised mutual funds portfolio, diversified across
                       equity, debt and gold for long- term growth.
@@ -558,12 +562,12 @@ const Page = () => {
                 <Image
                   src="/assets/saving.png"
                   alt="Your Image Alt Text"
-                  className="w-[48px]"
+                  className="w-[40px] sm:w-[48px]"
                   width={500}
                   height={1}
                 />
                 <div className="">
-                  <p className="text-2xl font-medium">PMS</p>
+                  <p className="text-xl font-medium">PMS</p>
                   <p className="mt-2 font-light">
                     Diversified portfolio for long-term growth.
                   </p>
@@ -586,7 +590,7 @@ const Page = () => {
                     height={1}
                   />
                   <div className=" py-10 px-4">
-                    <p className="text-3xl font-medium">Bond</p>
+                    <p className="text-2xl font-medium">Bond</p>
                     <p className="mt-2 font-light text-sm">
                       A personalised mutual funds portfolio, diversified across
                       equity, debt and gold for long- term growth.
@@ -633,12 +637,12 @@ const Page = () => {
                 <Image
                   src="/assets/bond.png"
                   alt="Your Image Alt Text"
-                  className="w-[48px]"
+                  className="w-[40px] sm:w-[48px]"
                   width={500}
                   height={1}
                 />
                 <div className="">
-                  <p className="text-2xl font-medium">Bond</p>
+                  <p className="text-xl font-medium">Bond</p>
                   <p className="mt-2 font-light">
                     Diversified portfolio for long-term growth.
                   </p>
@@ -666,7 +670,7 @@ const Page = () => {
                 height={1}
               />
               <div className="">
-                <p className="text-2xl font-medium">Mutual Funds</p>
+                <p className="text-xl font-medium">Mutual Funds</p>
                 <p className="mt-2 font-light">
                   Diversified portfolio for long-term growth.
                 </p>
@@ -690,7 +694,7 @@ const Page = () => {
                 height={1}
               />
               <div className="">
-                <p className="text-2xl font-medium">Fixed Deposits</p>
+                <p className="text-xl font-medium">Fixed Deposits</p>
                 <p className="mt-2 font-light">
                   Diversified portfolio for long-term growth.
                 </p>
@@ -714,7 +718,7 @@ const Page = () => {
                 height={1}
               />
               <div className="">
-                <p className="text-2xl font-medium">Commercial Real Estate</p>
+                <p className="text-xl font-medium">Commercial Real Estate</p>
                 <p className="mt-2 font-light">
                   Diversified portfolio for long-term growth.
                 </p>
@@ -738,7 +742,7 @@ const Page = () => {
                 height={1}
               />
               <div className="">
-                <p className="text-2xl font-medium">PMS</p>
+                <p className="text-xl font-medium">PMS</p>
                 <p className="mt-2 font-light">
                   Diversified portfolio for long-term growth.
                 </p>
@@ -762,7 +766,7 @@ const Page = () => {
                 height={1}
               />
               <div className="">
-                <p className="text-2xl font-medium">Bond</p>
+                <p className="text-xl font-medium">Bond</p>
                 <p className="mt-2 font-light">
                   Diversified portfolio for long-term growth.
                 </p>
@@ -779,7 +783,7 @@ const Page = () => {
                 height={1}
               />
               <div className=" py-10 px-4">
-                <p className="text-3xl font-medium">{products[index]}</p>
+                <p className="text-2xl font-medium">{products[index]}</p>
                 <p className="mt-2 font-light text-sm">
                   A personalised mutual funds portfolio, diversified across
                   equity, debt and gold for long- term growth.
@@ -833,9 +837,17 @@ const Page = () => {
                   Create Account
                 </button>
               </div>
-              <button className="flex gap-4  px-8 items-center mt-10 py-2  text-black rounded-md bg-white">
+              <button
+                className="flex gap-4  px-6 items-center mt-10 py-2 rounded-md bg-white border border-primary text-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+                onMouseEnter={() => {
+                  setShowArrow(true);
+                }}
+                onMouseLeave={() => {
+                  setShowArrow(false);
+                }}
+              >
                 Contact us
-                <GoArrowRight size={20} />
+                {showArrow && <GoArrowRight size={20} color="#008000" />}
               </button>
             </div>
 
@@ -929,31 +941,39 @@ const Page = () => {
               />
               <p className="text-2xl font-medium mt-2">Taxation</p>
             </div>
-            <div className="py-8 pl-8 pr-20">
-              <div className="flex gap-2 items-start mt-4">
-                <FaCanadianMapleLeaf size={20} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+            <div className="pt-8 pl-8 pr-20 pb-12">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10">
+                  <FaCanadianMapleLeaf size={20} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-gray-500 absolute left-10">
                   Personalized consultations with{" "}
                   <span className="text-black">NRI-specialized </span>
                   taxation experts
                 </p>
               </div>
-              <div className="flex gap-2 items-start mt-3">
-                <PiShootingStarThin size={20} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+              <div className="flex items-start mt-8 relative">
+                <div className="w-10">
+                  <PiShootingStarThin size={30} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-gray-500 absolute left-10">
                   File ITRs hassle-free & maximize the refunds
                 </p>
               </div>
-              <div className="flex gap-2 items-start mt-3">
-                <TbAntennaBars5 size={25} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+              <div className="flex items-start mt-6 relative">
+                <div className="w-10">
+                  <TbAntennaBars5 size={25} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-gray-500 absolute left-10">
                   Apply for <span className="text-black">15CA & CB</span> & Make
                   your (NRO-NRE) transfers stress-free
                 </p>
               </div>
-              <div className="flex gap-2 items-start mt-3">
-                <PiShootingStarThin size={30} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+              <div className="flex items-start mt-6 relative">
+                <div className="w-10">
+                  <PiShootingStarThin size={30} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-gray-500 absolute left-10">
                   <span className="text-black">
                     {" "}
                     Apply for Lower TDS certificates
@@ -961,19 +981,24 @@ const Page = () => {
                   & Reduce TDS deductions on property sales
                 </p>
               </div>
-              <div className="flex gap-2 items-start mt-3">
-                <FaCanadianMapleLeaf size={20} color="gray" />
-                <p className="font-medium text-sm text-black">
+              <div className="flex items-start mt-6 relative">
+                <div className="w-10">
+                  <FaCanadianMapleLeaf size={20} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-black absolute left-10">
                   {`Received an Income Tax Notice? Don't worry, we're here to help`}
                 </p>
               </div>
-              <div className="flex gap-2 items-start mt-3">
-                <TbAntennaBars5 size={25} color="gray" />
-                <p className="font-medium text-sm text-gray-500 ">
+              <div className="flex items-start mt-8 relative">
+                <div className="w-10">
+                  <TbAntennaBars5 size={25} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-gray-500 absolute left-10">
                   Gain More, Pay Less: Top-notch Capital Gain Tax Planning
                 </p>
               </div>
             </div>
+
             {/* <div className="flex justify-center">
               <button className="bg-primary text-white w-full mx-8 mb-10 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
                 Get started today
@@ -992,31 +1017,39 @@ const Page = () => {
               <p className="text-2xl font-medium mt-2">Documentation</p>
             </div>
 
-            <div className="py-8 pl-8 pr-20">
-              <div className="flex gap-2 items-start mt-4">
-                <FaCanadianMapleLeaf size={20} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+            <div className="pt-8 pl-8 pr-20 pb-12">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10">
+                  <FaCanadianMapleLeaf size={20} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-gray-500 absolute left-10">
                   Personalized consultations with{" "}
                   <span className="text-black">NRI-specialized </span>
                   taxation experts
                 </p>
               </div>
-              <div className="flex gap-2 items-start mt-3">
-                <PiShootingStarThin size={20} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+              <div className="flex items-start mt-8 relative">
+                <div className="w-10">
+                  <PiShootingStarThin size={30} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-gray-500 absolute left-10">
                   File ITRs hassle-free & maximize the refunds
                 </p>
               </div>
-              <div className="flex gap-2 items-start mt-3">
-                <TbAntennaBars5 size={25} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+              <div className="flex items-start mt-6 relative">
+                <div className="w-10">
+                  <TbAntennaBars5 size={25} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-gray-500 absolute left-10">
                   Apply for <span className="text-black">15CA & CB</span> & Make
                   your (NRO-NRE) transfers stress-free
                 </p>
               </div>
-              <div className="flex gap-2 items-start mt-3">
-                <PiShootingStarThin size={30} color="gray" />
-                <p className="font-medium text-sm text-gray-500">
+              <div className="flex items-start mt-6 relative">
+                <div className="w-10">
+                  <PiShootingStarThin size={30} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-gray-500 absolute left-10">
                   <span className="text-black">
                     {" "}
                     Apply for Lower TDS certificates
@@ -1024,15 +1057,19 @@ const Page = () => {
                   & Reduce TDS deductions on property sales
                 </p>
               </div>
-              <div className="flex gap-2 items-start mt-3">
-                <FaCanadianMapleLeaf size={20} color="gray" />
-                <p className="font-medium text-sm text-black">
+              <div className="flex items-start mt-6 relative">
+                <div className="w-10">
+                  <FaCanadianMapleLeaf size={20} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-black absolute left-10">
                   {`Received an Income Tax Notice? Don't worry, we're here to help`}
                 </p>
               </div>
-              <div className="flex gap-2 items-start mt-3">
-                <TbAntennaBars5 size={25} color="gray" />
-                <p className="font-medium text-sm text-gray-500 ">
+              <div className="flex items-start mt-8 relative">
+                <div className="w-10">
+                  <TbAntennaBars5 size={25} color="gray" />
+                </div>
+                <p className="font-medium text-sm text-gray-500 absolute left-10">
                   Gain More, Pay Less: Top-notch Capital Gain Tax Planning
                 </p>
               </div>
@@ -1048,10 +1085,10 @@ const Page = () => {
       {/* {section 7} */}
       <section className=" px-4 md:px-20 lg:px10 mt-24">
         <div className="w-full flex flex-col justify-center items-center">
-          <h2 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[40px]">
+          <h2 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[40px] text-center">
             What <span className="text-primary">Customers</span> have to say
           </h2>
-          <p className="font-light text-sm mt-4">
+          <p className="font-light text-sm mt-4 text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
             mollis aenean sit dictum tincidunt. Ut arcu,
           </p>
@@ -1068,7 +1105,7 @@ const Page = () => {
       {/* {section 8} */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <div className="w-full flex flex-col justify-center items-center">
-          <h2 className="text-gray-800 mx-auto font-semibold font-graphik leading-[40px]">
+          <h2 className="text-gray-800 mx-auto font-semibold font-graphik leading-[40px] text-center">
             Your money will be{" "}
             <span className="text-primary">safe & secure</span>
           </h2>
@@ -1152,7 +1189,7 @@ const Page = () => {
           <h2 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[40px] text-center">
             Frequently <span className="text-primary">Asked</span> Questions
           </h2>
-          <p className="font-extralight mt-3">
+          <p className="font-extralight mt-3 text-center">
             Learn about us and check out these frequently asked questions.
           </p>
         </div>
