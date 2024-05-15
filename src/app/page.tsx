@@ -1207,7 +1207,7 @@ const Page = () => {
           <h2 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[40px] text-center">
             Frequently <span className="text-primary">Asked</span> Questions
           </h2>
-          <p className="font-extralight mt-3 text-center">
+          <p className="font-extralight mt-1 text-center">
             Learn about us and check out these frequently asked questions.
           </p>
         </div>
