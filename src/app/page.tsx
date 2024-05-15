@@ -72,7 +72,7 @@ const Page = () => {
         height={1}
       /> */}
       <section className="flex-col px-2 pt-16 ">
-        <div className="flex justify-center align-middle pt-32">
+        <div className="flex justify-center align-middle pt-20">
           <div className="relative text-center max-w-3xl lg:max-w-4xl">
             <svg
               aria-hidden="true"
@@ -94,7 +94,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-10 gap-2">
+        <div className="flex justify-center mt-10 gap-2 mb-36">
           <button className=" flex gap-2  items-center bg-primary text-white px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
             {" "}
             <span> Schedule a Meeting </span>
