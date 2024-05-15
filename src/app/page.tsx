@@ -240,7 +240,7 @@ const Page = () => {
                       </div>
                       {feature.name}
                     </dt>
-                    <dd className="mt-2 text-base leading-7 text-gray-600">
+                    <dd className="mt-2 text-sm text-base text-gray-600">
                       {feature.description}
                     </dd>
                   </div>
@@ -1128,8 +1128,8 @@ const Page = () => {
             <span className="text-primary">safe & secure</span>
           </h2>
           <p className="text-sm font-light text-center mt-1">
-            Your money is regulated by mutual fund companies. iNRI doesn’t keep
-            or handle your mponey
+            Your money is regulated by mutual fund companies. NRI doesn’t keep
+            or handle your money
           </p>
         </div>
 
@@ -1207,7 +1207,7 @@ const Page = () => {
           <h2 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[40px] text-center">
             Frequently <span className="text-primary">Asked</span> Questions
           </h2>
-          <p className="font-extralight mt-1 text-center">
+          <p className="font-extralight mt-1 text-sm text-center">
             Learn about us and check out these frequently asked questions.
           </p>
         </div>
@@ -1244,9 +1244,12 @@ const Page = () => {
       {/* {section 10} */}
       <section className="bg-secondary px-4 md:px-20 lg:px-40 py-20 mt-10">
         {/* <div className="w-full flex justify-start items-start"> */}
-        <h2 className="text-gray-800 mx-auto font-semibold font-graphik">
-          <span className="text-primary">Blogs</span>
+        <h2 className="text-gray-800 mx-auto font-semibold text-center font-graphik leading-[40px]">
+          <span className="text-primary">Resource Center</span>
         </h2>
+        <p className="font-extralight mt-1 text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing fermentum ante eu dignissim pulvinar.
+        </p>
         {/* </div> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
@@ -1326,6 +1329,20 @@ const Page = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className=" flex justify-center items-center w-full py-10">
+          <button
+                  className="flex gap-4  px-6 items-center mt-10 py-2 rounded-md bg-white border border-primary text-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+                  onMouseEnter={() => {
+                    setShowArrow(true);
+                  }}
+                  onMouseLeave={() => {
+                    setShowArrow(false);
+                  }}
+                >
+                  Read More
+                  {showArrow && <GoArrowRight size={20} color="#008000" />}
+          </button>
         </div>
       </section>
       {/* {section 11} */}
