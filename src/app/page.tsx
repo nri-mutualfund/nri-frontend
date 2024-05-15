@@ -943,37 +943,37 @@ const Page = () => {
             </div>
             <div className="pt-8 pl-8 pr-20 pb-12">
               <div className="flex items-start mt-4 relative">
-                <div className="w-10">
+                <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 absolute left-10">
+                <p className="font-medium text-sm text-gray-500 ml-10 ">
                   Personalized consultations with{" "}
                   <span className="text-black">NRI-specialized </span>
                   taxation experts
                 </p>
               </div>
-              <div className="flex items-start mt-8 relative">
-                <div className="w-10">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10 absolute left-0">
                   <PiShootingStarThin size={30} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 absolute left-10">
+                <p className="font-medium text-sm text-gray-500 ml-10">
                   File ITRs hassle-free & maximize the refunds
                 </p>
               </div>
-              <div className="flex items-start mt-6 relative">
-                <div className="w-10">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10 absolute left-0">
                   <TbAntennaBars5 size={25} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 absolute left-10">
+                <p className="font-medium text-sm text-gray-500 ml-10">
                   Apply for <span className="text-black">15CA & CB</span> & Make
                   your (NRO-NRE) transfers stress-free
                 </p>
               </div>
-              <div className="flex items-start mt-6 relative">
-                <div className="w-10">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10 absolute left-0">
                   <PiShootingStarThin size={30} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 absolute left-10">
+                <p className="font-medium text-sm text-gray-500 ml-10">
                   <span className="text-black">
                     {" "}
                     Apply for Lower TDS certificates
@@ -981,19 +981,19 @@ const Page = () => {
                   & Reduce TDS deductions on property sales
                 </p>
               </div>
-              <div className="flex items-start mt-6 relative">
-                <div className="w-10">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-black absolute left-10">
+                <p className="font-medium text-sm text-black ml-10">
                   {`Received an Income Tax Notice? Don't worry, we're here to help`}
                 </p>
               </div>
-              <div className="flex items-start mt-8 relative">
-                <div className="w-10">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10 absolute left-0">
                   <TbAntennaBars5 size={25} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 absolute left-10">
+                <p className="font-medium text-sm text-gray-500 ml-10">
                   Gain More, Pay Less: Top-notch Capital Gain Tax Planning
                 </p>
               </div>
@@ -1019,37 +1019,37 @@ const Page = () => {
 
             <div className="pt-8 pl-8 pr-20 pb-12">
               <div className="flex items-start mt-4 relative">
-                <div className="w-10">
+                <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 absolute left-10">
+                <p className="font-medium text-sm text-gray-500 ml-10 ">
                   Personalized consultations with{" "}
                   <span className="text-black">NRI-specialized </span>
                   taxation experts
                 </p>
               </div>
-              <div className="flex items-start mt-8 relative">
-                <div className="w-10">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10 absolute left-0">
                   <PiShootingStarThin size={30} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 absolute left-10">
+                <p className="font-medium text-sm text-gray-500 ml-10">
                   File ITRs hassle-free & maximize the refunds
                 </p>
               </div>
-              <div className="flex items-start mt-6 relative">
-                <div className="w-10">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10 absolute left-0">
                   <TbAntennaBars5 size={25} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 absolute left-10">
+                <p className="font-medium text-sm text-gray-500 ml-10">
                   Apply for <span className="text-black">15CA & CB</span> & Make
                   your (NRO-NRE) transfers stress-free
                 </p>
               </div>
-              <div className="flex items-start mt-6 relative">
-                <div className="w-10">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10 absolute left-0">
                   <PiShootingStarThin size={30} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 absolute left-10">
+                <p className="font-medium text-sm text-gray-500 ml-10">
                   <span className="text-black">
                     {" "}
                     Apply for Lower TDS certificates
@@ -1057,19 +1057,19 @@ const Page = () => {
                   & Reduce TDS deductions on property sales
                 </p>
               </div>
-              <div className="flex items-start mt-6 relative">
-                <div className="w-10">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-black absolute left-10">
+                <p className="font-medium text-sm text-black ml-10">
                   {`Received an Income Tax Notice? Don't worry, we're here to help`}
                 </p>
               </div>
-              <div className="flex items-start mt-8 relative">
-                <div className="w-10">
+              <div className="flex items-start mt-4 relative">
+                <div className="w-10 absolute left-0">
                   <TbAntennaBars5 size={25} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 absolute left-10">
+                <p className="font-medium text-sm text-gray-500 ml-10">
                   Gain More, Pay Less: Top-notch Capital Gain Tax Planning
                 </p>
               </div>
