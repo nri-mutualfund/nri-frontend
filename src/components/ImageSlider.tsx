@@ -48,7 +48,7 @@ const ImageSlider = () => {
           }}
           loop={true}
           ref={swiperRef}
-          className="mySwiper bg-white"
+          className="mySwiper bg-white rounded-xl"
         >
           {[1, 2, 3, 4, 5, 6, 7, 8, 9]?.map((item, index) => (
             <SwiperSlide className=" bg-white " key={index}>
