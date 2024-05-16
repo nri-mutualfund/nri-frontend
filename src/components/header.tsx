@@ -27,28 +27,16 @@ const Header = () => {
             Logo
           </Link>
           <ul className="gap-12 md:flex items-center hidden">
-            <Link
-              href={"/"}
-              className="cursor-pointer font-lato hover:text-gray-900"
-            >
+            <Link href={"/"} className="cursor-pointer hover:text-gray-900">
               Home
             </Link>
-            <Link
-              href={"/"}
-              className="cursor-pointer font-lato hover:text-gray-900"
-            >
+            <Link href={"/"} className="cursor-pointer hover:text-gray-900">
               Join the Community
             </Link>
-            <Link
-              href={"/"}
-              className="cursor-pointer font-lato hover:text-gray-900"
-            >
+            <Link href={"/"} className="cursor-pointer hover:text-gray-900">
               FAQ
             </Link>
-            <Link
-              href={"/blog"}
-              className="cursor-pointer font-lato hover:text-gray-900"
-            >
+            <Link href={"/blog"} className="cursor-pointer hover:text-gray-900">
               Blog
             </Link>
           </ul>
@@ -56,7 +44,7 @@ const Header = () => {
         <div className="items-center md:flex hidden gap-12">
           {/* <Link
             href={"/login"}
-            className="cursor-pointer font-lato hover:text-gray-900"
+            className="cursor-pointer hover:text-gray-900"
           >
             Sign in
           </Link> */}
@@ -99,28 +87,28 @@ const Header = () => {
             <Link
               href={"/"}
               onClick={handleNav}
-              className="cursor-pointer font-lato hover:text-gray-900"
+              className="cursor-pointer hover:text-gray-900"
             >
               Home
             </Link>
             <Link
               href={"/"}
               onClick={handleNav}
-              className="cursor-pointer font-lato hover:text-gray-900"
+              className="cursor-pointer hover:text-gray-900"
             >
               Join the Community
             </Link>
             <Link
               href={"/"}
               onClick={handleNav}
-              className="cursor-pointer font-lato hover:text-gray-900"
+              className="cursor-pointer hover:text-gray-900"
             >
               FAQ
             </Link>
             <Link
               href={"/"}
               onClick={handleNav}
-              className="cursor-pointer font-lato hover:text-gray-900"
+              className="cursor-pointer hover:text-gray-900"
             >
               Blog
             </Link>
