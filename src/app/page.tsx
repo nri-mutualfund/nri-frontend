@@ -9,7 +9,8 @@ import {
 import { PiShootingStarThin } from "react-icons/pi";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { HiArrowPath } from "react-icons/hi2";
-import { GoArrowRight } from "react-icons/go";
+import { GoArrowRight, GoArrowUpRight } from "react-icons/go";
+import { FaWhatsapp } from "react-icons/fa";
 import { IoCalendarNumberOutline, IoLockClosedOutline } from "react-icons/io5";
 import Image from "next/image";
 import FAQ from "@/components/FAQ";
@@ -31,25 +32,25 @@ const Page = () => {
     {
       name: "Invest reliably with index funds",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu, mollis aenean sit dictum tincidunt.",
+        "Invest reliably with index funds: Build wealth over time by subscribing to our curated portfolio of equity & debt instruments. Relax and focus on other important things in life",
       icon: AiOutlineCloudUpload,
     },
     {
       name: "Earn high returns with India’s growth",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu, mollis aenean sit dictum tincidunt.",
+        "Earn high returns with India’s growth: With its young talent and growing urban class, India is poised to be one of the fastest growing economies in the next decade. We offer a seamless way for this growth to reflect in your asset portfolio.",
       icon: IoLockClosedOutline,
     },
     {
       name: "Faster account opening processes with trusted banks",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu, mollis aenean sit dictum tincidunt.",
+        "Faster account opening processes with trusted banks:** Invest with us and open a NRE/NRO bank account with top banks like ICICI, Axis, Yes in few days. No more waiting for weeks just to get started.",
       icon: HiArrowPath,
     },
     {
       name: "Complimentary tax guidance",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu, mollis aenean sit dictum tincidunt.",
+        "Complimentary tax guidance: Investing in a foreign market can be complicated, especially when it comes to taxation. Use our simple and tax-compliant platform to invest with confidence.",
       icon: FaFingerprint,
     },
   ];
@@ -71,7 +72,7 @@ const Page = () => {
         width={500}
         height={1}
       /> */}
-      <section className="flex-col px-2 pt-16 ">
+      <section className="flex-col px-2 pt-16">
         <div className="flex justify-center align-middle pt-20">
           <div className="relative text-center max-w-3xl lg:max-w-4xl">
             <svg
@@ -94,7 +95,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-10 gap-2 mb-36">
+        <div className="flex justify-center mt-10 gap-2 mb-16">
           <button className=" flex gap-2  items-center bg-primary text-white px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
             {" "}
             <span> Schedule a Meeting </span>
@@ -107,117 +108,41 @@ const Page = () => {
             </button>
           </Link>
         </div>
+        <Link
+          href={"https://www.mutualfundssahihai.com/en/amfi"}
+          target="_blank"
+        >
+          <button className="border-2 mb-32 border-gray-100 px-4 py-4 bg-secondary flex gap-4 justify-between rounded-lg items-center mt-6 drop-shadow-md mx-4 md:mx-20 xl:mx-auto">
+            <Image
+              src={"/assets/images.png"}
+              alt="cots"
+              className="w-[40px]"
+              width={500}
+              height={1}
+            />
+            <p className="text-center">
+              NRI is a certified Mutual Fund distributor registered with
+              Association of Mutual Funds in India (AMFI) with Reg. No. 000000
+            </p>
+            <GoArrowUpRight
+              size={100}
+              color="#008000"
+              className="block md:hidden"
+            />
+            <GoArrowUpRight
+              size={25}
+              color="#008000"
+              className="hidden md:block"
+            />
+          </button>
+        </Link>
       </section>
 
       {/* section 2 */}
-      {/* <section className=" px-4 md:px-20 lg:px-40 mt-24">
-        <div className="flex flex-col justify-center items-center  w-full">
-          <h2 className="text-gray-800 font-semibold font-graphik leading-[40px] text-center">
-            A one-stop <span className="text-primary">Indian</span> Expacts
-          </h2>
-          <p className="text-center text-sm font-light w-full  mt-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu,
-            mollis aenean sit dictum tincidunt. Ut arcu, susci
-          </p>
-        </div>
-        <div className="w-full lg:w-[80%] flex flex-wrap  gap-12 md:gap-0  mx-auto justify-between mt-8">
-          <div className="w-full md:w-[47%] flex flex-col gap-12">
-            <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white">
-              <div className="flex justify-center">
-                <Image
-                  src="/assets/piggy.png"
-                  alt="Your Image Alt Text"
-                  className="rounded-md mt-10 "
-                  width="80"
-                  height="80"
-                />
-                <Image
-                  src="/assets/shape.png"
-                  alt="shape"
-                  width="200"
-                  height="100"
-                  className="absolute right-0"
-                />
-              </div>
-
-              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
-                Invest reliably with index funds
-              </p>
-              <p className="text-center text-sm font-light  mt-4 px-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
-                mollis aenean sit dictum tincidunt.
-              </p>
-            </div>
-            <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
-              <div className="flex justify-center ">
-                <Image
-                  src="/assets/shape.png"
-                  alt="shape"
-                  width="200"
-                  height="100"
-                  className="absolute left-0"
-                />
-                <Image
-                  src="/assets/bank_building.png"
-                  alt="Your Image Alt Text"
-                  className="rounded-md mt-10 mx-auto"
-                  width="80"
-                  height="80"
-                />
-              </div>
-
-              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
-                Faster account opening processes with trusted banks
-              </p>
-              <p className="text-center text-sm font-light  mt-4 px-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
-                mollis aenean sit dictum tincidunt.
-              </p>
-            </div>
-          </div>
-          <div className="w-full md:w-[47%] flex flex-col gap-12 mt-0 md:mt-20">
-            <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
-              <Image
-                src="/assets/graph.png"
-                alt="Your Image Alt Text"
-                className="rounded-md mt-10 mx-auto"
-                width="80"
-                height="80"
-              />
-              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
-                Earn high returns with India’s growth
-              </p>
-              <p className="text-center text-sm font-light  mt-4 px-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
-                mollis aenean sit dictum tincidunt.
-              </p>
-            </div>
-            <div className="drop-shadow-lg pb-10 w-full rounded-xl bg-white ">
-              <Image
-                src="/assets/tax2.png"
-                alt="Your Image Alt Text"
-                className="rounded-md mt-10 mx-auto"
-                width="80"
-                height="80"
-              />
-              <p className="text-gray-800 font-medium text-xl text-center mt-4 px-10 leading-[24px]">
-                Complimentary tax guidance
-              </p>
-              <p className="text-center text-sm font-light  mt-4 px-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut eu,
-                mollis aenean sit dictum tincidunt.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
       <section className="px-4 md:px-20 lg:px-40 mt-10 bg-secondary">
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-2xl text-center">
-              {/* <h2 className="text-base font-semibold leading-7 text-primary">
-                Deploy faster
-              </h2> */}
               <h2 className="mt-2 font-bold tracking-tight text-gray-900">
                 A one-stop <span className="text-primary">Indian</span> Expats
               </h2>
@@ -229,9 +154,9 @@ const Page = () => {
             </div>
             <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
               <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-                {features.map((feature) => (
+                {features.map((feature, index) => (
                   <div key={feature.name} className="relative pl-16">
-                    <dt className="text-base font-semibold leading-7 text-gray-900">
+                    <dt className="text-base font-semibold leading-5 text-gray-900">
                       <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
                         <feature.icon
                           className="h-6 w-6 text-white"
@@ -240,9 +165,15 @@ const Page = () => {
                       </div>
                       {feature.name}
                     </dt>
-                    <dd className="mt-2 text-base leading-7 text-gray-600">
-                      {feature.description}
-                    </dd>
+                    {index === 3 ? (
+                      <dd className="text-sm text-base text-gray-600 mt-6">
+                        {feature.description}
+                      </dd>
+                    ) : (
+                      <dd className="mt-2 text-sm text-base text-gray-600">
+                        {feature.description}
+                      </dd>
+                    )}
                   </div>
                 ))}
               </dl>
@@ -250,20 +181,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      {/* section 3 */}
-      {/* <section className="flex flex-col justify-center mt-24 px-4 md:px-20 lg:px-40">
-        <h2 className="text-gray-800 mx-auto font-semibold font-graphik leading-[40px]">
-          Serving <span className="text-primary">NRI</span> from across
-          countries
-        </h2>
-        <Image
-          src="/assets/world.png"
-          alt="Your Image Alt Text"
-          className="rounded-md mt-10"
-          width={1454}
-          height={604}
-        />
-      </section> */}
+
       {/* section 4 */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <div className="w-full lg:w-1/2">
@@ -780,16 +698,16 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-[48%] bg-[#F2F8F2] px-2 rounded-[20px] py-2 hidden lg:block">
+          <div className="w-full lg:w-[48%] bg-[#F2F8F2] px-10 rounded-[20px] py-4 hidden lg:block">
             <div className="bg-white flex flex-col justify-between rounded-[20px] h-full">
               <Image
                 src="/assets/long-term-wealth.png"
                 alt="Your Image Alt Text"
-                className="rounded-md w-full h-[200px] transition-all duration-300 hover:scale-105"
+                className="rounded-md w-full h-[200px]"
                 width={500}
                 height={1}
               />
-              <div className=" py-10 px-4">
+              <div className="pt-4 px-4">
                 <p className="text-2xl font-medium">{products[index]}</p>
                 <p className="mt-2 font-light text-sm">
                   A personalised mutual funds portfolio, diversified across
@@ -815,7 +733,7 @@ const Page = () => {
                   <p className="text-sm font-light">No lock-in</p>
                 </div>
               </div>
-              <div className=" flex justify-center items-center w-full pb-10">
+              <div className=" flex justify-center items-center w-full pb-6">
                 <button className="w-[80%] flex justify-center items-center gap-3 py-2 text-sm font-medium text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
                   Explore
                   <GoArrowRight size={20} />
@@ -826,7 +744,7 @@ const Page = () => {
         </div>
       </section>
       {/* section 5 */}
-      <section className=" px-4 md:px-20 lg:px-40 mt-32 py-32 bg-secondary">
+      <section className=" px-4 md:px-20 lg:px-40 mt-10 lg:mt-32 py-10 lg:py-32 bg-secondary">
         <div className="grid grid-cols-1 gap-x-20 gap-y-10 mt-4 lg:grid-cols-2 items-center">
           <div className="w-full">
             <h2 className="text-gray-800  font-semibold font-graphik leading-[40px] max-w-80">
@@ -836,12 +754,10 @@ const Page = () => {
             <p className="font-light mt-1 text-sm">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
               egestas tempus tellus etiam sed. Quam a scelerisque amet
-              ullamcorper eu enim et fermentum, augue. 
-              Lorem ipsum dolor sit
+              ullamcorper eu enim et fermentum, augue. Lorem ipsum dolor sit
               amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam
               sed. Quam a scelerisque amet ullamcorper eu enim et fermentum,
-              augue.
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Et, egestas tempus tellus etiam sed. Quam a scelerisque amet
               ullamcorper eu enim et fermentum, augue.
             </p>
@@ -864,34 +780,6 @@ const Page = () => {
                 {showArrow && <GoArrowRight size={20} color="#008000" />}
               </button>
             </div>
-
-            {/* <div className="flex flex-wrap mt-2">
-              <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
-                  <p>1</p>
-                </div>
-                <p className="font-light">RBI registered banks</p>
-              </div>
-              <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
-                  <p>2</p>
-                </div>
-                <p className="font-light">Robust Netbanking</p>
-              </div>
-              <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
-                  <p>3</p>
-                </div>
-                <p className="font-light">Earn attractive interest rate*</p>
-              </div>
-              <div className="w-full md:w-1/2 lg:w-full flex gap-8 mt-6 items-center">
-                <div className="text-primary bg-green-100 rounded-full text-2xl flex justify-center h-10 w-10 items-center font-bold">
-                  <p>4</p>
-                </div>
-                <p className="font-light">Withdraw Anytime</p>
-              </div>
-       
-            </div> */}
           </div>
           <div className="w-full">
             <div className="grid max-w-xl grid-cols-2 gap-x-8 gap-y-6 items-center">
@@ -964,10 +852,10 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10 ">
+                <p className="font-medium text-sm text-gray-500 ml-10">
                   Personalized consultations with{" "}
                   <span className="text-black">NRI-specialized </span>
-                  taxation experts
+                  taxation
                 </p>
               </div>
               <div className="flex items-start mt-4 relative">
@@ -1016,12 +904,6 @@ const Page = () => {
                 </p>
               </div>
             </div>
-
-            {/* <div className="flex justify-center">
-              <button className="bg-primary text-white w-full mx-8 mb-10 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-                Get started today
-              </button>
-            </div> */}
           </div>
           <div className="w-full bg-white drop-shadow-lg rounded-[20px]">
             <div className="pl-8 pr-4 pt-10">
@@ -1040,47 +922,49 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10 ">
-                  Personalized consultations with{" "}
-                  <span className="text-black">NRI-specialized </span>
-                  taxation experts
+                <p className="font-medium text-sm text-gray-500 ml-10">
+                  Apply for a new <span className="text-black">PAN </span>
+                  digitally
                 </p>
+                <br />
               </div>
-              <div className="flex items-start mt-4 relative">
+              <div className="flex items-start mt-8 relative">
                 <div className="w-10 absolute left-0">
                   <PiShootingStarThin size={30} color="gray" />
                 </div>
                 <p className="font-medium text-sm text-gray-500 ml-10">
-                  File ITRs hassle-free & maximize the refunds
+                  Update/ correct &{" "}
+                  <span className="text-black">Link Aadhaar</span>
                 </p>
+                <br />
               </div>
-              <div className="flex items-start mt-4 relative">
+              <div className="flex items-start mt-8 relative">
                 <div className="w-10 absolute left-0">
                   <TbAntennaBars5 size={25} color="gray" />
                 </div>
                 <p className="font-medium text-sm text-gray-500 ml-10">
-                  Apply for <span className="text-black">15CA & CB</span> & Make
-                  your (NRO-NRE) transfers stress-free
+                  Reprint <span className="text-black">PAN Card</span> (Lost/
+                  Damaged)
                 </p>
+                <br />
               </div>
-              <div className="flex items-start mt-4 relative">
+              <div className="flex items-start mt-8 relative">
                 <div className="w-10 absolute left-0">
                   <PiShootingStarThin size={30} color="gray" />
                 </div>
                 <p className="font-medium text-sm text-gray-500 ml-10">
-                  <span className="text-black">
-                    {" "}
-                    Apply for Lower TDS certificates
-                  </span>{" "}
-                  & Reduce TDS deductions on property sales
+                  Quick issuance with a streamlined digital process
                 </p>
               </div>
               <div className="flex items-start mt-4 relative">
                 <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-black ml-10">
-                  {`Received an Income Tax Notice? Don't worry, we're here to help`}
+                <p className="font-medium text-sm text-gray-500 ml-10">
+                  Seamless Pan card delivery to your doorstep -{" "}
+                  <span className="text-black">
+                    Anywhere, Anytime, Worldwide
+                  </span>
                 </p>
               </div>
               <div className="flex items-start mt-4 relative">
@@ -1088,15 +972,11 @@ const Page = () => {
                   <TbAntennaBars5 size={25} color="gray" />
                 </div>
                 <p className="font-medium text-sm text-gray-500 ml-10">
-                  Gain More, Pay Less: Top-notch Capital Gain Tax Planning
+                  For inquiries & assistance, our 24/7 chat support team is at
+                  your service
                 </p>
               </div>
             </div>
-            {/* <div className="flex justify-center">
-              <button className="bg-primary text-white w-full mx-8 mb-10 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-                Get started today
-              </button>
-            </div> */}
           </div>
         </div>
       </section>
@@ -1128,8 +1008,8 @@ const Page = () => {
             <span className="text-primary">safe & secure</span>
           </h2>
           <p className="text-sm font-light text-center mt-1">
-            Your money is regulated by mutual fund companies. iNRI doesn’t keep
-            or handle your mponey
+            Your money is regulated by mutual fund companies. NRI doesn’t keep
+            or handle your money
           </p>
         </div>
 
@@ -1207,18 +1087,10 @@ const Page = () => {
           <h2 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[40px] text-center">
             Frequently <span className="text-primary">Asked</span> Questions
           </h2>
-          <p className="font-extralight mt-1 text-center">
+          <p className="font-extralight mt-1 text-sm text-center">
             Learn about us and check out these frequently asked questions.
           </p>
         </div>
-        {/* <div className="flex flex-wrap justify-between gap-6 mt-10">
-          <FAQ question={options} answer={details} />
-          <FAQ question={options3} answer={details} />
-          <FAQ question={options5} answer={details} />
-          <FAQ question={options2} answer={details} />
-          <FAQ question={options4} answer={details} />
-          <FAQ question={options6} answer={details} />
-        </div> */}
         <div className="flex flex-wrap justify-between gap-6 mt-10">
           <div className="w-full md:w-[45%] text-right">
             <div className="flex flex-col gap-6">
@@ -1243,11 +1115,13 @@ const Page = () => {
       </section>
       {/* {section 10} */}
       <section className="bg-secondary px-4 md:px-20 lg:px-40 py-20 mt-10">
-        {/* <div className="w-full flex justify-start items-start"> */}
-        <h2 className="text-gray-800 mx-auto font-semibold font-graphik">
-          <span className="text-primary">Blogs</span>
+        <h2 className="text-gray-800 mx-auto font-semibold text-center font-graphik leading-[40px]">
+          <span className="text-primary">Resource Center</span>
         </h2>
-        {/* </div> */}
+        <p className="font-extralight mt-1 text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing fermentum ante eu
+          dignissim pulvinar.
+        </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
           <div>
@@ -1327,32 +1201,103 @@ const Page = () => {
             </div>
           </div>
         </div>
+        <div className=" flex justify-center items-center w-full py-10">
+          <button
+            className="flex gap-4  px-6 items-center mt-10 py-2 rounded-md bg-white border border-primary text-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+            onMouseEnter={() => {
+              setShowArrow(true);
+            }}
+            onMouseLeave={() => {
+              setShowArrow(false);
+            }}
+          >
+            Read More
+            {showArrow && <GoArrowRight size={20} color="#008000" />}
+          </button>
+        </div>
       </section>
       {/* {section 11} */}
-      {/* <section className=" px-4 md:px-20 lg:px-40 mt-20  mb-40">
-        <div className="w-full bg-[#F2F8F2] px-4 rounded-[20px] py-10 relative overflow-hidden">
-          <div className="absolute inset-0 z-0 w-[80%] mx-auto">
-            <Image
-              src="/assets/bg_circle.png"
-              alt="Your Image Alt Text"
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-            />
+      <section className="px-4 md:px-20 lg:px-40 mt-32 py-32 bg-secondary">
+        <div className="grid grid-cols-1 gap-x-20 gap-y-20 lg:max-w-none lg:grid-cols-3 lg:gap-y-16 items-center">
+          <div className="w-full px-10  md:px-40 lg:px-0">
+            <div className="flex gap-x-20">
+              <Image
+                src={"/assets/male.png"}
+                alt="cots"
+                className="w-[70px]"
+                width={500}
+                height={1}
+              />
+              <Image
+                src={"/assets/female.png"}
+                alt="cots"
+                className="w-[70px]"
+                width={500}
+                height={1}
+              />
+            </div>
+            <div className="flex gap-x-20 ml-20 mt-4">
+              <Image
+                src={"/assets/male.png"}
+                alt="cots"
+                className="w-[70px]"
+                width={500}
+                height={1}
+              />
+              <Image
+                src={"/assets/female.png"}
+                alt="cots"
+                className="w-[70px]"
+                width={500}
+                height={1}
+              />
+            </div>
           </div>
-          <div className="w-[80%] lg:w-[70%] mx-auto relative z-10">
-            <h2 className="text-gray-800 mx-auto  font-semibold text-center font-graphik leading-[40px]">
-              Get in touch <span className="text-primary">NRI website</span> and
-              invest in your future Product
-            </h2>
-          </div>
-          <div className="flex  justify-center items-center w-full mt-6">
-            <button className="px-8 z-10 py-2 text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-              Learn More
+          <div className="w-full px-10 md:px-36 lg:px-0">
+            <p className="font-semibold text-lg text-center">
+              Join our Whatsapp community of NRI/OCIs like you
+            </p>
+            <button className="flex gap-2 mx-auto px-6 items-center mt-6 py-2 rounded-md bg-primary  text-white focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+              <FaWhatsapp size={20} color="#fff" />
+              Join Community
             </button>
           </div>
+          <div className="w-full  px-10 md:px-40 lg:px-0">
+            <div className="flex gap-x-20 ml-20">
+              <Image
+                src={"/assets/male.png"}
+                alt="cots"
+                className="w-[70px]"
+                width={500}
+                height={1}
+              />
+              <Image
+                src={"/assets/female.png"}
+                alt="cots"
+                className="w-[70px]"
+                width={500}
+                height={1}
+              />
+            </div>
+            <div className="flex gap-x-20 mt-4">
+              <Image
+                src={"/assets/male.png"}
+                alt="cots"
+                className="w-[70px]"
+                width={500}
+                height={1}
+              />
+              <Image
+                src={"/assets/female.png"}
+                alt="cots"
+                className="w-[70px]"
+                width={500}
+                height={1}
+              />
+            </div>
+          </div>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 };
