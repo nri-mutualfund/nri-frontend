@@ -852,7 +852,7 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500  ">
+                <p className="font-medium text-sm text-gray-500 ml-10">
                   Personalized consultations with{" "}
                   <span className="text-black">NRI-specialized </span>
                   taxation
