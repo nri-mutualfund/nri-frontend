@@ -596,7 +596,7 @@ const Page = () => {
               />
               <div className="">
                 <p className="text-xl font-medium">Mutual Funds</p>
-                <p className="mt-2 font-light">
+                <p className="mt-2 font-light text-sm">
                   Diversified portfolio for long-term growth.
                 </p>
               </div>
@@ -620,7 +620,7 @@ const Page = () => {
               />
               <div className="">
                 <p className="text-xl font-medium">Fixed Deposits</p>
-                <p className="mt-2 font-light">
+                <p className="mt-2 font-light text-sm">
                   Diversified portfolio for long-term growth.
                 </p>
               </div>
@@ -644,7 +644,7 @@ const Page = () => {
               />
               <div className="">
                 <p className="text-xl font-medium">Commercial Real Estate</p>
-                <p className="mt-2 font-light">
+                <p className="mt-2 font-light text-sm">
                   Diversified portfolio for long-term growth.
                 </p>
               </div>
@@ -668,7 +668,7 @@ const Page = () => {
               />
               <div className="">
                 <p className="text-xl font-medium">PMS</p>
-                <p className="mt-2 font-light">
+                <p className="mt-2 font-light text-sm">
                   Diversified portfolio for long-term growth.
                 </p>
               </div>
@@ -692,7 +692,7 @@ const Page = () => {
               />
               <div className="">
                 <p className="text-xl font-medium">Bond</p>
-                <p className="mt-2 font-light">
+                <p className="mt-2 font-light text-sm">
                   Diversified portfolio for long-term growth.
                 </p>
               </div>
@@ -860,7 +860,7 @@ const Page = () => {
               </div>
               <div className="flex items-start mt-4 relative">
                 <div className="w-10 absolute left-0">
-                  <PiShootingStarThin size={30} color="gray" />
+                  <PiShootingStarThin size={22} color="gray" />
                 </div>
                 <p className="font-medium text-sm text-gray-500 ml-10">
                   File ITRs hassle-free & maximize the refunds
@@ -877,7 +877,7 @@ const Page = () => {
               </div>
               <div className="flex items-start mt-4 relative">
                 <div className="w-10 absolute left-0">
-                  <PiShootingStarThin size={30} color="gray" />
+                  <PiShootingStarThin size={22} color="gray" />
                 </div>
                 <p className="font-medium text-sm text-gray-500 ml-10">
                   <span className="text-black">
@@ -930,7 +930,7 @@ const Page = () => {
               </div>
               <div className="flex items-start mt-8 relative">
                 <div className="w-10 absolute left-0">
-                  <PiShootingStarThin size={30} color="gray" />
+                  <PiShootingStarThin size={22} color="gray" />
                 </div>
                 <p className="font-medium text-sm text-gray-500 ml-10">
                   Update/ correct &{" "}
@@ -950,7 +950,7 @@ const Page = () => {
               </div>
               <div className="flex items-start mt-8 relative">
                 <div className="w-10 absolute left-0">
-                  <PiShootingStarThin size={30} color="gray" />
+                  <PiShootingStarThin size={22} color="gray" />
                 </div>
                 <p className="font-medium text-sm text-gray-500 ml-10">
                   Quick issuance with a streamlined digital process
@@ -1130,7 +1130,7 @@ const Page = () => {
               We’re incredibly proud to announce we have secured $75m in Series
               B
             </h2>
-            <p className="font-light mt-6 text-lg">
+            <p className="font-light mt-6 text-base">
               Libero neque aenean tincidunt nec consequat tempor. Viverra odio
               id velit adipiscing id. Nisi vestibulum orci eget bibendum dictum.
               Velit viverra posuere vulputate volutpat nunc. Nunc netus sit
@@ -1156,10 +1156,10 @@ const Page = () => {
           <div className="flex flex-col gap-8">
             <div>
               <p className="font-light text-sm">Mar 10, 2020</p>
-              <p className="text-gray-800 font-semibold mt-2 text-lg">
+              <p className="text-gray-800 font-semibold mt-2 text-base">
                 Boost your conversion rate
               </p>
-              <p className="font-light mt-6">
+              <p className="font-light mt-3 text-sm">
                 Libero neque aenean tincidunt nec consequat tempor. Viverra odio
                 id velit adipiscing id. Nisi vestibulum orci eget bibendum
                 dictum. Velit viverra posuere vulputate volutpat nunc. Nunc
@@ -1179,10 +1179,10 @@ const Page = () => {
             <div className="border-[0.5px]" />
             <div>
               <p className="font-light text-sm">Feb 12, 2020</p>
-              <p className="text-gray-800 font-semibold mt-2 text-lg">
+              <p className="text-gray-800 font-semibold mt-2 text-base">
                 How to use search engine optimization to drive sales
               </p>
-              <p className="font-light mt-6">
+              <p className="font-light mt-3 text-sm">
                 Libero neque aenean tincidunt nec consequat tempor. Viverra odio
                 id velit adipiscing id. Nisi vestibulum orci eget bibendum
                 dictum. Velit viverra posuere vulputate volutpat nunc. Nunc
@@ -1217,7 +1217,58 @@ const Page = () => {
         </div>
       </section>
       {/* {section 11} */}
-      <section className="px-4 md:px-20 lg:px-40 mt-32 py-32 bg-secondary">
+      {/* <section className="px-4 md:px-20 lg:px-40 mt-32 py-32">
+        <div
+          className="flex justify-start items-center h-[250px] bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/assets/community.png')" }}
+        >
+          <div className="">
+            <p className="font-semibold text-lg text-center">
+              Join our Whatsapp community of NRI/OCIs like you
+            </p>
+            <button className="flex gap-2 mx-auto px-6 items-center mt-6 py-2 rounded-md bg-primary  text-white focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+              <FaWhatsapp size={20} color="#fff" />
+              Join Community
+            </button>
+          </div>
+        </div>
+      </section> */}
+      <section
+        className="px-4 md:px-20 lg:px-40 mt-12 h-36 bg-cover bg-center bg-no-repeat block md:hidden py-4"
+        style={{ backgroundImage: "url('/assets/community2.png')" }}
+      >
+        <div className="flex justify-center items-center">
+          <div>
+            <p className="text-lg  text-center max-w-[250px] text-[#111827]">
+              Join our Whatsapp community of NRI/OCIs like you
+            </p>
+            <button className="flex gap-2 mx-auto px-6 items-center mt-6 py-2 rounded-md bg-primary  text-white focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+              <FaWhatsapp size={20} color="#fff" />
+              Join Community
+            </button>
+          </div>
+        </div>
+      </section>
+      <section
+        className="px-4 md:px-20 lg:px-40 mt-32  hidden md:block bg-cover bg-center bg-no-repeat h-20 md:h-56 xl:h-[350px]"
+        style={{ backgroundImage: "url('/assets/community2.png')" }}
+      >
+        <div className="flex justify-center items-center h-full">
+          <div>
+            <p className="font-semibold text-xl text-center max-w-[320px] text-[#111827]">
+              Join our Whatsapp community of NRI/OCIs like you
+            </p>
+            <button className="flex gap-2 mx-auto px-6 items-center mt-6 py-2 rounded-md bg-primary  text-white focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+              <FaWhatsapp size={20} color="#fff" />
+              Join Community
+            </button>
+          </div>
+        </div>
+      </section>
+      {/* <section
+        className="px-4 md:px-20 lg:px-40 mt-32 py-32 bg-cover bg-center bg-no-repeat h-screen"
+        style={{ backgroundImage: "url('/assets/community.png')" }}
+      >
         <div className="grid grid-cols-1 gap-x-20 gap-y-20 lg:max-w-none lg:grid-cols-3 lg:gap-y-16 items-center">
           <div className="w-full px-10  md:px-40 lg:px-0">
             <div className="flex gap-x-20">
@@ -1297,7 +1348,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
