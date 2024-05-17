@@ -23,7 +23,7 @@ const config: Config = {
       },
       fontFamily: {
         "area-normal": ["area-normal", "sans-serif"],
-        inter: ["Inter", "sans-serif"],
+        inter: ["Inter var", "ui-sans-serif"],
         lato: ["Lato", "sans-serif"],
         graphik: ["Graphik", "sans-serif"],
         sans: ["Graphik", "sans-serif"],
