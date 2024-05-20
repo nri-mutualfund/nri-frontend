@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 const plugin = require("tailwindcss/plugin");
 const defaultTheme = require("tailwindcss/defaultTheme");
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 const config: Config = {
   content: [
@@ -23,15 +24,17 @@ const config: Config = {
       },
       fontFamily: {
         "area-normal": ["area-normal", "sans-serif"],
-        inter: ["Inter var", "ui-sans-serif"],
+        inter: ['Inter', 'sans-serif'],
         lato: ["Lato", "sans-serif"],
         graphik: ["Graphik", "sans-serif"],
         sans: ["Graphik", "sans-serif"],
       },
       fontSize: {
-        h1: "48px",
-        h2: "34px",
-        h3: "20px",
+        h1: "44px",
+        h2: "36px",
+        h3: "30px",
+        h4: "24px",
+        h5: "20px",
         p: "16px",
         base: "16px",
       },

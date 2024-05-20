@@ -25,7 +25,7 @@ const FAQ = ({ question, answer }: FAQProps) => {
     <div className="flex flex-col items-center justify-center border-t px-6 bg-white">
       <div onClick={toggleAccordion} className="cursor-pointer w-full">
         <div className="flex items-start justify-between text-left mt-6">
-          <span className="text-[16px] font-semibold text-[#111827]">
+          <span className="text-[16px] font-medium text-[#111827]">
             {question}
           </span>
 

@@ -6,7 +6,7 @@ import {
   FaCanadianMapleLeaf,
   FaArrowRight,
 } from "react-icons/fa";
-import { PiShootingStarThin } from "react-icons/pi";
+import { PiBankBold, PiBankLight, PiChartLineUp, PiShootingStarThin } from "react-icons/pi";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { HiArrowPath } from "react-icons/hi2";
 import { GoArrowRight, GoArrowUpRight } from "react-icons/go";
@@ -16,6 +16,9 @@ import Image from "next/image";
 import FAQ from "@/components/FAQ";
 import ImageSlider from "@/components/ImageSlider";
 import Link from "next/link";
+import { FaHandHoldingDollar } from "react-icons/fa6";
+import { LuFileType } from "react-icons/lu";
+
 const Page = () => {
   const [index, setIndex] = useState(0);
   const [expandIndex, setExpand] = useState(6);
@@ -33,25 +36,29 @@ const Page = () => {
       name: "Invest reliably with index funds",
       description:
         "Invest reliably with index funds: Build wealth over time by subscribing to our curated portfolio of equity & debt instruments. Relax and focus on other important things in life",
-      icon: AiOutlineCloudUpload,
+      icon: FaHandHoldingDollar,
     },
     {
       name: "Earn high returns with India’s growth",
       description:
         "Earn high returns with India’s growth: With its young talent and growing urban class, India is poised to be one of the fastest growing economies in the next decade. We offer a seamless way for this growth to reflect in your asset portfolio.",
-      icon: IoLockClosedOutline,
+      icon: PiChartLineUp
+      ,
     },
     {
       name: "Faster account opening processes with trusted banks",
       description:
         "Faster account opening processes with trusted banks:** Invest with us and open a NRE/NRO bank account with top banks like ICICI, Axis, Yes in few days. No more waiting for weeks just to get started.",
-      icon: HiArrowPath,
+      icon: PiBankBold
+
+      ,
     },
     {
       name: "Complimentary tax guidance",
       description:
         "Complimentary tax guidance: Investing in a foreign market can be complicated, especially when it comes to taxation. Use our simple and tax-compliant platform to invest with confidence.",
-      icon: FaFingerprint,
+      icon: LuFileType
+      ,
     },
   ];
   const options = "How secure is this?";
@@ -63,7 +70,7 @@ const Page = () => {
   const details =
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
   return (
-    <div className="max-w-screen-2xl mx-auto  font-graphik">
+    <div className="max-w-screen-2xl mx-auto ">
       {/* sectin 1 */}
       {/* <Image
         src="/assets/circle.png"
@@ -112,29 +119,29 @@ const Page = () => {
           href={"https://www.mutualfundssahihai.com/en/amfi"}
           target="_blank"
         >
-          <button className="border-2 mb-32 border-gray-100 px-4 py-4 bg-secondary flex gap-4 justify-between rounded-lg items-center mt-6 drop-shadow-md mx-4 md:mx-20 xl:mx-auto">
-            <Image
-              src={"/assets/images.png"}
-              alt="cots"
-              className="w-[40px]"
-              width={500}
-              height={1}
-            />
-            <p className="text-center">
-              NRI is a certified Mutual Fund distributor registered with
-              Association of Mutual Funds in India (AMFI) with Reg. No. 000000
-            </p>
-            <GoArrowUpRight
-              size={100}
-              color="#008000"
-              className="block md:hidden"
-            />
-            <GoArrowUpRight
-              size={25}
-              color="#008000"
-              className="hidden md:block"
-            />
-          </button>
+            <button className="border-2 mb-32 border-gray-100 px-2 py-2 bg-secondary flex gap-4 justify-between rounded-lg items-center mt-6 drop-shadow-md mx-4 md:mx-20 xl:mx-auto">
+              <Image
+                src={"/assets/images.png"}
+                alt="cots"
+                className="w-[35px]"
+                width={400}
+                height={1}
+              />
+              <p className="text-center text-[12px]">
+                NRI is a certified Mutual Fund distributor registered with
+                Association of Mutual Funds in India (AMFI) with Reg. No. 000000
+              </p>
+              <GoArrowUpRight
+                size={100}
+                color="#008000"
+                className="block md:hidden"
+              />
+              <GoArrowUpRight
+                size={25}
+                color="#008000"
+                className="hidden md:block"
+              />
+            </button>
         </Link>
       </section>
 
@@ -143,7 +150,7 @@ const Page = () => {
         <div className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="mt-2 font-bold tracking-tight text-gray-900">
+              <h2 className="mt-2 font-medium tracking-tight text-gray-900">
                 A one-stop <span className="text-primary">Indian</span> Expats
               </h2>
               <p className="mt-1 text-sm text-gray-600">
@@ -156,9 +163,10 @@ const Page = () => {
               <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                 {features.map((feature, index) => (
                   <div key={feature.name} className="relative pl-16">
-                    <dt className="text-base font-semibold leading-5 text-gray-900">
-                      <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-                        <feature.icon
+                    <dt className="text-base font-medium leading-5 text-gray-900">
+                      <div className="absolute left-0 top-0 flex h-10 w-10 items-center  bg-primary justify-center rounded-lg  cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                      {/* <Image src={feature.icon} alt={feature.name} className="h-10 w-10 text-white" aria-hidden="true" /> */}
+                      < feature.icon
                           className="h-6 w-6 text-white"
                           aria-hidden="true"
                         />
@@ -185,7 +193,7 @@ const Page = () => {
       {/* section 4 */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24">
         <div className="w-full lg:w-1/2">
-          <h2 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[40px]">
+          <h2 className="text-gray-800 mx-auto  font-medium  leading-[40px]">
             Product <span className="text-primary">We offer</span>
           </h2>
           <p className="text-sm font-light mt-1">
@@ -747,7 +755,7 @@ const Page = () => {
       <section className=" px-4 md:px-20 lg:px-40 mt-10 lg:mt-32 py-10 lg:py-32 bg-secondary">
         <div className="grid grid-cols-1 gap-x-20 gap-y-10 mt-4 lg:grid-cols-2 items-center">
           <div className="w-full">
-            <h2 className="text-gray-800  font-semibold font-graphik leading-[40px] max-w-80">
+            <h2 className="text-gray-800  font-medium  leading-[40px] max-w-80">
               Open <span className="text-primary">NRI Bank Account </span>in
               India
             </h2>
@@ -826,7 +834,7 @@ const Page = () => {
       {/* section 6 */}
       <section className="px-4 md:px-20 lg:px-40 mt-10 lg:mt-32">
         <div className="w-full flex flex-col justify-center items-center">
-          <h2 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[40px]">
+          <h2 className="text-gray-800 mx-auto  font-medium  leading-[40px]">
             <span className="text-primary">NRI</span> Services
           </h2>
           <p className="font-light text-sm mt-1 text-center">
@@ -837,22 +845,22 @@ const Page = () => {
 
         <div className="max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-14 mx-auto mt-10">
           <div className="w-full bg-white drop-shadow-lg rounded-[20px]">
-            <div className="pl-8 pr-4 pt-10">
+            <div className="flex justify-between pl-8 pr-4 pt-10">
+              <p className="text-2xl font-medium mt-2">Taxation</p>
               <Image
                 src="/assets/tax.png"
                 alt="Your Image Alt Text"
-                className="w-[50px]"
+                className="w-[50px] "
                 width={500}
                 height={1}
               />
-              <p className="text-2xl font-medium mt-2">Taxation</p>
             </div>
-            <div className="pt-8 pl-8 pr-20 pb-12">
+            <div className=" pl-8 pr-20 pb-12">
               <div className="flex items-start mt-4 relative">
                 <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   Personalized consultations with{" "}
                   <span className="text-black">NRI-specialized </span>
                   taxation
@@ -862,7 +870,7 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <PiShootingStarThin size={22} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   File ITRs hassle-free & maximize the refunds
                 </p>
               </div>
@@ -870,7 +878,7 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <TbAntennaBars5 size={25} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   Apply for <span className="text-black">15CA & CB</span> & Make
                   your (NRO-NRE) transfers stress-free
                 </p>
@@ -879,7 +887,7 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <PiShootingStarThin size={22} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   <span className="text-black">
                     {" "}
                     Apply for Lower TDS certificates
@@ -891,7 +899,7 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-black ml-10">
+                <p className=" text-sm text-black ml-10">
                   {`Received an Income Tax Notice? Don't worry, we're here to help`}
                 </p>
               </div>
@@ -899,14 +907,15 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <TbAntennaBars5 size={25} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   Gain More, Pay Less: Top-notch Capital Gain Tax Planning
                 </p>
               </div>
             </div>
           </div>
           <div className="w-full bg-white drop-shadow-lg rounded-[20px]">
-            <div className="pl-8 pr-4 pt-10">
+            <div className="flex justify-between pl-8 pr-4 pt-10">
+              <p className="text-2xl font-medium mt-2">Documentation</p>
               <Image
                 src="/assets/doc.png"
                 alt="Your Image Alt Text"
@@ -914,15 +923,14 @@ const Page = () => {
                 width={500}
                 height={1}
               />
-              <p className="text-2xl font-medium mt-2">Documentation</p>
             </div>
 
-            <div className="pt-8 pl-8 pr-20 pb-12">
+            <div className=" pl-8 pr-20 pb-12">
               <div className="flex items-start mt-4 relative">
                 <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   Apply for a new <span className="text-black">PAN </span>
                   digitally
                 </p>
@@ -932,7 +940,7 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <PiShootingStarThin size={22} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   Update/ correct &{" "}
                   <span className="text-black">Link Aadhaar</span>
                 </p>
@@ -942,7 +950,7 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <TbAntennaBars5 size={25} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   Reprint <span className="text-black">PAN Card</span> (Lost/
                   Damaged)
                 </p>
@@ -952,7 +960,7 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <PiShootingStarThin size={22} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   Quick issuance with a streamlined digital process
                 </p>
               </div>
@@ -960,7 +968,7 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <FaCanadianMapleLeaf size={20} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   Seamless Pan card delivery to your doorstep -{" "}
                   <span className="text-black">
                     Anywhere, Anytime, Worldwide
@@ -971,7 +979,7 @@ const Page = () => {
                 <div className="w-10 absolute left-0">
                   <TbAntennaBars5 size={25} color="gray" />
                 </div>
-                <p className="font-medium text-sm text-gray-500 ml-10">
+                <p className=" text-sm text-gray-500 ml-10">
                   For inquiries & assistance, our 24/7 chat support team is at
                   your service
                 </p>
@@ -983,7 +991,7 @@ const Page = () => {
       {/* {section 7} */}
       <section className="px-4 md:px-20 lg:px-10 mt-24 py-12">
         <div className="w-full flex flex-col justify-center items-center">
-          <h2 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[40px] text-center">
+          <h2 className="text-gray-800 mx-auto  font-medium  leading-[40px] text-center">
             What <span className="text-primary">Customers</span> have to say
           </h2>
           <p className="font-light text-sm mt-1 text-center">
@@ -1003,7 +1011,7 @@ const Page = () => {
       {/* {section 8} */}
       <section className=" px-4 md:px-20 lg:px-40 mt-24 bg-secondary py-32">
         <div className="w-full flex flex-col justify-center items-center">
-          <h2 className="text-gray-800 mx-auto font-semibold font-graphik leading-[40px] text-center">
+          <h2 className="text-gray-800 mx-auto font-medium  leading-[40px] text-center">
             Your money will be{" "}
             <span className="text-primary">safe & secure</span>
           </h2>
@@ -1084,7 +1092,7 @@ const Page = () => {
       {/* {section 9} */}
       <section className=" px-4 md:px-20 lg:px-40 mt-40">
         <div className="w-full flex flex-col justify-center items-center">
-          <h2 className="text-gray-800 mx-auto  font-semibold font-graphik leading-[40px] text-center">
+          <h2 className="text-gray-800 mx-auto  font-medium  leading-[40px] text-center">
             Frequently <span className="text-primary">Asked</span> Questions
           </h2>
           <p className="font-extralight mt-1 text-sm text-center">
@@ -1115,7 +1123,7 @@ const Page = () => {
       </section>
       {/* {section 10} */}
       <section className="bg-secondary px-4 md:px-20 lg:px-40 py-20 mt-10">
-        <h2 className="text-gray-800 mx-auto font-semibold text-center font-graphik leading-[40px]">
+        <h2 className="text-gray-800 mx-auto font-medium text-center  leading-[40px]">
           <span className="text-primary">Resource Center</span>
         </h2>
         <p className="font-extralight mt-1 text-sm text-center">
@@ -1126,7 +1134,7 @@ const Page = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
           <div>
             <p className="font-light text-sm">Mar 16, 2020</p>
-            <h2 className="text-gray-800 font-semibold leading-[40px] mt-6">
+            <h2 className="text-gray-800 font-medium leading-[40px] mt-6">
               We’re incredibly proud to announce we have secured $75m in Series
               B
             </h2>
