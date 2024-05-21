@@ -28,8 +28,9 @@ const ImageSlider = () => {
   };
 
   return (
+    <div>
     <div className="flex gap-4 md:gap-4 items-center justify-center w-full">
-      <button className="" onClick={handlePrevClick}>
+      <button className="hidden md:block" onClick={handlePrevClick}>
         <FaChevronLeft color="#6C6C6C" size={40} />
       </button>
       <div className="max-w-[250px] sm:max-w-sm md:max-w-xl lg:max-w-[600px] bg-white">
@@ -52,7 +53,7 @@ const ImageSlider = () => {
         >
           {[1, 2, 3, 4, 5, 6, 7, 8, 9]?.map((item, index) => (
             <SwiperSlide className=" bg-white " key={index}>
-              <div className="bg-white rounded-xl border-2 py-12 px-6 drop-shadow-xl">
+              <div className="bg-white rounded-xl border-2 py-12 px-6 ">
                 <Image
                   src={"/assets/cords.png"}
                   alt="cots"
@@ -99,9 +100,18 @@ const ImageSlider = () => {
         </Swiper>
       </div>
 
-      <button className="" onClick={handleNextClick}>
+      <button className="hidden md:block" onClick={handleNextClick}>
         <FaChevronRight color="#6C6C6C" size={40} />
       </button>
+    </div>
+    <div className="flex gap-4 justify-center pt-6">
+    <button className="md:hidden" onClick={handlePrevClick}>
+        <FaChevronLeft color="#6C6C6C" size={40} />
+      </button>
+    <button className="md:hidden" onClick={handleNextClick}>
+        <FaChevronRight color="#6C6C6C" size={40} />
+      </button>
+    </div>
     </div>
   );
 };
