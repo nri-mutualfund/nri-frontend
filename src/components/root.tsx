@@ -5,7 +5,7 @@ import Header from "./header";
 import Footer from "./Footer";
 
 interface ConditionalWrapperProps {
-  routeName: string;
+  routeName: string[];
   children: React.ReactNode;
 }
 
@@ -15,7 +15,7 @@ const ConditionalWrapper: React.FC<ConditionalWrapperProps> = ({
 }) => {
   const currentRoute = usePathname();
 
-  return currentRoute === routeName ? (
+  return routeName.includes(currentRoute) ? (
     <>{children}</>
   ) : (
     <>
