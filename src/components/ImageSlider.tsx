@@ -13,7 +13,7 @@ import Image from "next/image";
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
 const ImageSlider = () => {
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<any>(null);
 
   const handlePrevClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {

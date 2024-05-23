@@ -175,7 +175,7 @@ const Page = () => {
                       {feature.name}
                     </dt>
                     {index === 3 ? (
-                      <dd className="text-sm text-base text-gray-600 mt-6">
+                      <dd className="text-sm text-base text-gray-600 mt-2 md:mt-6">
                         {feature.description}
                       </dd>
                     ) : (
@@ -274,8 +274,8 @@ const Page = () => {
                   height={1}
                 />
                 <div className="">
-                  <p className=" font-medium">Mutual Funds</p>
-                  <p className="mt-2 font-light">
+                  <p className="text-base font-medium">Mutual Funds</p>
+                  <p className="mt-2 text-[14px] text-[14px] font-light">
                     Diversified portfolio for long-term growth.
                   </p>
                 </div>
@@ -352,7 +352,7 @@ const Page = () => {
                 />
                 <div className="">
                   <p className=" font-medium">Fixed Deposits</p>
-                  <p className="mt-2 font-light">
+                  <p className="mt-2 text-[14px] font-light">
                     Diversified portfolio for long-term growth.
                   </p>
                 </div>
@@ -430,7 +430,7 @@ const Page = () => {
                 />
                 <div className="">
                   <p className=" font-medium">Commercial Real Estate</p>
-                  <p className="mt-2 font-light">
+                  <p className="mt-2 text-[14px] font-light">
                     Diversified portfolio for long-term growth.
                   </p>
                 </div>
@@ -506,7 +506,7 @@ const Page = () => {
                 />
                 <div className="">
                   <p className=" font-medium">PMS</p>
-                  <p className="mt-2 font-light">
+                  <p className="mt-2 text-[14px] font-light">
                     Diversified portfolio for long-term growth.
                   </p>
                 </div>
@@ -582,7 +582,7 @@ const Page = () => {
                 />
                 <div className="">
                   <p className=" font-medium">Bond</p>
-                  <p className="mt-2 font-light">
+                  <p className="mt-2 text-[14px] font-light">
                     Diversified portfolio for long-term growth.
                   </p>
                 </div>
@@ -1041,7 +1041,7 @@ const Page = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap  gap-4 md:gap-0   justify-between  items-start">
+        <div className="flex flex-wrap  gap-4 md:gap-0 pt-10  justify-between  items-start">
           <div className="w-full md:w-[20%] flex sm:flex-row md:flex-col gap-4 justify-center items-center">
             <Image
               src="/assets/dollar.png"

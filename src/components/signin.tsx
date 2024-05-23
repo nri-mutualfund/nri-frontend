@@ -11,7 +11,7 @@ const SignIn: React.FC<SignInProps> = ({ toggleForm }: SignInProps) => {
     <>
 <div className='flex '>
 <div className='w-1/2 bg-white rounded-r-lg rounded-l-lg flex justify-center items-center signIn'  >
-  <div className='w-full flex flex-col items-center pt-10 gap-4'>
+  <div className='w-full flex flex-col items-center py-5 gap-4'>
   <div className='bg-gray-300 text-black flex justify-center w-14 p-2 px-32 mb-10'>LOGO</div>
 <GoogleAuthButton />
 <div>
