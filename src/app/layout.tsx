@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import ConditionalWrapper from "@/components/root";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "NRI",
@@ -17,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+        <link
+          href="https://fonts.googleapis.com/css?family=Inter:400,500&display=swap"
+          rel="stylesheet"
+        />
+      <body style={{ fontFamily: "'Inter', serif"}}>
         <ConditionalWrapper routeName={["/signup", "/signin", "/verify"]}>
           {children}</ConditionalWrapper>
       </body>

@@ -1,9 +1,9 @@
 /* fonts.css */
-/* @font-face {
+@font-face {
     font-family: 'Graphik';
-    src: url('/fonts/graphik.woff2') format('woff2'), 
-         url('/fonts/graphik.woff') format('woff');
+    src: url('/fonts/graphik.woff2') format('woff2'), /* Update the file path accordingly */
+         url('/fonts/graphik.woff') format('woff'); /* Update the file path accordingly */
     font-weight: normal;
     font-style: normal;
-  } */
+  }
   

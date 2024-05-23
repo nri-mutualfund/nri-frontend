@@ -52,6 +52,8 @@ const config: Config = {
         h1: { fontSize: theme("fontSize.h1") },
         h2: { fontSize: theme("fontSize.h2") },
         h3: { fontSize: theme("fontSize.h3") },
+        h4: { fontSize: theme("fontSize.h3") },
+        h5: { fontSize: theme("fontSize.h3") },
       };
       addBase(headingStyles);
     }),
