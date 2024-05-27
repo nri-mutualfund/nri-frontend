@@ -15,12 +15,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
         <link
           href="https://fonts.googleapis.com/css?family=Inter:400,500&display=swap"
           rel="stylesheet"
         />
+      </head>
+
       <body style={{ fontFamily: "'Inter', serif"}}>
-        <ConditionalWrapper routeName={["/signup", "/signin", "/verify"]}>
+        <ConditionalWrapper routeName={["/signup", "/signin", "/verify","/verify-pan","/verify-pan2"]}>
           {children}</ConditionalWrapper>
       </body>
     </html>
