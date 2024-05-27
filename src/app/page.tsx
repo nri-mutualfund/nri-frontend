@@ -13,7 +13,7 @@ import SectionTen from "@/components/SectionTen";
 import { useQuery } from "@tanstack/react-query";
 import { getSectionBlog, getSectionFAQ, getSectionFive, getSectionFour, getSectionOne, getSectionSix, getSectionThree, getSectionTwo } from "./api/api";
 const Page = () => {
-  const { data, isLoading, status, isError } = useQuery({
+  const { data, isLoading, status, isSuccess } = useQuery({
     queryKey: ["post"],
     queryFn: getSectionOne,
   });
