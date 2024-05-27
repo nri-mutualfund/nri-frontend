@@ -13,7 +13,8 @@ export interface DataProps {
         user_name:string;
         blog_heading:string;
         blog_content:string
-        created_at:string
+        created_at:string;
+        rating:string;
     }>;
     content_one: string[];
     content_two: string[];
