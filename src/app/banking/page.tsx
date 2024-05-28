@@ -7,8 +7,8 @@ const page = () => {
     <div className=" flex sm:flex-col md:flex-row items-center gap-8 justify-center  w-full my-10">
         <div className='w-[50%] '>
             <div className='pr-32'>
-            <h2 className='font-medium leading-snug text-slate-800  '>Open your NRO, NRE Bank Account with  </h2>
-            <h2  className='font-medium leading-snug text-primary pb-6'>Renowned Indian Banks</h2>
+            <h1 className='font-medium leading-snug text-slate-800  '>Open your NRO, NRE Bank Account with  </h1>
+            <h1  className='font-medium leading-snug text-primary pb-6'>Renowned Indian Banks</h1>
             <p className='font-medium w-auto'>Apply in multiple partner banks to speed-up your NRI bank account opening process. It is now easy, fast and secure for NRIs & OCIs to bank in India with SBNRI.</p>
         </div>
         <ul className='flex flex-col gap-4 pt-4'>
