@@ -18,7 +18,7 @@ const SignUp = () => {
     setIsValidEmail(emailRegex.test(newEmail));
     setEmail(newEmail);
   };
-  const queryParams = { name: name };
+  const queryParams = { name: name,email:email };
   const queryString = new URLSearchParams(queryParams).toString();
   const {isSuccess,mutate} = useMutation({mutationKey:["key1"], mutationFn:()=> verifyEmail(email)});
   const VerifyEmailForOtp = () => {

@@ -5,6 +5,9 @@ import { IoChevronDownOutline } from "react-icons/io5";
 import { FaLock } from "react-icons/fa";
 import Image from "next/image";
 import moment from "moment";
+import Link from "next/link";
+import { Query, useQuery } from "@tanstack/react-query";
+import {getDetails} from "./api"
 const Page = () => {
   const [country, setCountry] = useState("");
   const [pan, setPan] = useState("");
@@ -16,6 +19,10 @@ const Page = () => {
     FR: "+33",
     UK: "+44",
   };
+  const {data} = useQuery({
+    queryKey:["key22"],
+    queryFn:getDetails
+  })
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -126,9 +133,12 @@ const Page = () => {
                 </div>
               </div>
               <div className="mt-4 w-full rounded-md bg-secondary px-4 py-4 relative">
+                <Link href={"https://www.amfiindia.com/investor-corner/investor-center/kyc.html"} target="_blank">
                 <p className="underline underline-offset-4 text-gray-700">
                   Why do we ask this?
                 </p>
+                </Link>
+
                 <p className="text-xs mt-4 md:max-w-[60%] text-gray-500">{`It's a mandatory request from SEBI. All
                  investors must provide their PAN details to
                  open investment account.`}</p>
