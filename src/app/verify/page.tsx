@@ -30,7 +30,7 @@ const Page = () => {
     mutationFn:createUser,
     onSuccess:(data)=>{
       router.push("verify-pan");
-      localStorage.setItem("token",data?.token)
+      localStorage.setItem("token",data?.accessToken);
   },
   onError:(error)=>{
     alert(error?.response?.data?.data)
