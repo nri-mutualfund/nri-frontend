@@ -8,6 +8,7 @@ export const verifyEmail = async (values) => {
     )
     return response.data;
   } catch (error) {
-    console.log(error)
+    console.log(error);
+    throw error
   }
 }

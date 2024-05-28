@@ -4,8 +4,9 @@ import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
+import { addDetails } from "./api";
 const Page = () => {
-    const router = useRouter()
+  const router = useRouter();
   const [country, setCountry] = useState("");
   const [residentialStatus, setStaus] = useState("");
   const [isFromCanadaOrUS, setOrigin] = useState(false);
@@ -16,13 +17,43 @@ const Page = () => {
     FR: "+33",
     UK: "+44",
   };
- 
+  const getFullName = {
+    US: "United States",
+    GE: "Germany",
+    IND: "India",
+    FR: "France",
+    UK: "United Kingdom",
+  };
+  const { mutate } = useMutation({
+    mutationKey: ["key1"],
+    mutationFn: addDetails,
+    onSuccess: (data) => {
+      router.push("verify-pan2");
+    },
+    onError: (error) => {},
+  });
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    console.log("data", data);
-    router.push("./verify-pan2")
+    let newData = {
+      located_at: data?.country,
+      phone_number: getCodes[data?.country] + data.phone,
+    };
+    if (country !== "IND") {
+      newData = {
+        ...newData,
+        residency_status: residentialStatus,
+      };
+
+      if (data?.isFromCanadaOrUS === "on") {
+        newData = {
+          ...newData,
+          is_usa_or_canada: true,
+        };
+      }
+    }
+    mutate(newData);
   };
   return (
     <>
@@ -194,9 +225,9 @@ const Page = () => {
                           {getCodes[country]}
                         </p>
                         <input
-                          id="phone2"
-                          name="phone2"
-                          type="phone2"
+                          id="phone"
+                          name="phone"
+                          type="phone"
                           autoComplete="phone"
                           required
                           className="block w-full placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
