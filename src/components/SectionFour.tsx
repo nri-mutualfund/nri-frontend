@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { GoArrowRight } from "react-icons/go";
 type DataProps = {
@@ -6,6 +7,7 @@ type DataProps = {
 };
 const SectionFour = ({ data }: DataProps) => {
   const [showArrow, setShowArrow] = useState(false);
+const router = useRouter();
   return (
     <section className=" px-4 md:px-20 lg:px-40  py-14 md:py-24 lg:py-32 bg-secondary">
       <div className="grid grid-cols-1 gap-x-20 gap-y-10 mt-4 lg:grid-cols-2 items-center">
@@ -18,7 +20,7 @@ const SectionFour = ({ data }: DataProps) => {
           <p className="text-sm font-light mt-1">{data?.detail}</p>
           <div className="flex flex-wrap gap-2">
             <div className="flex  items-start mt-10">
-              <button className="px-8  py-2  text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+              <button onClick={()=>router.push('/banking')} className="px-8  py-2  text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
                 Create Account
               </button>
             </div>
