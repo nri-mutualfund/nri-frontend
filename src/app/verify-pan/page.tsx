@@ -37,7 +37,7 @@ const Page = () => {
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
     let newData = {
-      located_at: data?.country,
+      located_at: getFullName[data?.country],
       phone_number: getCodes[data?.country] + data.phone,
     };
     if (country !== "IND") {

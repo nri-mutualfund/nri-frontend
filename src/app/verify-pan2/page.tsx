@@ -4,32 +4,36 @@ import React, { useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { FaLock } from "react-icons/fa";
 import Image from "next/image";
-import moment from "moment";
 import Link from "next/link";
-import { Query, useQuery } from "@tanstack/react-query";
-import {getDetails} from "./api"
+import { useMutation, useQuery } from "@tanstack/react-query";
+import {addDetails2, getDetails} from "./api"
 const Page = () => {
   const [country, setCountry] = useState("");
   const [pan, setPan] = useState("");
-  const [isFromCanadaOrUS, setOrigin] = useState(false);
-  const getCodes = {
-    US: "+1",
-    GE: "+49",
-    IND: "+91",
-    FR: "+33",
-    UK: "+44",
-  };
+  const [checked, setChecked] = useState(false);
   const {data} = useQuery({
     queryKey:["key22"],
     queryFn:getDetails
   })
+  const { mutate } = useMutation({
+    mutationFn: addDetails2,
+    onSuccess: (data) => {
+      setChecked(true)
+    },
+    onError: (error) => {
+      console.log("error",error)
+    },
+  });
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    const newDate = new Date(`${data?.date}-${data?.month}-${data?.year}`)
-    console.log("data", data,newDate);
-    console.log("new Date",moment(newDate))
+    const newDate = `${data?.date}/${data?.month}/${data?.year}`
+    const newData = {
+      pan:data.pan,
+      dob:newDate
+    }
+    console.log("data",newData);
   };
   return (
     <>
@@ -55,12 +59,9 @@ const Page = () => {
                 <div className="mt-2 relative">
                   <select
                     disabled
-                    onChange={(e) => {
-                      setCountry(e.target.value);
-                    }}
                     className="px-4 pr-10 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 appearance-none"
                   >
-                    <option>United States</option>
+                    <option>{data?.located_at}</option>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                     <IoChevronDownOutline color="#8898aa" />
@@ -79,13 +80,15 @@ const Page = () => {
                 </label>
                 <div className="mt-2 flex gap-4">
                   <input
-                    value={pan}
-                    onChange={(e) => setPan(e.target.value)}
+                   id="pan"
+                   type="text"
+                   name="pan"
                     autoComplete="off"
+                    required
                     className=" px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   />
                   <button
-                    type="button"
+                    type="submit"
                     className="flex px-6 justify-center rounded-md bg-primary py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     Check
@@ -150,19 +153,19 @@ const Page = () => {
                   height={1}
                 />
               </div>
-              <div className="flex justify-between">
-                <button
-                  type="submit"
+              <div className="">
+               {checked? <button
+                  type="button"
                   className="flex w-1/3 justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
                   Continue
-                </button>
-                <button
+                </button>:  <button
                   type="button"
-                  className="flex w-1/3 justify-center rounded-md border-primary border px-3 py-1.5 text-sm font-semibold leading-6 text-primary shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  className="flex w-1/3 justify-center rounded-md border-primary border px-3 py-1.5 text-sm font-semibold leading-6 text-primary shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ml-auto"
                 >
                   Skip
-                </button>
+                </button>}
+              
               </div>
             </form>
           </div>
