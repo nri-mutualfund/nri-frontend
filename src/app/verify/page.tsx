@@ -9,40 +9,42 @@ const Page = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const nameProp = searchParams.get("name");
+  const emailProp = searchParams.get("email");
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
     console.log("data", data);
     const newData = {
-      email: data.email,
+      email: email,
       verificationCode: data.code,
       password: data.password,
-      first_name: data.name,
+      first_name: name,
     };
-try {   const res =  await createUser(newData);
-    if(res){
-     router.push('verify-pan')
-     alert("user created successfully!")
-    }
-    
-} catch (error) {
-    console.log("error")
-}
-    // router.push("/verify-pan")
-    // Navigate to the next route after form submission
+    mutate(newData);
   };
-  const { isSuccess, mutate } = useMutation({
-    // mutationKey: ["key2"],
-    mutationFn: submit,
+  const { data,isSuccess, mutate ,isError,error} = useMutation({
+    mutationKey: ["key2"],
+    mutationFn:createUser,
+    onSuccess:(data)=>{
+      router.push("verify-pan");
+      localStorage.setItem("token",data?.token)
+  },
+  onError:(error)=>{
+    alert(error?.response?.data?.data)
+  }
   });
 
-  useEffect(() => {
-    if (nameProp) {
-      setName(nameProp);
-    }
-  }, []);
+useEffect(()=>{
+  if (nameProp) {
+    setName(nameProp);
+  }
+  if (emailProp) {
+    setEmail(emailProp);
+  }
+},[])
   return (
     <>
       <div className="w-100% flex">
@@ -84,7 +86,8 @@ try {   const res =  await createUser(newData);
                     autoComplete="name"
                     required
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    disabled
+                    // onChange={(e) => setName(e.target.value)}
                     className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -103,6 +106,8 @@ try {   const res =  await createUser(newData);
                     type="email"
                     autoComplete="email"
                     required
+                    value={email}
+                    disabled
                     className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -142,6 +147,7 @@ try {   const res =  await createUser(newData);
                     type="password"
                     autoComplete="new-password"
                     required
+                    minLength={8}
                     className=" px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   />
                 </div>
