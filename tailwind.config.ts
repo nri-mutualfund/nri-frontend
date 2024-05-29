@@ -24,14 +24,14 @@ const config: Config = {
       },
       fontFamily: {
         "area-normal": ["area-normal", "sans-serif"],
-        inter: ['Inter', 'sans-serif'],
+        inter: ["Inter", "sans-serif"],
         lato: ["Lato", "sans-serif"],
         graphik: ["Graphik", "sans-serif"],
         sans: ["Graphik", "sans-serif"],
       },
       fontSize: {
         h1: "44px",
-        h2: "36px",
+        h2: "32px",
         h3: "30px",
         h4: "24px",
         h5: "20px",
