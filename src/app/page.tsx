@@ -11,7 +11,17 @@ import SectionEight from "@/components/SectionEight";
 import SectionNine from "@/components/SectionNine";
 import SectionTen from "@/components/SectionTen";
 import { useQuery } from "@tanstack/react-query";
-import { getSectionBlog, getSectionFAQ, getSectionFive, getSectionFour, getSectionOne, getSectionSix, getSectionThree, getSectionTwo } from "./api/api";
+import {
+  getSectionBlog,
+  getSectionFAQ,
+  getSectionFive,
+  getSectionFour,
+  getSectionOne,
+  getSectionSix,
+  getSectionThree,
+  getSectionTwo,
+} from "./api/api";
+import Section11 from "@/components/Section11";
 const Page = () => {
   const { data, isLoading, status, isSuccess } = useQuery({
     queryKey: ["post"],
@@ -45,9 +55,18 @@ const Page = () => {
     queryKey: ["post8"],
     queryFn: getSectionBlog,
   });
-  const checkLoading = ()=>{
-    return isLoading&&sectionTwo?.isLoading&&sectionThree?.isLoading&&sectionFour?.isLoading&&sectionFive?.isLoading&&sectionSix?.isLoading&&sectionFAQ?.isLoading&&sectionBlog?.isLoading;
-  }
+  const checkLoading = () => {
+    return (
+      isLoading &&
+      sectionTwo?.isLoading &&
+      sectionThree?.isLoading &&
+      sectionFour?.isLoading &&
+      sectionFive?.isLoading &&
+      sectionSix?.isLoading &&
+      sectionFAQ?.isLoading &&
+      sectionBlog?.isLoading
+    );
+  };
   return (
     <>
       {checkLoading() ? (
@@ -66,7 +85,7 @@ const Page = () => {
           {/* section 2 */}
           <SectionTwo data={sectionTwo?.data} />
           {/* section 3 */}
-          <SectionThree  data={sectionThree.data}/>
+          <SectionThree data={sectionThree.data} />
           {/* section 4 */}
           <SectionFour data={sectionFour.data} />
           {/* section 5 */}
@@ -79,6 +98,8 @@ const Page = () => {
           <SectionEight data={sectionFAQ.data} />
           {/* {section 9} */}
           <SectionNine data={sectionBlog.data} />
+          {/* Section11 */}
+          <Section11 />
           {/* {section 10} */}
           <SectionTen />
         </div>
