@@ -22,30 +22,21 @@ const Header = () => {
         /> */}
 
         <nav className="flex items-center text-base gap-12">
-          <Link
-            href={"/"}
-            className="cursor-pointer hover:text-gray-900 "
-          >
+          <Link href={"/"} className="cursor-pointer hover:text-gray-900 ">
             {/* <Image src={Logo} width={70} alt="logo" /> */}
             Logo
           </Link>
           <ul className="gap-12 md:flex items-center hidden">
-            <Link
-              href={"/"}
-              className="cursor-pointer hover:text-gray-900 "
-            >
+            <Link href={"/"} className="cursor-pointer hover:text-gray-900 ">
               Home
             </Link>
             <Link
-              href={"/"}
+              href={"/join-the-community"}
               className="cursor-pointer hover:text-gray-900 "
             >
               Join the Community
             </Link>
-            <Link
-              href={"/"}
-              className="cursor-pointer hover:text-gray-900 "
-            >
+            <Link href={"/faq"} className="cursor-pointer hover:text-gray-900 ">
               FAQ
             </Link>
             <Link
@@ -107,14 +98,14 @@ const Header = () => {
               Home
             </Link>
             <Link
-              href={"/"}
+              href={"/join-the-community"}
               onClick={handleNav}
               className="cursor-pointer hover:text-gray-900 "
             >
               Join the Community
             </Link>
             <Link
-              href={"/"}
+              href={"/faq"}
               onClick={handleNav}
               className="cursor-pointer hover:text-gray-900 "
             >
