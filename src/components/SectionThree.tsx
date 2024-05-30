@@ -1,13 +1,17 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import { TbAntennaBars5 } from "react-icons/tb";
-import { FaCanadianMapleLeaf, FaArrowRight } from "react-icons/fa";
-import { PiShootingStarThin } from "react-icons/pi";
-import {DataProps} from "../utility/type"
+import { IoBarChartOutline, IoLockOpenOutline } from "react-icons/io5";
+import { GiSandsOfTime } from "react-icons/gi";
+import { RiLuggageDepositLine } from "react-icons/ri";
+import { BsHouseCheck, BsGraphUpArrow } from "react-icons/bs";
+import { DataProps } from "../utility/type";
+import { MdSavings } from "react-icons/md";
+import { HiOutlineDocumentMinus } from "react-icons/hi2";
+
 interface SectionOneProps {
   data: DataProps;
 }
-const SectionThree = ({data}:SectionOneProps) => {
+const SectionThree = ({ data }: SectionOneProps) => {
   const [activeIndex, setIndex] = useState(0);
   const [expandIndex, setExpand] = useState(6);
 
@@ -17,6 +21,13 @@ const SectionThree = ({data}:SectionOneProps) => {
     "/assets/house.png",
     "/assets/saving.png",
     "/assets/bond.png",
+  ];
+  const icons = [
+    { icon: <MdSavings size={40} color="#008000" /> },
+    { icon: <BsHouseCheck size={40} color="#008000" /> },
+    { icon: <RiLuggageDepositLine size={40} color="#008000" /> },
+    { icon: <BsGraphUpArrow size={40} color="#008000" /> },
+    { icon: <HiOutlineDocumentMinus size={40} color="#008000" /> },
   ];
   return (
     <section className=" px-4 md:px-20 lg:px-40 py-14 md:py-24 ">
@@ -55,11 +66,11 @@ const SectionThree = ({data}:SectionOneProps) => {
                         key={index1}
                       >
                         {index1 % 3 === 0 ? (
-                          <TbAntennaBars5 />
+                          <IoBarChartOutline />
                         ) : index1 % 3 === 1 ? (
-                          <FaCanadianMapleLeaf />
+                          <GiSandsOfTime />
                         ) : (
-                          <PiShootingStarThin />
+                          <IoLockOpenOutline />
                         )}
 
                         <p className="text-sm font-light">{item1}</p>
@@ -79,13 +90,7 @@ const SectionThree = ({data}:SectionOneProps) => {
                   setExpand(index);
                 }}
               >
-                <Image
-                  src={images[index]}
-                  alt="Your Image Alt Text"
-                  className="w-[40px] sm:w-[48px]"
-                  width={500}
-                  height={1}
-                />
+                {icons[index]?.icon}
                 <div className="">
                   <p className=" font-medium">{item?.heading}</p>
                   <p className="mt-2 font-light">{item?.short_description}</p>
@@ -110,13 +115,7 @@ const SectionThree = ({data}:SectionOneProps) => {
                 setIndex(index);
               }}
             >
-              <Image
-                src={images[index]}
-                alt="Your Image Alt Text"
-                className="w-[48px]"
-                width={500}
-                height={1}
-              />
+              {icons[index]?.icon}
               <div className="">
                 <p className="text-xl font-medium">{item?.heading}</p>
                 <p className="mt-2 font-light text-sm">
@@ -147,11 +146,11 @@ const SectionThree = ({data}:SectionOneProps) => {
                 .map((item1, index1) => (
                   <div className="flex gap-2 items-center mt-4" key={index1}>
                     {index1 % 3 === 0 ? (
-                      <TbAntennaBars5 />
+                      <IoBarChartOutline />
                     ) : index1 % 3 === 1 ? (
-                      <FaCanadianMapleLeaf />
+                      <GiSandsOfTime />
                     ) : (
-                      <PiShootingStarThin />
+                      <IoLockOpenOutline />
                     )}
 
                     <p className="text-sm font-light">{item1}</p>
