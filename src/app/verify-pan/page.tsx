@@ -10,14 +10,14 @@ const Page = () => {
   const [country, setCountry] = useState("");
   const [residentialStatus, setStaus] = useState("");
   const [isFromCanadaOrUS, setOrigin] = useState(false);
-  const getCodes = {
+  const getCodes: { [key: string]: string } = {
     US: "+1",
     GE: "+49",
-    IND: "+91",
+    CA: "+1",
     FR: "+33",
     UK: "+44",
   };
-  const getFullName = {
+  const getFullName: { [key: string]: string } = {
     US: "United States",
     GE: "Germany",
     IND: "India",

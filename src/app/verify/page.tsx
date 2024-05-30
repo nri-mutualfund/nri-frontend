@@ -25,26 +25,26 @@ const Page = () => {
     };
     mutate(newData);
   };
-  const { data,isSuccess, mutate ,isError,error} = useMutation({
+  const { data, isSuccess, mutate, isError, error } = useMutation({
     mutationKey: ["key2"],
-    mutationFn:createUser,
-    onSuccess:(data)=>{
+    mutationFn: createUser,
+    onSuccess: (data) => {
       router.push("verify-pan");
-      localStorage.setItem("token",data?.accessToken);
-  },
-  onError:(error)=>{
-    alert(error?.response?.data?.data)
-  }
+      localStorage.setItem("token", data?.accessToken);
+    },
+    onError: (error) => {
+      alert(error?.response?.data?.data);
+    },
   });
 
-useEffect(()=>{
-  if (nameProp) {
-    setName(nameProp);
-  }
-  if (emailProp) {
-    setEmail(emailProp);
-  }
-},[])
+  useEffect(() => {
+    if (nameProp) {
+      setName(nameProp);
+    }
+    if (emailProp) {
+      setEmail(emailProp);
+    }
+  }, []);
   return (
     <>
       <div className="w-100% flex">
@@ -64,7 +64,7 @@ useEffect(()=>{
                 href="/signin"
                 className="font-semibold leading-6 text-primary hover:text-green-600"
               >
-                SignIn
+                Sign In
               </Link>
             </p>
           </div>

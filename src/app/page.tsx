@@ -22,6 +22,7 @@ import {
   getSectionTwo,
 } from "./api/api";
 import Section11 from "@/components/Section11";
+import Section12 from "@/components/Section12";
 const Page = () => {
   const { data, isLoading, status, isSuccess } = useQuery({
     queryKey: ["post"],
@@ -100,6 +101,8 @@ const Page = () => {
           <SectionNine data={sectionBlog.data} />
           {/* Section11 */}
           <Section11 />
+          {/* Section 12 */}
+          <Section12 />
           {/* {section 10} */}
           <SectionTen />
         </div>

@@ -125,24 +125,24 @@ const SignUp = () => {
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
-            className="h-10 w-auto"
+            className="h-10 w-auto mx-auto"
             src="https://tailwindui.com/img/logos/mark.svg?color=green&shade=700"
             alt="Your Company"
           />
-          <h2 className="mt-10 text-start font-bold leading-9 tracking-tight text-gray-900">
+          <h2 className="mt-10 font-bold leading-9 tracking-tight text-gray-900 text-center">
             Create an account
           </h2>
-          <p className="mt-4  text-sm text-gray-600">
+          <p className="mt-4  text-sm text-gray-600 text-center">
             Already have an account?{" "}
             <a
               href="/signin"
               className="font-semibold leading-6 text-primary hover:text-green-600"
             >
-              SignIn
+              Sign In
             </a>
           </p>
         </div>
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white md:px-10 py-10 rounded-sm md:drop-shadow-lg">
+        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white md:px-10 py-10 rounded-md md:shadow-md border border-gray-200">
           <form className="space-y-6" action="#" method="POST">
             <div>
               <label
