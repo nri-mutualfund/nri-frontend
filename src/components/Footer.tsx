@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 const Footer = () => {
   return (
-    <div className="w-full bg-secondary ">
+    <div className="w-full bg-secondary">
       <div className="max-w-screen-2xl mx-auto py-6 xl:px-40 md:px-16 px-10">
         <div className="w-full flex flex-wrap items-start gap-20 md:gap-10 lg:gap-0 justify-between mt-20">
           <div className="w-full lg:w-[45%] px-4">

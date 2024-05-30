@@ -9,14 +9,14 @@ const SignIn = () => {
   const { isSuccess, mutate } = useMutation({
     mutationKey: ["key1"],
     mutationFn: signIn,
-    onSuccess:(data)=>{
-        router.push("verify-pan");
-        localStorage.setItem("token",data?.token)
+    onSuccess: (data) => {
+      router.push("verify-pan");
+      localStorage.setItem("token", data?.token);
     },
-    onError:(error)=>{
-        console.log("error",error)
-        alert("user unauthorized!")
-    }
+    onError: (error) => {
+      console.log("error", error);
+      alert("user unauthorized!");
+    },
   });
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -44,7 +44,7 @@ const SignIn = () => {
                 href="/signup"
                 className="font-semibold leading-6 text-primary hover:text-green-600"
               >
-                SignUp
+                Sign Up
               </a>
             </p>
           </div>
