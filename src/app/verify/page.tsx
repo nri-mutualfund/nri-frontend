@@ -5,6 +5,13 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { createUser } from "./api";
+interface CustomError extends Error {
+  response?: {
+    data?: {
+      data?: string;
+    };
+  };
+}
 const Page = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -32,7 +39,7 @@ const Page = () => {
       router.push("verify-pan");
       localStorage.setItem("token", data?.accessToken);
     },
-    onError: (error) => {
+    onError: (error: CustomError) => {
       alert(error?.response?.data?.data);
     },
   });
