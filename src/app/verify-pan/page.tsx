@@ -5,6 +5,13 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { addDetails } from "./api";
+import Section11 from "@/components/Section11";
+interface NewData {
+  located_at: string;
+  phone_number: string;
+  residency_status?: string;
+  is_usa_or_canada?: boolean;
+}
 const Page = () => {
   const router = useRouter();
   const [country, setCountry] = useState("");
@@ -36,8 +43,13 @@ const Page = () => {
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    let newData = {
+    // const data = Object.fromEntries(formData.entries());
+    const data = Object.fromEntries(formData.entries()) as Record<
+      string,
+      string
+    >;
+
+    let newData: NewData = {
       located_at: getFullName[data?.country],
       phone_number: getCodes[data?.country] + data.phone,
     };
@@ -54,6 +66,7 @@ const Page = () => {
         };
       }
     }
+    // console.log("newData", newData);
     mutate(newData);
   };
   return (
