@@ -85,26 +85,27 @@ const Page = () => {
                     <div className="flex items-center gap-1">
                       <MdOutlinePercent color="#555" />
                       <p className="text-sm font-semibold text-[#555]">
-                        Up to 7.50% p.a. FD Rate
+                        Up to 7.4% p.a. FD Rate
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <MdLocationOn color="#555" />
                       <p className="text-sm font-semibold text-[#555]">
-                        520+ Branches
+                        5000+ Branches
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <RxCountdownTimer color="#555" />
                       <p className="text-sm font-semibold text-[#555]">
-                        Fast Process Time
+                        Medium Process Time
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm font-medium text-gray-400">
-                    <span className="font-bold text-2xl">.</span> Medical
-                    assistance for loved ones back home in India
-                  </p>
+                  <ul className="pt-4 list-disc list-inside space-y-2">
+                    <li className="text-sm font-medium text-gray-400">
+                      Medical assistance for loved ones back home in India
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div className="flex gap-4 items-center border-t px-8 py-6">
@@ -121,13 +122,13 @@ const Page = () => {
                     <div className="flex items-center gap-1">
                       <MdOutlinePercent color="#555" />
                       <p className="text-sm font-semibold text-[#555]">
-                        Up to 7.40% p.a. FD Rate
+                        Up to 7.60% p.a. FD Rate
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <MdLocationOn color="#555" />
                       <p className="text-sm font-semibold text-[#555]">
-                        4900+ Branches
+                        8700+ Branches
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
@@ -137,10 +138,11 @@ const Page = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm font-medium text-gray-400">
-                    <span className="font-bold text-2xl">.</span> Savings
-                    Account Interest Rate – Up to 3.5% p.a
-                  </p>
+                  <ul className="pt-4 list-disc list-inside space-y-2">
+                    <li className="text-sm font-medium text-gray-400">
+                      Savings Account Interest Rate – Up to 3.5% p.a
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div className="flex gap-4 items-center border-t px-8 py-6">
@@ -157,13 +159,13 @@ const Page = () => {
                     <div className="flex items-center gap-1">
                       <MdOutlinePercent color="#555" />
                       <p className="text-sm font-semibold text-[#555]">
-                        Up to 7.75% p.a. FD Rate
+                        Up to 7.25% p.a. FD Rate
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <MdLocationOn color="#555" />
                       <p className="text-sm font-semibold text-[#555]">
-                        3300+ Branche
+                        800+ Branches
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
@@ -173,10 +175,12 @@ const Page = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm font-medium text-gray-400">
-                    <span className="font-bold text-2xl">.</span> Savings
-                    Account Interest Rate – Up to 6.25% p.a.
-                  </p>
+
+                  <ul className="pt-4 list-disc list-inside space-y-2">
+                    <li className="text-sm font-medium text-gray-400">
+                      Savings Account Interest Rate – Up to 6.25% p.a
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -284,7 +288,7 @@ const Page = () => {
                     Start Process Now
                   </button>
                 </form>
-                <ul className="pt-4">
+                <ul className="pt-4 list-disc list-inside space-y-2">
                   <li className="text-gray-300 text-xs font-thin">
                     I have checked all the details and these details can be used
                     for my bank account opening.
