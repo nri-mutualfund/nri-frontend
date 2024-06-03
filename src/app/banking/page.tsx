@@ -1,7 +1,7 @@
 "use client";
 import MultiSelect from "@/components/MultipleSelect";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { MdOutlinePercent, MdLocationOn } from "react-icons/md";
@@ -36,9 +36,10 @@ const Page = () => {
     const data = Object.fromEntries(formData.entries());
     console.log("data", data);
   };
+
   return (
     <>
-      <section className="xl:px-40 md:px-16 px-10 py-14">
+      <section className="xl:px-40 md:px-16 px-10 py-14 bg-[#f2f8f24d]">
         <div className="flex flex-wrap items-start justify-center gap-y-20">
           <div className="w-full lg:w-[60%]">
             <div className="">
@@ -71,44 +72,7 @@ const Page = () => {
               </ul>
             </div>
             <div className="bg-white border-gray-200 border shadow-sm rounded-lg mt-10">
-              <div className="flex gap-4 items-center px-8 py-6 ">
-                <Image
-                  src="/assets/axis.png"
-                  alt="Your Image Alt Text"
-                  className="w-[70px] transition-all duration-300 hover:scale-110"
-                  width={500}
-                  height={1}
-                />
-                <div>
-                  <p className="text-lg font-semibold text-[#333]">Axis Bank</p>
-                  <div className="flex items-center gap-2 mt-3 flex-wrap">
-                    <div className="flex items-center gap-1">
-                      <MdOutlinePercent color="#555" />
-                      <p className="text-sm font-semibold text-[#555]">
-                        Up to 7.4% p.a. FD Rate
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <MdLocationOn color="#555" />
-                      <p className="text-sm font-semibold text-[#555]">
-                        5000+ Branches
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <RxCountdownTimer color="#555" />
-                      <p className="text-sm font-semibold text-[#555]">
-                        Medium Process Time
-                      </p>
-                    </div>
-                  </div>
-                  <ul className="pt-4 list-disc list-inside space-y-2">
-                    <li className="text-sm font-medium text-gray-400">
-                      Medical assistance for loved ones back home in India
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="flex gap-4 items-center border-t px-8 py-6">
+              <div className="flex gap-4 items-center px-8 py-6">
                 <Image
                   src="/assets/HDFC_LOGO.png"
                   alt="Your Image Alt Text"
@@ -140,7 +104,7 @@ const Page = () => {
                   </div>
                   <ul className="pt-4 list-disc list-inside space-y-2">
                     <li className="text-sm font-medium text-gray-400">
-                      Savings Account Interest Rate – Up to 3.5% p.a
+                      Savings Account Interest Rate – Up to 3.0% p.a
                     </li>
                   </ul>
                 </div>
@@ -178,7 +142,44 @@ const Page = () => {
 
                   <ul className="pt-4 list-disc list-inside space-y-2">
                     <li className="text-sm font-medium text-gray-400">
-                      Savings Account Interest Rate – Up to 6.25% p.a
+                      Savings Account Interest Rate – Up to 3.0% p.a
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex gap-4 items-center border-t px-8 py-6 ">
+                <Image
+                  src="/assets/axis.png"
+                  alt="Your Image Alt Text"
+                  className="w-[70px] transition-all duration-300 hover:scale-110"
+                  width={500}
+                  height={1}
+                />
+                <div>
+                  <p className="text-lg font-semibold text-[#333]">Axis Bank</p>
+                  <div className="flex items-center gap-2 mt-3 flex-wrap">
+                    <div className="flex items-center gap-1">
+                      <MdOutlinePercent color="#555" />
+                      <p className="text-sm font-semibold text-[#555]">
+                        Up to 7.4% p.a. FD Rate
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MdLocationOn color="#555" />
+                      <p className="text-sm font-semibold text-[#555]">
+                        5000+ Branches
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <RxCountdownTimer color="#555" />
+                      <p className="text-sm font-semibold text-[#555]">
+                        Medium Process Time
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="pt-4 list-disc list-inside space-y-2">
+                    <li className="text-sm font-medium text-gray-400">
+                      Savings Account Interest Rate – Up to 3.5% p.a
                     </li>
                   </ul>
                 </div>
@@ -187,7 +188,7 @@ const Page = () => {
           </div>
 
           <div className="w-full lg:w-[40%] flex justify-center lg:justify-end items-start">
-            <div>
+            <div className="">
               <div className="bg-white border-gray-200 border-2 shadow-md rounded-lg px-8 py-6 max-w-sm">
                 <h1 className="text-xl font-medium text-center  ">
                   Apply in 20 seconds
