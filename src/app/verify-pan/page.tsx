@@ -14,17 +14,24 @@ interface NewData {
 }
 const Page = () => {
   const router = useRouter();
-  const [country, setCountry] = useState("");
-  const [residentialStatus, setStaus] = useState("");
-  const [isFromCanadaOrUS, setOrigin] = useState(false);
-  const getCodes: { [key: string]: string } = {
-    US: "+1",
-    GE: "+49",
-    CA: "+1",
-    FR: "+33",
-    UK: "+44",
-    IND: "+91",
-  };
+  const [country, setCountry] = useState<string>("");
+  const [residentialStatus, setStaus] = useState<string>("");
+  const [isFromCanadaOrUS, setOrigin] = useState<boolean>(false);
+  const getCodes: {
+    US: string;
+    GE: string;
+    CA: string;
+    FR: string;
+    UK: string;
+    IND: string;
+} = {
+    US: "US_code",
+    GE: "GE_code",
+    CA: "CA_code",
+    FR: "FR_code",
+    UK: "UK_code",
+    IND: "IND_code",
+};
   const getFullName: { [key: string]: string } = {
     US: "United States",
     GE: "Germany",
@@ -43,22 +50,18 @@ const Page = () => {
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    // const data = Object.fromEntries(formData.entries());
-    const data = Object.fromEntries(formData.entries()) as Record<
-      string,
-      string
-    >;
+    const data = Object.fromEntries(formData.entries());
+    let newData: any = {
+      located_at: (getFullName as any)[data?.country as any],
+      phone_number: (getCodes as any)[data?.country as any] + data.phone,
 
-    let newData: NewData = {
-      located_at: getFullName[data?.country],
-      phone_number: getCodes[data?.country] + data.phone,
     };
     if (country !== "IND") {
       newData = {
         ...newData,
         residency_status: residentialStatus,
       };
-
+    
       if (data?.isFromCanadaOrUS === "on") {
         newData = {
           ...newData,
@@ -66,9 +69,8 @@ const Page = () => {
         };
       }
     }
-    // console.log("newData", newData);
-    mutate(newData);
-  };
+    mutate(newData as any);
+    };
   return (
     <>
       <div className="flex min-h-screen flex-1 flex-col justify-start px-10 py-12 lg:px-8">
@@ -233,7 +235,7 @@ const Page = () => {
                   <div className="mt-2">
                     <div className="flex w-full rounded-md border-0 py-0.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
                       <p className="border-r-2 px-4 py-1">
-                        {getCodes[country]}
+                      {getCodes[country as keyof typeof getCodes] || "Invalid Country"} {/* Conditional check for valid key */}
                       </p>
                       <input
                         id="phone"
@@ -246,6 +248,7 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="flex items-center mb-4">
                   <input
                     id="default-checkbox"

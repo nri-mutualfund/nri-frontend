@@ -28,6 +28,7 @@ export interface DataProps {
     part4content: string;
     title_one:string;
     title_two:string;
+    optionalProp?: string;
 }
 export interface DataItem {
     id: string;
