@@ -17,7 +17,7 @@ interface SectionOneProps {
   data: DataProps;
 }
 const SectionSix = ({ data }: SectionOneProps) => {
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<any>(null);
 
   const handlePrevClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {

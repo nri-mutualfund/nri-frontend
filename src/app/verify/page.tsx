@@ -33,7 +33,7 @@ const Page = () => {
       localStorage.setItem("token",data?.accessToken);
   },
   onError:(error)=>{
-    alert(error?.response?.data?.data)
+    // alert(error?.response?.data?.data)
   }
   });
 
