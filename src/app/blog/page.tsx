@@ -91,7 +91,7 @@ const page = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing fermentum ante eu
           dignissim pulvinar.
         </p>
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-32 lg:mx-0 lg:max-w-none lg:grid-cols-2 mt-10">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 mt-28">
           {posts.map((post) => (
             <article
               key={post.id}
