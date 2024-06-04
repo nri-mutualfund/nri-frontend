@@ -23,10 +23,11 @@ const ConditionalWrapper: React.FC<ConditionalWrapperProps> = ({
   useEffect(() => {
     const handleStart = () => NProgress.start();
     const handleStop = () => NProgress.done();
-    handleStop();
+    // handleStop();
 
     return () => {
-      handleStart();
+      // handleStart();
+      handleStop();
     };
   }, [currentRoute, searchParams]);
   return routeName.includes(currentRoute) ? (

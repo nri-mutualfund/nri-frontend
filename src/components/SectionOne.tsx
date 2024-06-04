@@ -3,11 +3,12 @@ import Link from "next/link";
 import React from "react";
 import { IoCalendarNumberOutline } from "react-icons/io5";
 import { GoArrowUpRight } from "react-icons/go";
-import {DataProps} from "../utility/type"
+import { DataProps } from "../utility/type";
+import NProgress from "nprogress";
 interface SectionOneProps {
   data: DataProps;
 }
-const SectionOne = ({data}:SectionOneProps) => {
+const SectionOne = ({ data }: SectionOneProps) => {
   return (
     <>
       <section className="flex-col px-2 py-14 md:py-24 ">
@@ -38,7 +39,12 @@ const SectionOne = ({data}:SectionOneProps) => {
             <span> Schedule a Meeting </span>
             <IoCalendarNumberOutline className="text-xl" />
           </button>
-          <Link href={"/login"}>
+          <Link
+            href={"/signup"}
+            onClick={() => {
+              NProgress.start();
+            }}
+          >
             <button className="bg-white text-primary border-primary border px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
               {" "}
               Sign Up

@@ -3,7 +3,7 @@ import React from "react";
 
 const SectionSeven = () => {
   return (
-    <section className="px-4 md:px-20 lg:px-40 bg-secondary py-14 md:py:24">
+    <section className="px-4 md:px-20 lg:px-40 bg-secondary py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
         <h2 className="text-gray-800 mx-auto font-medium  leading-[40px] text-center">
           Your money will be <span className="text-primary">safe & secure</span>

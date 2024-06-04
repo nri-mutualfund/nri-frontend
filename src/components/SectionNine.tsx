@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { GoArrowRight } from "react-icons/go";
+import NProgress from "nprogress";
+
 interface SectionOneProps {
   data: DataProps;
 }
@@ -108,7 +109,12 @@ const SectionNine = ({ data }: SectionOneProps) => {
       </button>
     </div> */}
       <div className=" flex justify-center items-center w-full py-10">
-        <Link href={"/blog"}>
+        <Link
+          href={"/blog"}
+          onClick={() => {
+            NProgress.start();
+          }}
+        >
           <button className="px-12  py-2  text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
             Read More
           </button>

@@ -77,7 +77,7 @@ const SectionTwo = ({ data }: SectionOneProps) => {
                   {data?.part4content}
                 </dd>
               </div>
-              <div className="w-0.5 h-full bg-gray-300 absolute left-[50%]"></div>
+              <div className="w-0.5 h-full bg-gray-300 absolute left-[50%] hidden lg:block"></div>
             </dl>
           </div>
         </div>
