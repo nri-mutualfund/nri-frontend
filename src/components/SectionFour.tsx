@@ -1,11 +1,10 @@
+import { DataProps } from "@/utility/type";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { GoArrowRight } from "react-icons/go";
-type DataProps = {
-  data: object;
-};
-const SectionFour = ({ data }: DataProps) => {
+
+const SectionFour = ( data : any) => {
   const [showArrow, setShowArrow] = useState(false);
 const router = useRouter();
   return (
