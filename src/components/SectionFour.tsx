@@ -3,10 +3,12 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { GoArrowRight } from "react-icons/go";
+
 interface SectionOneProps {
   data: DataProps;
 }
 const SectionFour = ({ data }: SectionOneProps) => {
+
   const [showArrow, setShowArrow] = useState(false);
   const router = useRouter();
   return (
