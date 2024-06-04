@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { RxArrowRight } from "react-icons/rx";
+import NProgress from "nprogress";
 
 const page = () => {
   const posts = [
@@ -112,6 +114,9 @@ const page = () => {
                 <Link
                   href="/blog-details"
                   className="flex text-primary items-center gap-2 "
+                  onClick={() => {
+                    NProgress.start();
+                  }}
                 >
                   Learn More
                   <RxArrowRight />

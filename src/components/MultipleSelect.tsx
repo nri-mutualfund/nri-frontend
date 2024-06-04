@@ -10,7 +10,7 @@ interface Option {
 interface MultiSelectProps {
   options: Option[];
   selectedOptions: string[];
-  setSelectedOptions: (options: string[]) => void;
+  setSelectedOptions: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const MultiSelect: React.FC<MultiSelectProps> = ({
@@ -36,7 +36,8 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (!event.target.closest(".multi-select-container")) {
+      const target = event.target as Element | null;
+      if (target && !target.closest(".multi-select-container")) {
         setIsDropdownOpen(false);
       }
     }

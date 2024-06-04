@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { addDetails2, getDetails } from "./api";
+import { BsFillFlagFill } from "react-icons/bs";
 const Page = () => {
   const [country, setCountry] = useState("");
   const [pan, setPan] = useState("");
@@ -144,17 +145,11 @@ const Page = () => {
                   Why do we ask this?
                 </p>
               </Link>
-
               <p className="text-xs mt-4 md:max-w-[60%] text-gray-500">{`It's a mandatory request from SEBI. All
                  investors must provide their PAN details to
                  open investment account.`}</p>
-              <Image
-                src="/assets/flag.png"
-                alt="Your Image Alt Text"
-                className="w-[30px] absolute right-4 top-4"
-                width={500}
-                height={1}
-              />
+
+              <BsFillFlagFill className="absolute right-4 top-4" size={30} />
             </div>
             <div className="">
               {checked ? (

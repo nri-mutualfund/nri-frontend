@@ -36,7 +36,7 @@ const Page = () => {
     const data = Object.fromEntries(formData.entries());
     console.log("data", data);
   };
-
+  console.log("selected", selectedOptions);
   return (
     <>
       <section className="xl:px-40 md:px-16 px-10 py-14 bg-[#f2f8f24d]">
