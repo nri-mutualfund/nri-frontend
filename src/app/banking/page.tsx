@@ -40,14 +40,14 @@ const Page = () => {
   return (
     <>
       <section className="xl:px-40 md:px-16 px-10 py-14 bg-[#f2f8f24d]">
-        <div className="flex flex-wrap items-start justify-center gap-y-20">
-          <div className="w-full lg:w-[60%]">
+        <div className="grid grid-cols-2 lg:grid-cols-5 items-start justify-center gap-y-20 gap-x-4">
+          <div className="col-span-3">
             <div className="">
               <div className="max-w-lg">
-                <h1 className="font-medium leading-snug text-slate-800">
+                <h1 className="font-medium leading-[55px] text-slate-800">
                   Open your NRO, NRI Bank Account with{" "}
                 </h1>
-                <h1 className="font-medium leading-snug text-primary pb-6">
+                <h1 className="font-medium leading-[55px] text-primary pb-6">
                   Renowned Indian Banks
                 </h1>
                 <p className="font-medium w-auto">
@@ -187,18 +187,20 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-[40%] flex justify-center lg:justify-end items-start">
+          <div
+            className={`col-span-2 flex justify-center lg:justify-end items-start sticky ${"top-32"} z-40`}
+          >
             <div className="">
               <div className="bg-white border-gray-200 border-2 shadow-md rounded-lg px-8 py-6 max-w-sm">
-                <h1 className="text-xl font-medium text-center  ">
+                <h1 className="text-xl font-medium text-center">
                   Apply in 20 seconds
                 </h1>
-                <p className="text-gray-400 text-center mb-4 ">
+                <p className="text-gray-400 text-center mb-4">
                   50,000+ NRIs applied in last 6 months
                 </p>
                 <form onSubmit={submit}>
                   <div className="mb-4">
-                    <label className="block text-[11px] font-medium ">
+                    <label className="block text-[11px] font-medium">
                       Name
                     </label>
                     <input

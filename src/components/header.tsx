@@ -112,7 +112,7 @@ const Header = () => {
               FAQ
             </Link>
             <Link
-              href={"/"}
+              href={"/blog"}
               onClick={handleNav}
               className="cursor-pointer hover:text-gray-900 "
             >
