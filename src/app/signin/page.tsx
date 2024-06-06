@@ -4,18 +4,21 @@ import React from "react";
 import { signIn } from "./api";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import nProgress from "nprogress";
 const SignIn = () => {
   const router = useRouter();
   const { isSuccess, mutate } = useMutation({
-    mutationKey: ["key1"],
+    mutationKey: ["sigin"],
     mutationFn: signIn,
     onSuccess: (data) => {
-      router.push("verify-pan");
+      nProgress.start();
+      router.push("/status-check");
       localStorage.setItem("token", data?.token);
     },
     onError: (error) => {
       console.log("error", error);
-      alert("user unauthorized!");
+      toast("user unauthorized!");
     },
   });
 

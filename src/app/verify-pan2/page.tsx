@@ -8,10 +8,18 @@ import Link from "next/link";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { addDetails2, getDetails } from "./api";
 import { BsFillFlagFill } from "react-icons/bs";
+import nProgress from "nprogress";
+import { toast } from "react-toastify";
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
+import { addDetails } from "../verify-pan/api";
+import { useRouter } from "next/navigation";
+
 const Page = () => {
+  const router = useRouter();
   const [country, setCountry] = useState("");
   const [pan, setPan] = useState("");
   const [checked, setChecked] = useState(false);
+  const [formData, setFormData] = useState({});
   const { data } = useQuery({
     queryKey: ["key22"],
     queryFn: getDetails,
@@ -19,12 +27,32 @@ const Page = () => {
   const { mutate } = useMutation({
     mutationFn: addDetails2,
     onSuccess: (data) => {
-      setChecked(true);
+      if (data?.data?.status === "valid") {
+        setChecked(true);
+        toast("pan verification done!");
+      } else if (data?.data?.status === "invalid") {
+        toast("invalid pan details!");
+      } else {
+        toast("failed to verify!");
+      }
     },
     onError: (error) => {
       console.log("error", error);
     },
   });
+  const { mutate: submitPanDetail } = useMutation({
+    mutationFn: addDetails,
+    onSuccess: (data) => {
+      nProgress.start();
+      router.push("/profile");
+    },
+    onError: (error) => {
+      console.log("error", error);
+    },
+  });
+  const submitData = () => {
+    submitPanDetail(formData);
+  };
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -35,6 +63,8 @@ const Page = () => {
       dob: newDate,
     };
     console.log("data", newData);
+    setFormData({ ...newData, pan_verified: true });
+    mutate(newData);
   };
   return (
     <>
@@ -78,21 +108,33 @@ const Page = () => {
                 PAN
               </label>
               <div className="mt-2 flex gap-4">
-                <input
-                  id="pan"
-                  type="text"
-                  name="pan"
-                  autoComplete="off"
-                  required
-                  className=" px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-                />
+                <div className="px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 flex gap-2 items-center justify-between">
+                  <input
+                    id="pan"
+                    type="text"
+                    name="pan"
+                    autoComplete="off"
+                    required
+                    className=" "
+                  />
+                  {checked && (
+                    <IoCheckmarkCircleOutline size={20} color="#008000" />
+                  )}
+                </div>
+
                 <button
                   type="submit"
+                  disabled={checked}
                   className="flex px-6 justify-center rounded-md bg-primary py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
                   Check
                 </button>
               </div>
+              {checked && (
+                <label className="block text-sm font-medium leading-6 text-primary mt-2">
+                  Great, your PAN ABCPA0123D is KYC complete!
+                </label>
+              )}
             </div>
             <div className="mt-4">
               <label className="block text-sm font-medium leading-6 text-gray-900">
@@ -155,17 +197,27 @@ const Page = () => {
               {checked ? (
                 <button
                   type="button"
+                  onClick={() => {
+                    submitData();
+                  }}
                   className="flex w-1/3 justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
                   Continue
                 </button>
               ) : (
-                <button
-                  type="button"
-                  className="flex w-1/3 justify-center rounded-md border-primary border px-3 py-1.5 text-sm font-semibold leading-6 text-primary shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ml-auto"
+                <Link
+                  href={"/profile"}
+                  onClick={() => {
+                    nProgress.start();
+                  }}
                 >
-                  Skip
-                </button>
+                  <button
+                    type="button"
+                    className="flex w-1/3 justify-center rounded-md border-primary border px-3 py-1.5 text-sm font-semibold leading-6 text-primary shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ml-auto"
+                  >
+                    Skip
+                  </button>
+                </Link>
               )}
             </div>
           </form>
