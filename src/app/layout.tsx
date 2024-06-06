@@ -35,6 +35,7 @@ export default function RootLayout({
             "/investor-profile",
             "/income-details",
             "/bank-details",
+            "/nominee-details",
           ]}
         >
           {children}

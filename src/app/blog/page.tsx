@@ -7,7 +7,6 @@ import { useQuery } from "@tanstack/react-query";
 import { getSectionBlog } from "../api/api";
 import moment from "moment";
 import { BlogPost } from "@/utility/type";
-
 const Page = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["blog"],

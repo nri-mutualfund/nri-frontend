@@ -1,6 +1,7 @@
 import { DataProps } from "@/utility/type";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import nProgress from "nprogress";
 import React, { useState } from "react";
 import { GoArrowRight } from "react-icons/go";
 
@@ -8,7 +9,6 @@ interface SectionOneProps {
   data: DataProps;
 }
 const SectionFour = ({ data }: SectionOneProps) => {
-
   const [showArrow, setShowArrow] = useState(false);
   const router = useRouter();
   return (
@@ -24,7 +24,10 @@ const SectionFour = ({ data }: SectionOneProps) => {
           <div className="flex flex-wrap gap-2">
             <div className="flex  items-start mt-10">
               <button
-                onClick={() => router.push("/banking")}
+                onClick={() => {
+                  router.push("/banking");
+                  nProgress.start();
+                }}
                 className="px-8  py-2  text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
               >
                 Create Account
