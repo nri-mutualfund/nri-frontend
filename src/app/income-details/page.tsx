@@ -127,7 +127,7 @@ const Page = () => {
                 </div>
                 <div className="sm:col-span-3">
                   <div
-                    className={`w-full block rounded-md border py-2 px-4 ${
+                    className={`w-full flex rounded-md border py-2 px-4  h-14 items-center ${
                       status === "I’m Married" ? "border-primary" : ""
                     }`}
                     onClick={() => {
@@ -135,19 +135,17 @@ const Page = () => {
                     }}
                   >
                     <p
-                      className={`text-sm ${
+                      className={`text-xs ${
                         status === "I’m Married" ? "text-primary" : ""
                       }`}
                     >
                       I’m Married
-                      <br />
-                      <br />
                     </p>
                   </div>
                 </div>
                 <div className="sm:col-span-3">
                   <div
-                    className={`w-full block rounded-md border py-2 px-4 ${
+                    className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
                       status ===
                       "I have income from outside of India and I pay tax in other countries."
                         ? "border-primary"
@@ -160,7 +158,7 @@ const Page = () => {
                     }}
                   >
                     <p
-                      className={`text-sm ${
+                      className={`text-xs ${
                         status ===
                         "I have income from outside of India and I pay tax in other countries."
                           ? "text-primary"
@@ -174,7 +172,7 @@ const Page = () => {
                 </div>
                 <div className="sm:col-span-3">
                   <div
-                    className={`w-full block rounded-md border py-2 px-4 ${
+                    className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
                       status ===
                       "I'm a politically exposed person in a foreign country"
                         ? "border-primary"
@@ -187,7 +185,7 @@ const Page = () => {
                     }}
                   >
                     <p
-                      className={`text-sm ${
+                      className={`text-xs ${
                         status ===
                         "I'm a politically exposed person in a foreign country"
                           ? "text-primary"
@@ -195,14 +193,12 @@ const Page = () => {
                       }`}
                     >
                       {`I'm a politically exposed person in a foreign country`}
-                      <br />
-                      <br />
                     </p>
                   </div>
                 </div>
                 <div className="sm:col-span-3">
                   <div
-                    className={`w-full block rounded-md border py-2 px-4 ${
+                    className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
                       status ===
                       "Are you related to politically exposed person in a foreign country?"
                         ? "border-primary"
@@ -215,7 +211,7 @@ const Page = () => {
                     }}
                   >
                     <p
-                      className={`text-sm ${
+                      className={`text-xs ${
                         status ===
                         "Are you related to politically exposed person in a foreign country?"
                           ? "text-primary"

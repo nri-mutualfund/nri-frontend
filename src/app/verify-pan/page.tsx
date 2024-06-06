@@ -245,6 +245,7 @@ const Page = () => {
                         name="phone"
                         type="phone"
                         autoComplete="phone"
+                        maxLength={15}
                         required
                         className="block w-full placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                       />
