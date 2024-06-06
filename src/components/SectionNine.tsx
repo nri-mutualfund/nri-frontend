@@ -15,7 +15,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
   return (
     <section className="bg-secondary px-4 md:px-20 lg:px-40 py-14 md:py-24">
       <h2 className="text-gray-800 mx-auto font-medium text-center  leading-[40px]">
-        {data?.pre_heading}
+        {data?.pre_heading}{" "}
         <span className="text-primary">{data?.highlightned}</span>{" "}
         {data?.post_heading}
       </h2>
@@ -31,7 +31,6 @@ const SectionNine = ({ data }: SectionOneProps) => {
               pathname: "/blog-details",
               query: { id: data?.data[0]?.id },
             }}
-
             onClick={() => {
               nProgress.start();
             }}
@@ -49,7 +48,6 @@ const SectionNine = ({ data }: SectionOneProps) => {
               pathname: "/blog-details",
               query: { id: data?.data[0]?.id },
             }}
-
             onClick={() => {
               nProgress.start();
             }}
@@ -83,7 +81,6 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 pathname: "/blog-details",
                 query: { id: data?.data[1]?.id },
               }}
-
               onClick={() => {
                 nProgress.start();
               }}
@@ -116,7 +113,6 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 pathname: "/blog-details",
                 query: { id: data?.data[2]?.id },
               }}
-
               onClick={() => {
                 nProgress.start();
               }}

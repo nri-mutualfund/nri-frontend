@@ -1,39 +1,40 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { RxArrowRight } from "react-icons/rx";
 import NProgress from "nprogress";
 import { useQuery } from "@tanstack/react-query";
 import { getSectionBlog } from "../api/api";
 import moment from "moment";
 import { BlogPost } from "@/utility/type";
+import Loader from "@/components/Loader";
+import { Pagination } from "flowbite-react";
 const Page = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const onPageChange = (page: number) => {
+    setCurrentPage(page);
+  };
   const { data, isLoading } = useQuery({
-    queryKey: ["blog"],
-    queryFn: getSectionBlog,
+    queryKey: ["blog", currentPage],
+    queryFn: () => getSectionBlog(currentPage),
   });
-
+  console.log("page", currentPage);
   return (
-    <>
+    <div className="max-w-screen-2xl ">
       {isLoading ? (
-        <section className="h-screen flex justify-center items-center">
-          <div className="flex items-center justify-center h-screen">
-            <div className="relative">
-              <div className="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200"></div>
-              <div className="absolute top-0 left-0 h-24 w-24 rounded-full border-t-8 border-b-8 border-[#008000] animate-spin"></div>
-            </div>
-          </div>
-        </section>
+        <Loader />
       ) : (
         <div className="bg-white sm:pt-4 pb-12">
-          <div className="max-w-screen-2xl mx-auto py-6 xl:px-40 md:px-16 px-10">
+          <div className="mx-auto py-6 xl:px-40 md:px-16 px-10">
             <h2 className="text-gray-800 mx-auto font-medium text-center  leading-[40px]">
-              <span className="text-primary">Resource Center</span>
+              {data?.pre_heading}{" "}
+              <span className="text-primary">{data?.highlightned}</span>{" "}
+              {data?.post_heading}
             </h2>
             <p className="font-extralight mt-1 text-sm text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing fermentum ante
-              eu dignissim pulvinar.
+              {data?.detail}
             </p>
+
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 mt-28">
               {data?.data?.map((post: BlogPost, index: number) => (
                 <article
@@ -89,7 +90,14 @@ const Page = () => {
           </div>
         </div>
       )}
-    </>
+      <div className="flex overflow-x-auto justify-center mb-10">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={data?.pagination?.pageCount ?? 0}
+          onPageChange={onPageChange}
+        />
+      </div>
+    </div>
   );
 };
 
