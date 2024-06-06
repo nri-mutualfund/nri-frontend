@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import NProgress from "nprogress";
+import nProgress from "nprogress";
 
 interface SectionOneProps {
   data: DataProps;
@@ -25,16 +26,32 @@ const SectionNine = ({ data }: SectionOneProps) => {
           <p className="font-light text-sm">
             {moment(data?.data[0]?.created_at).format("MMM DD, YYYY")}
           </p>
-          <h2 className="text-gray-800 font-medium leading-[40px] mt-6">
-            {data?.data[0]?.blog_heading}
-          </h2>
+          <Link
+            href={"/blog-details"}
+            onClick={() => {
+              nProgress.start();
+            }}
+          >
+            <h2 className="text-gray-800 font-medium leading-[40px] mt-6">
+              {data?.data[0]?.blog_heading}
+            </h2>
+          </Link>
+
           <p className="font-light mt-6 text-base">
             {data?.data[0]?.blog_content}
           </p>
-          <button className="flex items-center gap-2 text-primary mt-6">
-            <p>Continue reading</p>
-            <FaArrowRight />
-          </button>
+          <Link
+            href={"/blog-details"}
+            onClick={() => {
+              nProgress.start();
+            }}
+          >
+            <button className="flex items-center gap-2 text-primary mt-6">
+              <p>Continue reading</p>
+              <FaArrowRight />
+            </button>
+          </Link>
+
           <div className="border-[0.5px] mt-8 hidden lg:block" />
           <div className="flex items-center gap-4 mt-6">
             <Image
@@ -53,9 +70,16 @@ const SectionNine = ({ data }: SectionOneProps) => {
             <p className="font-light text-sm">
               {moment(data?.data[1]?.created_at).format("MMM DD, YYYY")}
             </p>
-            <p className="text-gray-800 font-semibold mt-2 text-base">
-              {data?.data[1]?.blog_heading}
-            </p>
+            <Link
+              href={"/blog-details"}
+              onClick={() => {
+                nProgress.start();
+              }}
+            >
+              <p className="text-gray-800 font-semibold mt-2 text-base">
+                {data?.data[1]?.blog_heading}
+              </p>
+            </Link>
             <p className="font-light mt-3 text-sm">
               {data?.data[1]?.blog_content}
             </p>
@@ -75,9 +99,16 @@ const SectionNine = ({ data }: SectionOneProps) => {
             <p className="font-light text-sm">
               {moment(data?.data[2]?.created_at).format("MMM DD, YYYY")}
             </p>
-            <p className="text-gray-800 font-semibold mt-2 text-base">
-              {data?.data[2]?.blog_heading}
-            </p>
+            <Link
+              href={"/blog-details"}
+              onClick={() => {
+                nProgress.start();
+              }}
+            >
+              <p className="text-gray-800 font-semibold mt-2 text-base">
+                {data?.data[2]?.blog_heading}
+              </p>
+            </Link>
             <p className="font-light mt-3 text-sm">
               {data?.data[2]?.blog_content}
             </p>
