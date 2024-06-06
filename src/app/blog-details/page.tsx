@@ -1,18 +1,17 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
-import { getSectionBlog } from "../api/api";
+import { getBlogById, getSectionBlog } from "../api/api";
 import moment from "moment";
 import { BlogPost } from "@/utility/type";
 import { useSearchParams } from "next/navigation";
 const Page = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id"); // Might be null initially
-  const [currentData, setCurrentData] = useState<BlogPost | null>(null); // Initially set to null
 
-  const { data, isLoading } = useQuery({
+  const { data: currentData, isLoading } = useQuery({
     queryKey: ["blog"],
-    queryFn: getSectionBlog,
+    queryFn: () => getBlogById(id),
   });
 
   // Improved findBlogPostById function with optional chaining
@@ -23,12 +22,6 @@ const Page = () => {
     return data?.find((post) => post.id === id);
   };
 
-  useEffect(() => {
-    if (id) {
-      setCurrentData(findBlogPostById(data?.data, id) ?? null); // Use nullish coalescing
-    }
-  }, []);
-  console.log("current", currentData, id);
   return (
     <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white  antialiased">
       <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">

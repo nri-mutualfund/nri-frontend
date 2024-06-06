@@ -44,7 +44,7 @@ const Footer = () => {
             <div className="flex justify-center mt-6">
               <div className="bg-gray-100 flex justify-between rounded-lg mt-3 w-full  pl-4 pr-2 py-2">
                 <input
-                  className="bg-transparent text-black placeholder-black outline-none w-full "
+                  className="bg-transparent text-black placeholder-black outline-none w-full  border border-gray-400 rounded-sm"
                   type="text"
                   placeholder="Enter your email"
                 />
