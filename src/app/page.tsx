@@ -25,35 +25,35 @@ import Section11 from "@/components/Section11";
 import Section12 from "@/components/Section12";
 const Page = () => {
   const { data, isLoading, status, isSuccess } = useQuery({
-    queryKey: ["post"],
+    queryKey: ["banner"],
     queryFn: getSectionOne,
   });
   const sectionTwo = useQuery({
-    queryKey: ["post2"],
+    queryKey: ["funds"],
     queryFn: getSectionTwo,
   });
   const sectionThree = useQuery({
-    queryKey: ["post3"],
+    queryKey: ["products"],
     queryFn: getSectionThree,
   });
   const sectionFour = useQuery({
-    queryKey: ["post4"],
+    queryKey: ["bank"],
     queryFn: getSectionFour,
   });
   const sectionFive = useQuery({
-    queryKey: ["post5"],
+    queryKey: ["documents"],
     queryFn: getSectionFive,
   });
   const sectionSix = useQuery({
-    queryKey: ["post6"],
+    queryKey: ["testomonial"],
     queryFn: getSectionSix,
   });
   const sectionFAQ = useQuery({
-    queryKey: ["post7"],
+    queryKey: ["faq"],
     queryFn: getSectionFAQ,
   });
   const sectionBlog = useQuery({
-    queryKey: ["post8"],
+    queryKey: ["blog"],
     queryFn: getSectionBlog,
   });
   const checkLoading = () => {

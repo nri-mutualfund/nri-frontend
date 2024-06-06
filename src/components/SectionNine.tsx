@@ -27,7 +27,10 @@ const SectionNine = ({ data }: SectionOneProps) => {
             {moment(data?.data[0]?.created_at).format("MMM DD, YYYY")}
           </p>
           <Link
-            href={"/blog-details"}
+            href={{
+              pathname: "/blog-details",
+              query: { id: data?.data[0]?.id },
+            }}
             onClick={() => {
               nProgress.start();
             }}
@@ -41,7 +44,10 @@ const SectionNine = ({ data }: SectionOneProps) => {
             {data?.data[0]?.blog_content}
           </p>
           <Link
-            href={"/blog-details"}
+            href={{
+              pathname: "/blog-details",
+              query: { id: data?.data[0]?.id },
+            }}
             onClick={() => {
               nProgress.start();
             }}
@@ -71,7 +77,10 @@ const SectionNine = ({ data }: SectionOneProps) => {
               {moment(data?.data[1]?.created_at).format("MMM DD, YYYY")}
             </p>
             <Link
-              href={"/blog-details"}
+              href={{
+                pathname: "/blog-details",
+                query: { id: data?.data[1]?.id },
+              }}
               onClick={() => {
                 nProgress.start();
               }}
@@ -100,7 +109,10 @@ const SectionNine = ({ data }: SectionOneProps) => {
               {moment(data?.data[2]?.created_at).format("MMM DD, YYYY")}
             </p>
             <Link
-              href={"/blog-details"}
+              href={{
+                pathname: "/blog-details",
+                query: { id: data?.data[2]?.id },
+              }}
               onClick={() => {
                 nProgress.start();
               }}
