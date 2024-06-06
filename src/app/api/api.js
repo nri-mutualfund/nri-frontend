@@ -66,11 +66,12 @@ export const getSectionSix = async (values) => {
     console.log(error)
   }
 }
-export const getSectionFAQ = async (values) => {
+export const getSectionFAQ = async (query) => {
   try {
+    // console.log('query', query)
+    if(!query) query= '1'
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/homePage/faq`,
-      values
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/homePage/faq?pageNumber=${query}`,
     )
     return response.data
   } catch (error) {

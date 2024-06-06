@@ -1,15 +1,20 @@
 "use client";
 import ProgressBar from "@/components/ProgressBar";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import nProgress from "nprogress";
 import React, { useState } from "react";
 import { FaLock } from "react-icons/fa";
 const Page = () => {
   const [status, setStatus] = useState("");
+  const router = useRouter();
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
     console.log("data", data);
+    nProgress.start();
+    router.push("/nominee-details");
   };
   return (
     <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary min-h-screen">

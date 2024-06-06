@@ -135,12 +135,102 @@ const Page = () => {
                   name="code"
                   type="code"
                   autoComplete="code"
+                  maxLength={6}
                   required
                   className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
-
+            {/* <div className="flex mb-2 space-x-2 rtl:space-x-reverse">
+              <div>
+                <label htmlFor="code-1" className="sr-only">
+                  First code
+                </label>
+                <input
+                  type="text"
+                  maxLength={1}
+                  data-focus-input-init
+                  data-focus-input-next="code-2"
+                  id="code-1"
+                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="code-2" className="sr-only">
+                  Second code
+                </label>
+                <input
+                  type="text"
+                  maxLength={1}
+                  data-focus-input-init
+                  data-focus-input-prev={"code-1"}
+                  data-focus-input-next={"code-3"}
+                  id="code-2"
+                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="code-3" className="sr-only">
+                  Third code
+                </label>
+                <input
+                  type="text"
+                  maxLength={1}
+                  data-focus-input-init
+                  data-focus-input-prev="code-2"
+                  data-focus-input-next="code-4"
+                  id="code-3"
+                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="code-4" className="sr-only">
+                  Fourth code
+                </label>
+                <input
+                  type="text"
+                  maxLength={1}
+                  data-focus-input-init
+                  data-focus-input-prev="code-3"
+                  data-focus-input-next="code-5"
+                  id="code-4"
+                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="code-5" className="sr-only">
+                  Fifth code
+                </label>
+                <input
+                  type="text"
+                  maxLength={1}
+                  data-focus-input-init
+                  data-focus-input-prev="code-4"
+                  data-focus-input-next="code-6"
+                  id="code-5"
+                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="code-6" className="sr-only">
+                  Sixth code
+                </label>
+                <input
+                  type="text"
+                  maxLength={1}
+                  data-focus-input-init
+                  data-focus-input-prev="code-5"
+                  id="code-6"
+                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                  required
+                />
+              </div>
+            </div> */}
             <div>
               <div className="flex items-center justify-between">
                 <label
