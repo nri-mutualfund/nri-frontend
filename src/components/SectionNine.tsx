@@ -31,6 +31,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
               pathname: "/blog-details",
               query: { id: data?.data[0]?.id },
             }}
+
             onClick={() => {
               nProgress.start();
             }}
@@ -48,6 +49,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
               pathname: "/blog-details",
               query: { id: data?.data[0]?.id },
             }}
+
             onClick={() => {
               nProgress.start();
             }}
@@ -81,6 +83,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 pathname: "/blog-details",
                 query: { id: data?.data[1]?.id },
               }}
+
               onClick={() => {
                 nProgress.start();
               }}
@@ -113,6 +116,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 pathname: "/blog-details",
                 query: { id: data?.data[2]?.id },
               }}
+
               onClick={() => {
                 nProgress.start();
               }}
