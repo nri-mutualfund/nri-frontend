@@ -1,6 +1,34 @@
-import React from "react";
+"use client";
+import { useQuery } from "@tanstack/react-query";
+import React, { useEffect, useState } from "react";
+import { getSectionBlog } from "../api/api";
+import moment from "moment";
+import { BlogPost } from "@/utility/type";
+import { useSearchParams } from "next/navigation";
+const Page = () => {
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id"); // Might be null initially
+  const [currentData, setCurrentData] = useState<BlogPost | null>(null); // Initially set to null
 
-const page = () => {
+  const { data, isLoading } = useQuery({
+    queryKey: ["blog"],
+    queryFn: getSectionBlog,
+  });
+
+  // Improved findBlogPostById function with optional chaining
+  const findBlogPostById = (
+    data: BlogPost[] | undefined,
+    id: string
+  ): BlogPost | undefined => {
+    return data?.find((post) => post.id === id);
+  };
+
+  useEffect(() => {
+    if (id) {
+      setCurrentData(findBlogPostById(data?.data, id) ?? null); // Use nullish coalescing
+    }
+  }, []);
+  console.log("current", currentData, id);
   return (
     <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white  antialiased">
       <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
@@ -19,24 +47,20 @@ const page = () => {
                     rel="author"
                     className="text-xl font-bold text-gray-900"
                   >
-                    Michael Foster
+                    {currentData?.user_name}
                   </a>
                   <p className="text-base text-gray-500">Co-Founder/CTO</p>
                   <p className="text-base text-gray-500">
-                    <p>Mar 16, 2020</p>
+                    {moment(currentData?.created_at).format("MMM DD, YYYY")}
                   </p>
                 </div>
               </div>
             </address>
             <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">
-              Boost your conversion rate Boost your conversion rate
+              {currentData?.blog_heading}
             </h1>
           </header>
-          <p className="lead">
-            Flowbite is an open-source library of UI components built with the
-            utility-first classes from Tailwind CSS. It also includes
-            interactive elements such as dropdowns, modals, datepickers.
-          </p>
+          <p className="lead">{currentData?.blog_content}</p>
           <p>
             Before going digital, you might benefit from scribbling down some
             ideas in a sketchbook. This way, you can think things through before
@@ -125,4 +149,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
