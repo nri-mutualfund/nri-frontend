@@ -6,7 +6,7 @@ import { getSectionFAQ } from "../api/api";
 
 const Page = () => {
   const { data, isLoading } = useQuery({
-    queryKey: ["post7"],
+    queryKey: ["faq"],
     queryFn: getSectionFAQ,
   });
   return (

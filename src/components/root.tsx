@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import Header from "./header";
 import Footer from "./Footer";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css"; // Import NProgress styles
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -18,7 +18,6 @@ const ConditionalWrapper: React.FC<ConditionalWrapperProps> = ({
   children,
 }) => {
   const currentRoute = usePathname();
-  let searchParams = useSearchParams();
 
   useEffect(() => {
     const handleStop = () => NProgress.done();
@@ -28,15 +27,42 @@ const ConditionalWrapper: React.FC<ConditionalWrapperProps> = ({
       // handleStart();
       handleStop();
     };
-  }, [currentRoute, searchParams]);
+  }, [currentRoute]);
   return (
     <QueryClientProvider client={queryClient}>
       {routeName.includes(currentRoute) ? (
-        children
+        <Suspense
+          fallback={
+            <section className="h-screen flex justify-center items-center">
+              <div className="flex items-center justify-center h-screen">
+                <div className="relative">
+                  <div className="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200"></div>
+                  <div className="absolute top-0 left-0 h-24 w-24 rounded-full border-t-8 border-b-8 border-[#008000] animate-spin"></div>
+                </div>
+              </div>
+            </section>
+          }
+        >
+          {children}
+        </Suspense>
       ) : (
         <>
           <Header />
-          {children}
+          <Suspense
+            fallback={
+              <section className="h-screen flex justify-center items-center">
+                <div className="flex items-center justify-center h-screen">
+                  <div className="relative">
+                    <div className="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200"></div>
+                    <div className="absolute top-0 left-0 h-24 w-24 rounded-full border-t-8 border-b-8 border-[#008000] animate-spin"></div>
+                  </div>
+                </div>
+              </section>
+            }
+          >
+            {children}
+          </Suspense>
+
           <Footer />
         </>
       )}
