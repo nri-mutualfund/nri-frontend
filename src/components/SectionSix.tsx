@@ -2,7 +2,6 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,7 +16,7 @@ interface SectionOneProps {
   data: DataProps;
 }
 const SectionSix = ({ data }: SectionOneProps) => {
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef() as any;
 
   const handlePrevClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {

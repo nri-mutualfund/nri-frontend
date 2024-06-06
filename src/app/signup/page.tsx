@@ -7,6 +7,8 @@ import { RxArrowRight, RxCross2 } from "react-icons/rx";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { verifyEmail } from "./api";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import NProgress from "nprogress";
 const SignUp = () => {
   const router = useRouter();
   const [isValidEmail, setIsValidEmail] = useState(false);
@@ -21,8 +23,12 @@ const SignUp = () => {
   const queryParams = { name: name, email: email };
   const queryString = new URLSearchParams(queryParams).toString();
   const { isSuccess, mutate } = useMutation({
-    mutationKey: ["key1"],
+    mutationKey: ["signup"],
     mutationFn: () => verifyEmail(email),
+    onSuccess: () => {
+      router.push(`verify?${queryString}`);
+      NProgress;
+    },
   });
   const VerifyEmailForOtp = () => {
     // Enable fetching on button click
@@ -35,6 +41,7 @@ const SignUp = () => {
   };
   if (isSuccess) {
     router.push(`verify?${queryString}`);
+    NProgress.start();
   }
   return (
     <>

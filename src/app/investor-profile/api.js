@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const addDetails2 = async (values) => {
+export const addProfileDetails = async (values) => {
   try {
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/verifyPan`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/investorProfile`,
       values,
       {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -15,10 +15,10 @@ export const addDetails2 = async (values) => {
     throw error;
   }
 };
-export const getDetails = async () => {
+export const getProfileDetails = async () => {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/kycDetails`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/userDetails`,
       {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       }
