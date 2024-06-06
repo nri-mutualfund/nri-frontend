@@ -9,6 +9,13 @@ import { verifyEmail } from "./api";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import NProgress from "nprogress";
+interface CustomError extends Error {
+  response?: {
+    data?: {
+      data?: string;
+    };
+  };
+}
 const SignUp = () => {
   const router = useRouter();
   const [isValidEmail, setIsValidEmail] = useState(false);
@@ -22,12 +29,16 @@ const SignUp = () => {
   };
   const queryParams = { name: name, email: email };
   const queryString = new URLSearchParams(queryParams).toString();
-  const { isSuccess, mutate } = useMutation({
+  const { mutate } = useMutation({
     mutationKey: ["signup"],
-    mutationFn: () => verifyEmail(email),
+    mutationFn: () => verifyEmail({ email: email }),
     onSuccess: () => {
+      NProgress.start();
       router.push(`verify?${queryString}`);
-      NProgress;
+    },
+    onError: (error: CustomError) => {
+      console.log("error", error);
+      toast(error?.response?.data?.data);
     },
   });
   const VerifyEmailForOtp = () => {
@@ -39,10 +50,7 @@ const SignUp = () => {
       // Handle errors appropriately
     }
   };
-  if (isSuccess) {
-    router.push(`verify?${queryString}`);
-    NProgress.start();
-  }
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-10 py-12 lg:px-8">
