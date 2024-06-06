@@ -24,7 +24,7 @@ const Page = () => {
     queryKey: ["key22"],
     queryFn: getDetails,
   });
-  const { mutate } = useMutation({
+  const { mutate, data: panDetails } = useMutation({
     mutationFn: addDetails2,
     onSuccess: (data) => {
       if (data?.data?.status === "valid") {
@@ -116,6 +116,7 @@ const Page = () => {
                     autoComplete="off"
                     required
                     className=" "
+                    maxLength={10}
                   />
                   {checked && (
                     <IoCheckmarkCircleOutline size={20} color="#008000" />
@@ -132,7 +133,7 @@ const Page = () => {
               </div>
               {checked && (
                 <label className="block text-sm font-medium leading-6 text-primary mt-2">
-                  Great, your PAN ABCPA0123D is KYC complete!
+                  Great, your PAN {panDetails?.data?.pan} is KYC complaint!
                 </label>
               )}
             </div>
@@ -206,7 +207,7 @@ const Page = () => {
                 </button>
               ) : (
                 <Link
-                  href={"/profile"}
+                  href={"/skip"}
                   onClick={() => {
                     nProgress.start();
                   }}
