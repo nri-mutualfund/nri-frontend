@@ -50,11 +50,11 @@ const Page = () => {
   });
   const sectionFAQ = useQuery({
     queryKey: ["faq"],
-    queryFn: getSectionFAQ,
+    queryFn: () => getSectionFAQ(1),
   });
   const sectionBlog = useQuery({
     queryKey: ["blog"],
-    queryFn: getSectionBlog,
+    queryFn: () => getSectionBlog(1),
   });
   const checkLoading = () => {
     return (
@@ -96,9 +96,9 @@ const Page = () => {
           {/* {section 7} */}
           <SectionSeven />
           {/* {section 8} */}
-          <SectionEight data={sectionFAQ.data} />
+          <SectionEight data={sectionFAQ?.data?.data} />
           {/* {section 9} */}
-          <SectionNine data={sectionBlog.data} />
+          <SectionNine data={sectionBlog?.data} />
           {/* Section11 */}
           <Section11 />
           {/* Section 12 */}
