@@ -123,7 +123,7 @@ const page = () => {
                 </Link>
                 <p className="text-gray-500 text-sm">{post.date}</p>
               </div>
-              <div className="relative mt-4 flex items-center gap-x-4 border-t border-gray-300 w-full py-4">
+              <div className="relative mt-4 flex items-center gap-x-4 border- w-full py-4">
                 <img
                   src={post.author.imageUrl}
                   alt=""
@@ -142,6 +142,37 @@ const page = () => {
             </article>
           ))}
         </div>
+        <nav aria-label="blog navigation" className="flex items-center justify-between mt-8">
+          <ul className="inline-flex -space-x-px text-base h-10">
+            <li>
+              <a href="#" className="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white  border-e- rounded-s-lg hover:bg-gray-100 hover:text-gray-700 ">Previous</a>
+            </li>
+          </ul>
+
+          <ul className="inline-flex -space-x-px text-base h-10">
+            <li>
+              <a href="#" className="flex items-center justify-center px-4 h-10 leading-tight text-blue-600 bg-blue-50 hover:bg-gray-100 hover:text-gray-700 ">1</a>
+            </li>
+            {/* <li>
+              <a href="#" className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white  hover:bg-gray-100 hover:text-gray-700 ">2</a>
+            </li>
+            <li>
+              <a href="#" aria-current="page" className="flex items-center justify-center px-4 h-10  text-gray-500  bg-white   hover:bg-blue-100 hover:text-blue-700">3</a>
+            </li>
+            <li>
+              <a href="#" className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white  hover:bg-gray-100 hover:text-gray-700 ">4</a>
+            </li>
+            <li>
+              <a href="#" className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white  hover:bg-gray-100 hover:text-gray-700 ">5</a>
+            </li> */}
+          </ul>
+          <ul className="inline-flex -space-x-px text-base h-10">
+
+            <li>
+              <a href="#" className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white  rounded-e-lg hover:bg-gray-100 hover:text-gray-700 ">Next</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   );
