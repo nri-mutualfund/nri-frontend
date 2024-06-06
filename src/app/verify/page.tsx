@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { createUser } from "./api";
+import { toast } from "react-toastify";
+import NProgress from "nprogress";
+
 interface CustomError extends Error {
   response?: {
     data?: {
@@ -33,15 +36,16 @@ const Page = () => {
     mutate(newData);
   };
   const { data, isSuccess, mutate, isError, error } = useMutation({
-    mutationKey: ["key2"],
+    mutationKey: ["verify"],
     mutationFn: createUser,
     onSuccess: (data) => {
+      NProgress.start();
       router.push("verify-pan");
-      localStorage.setItem("token",data?.accessToken);
-  },
-  onError:(error)=>{
-    // alert(error?.response?.data?.data)
-  }
+      localStorage.setItem("token", data?.accessToken);
+    },
+    onError: (error: CustomError) => {
+      toast(error?.response?.data?.data);
+    },
   });
 
   useEffect(() => {

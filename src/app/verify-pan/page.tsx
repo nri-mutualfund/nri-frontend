@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { addDetails } from "./api";
 import Section11 from "@/components/Section11";
+import nProgress from "nprogress";
 interface NewData {
   located_at: string;
   phone_number: string;
@@ -44,6 +45,7 @@ const Page = () => {
     mutationFn: addDetails,
     onSuccess: (data) => {
       router.push("verify-pan2");
+      nProgress.start();
     },
     onError: (error) => {},
   });
