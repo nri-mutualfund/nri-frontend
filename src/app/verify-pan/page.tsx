@@ -25,14 +25,14 @@ const Page = () => {
     FR: string;
     UK: string;
     IND: string;
-} = {
-    US: "US_code",
-    GE: "GE_code",
-    CA: "CA_code",
-    FR: "FR_code",
-    UK: "UK_code",
-    IND: "IND_code",
-};
+  } = {
+    US: "+1",
+    GE: "+33",
+    CA: "+49",
+    FR: "+35",
+    UK: "+44",
+    IND: "+91",
+  };
   const getFullName: { [key: string]: string } = {
     US: "United States",
     GE: "Germany",
@@ -56,14 +56,13 @@ const Page = () => {
     let newData: any = {
       located_at: (getFullName as any)[data?.country as any],
       phone_number: (getCodes as any)[data?.country as any] + data.phone,
-
     };
     if (country !== "IND") {
       newData = {
         ...newData,
         residency_status: residentialStatus,
       };
-    
+
       if (data?.isFromCanadaOrUS === "on") {
         newData = {
           ...newData,
@@ -72,7 +71,7 @@ const Page = () => {
       }
     }
     mutate(newData as any);
-    };
+  };
   return (
     <>
       <div className="flex min-h-screen flex-1 flex-col justify-start px-10 py-12 lg:px-8">
@@ -237,7 +236,9 @@ const Page = () => {
                   <div className="mt-2">
                     <div className="flex w-full rounded-md border-0 py-0.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
                       <p className="border-r-2 px-4 py-1">
-                      {getCodes[country as keyof typeof getCodes] || "Invalid Country"} {/* Conditional check for valid key */}
+                        {getCodes[country as keyof typeof getCodes] ||
+                          "Invalid Country"}{" "}
+                        {/* Conditional check for valid key */}
                       </p>
                       <input
                         id="phone"
