@@ -107,6 +107,7 @@ const Page = () => {
                                                         <input type="text"
                                                             className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                             onChange={e => handleNomineeDetailListUpdate(item, 'full_legal_name', e.target.value)}
+                                                            placeholder="Name"
                                                             value={item?.full_legal_name} />
                                                     </td>
                                                     <td className="pt-2">
@@ -114,41 +115,58 @@ const Page = () => {
                                                             className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                             onChange={e => handleNomineeDetailListUpdate(item, 'relation', e.target.value)}
                                                             value={item?.relation} /> */}
+
                                                         <select
-                                                            className="block w-32 rounded-md border-0  py-[9px] px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                                            className="block w-32 mr-3 rounded-md border-0  py-[9px] px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                                                             onChange={e => handleNomineeDetailListUpdate(item, 'relation', e.target.value)}
-                                                            value={item?.relation} > 
-                                                            <option>Father</option>
-                                                            <option>Mother</option>
-                                                            <option>Brother</option>
-                                                            <option>Sister</option>
+                                                            value={item?.relation} 
+                                                            > 
+                                                             <option value={""}>Select</option>
+                                                            <option value={"Father"}>Father</option>
+                                                            <option value={"Mother"}>Mother</option>
+                                                            <option value={"Brother"}>Brother</option>
+                                                            <option value={"Sister"}>Sister</option>
                                                             </select>
+
                                                     </td>
                                                     <td className="pt-2">
                                                         <input type="text"
                                                             className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                             onChange={e => handleNomineeDetailListUpdate(item, 'pan', e.target.value)}
-                                                            value={item?.pan} />
+                                                            value={item?.pan}
+                                                            placeholder="PAN"
+
+                                                             />
                                                     </td>
                                                     <td className="pt-2">
-                                                        <input type="text"
+                                                        <input type="date"
                                                             className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                             onChange={e => handleNomineeDetailListUpdate(item, 'dob', e.target.value)}
-                                                            value={item?.dob} />
+                                                            value={item?.dob} 
+                                                            placeholder="DD-MM-YYYY"
+                                                            
+                                                            />
                                                     </td>
                                                     <td className="pt-2">
                                                         <input type="text"
                                                             className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                             onChange={e => handleNomineeDetailListUpdate(item, 'address', e.target.value)}
-                                                            value={item?.address} />
+                                                            value={item?.address} 
+                                                            placeholder="Address"
+                                                            />
                                                     </td>
                                                     <td className="pt-2 flex gap-1">
                                                         <input type="number"
                                                             className="block w-10/12 rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                             onChange={e => {
-                                                                // if(totalPercentage > 100) return
+                                                                // const val = e.target.valueAsNumber;
+                                                                // // val + total <= 100
+                                                                // console.log('val',val,100 - totalPercentage + 1 , 100 - totalPercentage + 1 < val)
+                                                                // console.log('rem val',100 - totalPercentage + 1 , 100 - totalPercentage + 1 < val)
+                                                                // if(val + totalPercentage > 100) return
                                                                 handleNomineeDetailListUpdate(item, 'percentage_share', e.target.value)
                                                             }}
+                                                            placeholder="0"
                                                             value={item?.percentage_share} />
                                                         {
                                                             idx !== 0 &&
