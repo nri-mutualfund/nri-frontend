@@ -24,7 +24,7 @@ const Page = () => {
       <div className="max-w-screen-2xl mx-auto py-6 xl:px-40 md:px-16 px-10">
         <div className="mx-auto text-center max-w-3xl">
           <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
-            Meet our <span className="text-primary">NRI Ambassadors</span>{" "}
+            Meet our <span className="text-[#424242]">NRI Ambassadors</span>{" "}
             across the Globe
           </h1>
           <p className="font-medium mt-4 mb-4 text-[#424242] text-center max-w-2xl mx-auto">

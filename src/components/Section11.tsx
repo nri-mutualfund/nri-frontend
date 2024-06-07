@@ -4,7 +4,7 @@ const Section11 = () => {
   return (
     <section className="bg-white px-4 md:px-20 lg:px-40 py-14 md:py-24">
       <h1 className="text-[#424242] mx-auto font-semibold text-center  leading-tight">
-        Serving <span className="text-primary">NRI</span> from across countries
+        Serving <span className="text-[#424242]">NRI</span> from across countries
       </h1>
       {/* <p className="font-extralight mt-1 text-sm text-center">{data?.detail}</p> */}
       <svg
