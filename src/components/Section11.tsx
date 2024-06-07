@@ -3,9 +3,9 @@ import React from "react";
 const Section11 = () => {
   return (
     <section className="bg-white px-4 md:px-20 lg:px-40 py-14 md:py-24">
-      <h2 className="text-gray-800 mx-auto font-medium text-center  leading-[40px]">
+      <h1 className="text-[#424242] mx-auto font-semibold text-center  leading-tight">
         Serving <span className="text-primary">NRI</span> from across countries
-      </h2>
+      </h1>
       {/* <p className="font-extralight mt-1 text-sm text-center">{data?.detail}</p> */}
       <svg
         // width="660"
