@@ -17,7 +17,7 @@ const Page = () => {
     queryFn: () => getSectionFAQ(currentPage),
   });
   return (
-    <section className=" px-4 md:px-20 lg:px-40 py-14 md:py-24">
+    <section className=" px-4 md:px-20 lg:px-40 py-10">
       <div className="w-full flex flex-col justify-center items-center">
       <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
       Frequently <span className="text-[#424242]">Asked</span> Questions

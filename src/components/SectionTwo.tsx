@@ -12,13 +12,14 @@ const SectionTwo = ({ data }: SectionOneProps) => {
       <div className="">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="mb-5 font-semibold text-[#424242] tracking-tight leading-tight">
+            <h1 className="font-semibold text-[#424242]  leading-tight">
               {data?.pre_heading}{" "}
               <span className="text-[#424242]">{data?.highlightned}</span>{" "}
               {data?.post_heading}
             </h1>
-            <p className="text-[#666666] font-light leading-normal mt-4 mb-4">{data?.detail}</p>
+            <p className="text-[#666666] font-normal leading-normal mt-4 mb-4">{data?.detail}</p>
           </div>
+          
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
             <dl className="grid max-w-xl grid-cols-1 gap-x-10 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16 relative">
               <div className="relative pl-16">
@@ -61,7 +62,7 @@ const SectionTwo = ({ data }: SectionOneProps) => {
                       aria-hidden="true"
                     />
                   </div>
-                  <h2 className="font-medium text-[#424242]">
+                  <h2 className="font-medium leading-6 text-[#424242]">
                   {data?.part3heading}</h2>
                 </dt>
                 <dd className="text-base  mt-[15px]">
@@ -81,7 +82,7 @@ const SectionTwo = ({ data }: SectionOneProps) => {
                   {data?.part4heading}</h2>
                 </dt>
                 <dd className="text-base leading-6  mt-[15px]">
-                <p className="font-normal text-[#424242] ">
+                <p className="font-normal text-[#424242] pt-1">
                   {data?.part4content}</p>
                 </dd>
               </div>

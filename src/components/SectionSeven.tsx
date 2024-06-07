@@ -5,11 +5,11 @@ const SectionSeven = () => {
   return (
     <section className="px-4 md:px-20 lg:px-40 bg-secondary py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-      <h1 className="mb-5 font-semibold text-[#424242] tracking-tight leading-tight">
+      <h1 className=" font-semibold text-[#424242]  leading-tight text-center">
           Your money will be <span className="text-[#424242]">safe & secure</span>
         </h1>
-        <p className="text-[#666666] font-light leading-normal mt-4 mb-4">
-          Your money is regulated by mutual fund companies. NRI doesn’t keep or
+        <p className="text-[#666666] font-normal leading-normal mt-4 mb-4 text-center">
+                    Your money is regulated by mutual fund companies. NRI doesn’t keep or
           handle your money
         </p>
       </div>
@@ -23,11 +23,11 @@ const SectionSeven = () => {
             width={500}
             height={1}
           />
-          <div className="flex justify-center items-center flex-col gap-3">
+          <div className="flex justify-center md:items-center flex-col gap-3">
                   <h2 className="font-medium text-[#424242]">
           From your Foreign Bank{" "}
             </h2>
-            <p className=" font-normal text-center leading-6 w-2/3 md:w-full">
+            <p className=" font-normal md:text-center leading-6 w-full md:w-full">
               Convert to INR through your preferred remittance partner
             </p>
           </div>
@@ -51,10 +51,10 @@ const SectionSeven = () => {
             width={500}
             height={1}
           />
-          <div className=" flex justify-center items-center flex-col gap-3">
+          <div className=" flex justify-center md:items-center flex-col gap-3">
                   <h2 className="font-medium text-[#424242]">
           To NRE/NRO Account</h2>
-            <p className=" font-normal text-center leading-6 w-2/3 md:w-full">
+            <p className=" font-normal md:text-center leading-6 w-full md:w-full">
               Integrate bank account and pay through net-banking
             </p>
           </div>
@@ -75,14 +75,14 @@ const SectionSeven = () => {
             src="/assets/funds.png"
             alt="Your Image Alt Text"
             className="w-[30%] lg:w-[60%] transition-all duration-300 hover:scale-105"
-            width={500}
+            width={700}
             height={1}
           />
-          <div className="flex justify-center items-center flex-col gap-3">
+          <div className="flex justify-center md:items-center flex-col gap-3 pt-3">
                   <h2 className="font-medium text-[#424242]">
           To Mutual Funds
             </h2>
-            <p className=" font-normal text-center leading-6 w-2/3 md:w-full">
+            <p className=" font-normal md:text-center leading-6 w-full ">
               Invest directly in your selected mutual funds
             </p>
           </div>

@@ -17,7 +17,7 @@ const Section12 = () => {
     <section className=" px-4 md:px-20 lg:px-40  py-14 md:py-24 bg-secondary">
       <div className="grid grid-cols-1 gap-x-20 gap-y-16 mt-4 lg:grid-cols-2 items-center">
         <div className="w-full order-2 lg:order-1">
-          <h1 className="text-[#424242]  font-semibold  max-w-md leading-tight text-center lg:text-left  mx-auto lg:mx-0">
+      <h1 className=" font-semibold text-[#424242] text-center md:text-start leading-tight max-w-md">
             Why you should <span className="text-[#424242]">invest</span> in
             India?
           </h1>
