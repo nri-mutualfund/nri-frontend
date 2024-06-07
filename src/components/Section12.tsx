@@ -18,7 +18,7 @@ const Section12 = () => {
       <div className="grid grid-cols-1 gap-x-20 gap-y-16 mt-4 lg:grid-cols-2 items-center">
         <div className="w-full order-2 lg:order-1">
           <h1 className="text-[#424242]  font-semibold  max-w-md leading-tight text-center lg:text-left  mx-auto lg:mx-0">
-            Why you should <span className="text-primary">invest</span> in
+            Why you should <span className="text-[#424242]">invest</span> in
             India?
           </h1>
           <div className="grid-cols-1 md:grid-cols-3 gap-14 items-center justify-center mt-14 hidden md:grid">

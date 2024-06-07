@@ -34,7 +34,7 @@ const SectionThree = ({ data }: SectionOneProps) => {
       <div className="w-full lg:w-1/2">
         <h1 className="text-[#424242] mx-auto  font-semibold leading-5 mb-5">
           {data?.pre_heading}{" "}
-          <span className="text-primary">{data?.highlightned}</span>{" "}
+          <span className="text-[#424242]">{data?.highlightned}</span>{" "}
           {data?.post_heading}
         </h1>
         <p className="text-[#666666] font-normal  leading-6 mt-4 mb-4">{data?.detail}</p>
