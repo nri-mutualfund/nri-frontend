@@ -92,9 +92,9 @@ const Page = () => {
                 >
                   <option>{data?.located_at}</option>
                 </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                {/* <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                   <IoChevronDownOutline color="#8898aa" />
-                </div>
+                </div> */}
               </div>
               <div className="mt-2 flex gap-2 items-center">
                 <FaLock />
@@ -108,14 +108,14 @@ const Page = () => {
                 PAN
               </label>
               <div className="mt-2 flex gap-4">
-                <div className="px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 flex gap-2 items-center justify-between">
+                <div className="px-2 w-full rounded-md border-0 py-1  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 flex gap-2 items-center justify-between">
                   <input
                     id="pan"
                     type="text"
                     name="pan"
                     autoComplete="off"
                     required
-                    className=" "
+                    className="h-8 border-none"
                     maxLength={10}
                   />
                   {checked && (
@@ -126,7 +126,7 @@ const Page = () => {
                 <button
                   type="submit"
                   disabled={checked}
-                  className="flex px-6 justify-center rounded-md bg-primary py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  className="flex px-6 justify-center items-center rounded-md bg-primary py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
                   Check
                 </button>
