@@ -28,7 +28,7 @@ const Page = () => {
           <div className="mx-auto py-6 xl:px-40 md:px-16 px-10">
           <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
           {data?.pre_heading}{" "}
-              <span className="text-primary">{data?.highlightned}</span>{" "}
+              <span className="text-[#424242]">{data?.highlightned}</span>{" "}
               {data?.post_heading}
             </h1>
             <p className="font-medium mt-4 mb-4 text-[#424242] text-center max-w-2xl mx-auto">
