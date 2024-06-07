@@ -24,7 +24,8 @@ const SectionOne = ({ data }: SectionOneProps) => {
             </svg>
             <h2 className="text-[#424242] mx-auto font-medium text-[44px] leading-tight">
               {data?.pre_heading}{" "}
-              <span className="text-[#424242]">{data?.highlightned} </span>
+              <span className="text-[#424242]">{data?.highlightned}</span>
+              <br/>
               {data?.post_heading}
             </h2>
             <p className="text-center text-[#424242] text-[20px] font-normal leading-normal mt-3 mb-5 mx-auto w-[85%] md:w-[60%]">

@@ -14,13 +14,14 @@ const SectionFour = ({ data }: SectionOneProps) => {
   return (
     <section className=" px-4 md:px-20 lg:px-40  py-14 md:py-24 bg-secondary">
       <div className="grid grid-cols-1 gap-x-20 gap-y-10 mt-4 lg:grid-cols-2 items-center">
-        <div className="w-full">
-          <h1 className="text-[#424242]  font-semibold  leading-tight max-w-80">
-            {data?.pre_heading}{" "}
-            <span className="text-[#424242]">{data?.highlightned}</span>{" "}
-            {data?.post_heading}
-          </h1>
-          <p className="font-normal  leading-normal mt-4 mb-4">{data?.detail}</p>
+      <div className="mx-auto max-w-2xl text-start">
+            <h1 className="font-semibold text-[#424242]  leading-tight max-w-sm">
+              {data?.pre_heading}{" "}
+              <span className="text-[#424242]">{data?.highlightned}</span>{" "}
+              {data?.post_heading}
+            </h1>
+            <p className="text-[#666666] text-start font-normal leading-normal mt-4 mb-4">{data?.detail}</p>
+          
           <div className="flex flex-wrap gap-2">
             <div className="flex  items-start mt-10">
               <button

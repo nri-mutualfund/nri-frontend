@@ -14,12 +14,12 @@ const SectionNine = ({ data }: SectionOneProps) => {
   const [showArrow, setShowArrow] = useState(false);
   return (
     <section className="bg-secondary px-4 md:px-20 lg:px-40 py-14 md:py-24">
-        <h1 className="text-[#424242] mx-auto  font-semibold  leading-tight text-center">
-        {data?.pre_heading}{" "}
+      <h1 className="text-[#424242] mx-auto font-semibold text-center  leading-tight">
+      {data?.pre_heading}{" "}
         <span className="text-[#424242]">{data?.highlightned}</span>{" "}
         {data?.post_heading}
       </h1>
-      <p className="font-medium mt-4 mb-4 text-[#666666] text-center">
+      <p className="text-[#666666] font-normal leading-normal mt-4 mb-4 mx-auto text-center">
       {data?.detail}</p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
@@ -36,12 +36,12 @@ const SectionNine = ({ data }: SectionOneProps) => {
               nProgress.start();
             }}
           >
-            <h2 className="text-gray-800 font-medium leading-[40px] mt-6">
+            <h2 className="text-gray-800 text-[36px] font-medium leading-[40px] mt-4">
               {data?.data[0]?.blog_heading}
             </h2>
           </Link>
 
-          <p className="font-light mt-6 text-base">
+          <p className="font-light mt-5 text-base">
             {data?.data[0]?.blog_content}
           </p>
           <Link
