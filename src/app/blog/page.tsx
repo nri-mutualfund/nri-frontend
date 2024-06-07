@@ -49,13 +49,13 @@ const Page = () => {
       ) : (
         <div className="bg-white sm:pt-4 pb-12">
           <div className="mx-auto py-6 xl:px-40 md:px-16 px-10">
-            <h2 className="text-gray-800 mx-auto font-medium text-center  leading-[40px] mt-6">
+ <h2 className="text-gray-800 mx-auto font-medium text-center  leading-[40px] mt-6">
               {data?.pre_heading}{" "}
               <span className="text-primary">{data?.highlightned}</span>{" "}
               {data?.post_heading}
             </h2>
-            <p className="font-extralight mt-1 text-sm text-center">
-              {data?.detail}
+            <p className="font-medium mt-4 mb-4 text-[#424242] text-center max-w-2xl mx-auto">
+            {data?.detail}
             </p>
             <div className="flex gap-10">
               <div className="hidden md:block">
