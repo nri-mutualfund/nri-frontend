@@ -35,12 +35,12 @@ const SectionSix = ({ data }: SectionOneProps) => {
   return (
     <section className="px-4 md:px-20 lg:px-10 py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-        <h2 className="text-gray-800 mx-auto  font-medium  leading-[40px] text-center">
+      <h1 className="mb-5 font-semibold text-[#424242] tracking-tight leading-tight">
           {data?.pre_heading}{" "}
           <span className="text-primary">{data?.highlightned}</span>{" "}
           {data?.post_heading}
-        </h2>
-        <p className="font-light text-sm mt-1 text-center">{data?.detail}</p>
+        </h1>
+        <p className="text-[#666666] font-light leading-normal mt-4 mb-4">{data?.detail}</p>
       </div>
       <div className="pt-14 md:pt-24">
         <div>
