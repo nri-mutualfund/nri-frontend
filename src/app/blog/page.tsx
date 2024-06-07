@@ -50,12 +50,6 @@ const Page = () => {
       ) : (
         <div className="bg-white sm:pt-4 pb-12">
           <div className="mx-auto py-6 xl:px-40 md:px-16 px-10">
-            <select className="block w-[80%] mx-auto rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6">
-              <option value={""}>Categories</option>
-              {cat.map((item, index) => (
-                <option key={index}>{item}</option>
-              ))}
-            </select>
             <h2 className="text-gray-800 mx-auto font-medium text-center  leading-[40px] mt-6">
               {data?.pre_heading}{" "}
               <span className="text-primary">{data?.highlightned}</span>{" "}
@@ -80,6 +74,12 @@ const Page = () => {
                 </div>
               </div>
               <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 mt-28">
+                <select className="block md:hidden w-[80%] mx-auto rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6 mb-6">
+                  <option value={""}>Categories</option>
+                  {cat.map((item, index) => (
+                    <option key={index}>{item}</option>
+                  ))}
+                </select>
                 {data?.data?.map((post: BlogPost, index: number) => (
                   <article
                     key={index}
