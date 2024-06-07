@@ -22,6 +22,7 @@ const Page = () => {
   const emailProp = searchParams.get("email");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [error, setError] = useState(false);
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -35,7 +36,7 @@ const Page = () => {
     };
     mutate(newData);
   };
-  const { data, isSuccess, mutate, isError, error } = useMutation({
+  const { data, isSuccess, mutate, isError } = useMutation({
     mutationKey: ["verify"],
     mutationFn: createUser,
     onSuccess: (data) => {
@@ -44,7 +45,11 @@ const Page = () => {
       localStorage.setItem("token", data?.accessToken);
     },
     onError: (error: CustomError) => {
-      toast(error?.response?.data?.data);
+      if (error?.response?.data?.data === "Incorrect verification code!") {
+        setError(true);
+      } else {
+        toast(error?.response?.data?.data);
+      }
     },
   });
 
@@ -135,11 +140,20 @@ const Page = () => {
                   name="code"
                   type="code"
                   autoComplete="code"
+                  minLength={6}
                   maxLength={6}
+                  onChange={() => {
+                    setError(false);
+                  }}
                   required
                   className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
+              {error && (
+                <p className="text-red-500 text-xs mt-2">
+                  Incorrect verification code!
+                </p>
+              )}
             </div>
             {/* <div className="flex mb-2 space-x-2 rtl:space-x-reverse">
               <div>
