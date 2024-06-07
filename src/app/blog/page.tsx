@@ -8,7 +8,7 @@ import { getSectionBlog } from "../api/api";
 import moment from "moment";
 import { BlogPost } from "@/utility/type";
 import Loader from "@/components/Loader";
-import { Pagination } from "flowbite-react";
+import CustomPagination from "@/components/CustomPagination";
 const Page = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const onPageChange = (page: number) => {
@@ -42,7 +42,6 @@ const Page = () => {
     "NRI Mutual Funds",
     "NRI Investment",
   ];
-  console.log("page", currentPage);
   return (
     <div className="max-w-screen-2xl ">
       {isLoading ? (
@@ -73,8 +72,8 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 mt-28">
-                <select className="block md:hidden w-[80%] mx-auto rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6 mb-6">
+              <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 mt-6 lg:mt-28">
+                <select className="block md:hidden w-2/3 rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6 ">
                   <option value={""}>Categories</option>
                   {cat.map((item, index) => (
                     <option key={index}>{item}</option>
@@ -135,10 +134,10 @@ const Page = () => {
           </div>
         </div>
       )}
-      <div className="flex overflow-x-auto justify-center mb-10">
-        <Pagination
+      <div className="mb-10 mx-auto py-6 xl:px-40 md:px-16 px-10">
+        <CustomPagination
           currentPage={currentPage}
-          totalPages={data?.pagination?.pageCount ?? 0}
+          total={100}
           onPageChange={onPageChange}
         />
       </div>

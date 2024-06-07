@@ -14,9 +14,7 @@ const Page = () => {
     queryKey: ["profile"],
     queryFn: getProfileDetails,
   });
-  const [name, setName] = useState(data?.first_name ?? "");
-  const [phone, setPhone] = useState(data?.phone_number ?? "");
-  const [email, setEmail] = useState(data?.email ?? "");
+
   const [errorStatus, setErrorStatus] = useState("");
   const [image1, setImage1] = useState<File | null>(null);
   const [previewSrc1, setPreviewSrc1] = useState<string | null>(null);
@@ -114,7 +112,7 @@ const Page = () => {
                       type="text"
                       // value={name}
                       // onChange={(e) => setName(e.target.value)}
-                      defaultValue={name}
+                      defaultValue={data?.first_name}
                       name="full_name"
                       id="full_name"
                       autoComplete="given-name"
@@ -159,8 +157,7 @@ const Page = () => {
                       id="email"
                       name="email"
                       type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      defaultValue={data?.email}
                       autoComplete="email"
                       required
                       disabled
@@ -197,9 +194,7 @@ const Page = () => {
                     <input
                       id="phone"
                       name="phone"
-                      type="phone"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      defaultValue={data?.phone_number}
                       autoComplete="phone"
                       required
                       className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"

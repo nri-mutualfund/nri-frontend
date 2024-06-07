@@ -256,14 +256,16 @@ const Page = () => {
             </button>
           </Link>
 
-          <Link href={"/finish"}>
-            <button
-              type="submit"
-              className="bg-primary text-white  px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
-            >
-              Complete
-            </button>
-          </Link>
+          {/* <Link
+          href={"/finish"}
+          > */}
+          <button
+            type="submit"
+            className="bg-primary text-white  px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+          >
+            Complete
+          </button>
+          {/* </Link> */}
         </div>
       </form>
     </div>
