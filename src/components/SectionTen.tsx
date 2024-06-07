@@ -10,7 +10,7 @@ const SectionTen = () => {
         >
           <div className="flex justify-center items-center p-3">
             <div>
-              <p className="text-lg  text-center max-w-[250px] text-[#111827]">
+              <p className="text-lg  text-center max-w-[250px] text-[#424242]">
                 Join our Whatsapp community of NRI/OCIs like you
               </p>
               <button className="flex gap-2 mx-auto px-6 items-center mt-6 py-2 rounded-md bg-primary  text-white focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">

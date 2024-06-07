@@ -24,8 +24,8 @@ const Page = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="bg-white sm:pt-4 pb-12">
-          <div className="mx-auto py-6 xl:px-40 md:px-16 px-10">
+        <div className="bg-white sm:pt-4 lg:py-10 pb-12">
+          <div className="mx-auto xl:px-40 md:px-16 px-10">
           <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
           {data?.pre_heading}{" "}
               <span className="text-[#424242]">{data?.highlightned}</span>{" "}
