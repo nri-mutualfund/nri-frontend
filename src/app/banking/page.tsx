@@ -44,13 +44,11 @@ const Page = () => {
           <div className="col-span-3">
             <div className="">
               <div className="max-w-lg">
-                <h1 className="font-medium leading-[55px] text-slate-800">
+              <h1 className="text-[#424242] mx-auto font-semibold  leading-tight">
                   Open your NRO, NRI Bank Account with{" "}
-                </h1>
-                <h1 className="font-medium leading-[55px] text-primary pb-6">
                   Renowned Indian Banks
                 </h1>
-                <p className="font-medium w-auto">
+                <p className="font-medium w-auto text-[#424242] mt-4 pb-4">
                   Apply in multiple partner banks to speed-up your NRI bank
                   account opening process. It is now easy, fast and secure for
                   NRIs & OCIs to bank in India with SBNRI.
