@@ -6,11 +6,7 @@ import { toast } from "react-toastify";
 import nProgress from "nprogress";
 import { useRouter } from "next/navigation";
 import ProgressBar from "@/components/ProgressBar";
-interface ProfileData {
-  first_name?: string;
-  phone_number?: string;
-  email?: string;
-}
+import ImageModal from "@/components/ImageModal";
 
 const Page = () => {
   const router = useRouter();
@@ -21,6 +17,11 @@ const Page = () => {
   const [name, setName] = useState(data?.first_name ?? "");
   const [phone, setPhone] = useState(data?.phone_number ?? "");
   const [email, setEmail] = useState(data?.email ?? "");
+  const [errorStatus, setErrorStatus] = useState("");
+  const [image1, setImage1] = useState<File | null>(null);
+  const [previewSrc1, setPreviewSrc1] = useState<string | null>(null);
+  const [show, setShow] = useState(false);
+
   const { isSuccess, mutate } = useMutation({
     mutationKey: ["investorProfile1"],
     mutationFn: addProfileDetails,
@@ -54,12 +55,33 @@ const Page = () => {
     form.append("phone_number", data?.phone);
     form.append("full_name", data?.full_name);
 
-    // form.append("address_proof_media", data?.address_proof);
-
-    mutate(form);
+    // form.append("address_proof_media",image1);
+    if (!image1) {
+      setErrorStatus("image1");
+    } else {
+      mutate(form);
+    }
   };
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      const file = files[0];
+      setImage1(file);
 
-  console.log("data", data);
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setPreviewSrc1(reader.result as string);
+      };
+    }
+    setErrorStatus("");
+  };
+  const openPdfInNewTab = (pdfFile: File | null) => {
+    if (pdfFile) {
+      const pdfUrl = URL.createObjectURL(pdfFile);
+      window.open(pdfUrl, "_blank");
+    }
+  };
   return (
     <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary">
       <ProgressBar widthPercentage={33} />
@@ -68,7 +90,7 @@ const Page = () => {
         onSubmit={submit}
       >
         <div className="grid grid-cols-1 md:grid-cols-5 gap-x-20 border-b border-gray-900/10 pb-0">
-          <div className="pb-12 col-span-2">
+          <div className="pb-12 sm:col-span-2">
             <h2 className="text-base font-semibold leading-7 text-gray-900">
               Profile
             </h2>
@@ -77,7 +99,7 @@ const Page = () => {
               share.
             </p>
           </div>
-          <div className="col-span-3">
+          <div className="sm:col-span-3">
             <div className="pb-12">
               <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-3">
@@ -229,7 +251,7 @@ const Page = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-x-20 border-b border-gray-900/10 py-12">
-          <div className="pb-12 col-span-2">
+          <div className="pb-12 sm:col-span-2">
             <h2 className="text-base font-semibold leading-7 text-gray-900">
               Current Residential Address
             </h2>
@@ -238,7 +260,7 @@ const Page = () => {
               share.
             </p>
           </div>
-          <div className="col-span-3">
+          <div className="sm:col-span-3">
             <div className="pb-12">
               <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-3">
@@ -365,7 +387,7 @@ const Page = () => {
                     document
                   </p>
                 </div>
-                <div className="sm:col-span-3">
+                {/* <div className="sm:col-span-3">
                   <div className="mt-2">
                     <input
                       id="address_proof"
@@ -375,6 +397,41 @@ const Page = () => {
                       className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                     />
                   </div>
+                </div> */}
+                <div className="sm:col-span-3 ">
+                  <div className="flex gap-10 items-center">
+                    <label htmlFor="address_proof">
+                      <p className="cursor-pointer">Upload</p>
+                      <input
+                        id="address_proof"
+                        type="file"
+                        required
+                        onChange={handleFileChange}
+                        className="hidden"
+                        accept="image/png, image/jpeg, .pdf"
+                      />
+                    </label>
+                    {previewSrc1 && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (image1?.type === "application/pdf") {
+                            openPdfInNewTab(image1);
+                          } else {
+                            setShow(true);
+                          }
+                        }}
+                      >
+                        Preview
+                      </button>
+                    )}
+                  </div>
+
+                  {errorStatus === "image1" && (
+                    <p className="text-red-500 text-xs mt-1">
+                      This field is required!
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -389,6 +446,13 @@ const Page = () => {
           </button>
         </div>
       </form>
+      <ImageModal isOpen={show} onClose={() => setShow(false)}>
+        <div className="flex justify-between items-center">
+          {previewSrc1 && (
+            <img src={previewSrc1} alt="Description" className="mx-auto" />
+          )}
+        </div>
+      </ImageModal>
     </div>
   );
 };
