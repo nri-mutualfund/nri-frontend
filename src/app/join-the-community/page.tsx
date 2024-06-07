@@ -23,18 +23,18 @@ const Page = () => {
     <div className="bg-white sm:pt-4 pb-12">
       <div className="max-w-screen-2xl mx-auto py-6 xl:px-40 md:px-16 px-10">
         <div className="mx-auto text-center max-w-3xl">
-          <h2 className="text-gray-800 mx-auto font-medium text-center  leading-[40px]">
-            Meet our <span className="text-primary">NRI Ambassadors</span>{" "}
+          <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
+            Meet our <span className="text-[#424242]">NRI Ambassadors</span>{" "}
             across the Globe
-          </h2>
-          <p className="font-extralight mt-1 text-sm text-center max-w-2xl mx-auto">
+          </h1>
+          <p className="font-medium mt-4 mb-4 text-[#424242] text-center max-w-2xl mx-auto">
             {`If you are a non-resident Indian (NRI) who shares our vision of India
           becoming the world's largest economy, we invite you to join our
           prestigious 'Ambassador' program. As an Ambassador, you will enjoy
           exclusive perks and benefits. Apply now to become a part of India's
           growth story and help shape its promising future.`}
           </p>
-          <p className="font-extralight mt-10 text-sm text-centerl">
+          <p className="font-medium mt-10 text-[#424242] text-center">
             Trusted by People working in reputed companies across the globe
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-2  max-w-md mx-auto">

@@ -14,12 +14,13 @@ const SectionNine = ({ data }: SectionOneProps) => {
   const [showArrow, setShowArrow] = useState(false);
   return (
     <section className="bg-secondary px-4 md:px-20 lg:px-40 py-14 md:py-24">
-      <h2 className="text-gray-800 mx-auto font-medium text-center  leading-[40px]">
+        <h1 className="text-[#424242] mx-auto  font-semibold  leading-tight text-center">
         {data?.pre_heading}{" "}
-        <span className="text-primary">{data?.highlightned}</span>{" "}
+        <span className="text-[#424242]">{data?.highlightned}</span>{" "}
         {data?.post_heading}
-      </h2>
-      <p className="font-extralight mt-1 text-sm text-center">{data?.detail}</p>
+      </h1>
+      <p className="font-medium mt-4 mb-4 text-[#666666] text-center">
+      {data?.detail}</p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
         <div>

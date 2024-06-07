@@ -32,12 +32,12 @@ const SectionThree = ({ data }: SectionOneProps) => {
   return (
     <section className=" px-4 md:px-20 lg:px-40 py-14 md:py-24 ">
       <div className="w-full lg:w-1/2">
-        <h2 className="text-gray-800 mx-auto  font-medium  leading-[40px]">
+        <h1 className="text-[#424242] mx-auto  font-semibold leading-5 mb-5">
           {data?.pre_heading}{" "}
-          <span className="text-primary">{data?.highlightned}</span>{" "}
+          <span className="text-[#424242]">{data?.highlightned}</span>{" "}
           {data?.post_heading}
-        </h2>
-        <p className="text-sm font-light mt-1">{data?.detail}</p>
+        </h1>
+        <p className="text-[#666666] font-normal  leading-6 mt-4 mb-4">{data?.detail}</p>
       </div>
       <div className="w-full flex flex-col gap-4 mt-8 lg:hidden">
         {data?.data?.map((item, index) => (
@@ -117,8 +117,8 @@ const SectionThree = ({ data }: SectionOneProps) => {
             >
               {icons[index]?.icon}
               <div className="">
-                <p className="text-xl font-medium">{item?.heading}</p>
-                <p className="mt-2 font-light text-sm">
+                <h2 className="text-[#424242] font-medium">{item?.heading}</h2>
+                <p className="mt-2 font-normal">
                   {item?.short_description}
                 </p>
               </div>
@@ -135,10 +135,10 @@ const SectionThree = ({ data }: SectionOneProps) => {
               height={1}
             />
             <div className="pt-4 px-6">
-              <p className="text-2xl font-medium">
+            <h2 className="text-[#424242] font-medium">
                 {data?.data[activeIndex]?.heading}
-              </p>
-              <p className="mt-2 font-light text-sm">
+              </h2>
+              <p className="mt-2 font-normal">
                 {data?.data[activeIndex]?.content}
               </p>
               {data?.data[activeIndex]?.key_points
