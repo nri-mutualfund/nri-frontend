@@ -37,7 +37,7 @@ const SectionSix = ({ data }: SectionOneProps) => {
       <div className="w-full flex flex-col justify-center items-center">
       <h1 className="mb-5 font-semibold text-[#424242] tracking-tight leading-tight">
           {data?.pre_heading}{" "}
-          <span className="text-primary">{data?.highlightned}</span>{" "}
+          <span className="text-[#424242]">{data?.highlightned}</span>{" "}
           {data?.post_heading}
         </h1>
         <p className="text-[#666666] font-light leading-normal mt-4 mb-4">{data?.detail}</p>

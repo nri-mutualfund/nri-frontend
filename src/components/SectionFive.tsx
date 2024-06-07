@@ -22,7 +22,7 @@ const SectionFive = ({ data }: SectionOneProps) => {
       <div className="w-full flex flex-col justify-center items-center">
       <h1 className="text-[#424242]  font-semibold  leading-tight max-w-80">
           {data?.pre_heading}
-          <span className="text-primary">{data?.highlightned}</span>{" "}
+          <span className="text-[#424242]">{data?.highlightned}</span>{" "}
           {data?.post_heading}
         </h1>
         <p className="font-normal  leading-normal mt-4 mb-4">{data?.detail}</p>

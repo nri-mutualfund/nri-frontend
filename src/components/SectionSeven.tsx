@@ -6,7 +6,7 @@ const SectionSeven = () => {
     <section className="px-4 md:px-20 lg:px-40 bg-secondary py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
       <h1 className="mb-5 font-semibold text-[#424242] tracking-tight leading-tight">
-          Your money will be <span className="text-primary">safe & secure</span>
+          Your money will be <span className="text-[#424242]">safe & secure</span>
         </h1>
         <p className="text-[#666666] font-light leading-normal mt-4 mb-4">
           Your money is regulated by mutual fund companies. NRI doesn’t keep or
