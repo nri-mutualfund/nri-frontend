@@ -1,10 +1,10 @@
 "use client";
 import FAQ from "@/components/FAQ";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { Pagination } from "flowbite-react";
 import React, { useState } from "react";
 import { getSectionFAQ } from "../api/api";
 import Loader from "@/components/Loader";
+import CustomPagination from "@/components/CustomPagination";
 
 const Page = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -29,7 +29,7 @@ const Page = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        data?.data?.length && (
+        data?.data?.length > 0 && (
           <div className="flex flex-wrap justify-between gap-6 mt-10">
             <div className="w-full md:w-2/3 text-right mx-auto">
               <div className="flex flex-col gap-6">
@@ -46,10 +46,10 @@ const Page = () => {
         )
       )}
       {/* <div className="w-full md:w-2/3 text-right mx-auto"> */}
-      <div className="flex overflow-x-auto justify-center mt-5">
-        <Pagination
+      <div className="my-10 w-full">
+        <CustomPagination
           currentPage={currentPage}
-          totalPages={data?.pagination?.pageCount ?? 0}
+          total={100}
           onPageChange={onPageChange}
         />
       </div>
