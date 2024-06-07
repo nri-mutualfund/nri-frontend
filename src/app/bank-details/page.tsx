@@ -1,4 +1,5 @@
 "use client";
+import ImageModal from "@/components/ImageModal";
 import ProgressBar from "@/components/ProgressBar";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -7,14 +8,44 @@ import React, { useState } from "react";
 import { FaLock } from "react-icons/fa";
 const Page = () => {
   const [status, setStatus] = useState("");
+  const [errorStatus, setErrorStatus] = useState("");
+  const [image1, setImage1] = useState<File | null>(null);
+  const [previewSrc1, setPreviewSrc1] = useState<string | null>(null);
+  const [show, setShow] = useState(false);
   const router = useRouter();
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    console.log("data", data);
-    nProgress.start();
-    router.push("/nominee-details");
+    let data = Object.fromEntries(formData.entries());
+    if (!image1) {
+      setErrorStatus("image1");
+    } else {
+      data = { ...data, verification_doc: image1 };
+      console.log("data", data);
+
+      nProgress.start();
+      router.push("/nominee-details");
+    }
+  };
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      const file = files[0];
+      setImage1(file);
+
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setPreviewSrc1(reader.result as string);
+      };
+    }
+    setErrorStatus("");
+  };
+  const openPdfInNewTab = (pdfFile: File | null) => {
+    if (pdfFile) {
+      const pdfUrl = URL.createObjectURL(pdfFile);
+      window.open(pdfUrl, "_blank");
+    }
   };
   return (
     <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary min-h-screen">
@@ -118,7 +149,7 @@ const Page = () => {
                     </select>
                   </div>
                 </div>
-                <div className="sm:col-span-3">
+                {/* <div className="sm:col-span-3">
                   <label
                     htmlFor="verification_document_media"
                     className="block text-sm font-medium leading-6 text-gray-900"
@@ -135,6 +166,40 @@ const Page = () => {
                       className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                     />
                   </div>
+                </div> */}
+                <div className="sm:col-span-3 ">
+                  <div className="flex gap-10 items-center pt-10">
+                    <label htmlFor="verification_document_media">
+                      <p className="cursor-pointer">Upload</p>
+                      <input
+                        id="verification_document_media"
+                        type="file"
+                        onChange={handleFileChange}
+                        className="hidden"
+                        accept="image/png, image/jpeg, .pdf"
+                      />
+                    </label>
+                    {previewSrc1 && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (image1?.type === "application/pdf") {
+                            openPdfInNewTab(image1);
+                          } else {
+                            setShow(true);
+                          }
+                        }}
+                      >
+                        Preview
+                      </button>
+                    )}
+                  </div>
+
+                  {errorStatus === "image1" && (
+                    <p className="text-red-500 text-xs mt-1">
+                      This field is required!
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -158,6 +223,13 @@ const Page = () => {
           </button>
         </div>
       </form>
+      <ImageModal isOpen={show} onClose={() => setShow(false)}>
+        <div className="flex justify-between items-center">
+          {previewSrc1 && (
+            <img src={previewSrc1} alt="Description" className="mx-auto" />
+          )}
+        </div>
+      </ImageModal>
     </div>
   );
 };
