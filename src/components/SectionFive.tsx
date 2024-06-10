@@ -20,19 +20,23 @@ const SectionFive = ({ data }: SectionOneProps) => {
   return (
     <section className="px-4 md:px-20 lg:px-40 py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-      <h1 className="text-[#424242]  font-semibold  leading-tight max-w-80">
+        <h1 className="text-[#424242]  font-semibold  leading-tight max-w-80">
           {data?.pre_heading}
           <span className="text-[#424242]">{data?.highlightned}</span>{" "}
           {data?.post_heading}
         </h1>
-        <p className="font-normal  leading-normal mt-4 mb-4">{data?.detail}</p>
+        <p className="font-normal text-center leading-normal mt-4 mb-4 text-[#666]">
+          {data?.detail}
+        </p>
       </div>
 
       <div className="max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-14 mx-auto mt-10">
         <div className="w-full bg-white drop-shadow-lg rounded-[20px]">
           <div className="flex flex-row items-center justify-between pl-12 pr-6 pt-10">
             <div className="flex justify-start">
-              <h2 className="text-[#424242] font-medium mt-2 ">{data?.title_one}</h2>
+              <h2 className="text-[#424242] font-medium mt-2 ">
+                {data?.title_one}
+              </h2>
             </div>
             <Image
               src="/assets/tax.png"
@@ -46,7 +50,9 @@ const SectionFive = ({ data }: SectionOneProps) => {
             {data?.content_one?.map((item, index) => (
               <div key={index} className="flex items-center mt-4 relative">
                 <div className="w-12 absolute left-0">{icons[index].icon}</div>
-                <p className=" text-[#424242] ml-10  font-normal leading-5">{item}</p>
+                <p className=" text-[#424242] ml-10  font-normal leading-5">
+                  {item}
+                </p>
               </div>
             ))}
           </div>
@@ -54,7 +60,9 @@ const SectionFive = ({ data }: SectionOneProps) => {
         <div className="w-full bg-white drop-shadow-lg rounded-[20px]">
           <div className="flex flex-row items-center justify-between pl-12 pr-6 pt-10">
             <div className="flex justify-start">
-            <h2 className="text-[#424242] font-medium mt-2 ">{data?.title_two}</h2>
+              <h2 className="text-[#424242] font-medium mt-2 ">
+                {data?.title_two}
+              </h2>
             </div>
             <Image
               src="/assets/doc.png"
@@ -74,7 +82,9 @@ const SectionFive = ({ data }: SectionOneProps) => {
                 } relative`}
               >
                 <div className="w-112 absolute left-0">{icons[index].icon}</div>
-                <p className=" text-[#424242]  font-normal ml-10 leading-5">{item}</p>
+                <p className=" text-[#424242]  font-normal ml-10 leading-5">
+                  {item}
+                </p>
                 <br />
               </div>
             ))}

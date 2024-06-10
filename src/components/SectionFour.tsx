@@ -20,7 +20,9 @@ const SectionFour = ({ data }: SectionOneProps) => {
             <span className="text-[#424242]">{data?.highlightned}</span>{" "}
             {data?.post_heading}
           </h1>
-          <p className="font-normal  leading-normal mt-4 mb-4">{data?.detail}</p>
+          <p className="font-normal  leading-normal mt-4 mb-4 text-[#666]">
+            {data?.detail}
+          </p>
           <div className="flex flex-wrap gap-2">
             <div className="flex  items-start mt-10">
               <button

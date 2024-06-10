@@ -35,12 +35,14 @@ const SectionSix = ({ data }: SectionOneProps) => {
   return (
     <section className="px-4 md:px-20 lg:px-10 py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-      <h1 className="mb-5 font-semibold text-[#424242] tracking-tight leading-tight">
+        <h1 className="mb-5 font-semibold text-[#424242] tracking-tight leading-tight">
           {data?.pre_heading}{" "}
           <span className="text-[#424242]">{data?.highlightned}</span>{" "}
           {data?.post_heading}
         </h1>
-        <p className="text-[#666666] font-light leading-normal mt-4 mb-4">{data?.detail}</p>
+        <p className="text-[#666666] font-light leading-normal mt-4 mb-4">
+          {data?.detail}
+        </p>
       </div>
       <div className="pt-14 md:pt-24">
         <div>
@@ -80,7 +82,7 @@ const SectionSix = ({ data }: SectionOneProps) => {
                             width={500}
                             height={1}
                           />
-                          <p className="font-light mt-4 ">
+                          <p className="font-light mt-4 text-[#666]">
                             {item?.content.length < 200
                               ? item?.content
                               : `${item?.content
@@ -102,10 +104,10 @@ const SectionSix = ({ data }: SectionOneProps) => {
                             height={1}
                           />
                           <div>
-                            <p className="font-medium text-gray-800">
+                            <p className="font-medium text-[#424242]">
                               {item?.author_name}
                             </p>
-                            <p className="font-medium text-gray-800  ">
+                            <p className="font-medium text-[#666]  ">
                               {item?.hobby}
                             </p>
                             <div className="grid w-full place-items-center overflow-x-scroll rounded-lg  lg:overflow-visible mt-1">

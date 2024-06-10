@@ -1,21 +1,121 @@
 "use client";
 import ProgressBar from "@/components/ProgressBar";
+import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import nProgress from "nprogress";
 import React, { useState } from "react";
 import { FaLock } from "react-icons/fa";
+import { addProfileDetails } from "../profile/api";
+import { toast } from "react-toastify";
+import { IoCloseCircleOutline } from "react-icons/io5";
+
+type NomineeDetail = {
+  tax_residency: string;
+  tin_or_pan: string;
+};
+type FormTypes = {
+  income_source: string;
+  occupation: string;
+  income_slab: string;
+  status_applies: string;
+  tax_residency_data?: any[]; // Optional property
+};
 const Page = () => {
   const router = useRouter();
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<string[]>([]);
+
+  const [taxResidency, setTaxResidency] = useState<NomineeDetail[]>([
+    {
+      tax_residency: "",
+      tin_or_pan: "",
+    },
+  ]);
+  const { mutate } = useMutation({
+    mutationKey: ["investorProfile1"],
+    mutationFn: addProfileDetails,
+    onSuccess: (data) => {
+      nProgress.start();
+      router.push("/bank-details");
+    },
+    onError: (error) => {
+      console.log("error", error);
+      toast("error occured");
+    },
+  });
+  const getStatus = [
+    "I’m Married",
+    "I have income from outside of India and I pay tax in other countries.",
+    "I'm a politically exposed person in a foreign country",
+    "Are you related to politically exposed person in a foreign country?",
+  ];
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    nProgress.start();
-    router.push("/bank-details");
-    console.log("data", data);
+    const data = Object.fromEntries(formData.entries()) as {
+      income_source?: string;
+      occupation?: string;
+      income_slab?: string;
+    };
+
+    let newData: FormTypes = {
+      income_source: data?.income_source ?? "",
+      occupation: data?.occupation ?? "",
+      income_slab: data?.income_slab ?? "",
+      status_applies: getStatusString(status),
+    };
+    if (status.includes("2")) {
+      newData = {
+        ...newData,
+        tax_residency_data: taxResidency,
+      };
+    }
+    console.log("data", newData);
+    // mutate(newData);
   };
+  const getStatusString = (indices: string[]): string => {
+    return indices
+      .map((indexStr) => parseInt(indexStr))
+      .map((index) => getStatus[index - 1])
+      .filter((status) => status !== undefined) // Ensure we filter out any undefined values in case of invalid indices
+      .join(", ");
+  };
+  function handleTaxResidencyDetailListUpdate(
+    selectedNominee: NomineeDetail,
+    key: string,
+    value: string
+  ) {
+    setTaxResidency(
+      taxResidency.map((currentNominee) =>
+        currentNominee === selectedNominee
+          ? {
+              ...currentNominee,
+              [key]: value,
+            }
+          : currentNominee
+      )
+    );
+  }
+  function addTax() {
+    setTaxResidency([
+      ...taxResidency,
+      {
+        tax_residency: "",
+        tin_or_pan: "",
+      },
+    ]);
+  }
+  function removeTax(item: NomineeDetail) {
+    setTaxResidency(taxResidency.filter((nominee) => nominee !== item));
+  }
+  const toggleString = (targetString: string) => {
+    if (status.includes(targetString)) {
+      setStatus(status.filter((str) => str !== targetString));
+    } else {
+      setStatus([...status, targetString]);
+    }
+  };
+
   return (
     <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary">
       <ProgressBar widthPercentage={55} />
@@ -128,15 +228,15 @@ const Page = () => {
                 <div className="sm:col-span-3">
                   <div
                     className={`w-full flex rounded-md border py-2 px-4  h-14 items-center ${
-                      status === "I’m Married" ? "border-primary" : ""
+                      status?.includes("1") ? "border-primary" : ""
                     }`}
                     onClick={() => {
-                      setStatus("I’m Married");
+                      toggleString("1");
                     }}
                   >
                     <p
                       className={`text-xs ${
-                        status === "I’m Married" ? "text-primary" : ""
+                        status?.includes("1") ? "text-primary" : ""
                       }`}
                     >
                       I’m Married
@@ -146,23 +246,15 @@ const Page = () => {
                 <div className="sm:col-span-3">
                   <div
                     className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
-                      status ===
-                      "I have income from outside of India and I pay tax in other countries."
-                        ? "border-primary"
-                        : ""
+                      status.includes("2") ? "border-primary" : ""
                     }`}
                     onClick={() => {
-                      setStatus(
-                        "I have income from outside of India and I pay tax in other countries."
-                      );
+                      toggleString("2");
                     }}
                   >
                     <p
                       className={`text-xs ${
-                        status ===
-                        "I have income from outside of India and I pay tax in other countries."
-                          ? "text-primary"
-                          : ""
+                        status.includes("2") ? "text-primary" : ""
                       }`}
                     >
                       I have income from outside of India and I pay tax in other
@@ -173,23 +265,15 @@ const Page = () => {
                 <div className="sm:col-span-3">
                   <div
                     className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
-                      status ===
-                      "I'm a politically exposed person in a foreign country"
-                        ? "border-primary"
-                        : ""
+                      status.includes("3") ? "border-primary" : ""
                     }`}
                     onClick={() => {
-                      setStatus(
-                        "I'm a politically exposed person in a foreign country"
-                      );
+                      toggleString("3");
                     }}
                   >
                     <p
                       className={`text-xs ${
-                        status ===
-                        "I'm a politically exposed person in a foreign country"
-                          ? "text-primary"
-                          : ""
+                        status.includes("3") ? "text-primary" : ""
                       }`}
                     >
                       {`I'm a politically exposed person in a foreign country`}
@@ -199,23 +283,15 @@ const Page = () => {
                 <div className="sm:col-span-3">
                   <div
                     className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
-                      status ===
-                      "Are you related to politically exposed person in a foreign country?"
-                        ? "border-primary"
-                        : ""
+                      status.includes("4") ? "border-primary" : ""
                     }`}
                     onClick={() => {
-                      setStatus(
-                        "Are you related to politically exposed person in a foreign country?"
-                      );
+                      toggleString("4");
                     }}
                   >
                     <p
                       className={`text-xs ${
-                        status ===
-                        "Are you related to politically exposed person in a foreign country?"
-                          ? "text-primary"
-                          : ""
+                        status.includes("4") ? "text-primary" : ""
                       }`}
                     >
                       Are you related to politically exposed person in a foreign
@@ -227,8 +303,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        {status ===
-          "I have income from outside of India and I pay tax in other countries." && (
+        {status?.includes("2") && (
           <div className="grid grid-cols-1 md:grid-cols-5 gap-x-20 border-b border-gray-900/10 pt-12 pb-4">
             <div className="col-span-2">
               <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -236,53 +311,81 @@ const Page = () => {
               </h2>
             </div>
             <div className="col-span-3">
-              <div className="pb-12">
-                <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                  <div className="sm:col-span-3">
-                    <label
-                      htmlFor="tax_residency"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      <span className="text-red-500">*</span> TAX Residency
-                    </label>
-                    <div className="mt-2">
-                      <select
-                        id="tax_residency"
-                        name="tax_residency"
-                        autoComplete="tax_residency"
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+              {taxResidency?.map((item, index) => (
+                <div className="pb-12" key={index}>
+                  <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
+                    <div className="sm:col-span-3">
+                      <label
+                        // htmlFor="tax_residency"
+                        className="block text-sm font-medium leading-6 text-gray-900"
                       >
-                        <option value={""}>Select TAX Residency</option>
-                        <option value={"India"}>India</option>
-                        <option value={"United States"}>United States</option>
-                        <option value={"United Kingdom"}>United Kingdom</option>
-                      </select>
+                        <span className="text-red-500">*</span> TAX Residency
+                      </label>
+                      <div className="mt-2">
+                        <select
+                          // id="tax_residency"
+                          // name="tax_residency"
+                          onChange={(e) => {
+                            handleTaxResidencyDetailListUpdate(
+                              item,
+                              "tax_residency",
+                              e.target.value
+                            );
+                          }}
+                          autoComplete="tax_residency"
+                          required
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        >
+                          <option value={""}>Select TAX Residency</option>
+                          <option value={"India"}>India</option>
+                          <option value={"United States"}>United States</option>
+                          <option value={"United Kingdom"}>
+                            United Kingdom
+                          </option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
-                  <div className="sm:col-span-3">
-                    <label
-                      htmlFor="tin_or_pan"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      <span className="text-red-500">*</span> TIN/PAN Details
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="tin_or_pan"
-                        name="tin_or_pan"
-                        autoComplete="tin_or_pan"
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                      />
+                    <div className="sm:col-span-3 ">
+                      <label
+                        // htmlFor="tin_or_pan"
+                        className="block text-sm font-medium leading-6 text-gray-900"
+                      >
+                        <span className="text-red-500">*</span> TIN/PAN Details
+                      </label>
+                      <div className="mt-2 relative">
+                        <input
+                          // id="tin_or_pan"
+                          // name="tin_or_pan"
+                          // autoComplete="tin_or_pan"
+
+                          onChange={(e) => {
+                            handleTaxResidencyDetailListUpdate(
+                              item,
+                              "tin_or_pan",
+                              e.target.value
+                            );
+                          }}
+                          required
+                          maxLength={10}
+                          minLength={10}
+                          className="block w-[85%] rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        />
+                        {index !== 0 && (
+                          <button
+                            className=" items-center justify-center absolute right-0 top-1"
+                            onClick={() => removeTax(item)}
+                          >
+                            <IoCloseCircleOutline className="w-6 h-6" />
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         )}
-
         <div className="mt-10 flex items-center justify-end gap-x-6">
           <Link href={"/investor-profile"}>
             <button
