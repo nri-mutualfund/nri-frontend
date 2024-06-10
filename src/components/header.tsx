@@ -24,7 +24,7 @@ const Header = () => {
           height={1}
         /> */}
 
-        <nav className="flex items-center text-base gap-12">
+        <nav className="flex items-center text-base gap-12 text-[#424242]">
           <Link
             href={"/"}
             className="cursor-pointer hover:text-gray-900"
@@ -144,7 +144,7 @@ const Header = () => {
               height={1}
             />
 
-            <p className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0 absolute left-10 ">
+            <p className="flex items-center mb-4 font-medium text-[#424242] title-font md:mb-0 absolute left-10 ">
               Logo
             </p>
           </Link>
@@ -157,7 +157,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-gray-900 "
+              className="cursor-pointer hover:text-gray-900 text-[#424242]"
             >
               Home
             </Link>
@@ -169,7 +169,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-gray-900 "
+              className="cursor-pointer hover:text-gray-900 text-[#424242]"
             >
               Join the Community
             </Link>
@@ -181,7 +181,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-gray-900 "
+              className="cursor-pointer hover:text-gray-900 text-[#424242]"
             >
               FAQ
             </Link>
@@ -193,7 +193,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-gray-900 "
+              className="cursor-pointer hover:text-gray-900 text-[#424242]"
             >
               Blog
             </Link>

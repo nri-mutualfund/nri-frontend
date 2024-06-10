@@ -69,17 +69,20 @@ const Page = () => {
           </div>
         </div>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md bg-white md:px-8 border-gray-200 md:border-2 md:shadow-md rounded-lg py-6">
-          <p className="text-lg font-semibold tracking-tight text-gray-900 text-center">
+          <h2 className="font-semibold tracking-tight text-[#424242] text-center leading-tight">
             Apply in 20 seconds
-          </p>
-          <p className="mt-1 text-sm text-gray-400 text-center mb-10">
+          </h2>
+          <p className="mt-1 text-base text-[#666] text-center mb-10">
             50,000+ Nris applied in last 6 months
           </p>
-          <form className="space-y-6" onSubmit={submit}>
+          <form
+            className="space-y-6 text-base text-[#424242]"
+            onSubmit={submit}
+          >
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6 text-[#424242]"
               >
                 Your name
               </label>
@@ -90,7 +93,7 @@ const Page = () => {
                   type="name"
                   placeholder="Fullname as per passport"
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -98,7 +101,7 @@ const Page = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6 text-[#424242]"
               >
                 Your Email address
               </label>
@@ -109,14 +112,14 @@ const Page = () => {
                   type="email"
                   placeholder="Enter Email"
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6 text-[#424242]"
               >
                 Country
               </label>
@@ -130,7 +133,7 @@ const Page = () => {
                     setCode(getCodes[e.target.value]);
                   }}
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 appearance-none"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 appearance-none"
                 >
                   <option disabled>Choose your country</option>
                   <option value="US">United States</option>
@@ -147,12 +150,12 @@ const Page = () => {
             <div>
               <label
                 htmlFor="phone"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6 text-[#424242]"
               >
                 Whatsapp Number
               </label>
               <div className="mt-2">
-                <div className="flex w-full rounded-md border-0 py-0.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
+                <div className="flex w-full rounded-md border-0 py-0.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
                   <p className="border-r-2 px-4 py-1">{code}</p>
                   <input
                     id="whatsapp_number"
