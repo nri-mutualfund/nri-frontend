@@ -19,11 +19,11 @@ const Page = () => {
   return (
     <section className=" px-4 md:px-20 lg:px-40 py-10">
       <div className="w-full flex flex-col justify-center items-center">
-      <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
-      Frequently <span className="text-[#424242]">Asked</span> Questions
+        <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
+          Frequently <span className="text-[#424242]">Asked</span> Questions
         </h1>
-        <p className="font-medium mt-4 mb-4 text-[#424242] text-center max-w-2xl mx-auto">
-        Learn about us and check out these frequently asked questions.
+        <p className="font-medium mt-4 mb-4 text-[#666] text-center max-w-2xl mx-auto">
+          Learn about us and check out these frequently asked questions.
         </p>
       </div>
       {isLoading ? (

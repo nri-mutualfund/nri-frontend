@@ -49,24 +49,23 @@ const Page = () => {
       ) : (
         <div className="bg-white sm:pt-4 lg:py-10 pb-12">
           <div className="mx-auto xl:px-40 md:px-16 px-10">
-          <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
-          {data?.pre_heading}{" "}
+            <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
+              {data?.pre_heading}{" "}
               <span className="text-[#424242]">{data?.highlightned}</span>{" "}
-
               {data?.post_heading}
             </h1>
-            <p className="font-medium mt-4 mb-4 text-[#424242] text-center max-w-2xl mx-auto">
+            <p className="font-medium mt-4 mb-4 text-[#666] text-center max-w-2xl mx-auto">
               {data?.detail}
             </p>
             <div className="flex gap-10">
               <div className="hidden md:block">
                 <div className="w-[250px] xl:w-[280px] border shadow-sm rounded-lg mt-28 ">
                   <div className="p-4 border-b">
-                    <p className="text-base font-bold">Categories</p>
+                    <h2 className="leading-tight text-[#424242]">Categories</h2>
                   </div>
                   <div className="p-4">
                     {cat?.map((item, index) => (
-                      <p key={index} className="mb-4">
+                      <p key={index} className="mb-4 text-[#424242] text-base">
                         {item}
                       </p>
                     ))}
@@ -86,11 +85,11 @@ const Page = () => {
                     className="flex max-w-xl flex-col items-start justify-between"
                   >
                     <div className="group relative">
-                      <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                      <h2 className="mt-3 font-semibold leading-6 text-[#424242] group-hover:text-gray-600">
                         <span className="absolute inset-0" />
                         {post.blog_heading}
-                      </h3>
-                      <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                      </h2>
+                      <p className="mt-5 line-clamp-3 text-base leading-6 text-[#424242]">
                         {post.blog_content}
                       </p>
                     </div>
@@ -108,7 +107,7 @@ const Page = () => {
                         Learn More
                         <RxArrowRight />
                       </Link>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-[#666] text-sm">
                         {moment(post?.created_at).format("MMM DD, YYYY")}
                       </p>
                     </div>
@@ -121,11 +120,11 @@ const Page = () => {
                         className="h-10 w-10 rounded-full bg-gray-50"
                       />
                       <div className="text-sm leading-6">
-                        <p className="font-semibold text-gray-900">
+                        <p className="font-semibold text-[#424242]">
                           <span className="absolute inset-0" />
                           {post?.user_name}
                         </p>
-                        <p className="text-gray-600">Co-Founder / CTO</p>
+                        <p className="text-[#666]">Co-Founder / CTO</p>
                       </div>
                     </div>
                   </article>
