@@ -20,6 +20,7 @@ const Page = () => {
   const [pan, setPan] = useState("");
   const [checked, setChecked] = useState(false);
   const [formData, setFormData] = useState({});
+  const [error, setError] = useState(false);
   const { data } = useQuery({
     queryKey: ["key22"],
     queryFn: getDetails,
@@ -29,11 +30,13 @@ const Page = () => {
     onSuccess: (data) => {
       if (data?.data?.status === "valid") {
         setChecked(true);
-        toast("pan verification done!");
+        // toast("pan verification done!");
       } else if (data?.data?.status === "invalid") {
-        toast("invalid pan details!");
+        // toast("invalid pan details!");
+        setError(true);
       } else {
-        toast("failed to verify!");
+        // toast("failed to verify!");
+        setError(true);
       }
     },
     onError: (error) => {
@@ -105,40 +108,6 @@ const Page = () => {
             </div>
             <div className="mt-4">
               <label className="block text-sm font-medium leading-6 text-gray-900">
-                PAN
-              </label>
-              <div className="mt-2 flex gap-4">
-                <div className="px-2 w-full rounded-md border-0 py-1  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 flex gap-2 items-center justify-between">
-                  <input
-                    id="pan"
-                    type="text"
-                    name="pan"
-                    autoComplete="off"
-                    required
-                    className="h-8 border-none"
-                    maxLength={10}
-                  />
-                  {checked && (
-                    <IoCheckmarkCircleOutline size={20} color="#008000" />
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={checked}
-                  className="flex px-6 justify-center items-center rounded-md bg-primary py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                >
-                  Check
-                </button>
-              </div>
-              {checked && (
-                <label className="block text-sm font-medium leading-6 text-primary mt-2">
-                  Great, your PAN {panDetails?.data?.pan} is KYC complaint!
-                </label>
-              )}
-            </div>
-            <div className="mt-4">
-              <label className="block text-sm font-medium leading-6 text-gray-900">
                 Date of Birth
               </label>
               <div className="mt-2 flex items-center gap-2">
@@ -177,6 +146,50 @@ const Page = () => {
                 />
               </div>
             </div>
+            <div className="mt-4">
+              <label className="block text-sm font-medium leading-6 text-gray-900">
+                PAN
+              </label>
+              <div className="mt-2 flex gap-4">
+                <div
+                  className={`px-2 w-full rounded-md border py-1   shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 flex gap-2 items-center justify-between ${
+                    error ? "border-red-500 text-red-500" : "text-gray-900"
+                  }`}
+                >
+                  <input
+                    id="pan"
+                    type="text"
+                    name="pan"
+                    autoComplete="off"
+                    required
+                    className="h-8 border-none"
+                    maxLength={10}
+                    onChange={() => {
+                      setError(false);
+                    }}
+                  />
+                  {checked && (
+                    <IoCheckmarkCircleOutline size={20} color="#008000" />
+                  )}
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={checked}
+                  className="flex px-6 justify-center items-center rounded-md bg-primary py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                >
+                  Check
+                </button>
+              </div>
+              {checked && (
+                <label className="block text-sm font-medium leading-6 text-primary mt-2">
+                  Great, your PAN {panDetails?.data?.pan} is KYC complaint!
+                </label>
+              )}
+            </div>
+            {error && (
+              <p className="text-red-500 text-sm">Invalid pan details!</p>
+            )}
             <div className="mt-4 w-full rounded-md bg-secondary px-4 py-4 relative">
               <Link
                 href={
