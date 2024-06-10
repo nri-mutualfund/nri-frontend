@@ -32,12 +32,14 @@ const SectionThree = ({ data }: SectionOneProps) => {
   return (
     <section className=" px-4 md:px-20 lg:px-40 py-14 md:py-24 ">
       <div className="w-full lg:w-1/2">
-      <h1 className=" font-semibold text-[#424242] leading-tight">
-      {data?.pre_heading}{" "}
+        <h1 className=" font-semibold text-[#424242] leading-tight">
+          {data?.pre_heading}{" "}
           <span className="text-[#424242]">{data?.highlightned}</span>{" "}
           {data?.post_heading}
         </h1>
-        <p className="text-[#666666] font-normal leading-normal mt-4 mb-4">{data?.detail}</p>
+        <p className="text-[#666666] font-normal  leading-6 mt-4 mb-4">
+          {data?.detail}
+        </p>
       </div>
       <div className="w-full flex flex-col gap-4 mt-8 lg:hidden">
         {data?.data?.map((item, index) => (
@@ -92,8 +94,10 @@ const SectionThree = ({ data }: SectionOneProps) => {
               >
                 {icons[index]?.icon}
                 <div className="">
-                  <p className=" font-medium">{item?.heading}</p>
-                  <p className="mt-2 font-light">{item?.short_description}</p>
+                  <p className=" font-medium text-[#424242]">{item?.heading}</p>
+                  <p className="mt-2 font-light text-[#666]">
+                    {item?.short_description}
+                  </p>
                 </div>
               </div>
             )}
@@ -118,7 +122,7 @@ const SectionThree = ({ data }: SectionOneProps) => {
               {icons[index]?.icon}
               <div className="">
                 <h2 className="text-[#424242] font-medium">{item?.heading}</h2>
-                <p className="mt-2 font-normal">
+                <p className="mt-2 font-normal text-[#666]">
                   {item?.short_description}
                 </p>
               </div>
@@ -135,10 +139,10 @@ const SectionThree = ({ data }: SectionOneProps) => {
               height={1}
             />
             <div className="pt-4 px-6">
-            <h2 className="text-[#424242] font-medium">
+              <h2 className="text-[#424242] font-medium">
                 {data?.data[activeIndex]?.heading}
               </h2>
-              <p className="mt-2 font-normal">
+              <p className="mt-2 font-normal text-[#666]">
                 {data?.data[activeIndex]?.content}
               </p>
               {data?.data[activeIndex]?.key_points
@@ -153,7 +157,7 @@ const SectionThree = ({ data }: SectionOneProps) => {
                       <IoLockOpenOutline />
                     )}
 
-                    <p className="text-sm font-light">{item1}</p>
+                    <p className="text-sm font-light text-[#666]">{item1}</p>
                   </div>
                 ))}
             </div>
