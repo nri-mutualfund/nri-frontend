@@ -42,7 +42,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
               </h2>
             </Link>
 
-            <p className="font-light mt-3 text-sm text-[#424242]">
+            <p className="font-light mt-3 text-base leading-tight text-[#424242]">
               {data?.data[0]?.blog_content} {data?.data[0]?.blog_content}{" "}
               {data?.data[0]?.blog_content} {data?.data[0]?.blog_content}
             </p>
@@ -95,7 +95,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   {data?.data[1]?.blog_heading}
                 </h2>
               </Link>
-              <p className="font-light mt-3 text-sm text-[#424242]">
+              <p className="font-light mt-3 text-base leading-tight text-[#424242]">
                 {data?.data[1]?.blog_content}
               </p>
               <div className="flex items-center gap-4 mt-6">
@@ -129,7 +129,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   {data?.data[2]?.blog_heading}
                 </h2>
               </Link>
-              <p className="font-light mt-3 text-sm text-[#424242]">
+              <p className="font-light mt-3 text-base leading-tight-sm text-[#424242]">
                 {data?.data[2]?.blog_content}
               </p>
               <div className="flex items-center gap-4 mt-6">
