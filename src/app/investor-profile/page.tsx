@@ -1,11 +1,14 @@
 "use client";
 import ImageModal from "@/components/ImageModal";
 import ProgressBar from "@/components/ProgressBar";
+import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import nProgress from "nprogress";
 import React, { useState } from "react";
 import { FaLock } from "react-icons/fa";
+import { addProfileDetails } from "../profile/api";
+import { toast } from "react-toastify";
 const Page = () => {
   const router = useRouter();
   const [image1, setImage1] = useState<File | null>(null);
@@ -22,6 +25,20 @@ const Page = () => {
   const [errorStatus, setErrorStatus] = useState("");
 
   const [show, setShow] = useState(false);
+  const { mutate } = useMutation({
+    mutationKey: ["investorProfile1"],
+    mutationFn: addProfileDetails,
+    onSuccess: (data) => {
+      nProgress.start();
+      router.push("income-details");
+    },
+    onError: (error) => {
+      console.log("error", error);
+      toast("error occured");
+      nProgress.start();
+      router.push("income-details");
+    },
+  });
   const validate = () => {
     if (!image1) {
       setErrorStatus("image1");
@@ -42,9 +59,14 @@ const Page = () => {
         passport_size_photo_media: image4,
         oci_card_media: image5,
       };
+      const formData = new FormData();
+      formData.append("hand_signature_media", image1);
+      formData.append("passport_front_page_media", image2);
+      formData.append("indian_pan_card_media", image3);
+      formData.append("passport_size_photo_media", image4);
+      formData.append("oci_card_media", image5);
       console.log("file", data);
-      nProgress.start();
-      router.push("income-details");
+      mutate(formData);
     }
   };
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
