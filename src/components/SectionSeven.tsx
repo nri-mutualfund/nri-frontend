@@ -5,7 +5,7 @@ const SectionSeven = () => {
   return (
     <section className="px-4 md:px-20 lg:px-40 bg-secondary py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-        <h1 className="mb-5 font-semibold text-[#424242] tracking-tight leading-tight">
+        <h1 className="font-semibold text-[#424242] tracking-tight leading-tight">
           Your money will be{" "}
           <span className="text-[#424242]">safe & secure</span>
         </h1>
@@ -31,7 +31,7 @@ const SectionSeven = () => {
             <h2 className="font-medium text-[#424242] md:text-center">
               From your Foreign Bank
             </h2>
-            <p className="font-normal md:text-center leading-6">
+            <p className="font-normal md:text-center leading-6 text-[#666]">
               Convert to INR through your preferred remittance partner
             </p>
           </div>
@@ -61,7 +61,7 @@ const SectionSeven = () => {
             <h2 className="font-medium text-[#424242] md:text-center">
               To NRE/NRO Account
             </h2>
-            <p className=" font-normal md:text-center leading-6">
+            <p className=" font-normal md:text-center leading-6 text-[#666]">
               Integrate bank account and pay through net-banking
             </p>
           </div>
