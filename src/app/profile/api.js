@@ -15,6 +15,20 @@ export const addProfileDetails = async (values) => {
     throw error;
   }
 };
+export const getInvestorProfileDetails = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/customer/investorProfile`,
+      {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
 export const getProfileDetails = async () => {
   try {
     const response = await axios.get(
