@@ -1,6 +1,6 @@
 "use client";
 import GoogleAuthButton from "@/components/googleAuthButton";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { FaLock } from "react-icons/fa";
 import Image from "next/image";
@@ -21,6 +21,40 @@ const Page = () => {
   const [checked, setChecked] = useState(false);
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
+  const dateRef = useRef<HTMLInputElement>(null);
+  const monthRef = useRef<HTMLInputElement>(null);
+  const yearRef = useRef<HTMLInputElement>(null);
+
+  const focusNextInput = (currentRef: React.RefObject<HTMLInputElement>) => {
+    if (currentRef.current) {
+      currentRef.current.focus();
+    }
+  };
+
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value.length === 2) {
+      focusNextInput(monthRef);
+    }
+  };
+
+  const handleMonthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value.length === 2) {
+      focusNextInput(yearRef);
+    }
+  };
+
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLInputElement>,
+    currentRef: React.RefObject<HTMLInputElement>,
+    prevRef: React.RefObject<HTMLInputElement>
+  ) => {
+    if (e.key === "Backspace" && !e.currentTarget.value) {
+      if (prevRef.current) {
+        prevRef.current.focus();
+      }
+    }
+  };
+
   const { data } = useQuery({
     queryKey: ["key22"],
     queryFn: getDetails,
@@ -28,12 +62,8 @@ const Page = () => {
   const { mutate, data: panDetails } = useMutation({
     mutationFn: addDetails2,
     onSuccess: (data) => {
-      if (data?.data?.status === "valid") {
+      if (data?.number) {
         setChecked(true);
-        // toast("pan verification done!");
-      } else if (data?.data?.status === "invalid") {
-        // toast("invalid pan details!");
-        setError(true);
       } else {
         // toast("failed to verify!");
         setError(true);
@@ -119,6 +149,9 @@ const Page = () => {
                   maxLength={2}
                   required
                   placeholder="DD"
+                  ref={dateRef}
+                  onChange={handleDateChange}
+                  onKeyDown={(e) => handleKeyDown(e, dateRef, monthRef)}
                   className=" px-2 block w-12 rounded-md border-0 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
                 <div className="h-[1px] bg-gray-300 w-4"></div>
@@ -130,6 +163,9 @@ const Page = () => {
                   maxLength={2}
                   required
                   placeholder="MM"
+                  ref={monthRef}
+                  onChange={handleMonthChange}
+                  onKeyDown={(e) => handleKeyDown(e, monthRef, dateRef)}
                   className=" px-2 block w-12 rounded-md border-0 py-1.5 text-gray-900 text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
                 <div className="h-[1px] bg-gray-300 w-4"></div>
@@ -142,6 +178,8 @@ const Page = () => {
                   maxLength={4}
                   required
                   placeholder="YYYY"
+                  ref={yearRef}
+                  onKeyDown={(e) => handleKeyDown(e, yearRef, monthRef)}
                   className=" px-2 block w-24 rounded-md border-0 py-1.5 text-gray-900 text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
