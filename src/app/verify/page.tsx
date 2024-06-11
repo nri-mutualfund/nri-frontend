@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import { createUser } from "./api";
 import { toast } from "react-toastify";
 import NProgress from "nprogress";
+import OTPInput from "@/components/OTPInput";
 
 interface CustomError extends Error {
   response?: {
@@ -23,18 +24,25 @@ const Page = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
+  const [error2, setError2] = useState(false);
+  const [code, setCode] = useState("");
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    console.log("data", data);
-    const newData = {
-      email: email,
-      verificationCode: data.code,
-      password: data.password,
-      first_name: name,
-    };
-    mutate(newData);
+    if (code?.length < 6) {
+      setError2(true);
+    } else {
+      console.log("data", data);
+      const newData = {
+        email: email,
+        verificationCode: code,
+        password: data.password,
+        first_name: name,
+      };
+      console.log("data", data, newData);
+      mutate(newData);
+    }
   };
   const { data, isSuccess, mutate, isError } = useMutation({
     mutationKey: ["verify"],
@@ -61,6 +69,9 @@ const Page = () => {
       setEmail(emailProp);
     }
   }, []);
+  useEffect(() => {
+    setError2(false);
+  }, [code]);
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-10 py-12 lg:px-8">
@@ -70,7 +81,7 @@ const Page = () => {
             src="https://tailwindui.com/img/logos/mark.svg?color=green&shade=700"
             alt="Your Company"
           />
-          <h2 className="mt-10 text-center font-bold leading-9 tracking-tight text-gray-900">
+          <h2 className="mt-10 text-center font-bold leading-9 tracking-tight text-[#424242]">
             Create an account
           </h2>
           <p className="mt-4  text-sm text-gray-600 text-center">
@@ -85,11 +96,11 @@ const Page = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white md:px-10 py-10 rounded-md md:shadow-md md:border border-gray-200">
-          <form className="space-y-6" onSubmit={submit}>
+          <form className="space-y-6 text-[#424242]" onSubmit={submit}>
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6 text-[#424242]"
               >
                 Your Name
               </label>
@@ -103,14 +114,14 @@ const Page = () => {
                   value={name}
                   disabled
                   // onChange={(e) => setName(e.target.value)}
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6 text-[#424242]"
               >
                 Your Email address
               </label>
@@ -123,133 +134,38 @@ const Page = () => {
                   required
                   value={email}
                   disabled
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div>
               <label
                 htmlFor="code"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6 text-[#424242]"
               >
                 Please enter verification code sent to your email
               </label>
-              <div className="mt-2">
-                <input
-                  id="code"
-                  name="code"
-                  type="code"
-                  autoComplete="code"
-                  minLength={6}
-                  maxLength={6}
-                  onChange={() => {
-                    setError(false);
-                  }}
-                  required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-                />
-              </div>
+            </div>
+            <div className="">
+              <OTPInput length={6} onChange={(e) => setCode(e)} />
               {error && (
                 <p className="text-red-500 text-xs mt-2">
                   Incorrect verification code!
                 </p>
               )}
+              {error2 && (
+                <p className="text-red-500 text-xs mt-2">
+                  {code?.length > 0
+                    ? "verification code should be in 6 digit!"
+                    : "This field is required!"}
+                </p>
+              )}
             </div>
-            {/* <div className="flex mb-2 space-x-2 rtl:space-x-reverse">
-              <div>
-                <label htmlFor="code-1" className="sr-only">
-                  First code
-                </label>
-                <input
-                  type="text"
-                  maxLength={1}
-                  data-focus-input-init
-                  data-focus-input-next="code-2"
-                  id="code-1"
-                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="code-2" className="sr-only">
-                  Second code
-                </label>
-                <input
-                  type="text"
-                  maxLength={1}
-                  data-focus-input-init
-                  data-focus-input-prev={"code-1"}
-                  data-focus-input-next={"code-3"}
-                  id="code-2"
-                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="code-3" className="sr-only">
-                  Third code
-                </label>
-                <input
-                  type="text"
-                  maxLength={1}
-                  data-focus-input-init
-                  data-focus-input-prev="code-2"
-                  data-focus-input-next="code-4"
-                  id="code-3"
-                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="code-4" className="sr-only">
-                  Fourth code
-                </label>
-                <input
-                  type="text"
-                  maxLength={1}
-                  data-focus-input-init
-                  data-focus-input-prev="code-3"
-                  data-focus-input-next="code-5"
-                  id="code-4"
-                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="code-5" className="sr-only">
-                  Fifth code
-                </label>
-                <input
-                  type="text"
-                  maxLength={1}
-                  data-focus-input-init
-                  data-focus-input-prev="code-4"
-                  data-focus-input-next="code-6"
-                  id="code-5"
-                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="code-6" className="sr-only">
-                  Sixth code
-                </label>
-                <input
-                  type="text"
-                  maxLength={1}
-                  data-focus-input-init
-                  data-focus-input-prev="code-5"
-                  id="code-6"
-                  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
-                  required
-                />
-              </div>
-            </div> */}
             <div>
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6 text-[#424242]"
                 >
                   Password
                 </label>
@@ -262,7 +178,7 @@ const Page = () => {
                   autoComplete="new-password"
                   required
                   minLength={8}
-                  className=" px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className=" px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>

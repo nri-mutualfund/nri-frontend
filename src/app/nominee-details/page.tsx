@@ -1,10 +1,14 @@
 "use client";
 import ProgressBar from "@/components/ProgressBar";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaLock } from "react-icons/fa";
 import { IoCloseCircleOutline } from "react-icons/io5";
-
+import { addNomineeDetails, getNomineeDetails } from "./api";
+import nProgress from "nprogress";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 type NomineeDetail = {
   full_legal_name: string;
   relation: string;
@@ -14,12 +18,33 @@ type NomineeDetail = {
   percentage_share: string;
 };
 const Page = () => {
+  const router = useRouter();
   const [canAddNominee, setCanAddNominee] = useState(false);
+  const { data: nomineeData, isLoading } = useQuery({
+    queryKey: ["nomineeDetails"],
+    queryFn: getNomineeDetails,
+  });
+  const { mutate } = useMutation({
+    mutationKey: ["nomineeDetails"],
+    mutationFn: addNomineeDetails,
+    onSuccess: (data) => {
+      nProgress.start();
+      router.push("/finish");
+    },
+    onError: (error) => {
+      console.log("error", error);
+      toast("error occured");
+    },
+  });
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    console.log("data", data);
+    console.log("data", nomineeDetailList);
+    const newData = {
+      nomineeList: nomineeDetailList,
+    };
+    mutate(newData);
   };
   const [nomineeDetailList, setNomineeDetailList] = useState<NomineeDetail[]>([
     {
@@ -51,7 +76,6 @@ const Page = () => {
     );
   }
 
-  console.log("nomineeDetailList", nomineeDetailList);
   function handleNomineeDetailListUpdate(
     selectedNominee: NomineeDetail,
     key: string,
@@ -72,6 +96,28 @@ const Page = () => {
     (amt, item) => (amt += Number(item?.percentage_share)),
     0
   );
+  useEffect(() => {
+    if (nomineeData) {
+      const newData = nomineeData?.map(
+        ({
+          full_legal_name,
+          relation,
+          pan,
+          dob,
+          address,
+          percentage_share,
+        }: NomineeDetail) => ({
+          full_legal_name,
+          relation,
+          pan,
+          dob,
+          address,
+          percentage_share,
+        })
+      );
+      setNomineeDetailList(newData);
+    }
+  }, [nomineeData]);
   return (
     <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary min-h-screen">
       <ProgressBar widthPercentage={100} />
@@ -127,6 +173,7 @@ const Page = () => {
                                 )
                               }
                               placeholder="Name"
+                              required
                               value={item?.full_legal_name}
                             />
                           </td>
@@ -145,6 +192,7 @@ const Page = () => {
                                   e.target.value
                                 )
                               }
+                              required
                               value={item?.relation}
                             >
                               <option value={""}>Select</option>
@@ -166,6 +214,7 @@ const Page = () => {
                                 )
                               }
                               value={item?.pan}
+                              required
                               placeholder="PAN"
                             />
                           </td>
@@ -197,6 +246,7 @@ const Page = () => {
                               }
                               value={item?.address}
                               placeholder="Address"
+                              required
                             />
                           </td>
                           <td className="pt-2 flex gap-1">
@@ -217,6 +267,7 @@ const Page = () => {
                               }}
                               placeholder="0"
                               value={item?.percentage_share}
+                              required
                             />
                             {idx !== 0 && (
                               <button
@@ -247,7 +298,7 @@ const Page = () => {
           )}
         </div>
         <div className="mt-10 flex items-center justify-end gap-x-6">
-          <Link href={"/income-details"}>
+          <Link href={"/bank-details"}>
             <button
               type="submit"
               className="bg-white text-primary  px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary"
