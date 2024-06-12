@@ -10,10 +10,10 @@ const SectionEight = ({ data }: SectionEightProps) => {
   return (
     <section className=" px-4 md:px-20 lg:px-40 py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-      <h1 className="font-semibold text-[#424242]  leading-tight text-center">
-          Frequently <span className="text-[#424242]">Asked</span> Questions
+        <h1 className="font-semibold text-text_dark  leading-tight text-center">
+          Frequently <span className="text-text_dark">Asked</span> Questions
         </h1>
-        <p className="text-[#666666] font-normal leading-normal mt-4 mb-4 text-center">
+        <p className="text-text_light font-normal leading-normal mt-4 mb-4 text-center">
           Learn about us and check out these frequently asked questions.
         </p>
       </div>

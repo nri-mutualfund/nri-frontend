@@ -14,18 +14,18 @@ const SectionNine = ({ data }: SectionOneProps) => {
   const [showArrow, setShowArrow] = useState(false);
   return (
     <section className="bg-secondary px-4 md:px-20 lg:px-40 py-14 md:py-24">
-      <h1 className="text-[#424242] mx-auto  font-semibold  leading-tight text-center">
+      <h1 className="text-text_dark mx-auto  font-semibold  leading-tight text-center">
         {data?.pre_heading}{" "}
-        <span className="text-[#424242]">{data?.highlightned}</span>{" "}
+        <span className="text-text_dark">{data?.highlightned}</span>{" "}
         {data?.post_heading}
       </h1>
-      <p className="font-medium mt-4 mb-4 text-[#666666] text-center">
+      <p className="font-medium mt-4 mb-4 text-text_light text-center">
         {data?.detail}
       </p>
       {data?.data?.length && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-end">
           <div>
-            <p className="font-light text-sm text-[#666]">
+            <p className="font-light text-sm text-text_light">
               {moment(data?.data[0]?.created_at).format("MMM DD, YYYY")}
             </p>
             <Link
@@ -37,12 +37,12 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 nProgress.start();
               }}
             >
-              <h2 className="text-[#424242] font-semibold mt-2 leading-tight">
+              <h2 className="text-text_dark font-semibold mt-2 leading-tight">
                 {data?.data[0]?.blog_heading}
               </h2>
             </Link>
 
-            <p className="font-light mt-3 text-base leading-tight text-[#424242]">
+            <p className="font-light mt-3 text-base leading-tight text-text_dark">
               {data?.data[0]?.blog_content} {data?.data[0]?.blog_content}{" "}
               {data?.data[0]?.blog_content} {data?.data[0]?.blog_content}
             </p>
@@ -70,7 +70,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 width={500}
                 height={1}
               />
-              <p className="font-semibold text-[#666]">
+              <p className="font-semibold text-text_light">
                 {" "}
                 {data?.data[0]?.user_name}
               </p>
@@ -79,7 +79,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
           </div>
           <div className="flex flex-col gap-8">
             <div>
-              <p className="font-light text-sm text-[#666]">
+              <p className="font-light text-sm text-text_light">
                 {moment(data?.data[1]?.created_at).format("MMM DD, YYYY")}
               </p>
               <Link
@@ -91,11 +91,11 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   nProgress.start();
                 }}
               >
-                <h2 className="text-[#424242] font-semibold mt-2 leading-tight">
+                <h2 className="text-text_dark font-semibold mt-2 leading-tight">
                   {data?.data[1]?.blog_heading}
                 </h2>
               </Link>
-              <p className="font-light mt-3 text-base leading-tight text-[#424242]">
+              <p className="font-light mt-3 text-base leading-tight text-text_dark">
                 {data?.data[1]?.blog_content}
               </p>
               <div className="flex items-center gap-4 mt-6">
@@ -106,14 +106,14 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   width={500}
                   height={1}
                 />
-                <p className="font-semibold text-[#666]">
+                <p className="font-semibold text-text_light">
                   {data?.data[1]?.user_name}r
                 </p>
               </div>
             </div>
             <div className="border-[0.5px]" />
             <div>
-              <p className="font-light text-sm text-[#666]">
+              <p className="font-light text-sm text-text_light">
                 {moment(data?.data[2]?.created_at).format("MMM DD, YYYY")}
               </p>
               <Link
@@ -125,11 +125,11 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   nProgress.start();
                 }}
               >
-                <h2 className="text-[#424242] font-semibold mt-2 leading-tight">
+                <h2 className="text-text_dark font-semibold mt-2 leading-tight">
                   {data?.data[2]?.blog_heading}
                 </h2>
               </Link>
-              <p className="font-light mt-3 text-base leading-tight-sm text-[#424242]">
+              <p className="font-light mt-3 text-base leading-tight-sm text-text_dark">
                 {data?.data[2]?.blog_content}
               </p>
               <div className="flex items-center gap-4 mt-6">
@@ -140,7 +140,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   width={500}
                   height={1}
                 />
-                <p className="font-semibold text-[#666]">
+                <p className="font-semibold text-text_light">
                   {data?.data[2]?.user_name}
                 </p>
               </div>
