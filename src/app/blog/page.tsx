@@ -48,26 +48,47 @@ const Page = () => {
         <Loader />
       ) : (
         <div className="bg-white sm:pt-4 lg:py-10 pb-12">
-          <div className="mx-auto xl:px-40 md:px-16 px-10">
-            <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
-              {data?.pre_heading}{" "}
-              <span className="text-[#424242]">{data?.highlightned}</span>{" "}
-              {data?.post_heading}
-            </h1>
-            <p className="font-medium mt-4 mb-4 text-[#666] text-center max-w-2xl mx-auto">
-              {data?.detail}
-            </p>
+          <div className="mx-auto xl:px-40 md:px-16 px-10 ">
+            <div className="max-w-2xl mx-auto">
+              <h1 className="">
+                {/* {data?.pre_heading}{" "}
+              <span className="text-text_dark">{data?.highlightned}</span>{" "}
+              {data?.post_heading} */}
+                Feed your brain in 5 minutes every week, for free.
+              </h1>
+              <h5 className="mt-4 mb-4 max-w-sm">
+                Join over 650,000 subscribers of Brain Food and add timeless
+                insights and actionable ideas to your inbox.
+              </h5>
+              <h5 className="mt-4 mb-4 max-w-sm">
+                <strong>Bonus:</strong> Download the first chapter of my instant
+                New York Times bestseller, Clear Thinking, and start turning
+                ordinary moments into extraordinary results.
+              </h5>
+              <div className="flex gap-4 rounded-lg mt-3 w-full max-w-sm">
+                <input
+                  className="bg-transparent text_dark placeholder_dark outline-none w-full border border-text_light rounded-sm focus:ring-2 focus:ring-primary focus:border-none"
+                  type="text"
+                  placeholder="Enter your email"
+                />
+                <button className="bg-primary text-white px-4 py-2  rounded-lg transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                  {" "}
+                  Subscribe
+                </button>
+              </div>
+            </div>
+
             <div className="flex gap-10">
               <div className="hidden md:block">
                 <div className="w-[250px] xl:w-[280px] border shadow-sm rounded-lg mt-28 ">
                   <div className="p-4 border-b">
-                    <h2 className="leading-tight text-[#424242]">Categories</h2>
+                    <h3 className="">Categories</h3>
                   </div>
                   <div className="p-4">
                     {cat?.map((item, index) => (
-                      <p key={index} className="mb-4 text-[#424242] text-base">
+                      <h5 key={index} className="mb-4">
                         {item}
-                      </p>
+                      </h5>
                     ))}
                   </div>
                 </div>
@@ -85,13 +106,11 @@ const Page = () => {
                     className="flex max-w-xl flex-col items-start justify-between"
                   >
                     <div className="group relative">
-                      <h2 className="mt-3 font-semibold leading-6 text-[#424242] group-hover:text-gray-600">
+                      <h3 className="mt-3 group-hover:text-gray-600">
                         <span className="absolute inset-0" />
                         {post.blog_heading}
-                      </h2>
-                      <p className="mt-5 line-clamp-3 text-base leading-6 text-[#424242]">
-                        {post.blog_content}
-                      </p>
+                      </h3>
+                      <h5 className="mt-5">{post.blog_content}</h5>
                     </div>
                     <div className="flex w-full items-center justify-between mt-4">
                       <Link
@@ -107,7 +126,7 @@ const Page = () => {
                         Learn More
                         <RxArrowRight />
                       </Link>
-                      <p className="text-[#666] text-sm">
+                      <p className="text-text_light text-sm">
                         {moment(post?.created_at).format("MMM DD, YYYY")}
                       </p>
                     </div>
@@ -120,11 +139,11 @@ const Page = () => {
                         className="h-10 w-10 rounded-full bg-gray-50"
                       />
                       <div className="text-sm leading-6">
-                        <p className="font-semibold text-[#424242]">
+                        <h5 className="font-medium">
                           <span className="absolute inset-0" />
                           {post?.user_name}
-                        </p>
-                        <p className="text-[#666]">Co-Founder / CTO</p>
+                        </h5>
+                        <h4 className="">Co-Founder / CTO</h4>
                       </div>
                     </div>
                   </article>

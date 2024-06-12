@@ -99,6 +99,11 @@ const Page = () => {
     setFormData({ ...newData, pan_verified: true });
     mutate(newData);
   };
+  const resetForm = () => {
+    const form = document.getElementById("pan-form") as HTMLFormElement;
+    form?.reset();
+    setChecked(false);
+  };
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-10 py-12 lg:px-8">
@@ -113,7 +118,7 @@ const Page = () => {
             </h2> */}
         </div>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white md:px-10 py-10 rounded-md md:shadow-md md:border border-gray-200">
-          <form className="space-y-6" onSubmit={submit}>
+          <form className="space-y-6" onSubmit={submit} id="pan-form">
             <div>
               <label className="block text-sm font-medium leading-6 text-gray-900">
                 Please add your PAN and Date of Birth
@@ -150,6 +155,7 @@ const Page = () => {
                   required
                   placeholder="DD"
                   ref={dateRef}
+                  disabled={checked}
                   onChange={handleDateChange}
                   onKeyDown={(e) => handleKeyDown(e, dateRef, monthRef)}
                   className=" px-2 block w-12 rounded-md border-0 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
@@ -164,6 +170,7 @@ const Page = () => {
                   required
                   placeholder="MM"
                   ref={monthRef}
+                  disabled={checked}
                   onChange={handleMonthChange}
                   onKeyDown={(e) => handleKeyDown(e, monthRef, dateRef)}
                   className=" px-2 block w-12 rounded-md border-0 py-1.5 text-gray-900 text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
@@ -179,6 +186,7 @@ const Page = () => {
                   required
                   placeholder="YYYY"
                   ref={yearRef}
+                  disabled={checked}
                   onKeyDown={(e) => handleKeyDown(e, yearRef, monthRef)}
                   className=" px-2 block w-24 rounded-md border-0 py-1.5 text-gray-900 text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
@@ -190,7 +198,7 @@ const Page = () => {
               </label>
               <div className="mt-2 flex gap-4">
                 <div
-                  className={`px-2 w-full rounded-md border py-1   shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 flex gap-2 items-center justify-between ${
+                  className={`px-2 w-[70%] rounded-md border py-1   shadow-sm  placeholder:text-gray-400  focus:ring-primary sm:text-sm sm:leading-6 flex gap-2  items-center justify-between ${
                     error ? "border-red-500 text-red-500" : "text-gray-900"
                   }`}
                 >
@@ -200,8 +208,9 @@ const Page = () => {
                     name="pan"
                     autoComplete="off"
                     required
-                    className="h-8 border-none"
+                    className="h-8 border-none focus:ring-0 focus:outline-none w-[80%]"
                     maxLength={10}
+                    disabled={checked}
                     onChange={() => {
                       setError(false);
                     }}
@@ -211,13 +220,24 @@ const Page = () => {
                   )}
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={checked}
-                  className="flex px-6 justify-center items-center rounded-md bg-primary py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                >
-                  Check
-                </button>
+                {checked ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      resetForm();
+                    }}
+                    className="flex px-6 justify-center items-center rounded-md bg-primary py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  >
+                    Change
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="flex px-6 justify-center items-center rounded-md bg-primary py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  >
+                    Check
+                  </button>
+                )}
               </div>
               {checked && (
                 <label className="block text-sm font-medium leading-6 text-primary mt-2">
