@@ -35,12 +35,12 @@ const SectionSix = ({ data }: SectionOneProps) => {
   return (
     <section className="px-4 md:px-20 lg:px-10 py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-        <h1 className="font-semibold text-[#424242] tracking-tight leading-tight">
+        <h1 className="font-semibold text-text_dark tracking-tight leading-tight">
           {data?.pre_heading}{" "}
-          <span className="text-[#424242]">{data?.highlightned}</span>{" "}
+          <span className="text-text_dark">{data?.highlightned}</span>{" "}
           {data?.post_heading}
         </h1>
-        <p className="text-[#666666] font-light leading-normal mt-4 mb-4">
+        <p className="text-text_light font-light leading-normal mt-4 mb-4">
           {data?.detail}
         </p>
       </div>
@@ -82,7 +82,7 @@ const SectionSix = ({ data }: SectionOneProps) => {
                             width={500}
                             height={1}
                           />
-                          <p className="font-light mt-4 text-[#424242]">
+                          <p className="font-light mt-4 text-text_dark">
                             {item?.content.length < 200
                               ? item?.content
                               : `${item?.content
@@ -104,7 +104,7 @@ const SectionSix = ({ data }: SectionOneProps) => {
                             height={1}
                           />
                           <div>
-                            <p className="font-medium text-[#424242]">
+                            <p className="font-medium text-text_dark">
                               {item?.author_name}
                             </p>
                             <p className="font-medium text-[#666]  ">

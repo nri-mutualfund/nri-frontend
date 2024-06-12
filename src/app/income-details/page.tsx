@@ -334,83 +334,85 @@ const Page = () => {
                 </h2>
               </div>
               <div className="col-span-3">
-                {taxResidency?.map((item, index) => (
-                  <div className="pb-12" key={index}>
-                    <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
-                      <div className="sm:col-span-3">
-                        <label
-                          // htmlFor="tax_residency"
-                          className="block text-sm font-medium leading-6 text-gray-900"
-                        >
-                          <span className="text-red-500">*</span> TAX Residency
-                        </label>
-                        <div className="mt-2">
-                          <select
-                            // id="tax_residency"
-                            // name="tax_residency"
-                            onChange={(e) => {
-                              handleTaxResidencyDetailListUpdate(
-                                item,
-                                "tax_residency",
-                                e.target.value
-                              );
-                            }}
-                            autoComplete="tax_residency"
-                            required
-                            value={item?.tax_residency}
-                            className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                {taxResidency?.length &&
+                  taxResidency?.map((item, index) => (
+                    <div className="pb-12" key={index}>
+                      <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
+                        <div className="sm:col-span-3">
+                          <label
+                            // htmlFor="tax_residency"
+                            className="block text-sm font-medium leading-6 text-gray-900"
                           >
-                            <option value={""}>Select TAX Residency</option>
-                            <option value={"India"}>India</option>
-                            <option value={"United States"}>
-                              United States
-                            </option>
-                            <option value={"United Kingdom"}>
-                              United Kingdom
-                            </option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className="sm:col-span-3 ">
-                        <label
-                          // htmlFor="tin_or_pan"
-                          className="block text-sm font-medium leading-6 text-gray-900"
-                        >
-                          <span className="text-red-500">*</span> TIN/PAN
-                          Details
-                        </label>
-                        <div className="mt-2 relative">
-                          <input
-                            // id="tin_or_pan"
-                            // name="tin_or_pan"
-                            // autoComplete="tin_or_pan"
-
-                            onChange={(e) => {
-                              handleTaxResidencyDetailListUpdate(
-                                item,
-                                "tin_or_pan",
-                                e.target.value
-                              );
-                            }}
-                            required
-                            maxLength={10}
-                            minLength={10}
-                            value={item?.tin_or_pan}
-                            className="block w-[85%] rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                          />
-                          {index !== 0 && (
-                            <button
-                              className=" items-center justify-center absolute right-0 top-1"
-                              onClick={() => removeTax(item)}
+                            <span className="text-red-500">*</span> TAX
+                            Residency
+                          </label>
+                          <div className="mt-2">
+                            <select
+                              // id="tax_residency"
+                              // name="tax_residency"
+                              onChange={(e) => {
+                                handleTaxResidencyDetailListUpdate(
+                                  item,
+                                  "tax_residency",
+                                  e.target.value
+                                );
+                              }}
+                              autoComplete="tax_residency"
+                              required
+                              value={item?.tax_residency}
+                              className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                             >
-                              <IoCloseCircleOutline className="w-6 h-6" />
-                            </button>
-                          )}
+                              <option value={""}>Select TAX Residency</option>
+                              <option value={"India"}>India</option>
+                              <option value={"United States"}>
+                                United States
+                              </option>
+                              <option value={"United Kingdom"}>
+                                United Kingdom
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="sm:col-span-3 ">
+                          <label
+                            // htmlFor="tin_or_pan"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            <span className="text-red-500">*</span> TIN/PAN
+                            Details
+                          </label>
+                          <div className="mt-2 relative">
+                            <input
+                              // id="tin_or_pan"
+                              // name="tin_or_pan"
+                              // autoComplete="tin_or_pan"
+
+                              onChange={(e) => {
+                                handleTaxResidencyDetailListUpdate(
+                                  item,
+                                  "tin_or_pan",
+                                  e.target.value
+                                );
+                              }}
+                              required
+                              maxLength={10}
+                              minLength={10}
+                              value={item?.tin_or_pan}
+                              className="block w-[85%] rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                            />
+                            {index !== 0 && (
+                              <button
+                                className=" items-center justify-center absolute right-0 top-1"
+                                onClick={() => removeTax(item)}
+                              >
+                                <IoCloseCircleOutline className="w-6 h-6" />
+                              </button>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
               <div className="col-span-2">
                 <button
