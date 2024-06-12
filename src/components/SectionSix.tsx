@@ -35,14 +35,12 @@ const SectionSix = ({ data }: SectionOneProps) => {
   return (
     <section className="px-4 md:px-20 lg:px-10 py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-        <h1 className="font-semibold text-text_dark tracking-tight leading-tight">
+        <h1 className="">
           {data?.pre_heading}{" "}
           <span className="text-text_dark">{data?.highlightned}</span>{" "}
           {data?.post_heading}
         </h1>
-        <p className="text-text_light font-light leading-normal mt-4 mb-4">
-          {data?.detail}
-        </p>
+        <h4 className="mt-4 mb-4">{data?.detail}</h4>
       </div>
       <div className="pt-14 md:pt-24">
         <div>
@@ -82,13 +80,13 @@ const SectionSix = ({ data }: SectionOneProps) => {
                             width={500}
                             height={1}
                           />
-                          <p className="font-light mt-4 text-text_dark">
+                          <h5 className="mt-4">
                             {item?.content.length < 200
                               ? item?.content
                               : `${item?.content
                                   .toString()
                                   .substring(0, 200)}...`}
-                          </p>
+                          </h5>
                         </div>
 
                         <div className="flex gap-4 items-center mt-10">
@@ -104,12 +102,8 @@ const SectionSix = ({ data }: SectionOneProps) => {
                             height={1}
                           />
                           <div>
-                            <p className="font-medium text-text_dark">
-                              {item?.author_name}
-                            </p>
-                            <p className="font-medium text-[#666]  ">
-                              {item?.hobby}
-                            </p>
+                            <h5 className="">{item?.author_name}</h5>
+                            <h4 className="">{item?.hobby}</h4>
                             <div className="grid w-full place-items-center overflow-x-scroll rounded-lg  lg:overflow-visible mt-1">
                               <div className="inline-flex items-center">
                                 {createArrayOfLength(Number(item.rating))?.map(

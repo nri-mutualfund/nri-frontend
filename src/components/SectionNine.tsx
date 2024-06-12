@@ -14,14 +14,12 @@ const SectionNine = ({ data }: SectionOneProps) => {
   const [showArrow, setShowArrow] = useState(false);
   return (
     <section className="bg-secondary px-4 md:px-20 lg:px-40 py-14 md:py-24">
-      <h1 className="text-text_dark mx-auto  font-semibold  leading-tight text-center">
+      <h1 className="text-center">
         {data?.pre_heading}{" "}
         <span className="text-text_dark">{data?.highlightned}</span>{" "}
         {data?.post_heading}
       </h1>
-      <p className="font-medium mt-4 mb-4 text-text_light text-center">
-        {data?.detail}
-      </p>
+      <p className="mt-4 mb-4">{data?.detail}</p>
       {data?.data?.length && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-end">
           <div>
@@ -37,15 +35,13 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 nProgress.start();
               }}
             >
-              <h2 className="text-text_dark font-semibold mt-2 leading-tight">
-                {data?.data[0]?.blog_heading}
-              </h2>
+              <h3 className="mt-2">{data?.data[0]?.blog_heading}</h3>
             </Link>
 
-            <p className="font-light mt-3 text-base leading-tight text-text_dark">
+            <h5 className="mt-3">
               {data?.data[0]?.blog_content} {data?.data[0]?.blog_content}{" "}
               {data?.data[0]?.blog_content} {data?.data[0]?.blog_content}
-            </p>
+            </h5>
             <Link
               href={{
                 pathname: "/blog-details",
@@ -70,10 +66,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 width={500}
                 height={1}
               />
-              <p className="font-semibold text-text_light">
-                {" "}
-                {data?.data[0]?.user_name}
-              </p>
+              <h4 className="">{data?.data[0]?.user_name}</h4>
             </div>
             <div className="border-[0.5px] mt-8 block lg:hidden" />
           </div>
@@ -91,13 +84,9 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   nProgress.start();
                 }}
               >
-                <h2 className="text-text_dark font-semibold mt-2 leading-tight">
-                  {data?.data[1]?.blog_heading}
-                </h2>
+                <h3 className="mt-2">{data?.data[1]?.blog_heading}</h3>
               </Link>
-              <p className="font-light mt-3 text-base leading-tight text-text_dark">
-                {data?.data[1]?.blog_content}
-              </p>
+              <h5 className="mt-3">{data?.data[1]?.blog_content}</h5>
               <div className="flex items-center gap-4 mt-6">
                 <Image
                   src={"/assets/male.png"}
@@ -106,9 +95,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   width={500}
                   height={1}
                 />
-                <p className="font-semibold text-text_light">
-                  {data?.data[1]?.user_name}r
-                </p>
+                <h5>{data?.data[1]?.user_name}</h5>
               </div>
             </div>
             <div className="border-[0.5px]" />
@@ -125,13 +112,9 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   nProgress.start();
                 }}
               >
-                <h2 className="text-text_dark font-semibold mt-2 leading-tight">
-                  {data?.data[2]?.blog_heading}
-                </h2>
+                <h3 className="mt-2">{data?.data[2]?.blog_heading}</h3>
               </Link>
-              <p className="font-light mt-3 text-base leading-tight-sm text-text_dark">
-                {data?.data[2]?.blog_content}
-              </p>
+              <h5 className="mt-3">{data?.data[2]?.blog_content}</h5>
               <div className="flex items-center gap-4 mt-6">
                 <Image
                   src={"/assets/male.png"}
@@ -140,9 +123,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   width={500}
                   height={1}
                 />
-                <p className="font-semibold text-text_light">
-                  {data?.data[2]?.user_name}
-                </p>
+                <h5>{data?.data[2]?.user_name}</h5>
               </div>
             </div>
           </div>

@@ -44,25 +44,25 @@ const Page = () => {
           <div className="col-span-3">
             <div className="">
               <div className="max-w-lg">
-                <h1 className="text-[#424242] mx-auto font-semibold  leading-tight">
+                <h1 className="mx-auto">
                   Open your NRO, NRI Bank Account with Renowned Indian Banks
                 </h1>
-                <p className="font-medium w-auto text-[#424242] mt-4 pb-4">
+                <h5 className="mt-4 pb-4">
                   Apply in multiple partner banks to speed-up your NRI bank
                   account opening process. It is now easy, fast and secure for
                   NRIs & OCIs to bank in India with SBNRI.
-                </p>
+                </h5>
               </div>
               <ul className="flex flex-col gap-4 pt-4">
-                <li className="flex items-center gap-2 font-medium text-[#666]">
+                <li className="flex items-center gap-2 font-medium text-text_light">
                   <IoIosCheckmarkCircle className="text-primary" />
                   Simplified process as per your country
                 </li>
-                <li className="flex items-center gap-2 font-medium text-[#666]">
+                <li className="flex items-center gap-2 font-medium text-text_light">
                   <IoIosCheckmarkCircle className="text-primary" />
                   Dedicated bank RM to help you at each step
                 </li>
-                <li className="flex items-center gap-2 font-medium text-[#666]">
+                <li className="flex items-center gap-2 font-medium text-text_light">
                   <IoIosCheckmarkCircle className="text-primary" />
                   Industry high FD & savings rate
                 </li>
@@ -78,31 +78,29 @@ const Page = () => {
                   height={1}
                 />
                 <div>
-                  <h2 className="leading-tight font-semibold text-[#424242]">
-                    HDFC Bank
-                  </h2>
+                  <h3 className="">HDFC Bank</h3>
                   <div className="flex items-center gap-2 mt-3 flex-wrap">
                     <div className="flex items-center gap-1">
                       <MdOutlinePercent color="#424242" />
-                      <p className="text-sm font-semibold text-[#424242]">
+                      <p className="text-sm font-semibold text-text_dark">
                         Up to 7.60% p.a. FD Rate
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <MdLocationOn color="#424242" />
-                      <p className="text-sm font-semibold text-[#424242]">
+                      <p className="text-sm font-semibold text-text_dark">
                         8700+ Branches
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <RxCountdownTimer color="#424242" />
-                      <p className="text-sm font-semibold text-[#424242]">
+                      <p className="text-sm font-semibold text-text_dark">
                         Medium Process Time
                       </p>
                     </div>
                   </div>
                   <ul className="pt-4 list-disc list-inside space-y-2">
-                    <li className="text-base font-medium text-[#666]">
+                    <li className="text-[16px] font-medium text-text_light">
                       Savings Account Interest Rate – Up to 3.0% p.a
                     </li>
                   </ul>
@@ -117,32 +115,30 @@ const Page = () => {
                   height={1}
                 />
                 <div>
-                  <h2 className="leading-tight font-semibold text-[#424242]">
-                    IDFC Bank
-                  </h2>
+                  <h3 className="">IDFC Bank</h3>
                   <div className="flex items-center gap-2 mt-3 flex-wrap">
                     <div className="flex items-center gap-1">
                       <MdOutlinePercent color="#424242" />
-                      <p className="text-sm font-semibold text-[#424242]">
+                      <p className="text-sm font-semibold text-text_dark">
                         Up to 7.25% p.a. FD Rate
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <MdLocationOn color="#424242" />
-                      <p className="text-sm font-semibold text-[#424242]">
+                      <p className="text-sm font-semibold text-text_dark">
                         800+ Branches
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <RxCountdownTimer color="#424242" />
-                      <p className="text-sm font-semibold text-[#424242]">
+                      <p className="text-sm font-semibold text-text_dark">
                         Fast Process Time
                       </p>
                     </div>
                   </div>
 
                   <ul className="pt-4 list-disc list-inside space-y-2">
-                    <li className="text-base font-medium text-[#666]">
+                    <li className="text-[16px] font-medium text-text_light">
                       Savings Account Interest Rate – Up to 3.0% p.a
                     </li>
                   </ul>
@@ -157,31 +153,29 @@ const Page = () => {
                   height={1}
                 />
                 <div>
-                  <h2 className="leading-tight font-semibold text-[#424242]">
-                    Axis Bank
-                  </h2>
+                  <h3 className="">Axis Bank</h3>
                   <div className="flex items-center gap-2 mt-3 flex-wrap">
                     <div className="flex items-center gap-1">
                       <MdOutlinePercent color="#424242" />
-                      <p className="text-sm font-semibold text-[#424242]">
+                      <p className="text-sm font-semibold text-text_dark">
                         Up to 7.4% p.a. FD Rate
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <MdLocationOn color="#424242" />
-                      <p className="text-sm font-semibold text-[#424242]">
+                      <p className="text-sm font-semibold text-text_dark">
                         5000+ Branches
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <RxCountdownTimer color="#424242" />
-                      <p className="text-sm font-semibold text-[#424242]">
+                      <p className="text-sm font-semibold text-text_dark">
                         Medium Process Time
                       </p>
                     </div>
                   </div>
                   <ul className="pt-4 list-disc list-inside space-y-2">
-                    <li className="text-base font-medium text-[#666]">
+                    <li className="text-[16px] font-medium text-text_light">
                       Savings Account Interest Rate – Up to 3.5% p.a
                     </li>
                   </ul>
@@ -195,15 +189,13 @@ const Page = () => {
           >
             <div className="">
               <div className="bg-white border-gray-200 border-2 shadow-md rounded-lg px-8 py-6 max-w-sm">
-                <h1 className="text-xl font-medium text-center text-[#424242]">
-                  Apply in 20 seconds
-                </h1>
-                <p className="text-[#666] text-center mb-4">
+                <h3 className="text-center">Apply in 20 seconds</h3>
+                <h4 className="text-center mb-4">
                   50,000+ NRIs applied in last 6 months
-                </p>
-                <form onSubmit={submit} className="text-[#424242]">
+                </h4>
+                <form onSubmit={submit} className="text-text_dark">
                   <div className="mb-4">
-                    <label className="block text-base text-[#424242] font-medium">
+                    <label className="block text-xs leading-6 mb-1 text-text_dark font-medium">
                       Name
                     </label>
                     <input
@@ -216,7 +208,7 @@ const Page = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block text-base text-[#424242] font-medium ">
+                    <label className="block text-xs leading-6 mb-1 text-text_dark font-medium ">
                       Email
                     </label>
                     <input
@@ -229,7 +221,7 @@ const Page = () => {
                     />
                   </div>
                   <div className="mb-4 relative">
-                    <label className="block text-base text-[#424242] font-medium ">
+                    <label className="block text-xs leading-6 mb-1 text-text_dark font-medium ">
                       Country
                     </label>
                     <select
@@ -258,26 +250,26 @@ const Page = () => {
                   <div className="mb-4">
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-xs font-medium leading-6 text-text_dark"
                     >
                       Whatsapp Number
                     </label>
                     <div className="mt-2">
-                      <div className="flex w-full rounded-md border-0 py-0.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
+                      <div className="flex w-full rounded-md border-0 py-0.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
                         <p className="border-r-2 px-4 py-1">{code}</p>
                         <input
                           id="whatsapp_number"
                           name="whatsapp_number"
                           type="phone"
                           autoComplete="phone"
-                          className="block w-full placeholder:text-[#666] px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full placeholder:text-text_light px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                           required
                         />
                       </div>
                     </div>
                   </div>
                   <div className="mb-4">
-                    <label className="block text-base text-[#424242] font-medium ">
+                    <label className="block text-xs leading-6 mb-1 text-text_dark font-medium ">
                       Reasons for account opening(You can select multiple)
                     </label>
                     <MultiSelect

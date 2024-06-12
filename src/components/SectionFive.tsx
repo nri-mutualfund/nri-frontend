@@ -20,23 +20,19 @@ const SectionFive = ({ data }: SectionOneProps) => {
   return (
     <section className="px-4 md:px-20 lg:px-40 py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-        <h1 className="text-text_dark  font-semibold  leading-tight max-w-80">
+        <h1 className="max-w-80">
           {data?.pre_heading}
           <span className="text-text_dark">{data?.highlightned}</span>{" "}
           {data?.post_heading}
         </h1>
-        <p className="font-normal text-center leading-normal mt-4 mb-4 text-text_light">
-          {data?.detail}
-        </p>
+        <h4 className="text-center mt-4 mb-4">{data?.detail}</h4>
       </div>
 
       <div className="max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-14 mx-auto mt-10">
         <div className="w-full bg-white drop-shadow-lg rounded-[20px]">
           <div className="flex flex-row items-center justify-between pl-12 pr-6 pt-10">
             <div className="flex justify-start">
-              <h2 className="text-text_dark font-medium mt-2 ">
-                {data?.title_one}
-              </h2>
+              <h3 className="mt-2">{data?.title_one}</h3>
             </div>
             <Image
               src="/assets/tax.png"
@@ -50,9 +46,7 @@ const SectionFive = ({ data }: SectionOneProps) => {
             {data?.content_one?.map((item, index) => (
               <div key={index} className="flex items-start mt-4 relative">
                 <div className="w-12 absolute left-0">{icons[index].icon}</div>
-                <p className=" text-text_dark ml-10  font-normal leading-5">
-                  {item}
-                </p>
+                <h5 className="ml-10">{item}</h5>
               </div>
             ))}
           </div>
@@ -60,9 +54,7 @@ const SectionFive = ({ data }: SectionOneProps) => {
         <div className="w-full bg-white drop-shadow-lg rounded-[20px]">
           <div className="flex flex-row items-center justify-between pl-12 pr-6 pt-10">
             <div className="flex justify-start">
-              <h2 className="text-text_dark font-medium mt-2 ">
-                {data?.title_two}
-              </h2>
+              <h3 className="mt-2 ">{data?.title_two}</h3>
             </div>
             <Image
               src="/assets/doc.png"
@@ -77,9 +69,7 @@ const SectionFive = ({ data }: SectionOneProps) => {
             {data?.content_two?.map((item, index) => (
               <div key={index} className="flex items-start mt-4 relative">
                 <div className="w-112 absolute left-0">{icons[index].icon}</div>
-                <p className=" text-text_dark  font-normal ml-10 leading-5">
-                  {item}
-                </p>
+                <h5 className="ml-10">{item}</h5>
                 <br />
               </div>
             ))}

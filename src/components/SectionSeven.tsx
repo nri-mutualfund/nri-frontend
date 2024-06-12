@@ -5,14 +5,14 @@ const SectionSeven = () => {
   return (
     <section className="px-4 md:px-20 lg:px-40 bg-secondary py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-        <h1 className="font-semibold text-text_dark tracking-tight leading-tight">
+        <h1 className="">
           Your money will be{" "}
           <span className="text-text_dark">safe & secure</span>
         </h1>
-        <p className="text-text_light font-normal leading-normal mt-4 mb-4 text-center">
+        <h4 className="mt-4 mb-4">
           Your money is regulated by mutual fund companies. NRI doesn’t keep or
           handle your money
-        </p>
+        </h4>
       </div>
 
       <div className="flex flex-wrap  gap-4 md:gap-0   justify-between  items-start mt-10">
@@ -28,9 +28,7 @@ const SectionSeven = () => {
           </div>
 
           <div className="flex md:justify-center md:items-center flex-col gap-3">
-            <h2 className="font-medium text-text_dark md:text-center">
-              From your Foreign Bank
-            </h2>
+            <h3 className="md:text-center">From your Foreign Bank</h3>
             <p className="font-normal md:text-center leading-6 text-text_light">
               Convert to INR through your preferred remittance partner
             </p>
@@ -58,12 +56,10 @@ const SectionSeven = () => {
             />
           </div>
           <div className="flex md:justify-center md:items-center flex-col gap-3">
-            <h2 className="font-medium text-text_dark md:text-center">
-              To NRE/NRO Account
-            </h2>
-            <p className=" font-normal md:text-center leading-6 text-text_light">
+            <h3 className="md:text-center">To NRE/NRO Account</h3>
+            <h5 className="md:text-center">
               Integrate bank account and pay through net-banking
-            </p>
+            </h5>
           </div>
         </div>
         <div className="w-[30%] md:w-[12.5%] flex flex-col md:flex-row  gap-2  justify-between items-center mt-0 md:mt-6 lg:mt-12">
@@ -88,12 +84,10 @@ const SectionSeven = () => {
             />
           </div>
           <div className="flex md:justify-center md:items-center flex-col gap-3">
-            <h2 className="font-medium text-text_dark md:text-center">
-              To Mutual Funds
-            </h2>
-            <p className=" font-normal md:text-center leading-6 text-text_light">
+            <h3 className="md:text-center">To Mutual Funds</h3>
+            <h5 className="md:text-center">
               Invest directly in your selected mutual funds
-            </p>
+            </h5>
           </div>
         </div>
       </div>

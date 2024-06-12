@@ -17,34 +17,21 @@ const Section12 = () => {
     <section className=" px-4 md:px-20 lg:px-40  py-14 md:py-24 bg-secondary">
       <div className="grid grid-cols-1 gap-x-20 gap-y-16 mt-4 lg:grid-cols-2 items-center">
         <div className="w-full order-2 lg:order-1">
-      <h1 className=" font-semibold text-[#424242] text-center md:text-start leading-tight max-w-md">
-            Why you should <span className="text-[#424242]">invest</span> in
-            India?
+          <h1 className="text-center md:text-start max-w-md">
+            Why you should <span className="">invest</span> in India?
           </h1>
           <div className="grid-cols-1 md:grid-cols-3 gap-14 items-center justify-center mt-14 hidden md:grid">
             <div className="mx-auto lg:mx-0">
-              <h2 className="text-primary font-bold leading-normal ">
-                $4 Trillion
-              </h2>
-              <p className="text-base leading-normal font-medium text-[#424242] mt-4">
-                5th Largest Economy
-              </p>
+              <h3 className="text-primary font-bold ">$4 Trillion</h3>
+              <h5 className=" mt-4">5th Largest Economy</h5>
             </div>
             <div className="mx-auto lg:mx-0">
-              <h2 className="text-primary font-bold leading-normal ">
-                $125B+
-              </h2>
-              <p className="text-base leading-normal font-medium text-[#424242] mt-4">
-                Annual Remittances
-              </p>
+              <h3 className="text-primary font-bold ">$125B+</h3>
+              <h5 className=" mt-4">Annual Remittances</h5>
             </div>
             <div className="mx-auto lg:mx-0">
-              <h2 className="text-primary font-bold leading-normal ">
-                8%
-              </h2>
-              <p className="text-base leading-normal font-medium text-[#424242] mt-4">
-                Annual GDP Growth
-              </p>
+              <h3 className="text-primary font-bold ">8%</h3>
+              <h5 className=" mt-4">Annual GDP Growth</h5>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-center mt-8 md:hidden">
