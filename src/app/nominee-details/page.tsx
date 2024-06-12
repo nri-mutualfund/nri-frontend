@@ -97,7 +97,7 @@ const Page = () => {
     0
   );
   useEffect(() => {
-    if (nomineeData) {
+    if (nomineeData?.length) {
       const newData = nomineeData?.map(
         ({
           full_legal_name,
