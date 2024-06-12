@@ -129,8 +129,12 @@ const Page = () => {
   };
   useEffect(() => {
     if (profileData) {
-      setStatus(getStatusIndex(profileData?.status_applies));
-      setTaxResidency(profileData?.tax_residency_data);
+      if (profileData?.status_applies) {
+        setStatus(getStatusIndex(profileData?.status_applies));
+      }
+      if (profileData?.tax_residency_data) {
+        setTaxResidency(profileData?.tax_residency_data);
+      }
     }
   }, [profileData]);
   return (
