@@ -60,7 +60,7 @@ const Page = () => {
       indexMapping[status] = (index + 1).toString();
     });
 
-    return statusArray.map((status) => indexMapping[status]);
+    return statusArray?.map((status) => indexMapping[status]);
   };
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -77,7 +77,7 @@ const Page = () => {
       income_slab: data?.income_slab ?? "",
       status_applies: getStatusString(status),
     };
-    if (status.includes("2")) {
+    if (status?.includes("2")) {
       newData = {
         ...newData,
         tax_residency_data: taxResidency,
@@ -121,7 +121,7 @@ const Page = () => {
     setTaxResidency(taxResidency.filter((nominee) => nominee !== item));
   }
   const toggleString = (targetString: string) => {
-    if (status.includes(targetString)) {
+    if (status?.includes(targetString)) {
       setStatus(status.filter((str) => str !== targetString));
     } else {
       setStatus([...status, targetString]);
@@ -269,7 +269,7 @@ const Page = () => {
                   <div className="sm:col-span-3">
                     <div
                       className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
-                        status.includes("2") ? "border-primary" : ""
+                        status?.includes("2") ? "border-primary" : ""
                       }`}
                       onClick={() => {
                         toggleString("2");
@@ -277,7 +277,7 @@ const Page = () => {
                     >
                       <p
                         className={`text-xs ${
-                          status.includes("2") ? "text-primary" : ""
+                          status?.includes("2") ? "text-primary" : ""
                         }`}
                       >
                         I have income from outside of India and I pay tax in
@@ -288,7 +288,7 @@ const Page = () => {
                   <div className="sm:col-span-3">
                     <div
                       className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
-                        status.includes("3") ? "border-primary" : ""
+                        status?.includes("3") ? "border-primary" : ""
                       }`}
                       onClick={() => {
                         toggleString("3");
@@ -296,7 +296,7 @@ const Page = () => {
                     >
                       <p
                         className={`text-xs ${
-                          status.includes("3") ? "text-primary" : ""
+                          status?.includes("3") ? "text-primary" : ""
                         }`}
                       >
                         {`I'm a politically exposed person in a foreign country`}
@@ -306,7 +306,7 @@ const Page = () => {
                   <div className="sm:col-span-3">
                     <div
                       className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
-                        status.includes("4") ? "border-primary" : ""
+                        status?.includes("4") ? "border-primary" : ""
                       }`}
                       onClick={() => {
                         toggleString("4");
@@ -314,7 +314,7 @@ const Page = () => {
                     >
                       <p
                         className={`text-xs ${
-                          status.includes("4") ? "text-primary" : ""
+                          status?.includes("4") ? "text-primary" : ""
                         }`}
                       >
                         Are you related to politically exposed person in a
