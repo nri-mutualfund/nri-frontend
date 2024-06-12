@@ -9,7 +9,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    flowbite.content()
+    flowbite.content(),
   ],
   theme: {
     extend: {
@@ -23,6 +23,8 @@ const config: Config = {
         secondary: "rgba(242, 248, 242, 0.5)",
         "custom-black": "#181818",
         "custom-gray": "rgb(21, 20, 20)",
+        text_dark: "#424242",
+        text_light: "#666",
       },
       fontFamily: {
         "area-normal": ["area-normal", "sans-serif"],
@@ -41,18 +43,18 @@ const config: Config = {
         base: "16px",
       },
       fontWeight: {
-        thin: '100',
-        hairline: '100',
-        extralight: '200',
-        light: '300',
-        normal: '400',
-        medium: '500',
-        semibold: '600',
-        bold: '700',
-        extrabold: '800',
-        'extra-bold': '800',
-        black: '900',
-      }
+        thin: "100",
+        hairline: "100",
+        extralight: "200",
+        light: "300",
+        normal: "400",
+        medium: "500",
+        semibold: "600",
+        bold: "700",
+        extrabold: "800",
+        "extra-bold": "800",
+        black: "900",
+      },
       // lineHeight: {
       //   'h1': "55px",
       //   'h2': "134%",

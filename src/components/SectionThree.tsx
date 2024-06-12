@@ -32,12 +32,12 @@ const SectionThree = ({ data }: SectionOneProps) => {
   return (
     <section className=" px-4 md:px-20 lg:px-40 py-14 md:py-24 ">
       <div className="w-full lg:w-1/2">
-        <h1 className=" font-semibold text-[#424242] leading-tight">
+        <h1 className=" font-semibold text-text_dark leading-tight">
           {data?.pre_heading}{" "}
-          <span className="text-[#424242]">{data?.highlightned}</span>{" "}
+          <span className="text-text_dark">{data?.highlightned}</span>{" "}
           {data?.post_heading}
         </h1>
-        <p className="text-[#666666] font-normal  leading-6 mt-4 mb-4">
+        <p className="text-text_light font-normal  leading-6 mt-4 mb-4">
           {data?.detail}
         </p>
       </div>
@@ -94,7 +94,7 @@ const SectionThree = ({ data }: SectionOneProps) => {
               >
                 {icons[index]?.icon}
                 <div className="">
-                  <p className=" font-medium text-[#424242]">{item?.heading}</p>
+                  <p className=" font-medium text-text_dark">{item?.heading}</p>
                   <p className="mt-2 font-light text-[#666]">
                     {item?.short_description}
                   </p>
@@ -121,7 +121,7 @@ const SectionThree = ({ data }: SectionOneProps) => {
             >
               {icons[index]?.icon}
               <div className="">
-                <h2 className="text-[#424242] font-medium">{item?.heading}</h2>
+                <h2 className="text-text_dark font-medium">{item?.heading}</h2>
                 <p className="mt-2 font-normal text-[#666]">
                   {item?.short_description}
                 </p>
@@ -139,7 +139,7 @@ const SectionThree = ({ data }: SectionOneProps) => {
               height={1}
             />
             <div className="pt-4 px-6">
-              <h2 className="text-[#424242] font-medium">
+              <h2 className="text-text_dark font-medium">
                 {data?.data[activeIndex]?.heading}
               </h2>
               <p className="mt-2 font-normal text-[#666]">

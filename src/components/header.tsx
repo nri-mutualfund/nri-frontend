@@ -24,10 +24,12 @@ const Header = () => {
           height={1}
         /> */}
 
-        <nav className="flex items-center text-base gap-12 text-[#424242]">
+        <nav className="flex items-center text-base gap-12 ">
           <Link
             href={"/"}
-            className="cursor-pointer hover:text-gray-900"
+            className={`cursor-pointer hover:text-primary ${
+              pathname === "/" ? "text-primary" : "text-[#424242]"
+            }`}
             onClick={() => {
               if (pathname !== "/") {
                 NProgress.start();
@@ -40,7 +42,9 @@ const Header = () => {
           <ul className="gap-12 md:flex items-center hidden">
             <Link
               href={"/"}
-              className="cursor-pointer hover:text-gray-900"
+              className={`cursor-pointer hover:text-primary ${
+                pathname === "/" ? "text-primary" : "text-[#424242]"
+              }`}
               onClick={() => {
                 if (pathname !== "/") {
                   NProgress.start();
@@ -51,7 +55,11 @@ const Header = () => {
             </Link>
             <Link
               href={"/join-the-community"}
-              className="cursor-pointer hover:text-gray-900 "
+              className={`cursor-pointer hover:text-primary ${
+                pathname === "/join-the-community"
+                  ? "text-primary"
+                  : "text-[#424242]"
+              }`}
               onClick={() => {
                 if (pathname !== "/join-the-community") {
                   NProgress.start();
@@ -62,7 +70,9 @@ const Header = () => {
             </Link>
             <Link
               href={"/faq"}
-              className="cursor-pointer hover:text-gray-900 "
+              className={`cursor-pointer hover:text-primary ${
+                pathname === "/faq" ? "text-primary" : "text-[#424242]"
+              }`}
               onClick={() => {
                 if (pathname !== "/faq") {
                   NProgress.start();
@@ -73,7 +83,9 @@ const Header = () => {
             </Link>
             <Link
               href={"/blog"}
-              className="cursor-pointer hover:text-gray-900 "
+              className={`cursor-pointer hover:text-primary ${
+                pathname === "/blog" ? "text-primary" : "text-[#424242]"
+              }`}
               onClick={() => {
                 if (pathname !== "/blog") {
                   NProgress.start();
@@ -87,7 +99,7 @@ const Header = () => {
         <div className="items-center md:flex hidden gap-12">
           {/* <Link
             href={"/login"}
-            className="cursor-pointer hover:text-gray-900 "
+            className="cursor-pointer hover:text-primary "
           >
             Sign in
           </Link> */}
@@ -157,7 +169,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-gray-900 text-[#424242]"
+              className="cursor-pointer hover:text-primary text-[#424242]"
             >
               Home
             </Link>
@@ -169,7 +181,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-gray-900 text-[#424242]"
+              className="cursor-pointer hover:text-primary text-[#424242]"
             >
               Join the Community
             </Link>
@@ -181,7 +193,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-gray-900 text-[#424242]"
+              className="cursor-pointer hover:text-primary text-[#424242]"
             >
               FAQ
             </Link>
@@ -193,7 +205,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-gray-900 text-[#424242]"
+              className="cursor-pointer hover:text-primary text-[#424242]"
             >
               Blog
             </Link>

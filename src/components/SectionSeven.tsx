@@ -5,11 +5,11 @@ const SectionSeven = () => {
   return (
     <section className="px-4 md:px-20 lg:px-40 bg-secondary py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-        <h1 className="font-semibold text-[#424242] tracking-tight leading-tight">
+        <h1 className="font-semibold text-text_dark tracking-tight leading-tight">
           Your money will be{" "}
-          <span className="text-[#424242]">safe & secure</span>
+          <span className="text-text_dark">safe & secure</span>
         </h1>
-        <p className="text-[#666666] font-normal leading-normal mt-4 mb-4 text-center">
+        <p className="text-text_light font-normal leading-normal mt-4 mb-4 text-center">
           Your money is regulated by mutual fund companies. NRI doesn’t keep or
           handle your money
         </p>
@@ -28,10 +28,10 @@ const SectionSeven = () => {
           </div>
 
           <div className="flex md:justify-center md:items-center flex-col gap-3">
-            <h2 className="font-medium text-[#424242] md:text-center">
+            <h2 className="font-medium text-text_dark md:text-center">
               From your Foreign Bank
             </h2>
-            <p className="font-normal md:text-center leading-6 text-[#666]">
+            <p className="font-normal md:text-center leading-6 text-text_light">
               Convert to INR through your preferred remittance partner
             </p>
           </div>
@@ -58,10 +58,10 @@ const SectionSeven = () => {
             />
           </div>
           <div className="flex md:justify-center md:items-center flex-col gap-3">
-            <h2 className="font-medium text-[#424242] md:text-center">
+            <h2 className="font-medium text-text_dark md:text-center">
               To NRE/NRO Account
             </h2>
-            <p className=" font-normal md:text-center leading-6 text-[#666]">
+            <p className=" font-normal md:text-center leading-6 text-text_light">
               Integrate bank account and pay through net-banking
             </p>
           </div>
@@ -88,10 +88,10 @@ const SectionSeven = () => {
             />
           </div>
           <div className="flex md:justify-center md:items-center flex-col gap-3">
-            <h2 className="font-medium text-[#424242] md:text-center">
+            <h2 className="font-medium text-text_dark md:text-center">
               To Mutual Funds
             </h2>
-            <p className=" font-normal md:text-center leading-6 text-[#666]">
+            <p className=" font-normal md:text-center leading-6 text-text_light">
               Invest directly in your selected mutual funds
             </p>
           </div>
