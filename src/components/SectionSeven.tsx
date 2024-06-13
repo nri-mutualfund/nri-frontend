@@ -4,7 +4,7 @@ import React from "react";
 const SectionSeven = () => {
   return (
     <section className="px-4 md:px-20 lg:px-40 bg-secondary py-14 md:py-24">
-      <div className="w-full flex flex-col justify-center items-center">
+      <div className="w-full flex flex-col justify-center items-center text-center">
         <h1 className="">
           Your money will be{" "}
           <span className="text-text_dark">safe & secure</span>

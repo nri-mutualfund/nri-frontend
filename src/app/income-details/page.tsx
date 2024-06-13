@@ -337,7 +337,7 @@ const Page = () => {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-x-20 border-b border-gray-900/10 pt-12 pb-4">
             <div className="col-span-2">
               <h2 className="text-base font-semibold leading-7 text-text_dark">
-                TAX Residency 1 Details
+                TAX Residency Details
               </h2>
             </div>
             <div className="col-span-3">
