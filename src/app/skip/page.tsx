@@ -18,7 +18,7 @@ const page = () => {
         }}
       >
         <button className="px-8 flex gap-2 items-center py-2 mt-10  text-white  bg-primary rounded-md shadow active:bg-primary focus:outline-none ease transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-          Initial KYC
+          Initiate KYC
           <BsArrowRight size={20} />
         </button>
       </Link>
