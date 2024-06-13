@@ -3,14 +3,14 @@ import React from "react";
 const Section11 = () => {
   return (
     <section className="bg-white px-4 md:px-20 lg:px-40 py-14 md:py-24">
-      <h1 className="text-text_dark mx-auto font-semibold text-center  leading-tight">
+      <h1 className="text-center mx-auto">
         Serving <span className="text-text_dark">NRI</span> from across
         countries
       </h1>
-      <p className="font-medium mt-4 mb-4 text-[#666666] text-center">
+      <h4 className="text-center my-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing fermentum ante eu
         dignissim pulvinar.
-      </p>
+      </h4>
       {/* <p className="font-extralight mt-1 text-sm text-center">{data?.detail}</p> */}
       <svg
         // width="660"

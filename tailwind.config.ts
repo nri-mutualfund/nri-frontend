@@ -35,12 +35,12 @@ const config: Config = {
       },
       fontSize: {
         h1: "36px",
-        h2: "20px",
-        h3: "30px",
-        h4: "24px",
+        h2: "28px",
+        h3: "20px",
+        h4: "16px",
         h5: "20px",
-        p: "16px",
-        base: "16px",
+        p: "14px",
+        base: "18px",
       },
       fontWeight: {
         thin: "100",
@@ -55,22 +55,79 @@ const config: Config = {
         "extra-bold": "800",
         black: "900",
       },
-      // lineHeight: {
-      //   'h1': "55px",
-      //   'h2': "134%",
-      //   'h3': "100%",
-      //   'base': "143%",
-      // },
+      lineHeight: {
+        h1: "125%",
+        h2: "150%",
+        h3: "150%",
+        base: "143%",
+      },
     },
   },
   plugins: [
     plugin(({ addBase, theme }: { addBase: any; theme: Function }) => {
       const headingStyles: { [key: string]: any } = {
-        h1: { fontSize: theme("fontSize.h1") },
-        h2: { fontSize: theme("fontSize.h2") },
-        h3: { fontSize: theme("fontSize.h3") },
-        h4: { fontSize: theme("fontSize.h3") },
-        h5: { fontSize: theme("fontSize.h3") },
+        h1: {
+          fontSize: theme("fontSize.h2"),
+          lineHeight: theme("lineHeight.h2"),
+          color: theme("colors.text_dark"),
+          fontWeight: theme("fontWeight.semibold"),
+        },
+        h2: {
+          fontSize: theme("fontSize.h1"),
+          lineHeight: theme("lineHeight.h1"),
+          color: theme("colors.text_dark"),
+          fontWeight: theme("fontWeight.semibold"),
+        },
+        h3: {
+          fontSize: theme("fontSize.base"),
+          lineHeight: theme("lineHeight.h3"),
+          color: theme("colors.text_dark"),
+          fontWeight: theme("fontWeight.medium"),
+        },
+        h4: {
+          fontSize: theme("fontSize.p"),
+          lineHeight: theme("lineHeight.h1"),
+          color: theme("colors.text_light"),
+          fontWeight: theme("fontWeight.normal"),
+        },
+        h5: {
+          fontSize: theme("fontSize.p"),
+          lineHeight: theme("lineHeight.h1"),
+          color: theme("colors.text_dark"),
+          fontWeight: theme("fontWeight.normal"),
+        },
+        "@media (min-width: 640px)": {
+          h1: {
+            fontSize: theme("fontSize.h1"),
+            lineHeight: theme("lineHeight.h1"),
+            color: theme("colors.text_dark"),
+            fontWeight: theme("fontWeight.semibold"),
+          },
+          h2: {
+            fontSize: theme("fontSize.h1"),
+            lineHeight: theme("lineHeight.h1"),
+            color: theme("colors.text_dark"),
+            fontWeight: theme("fontWeight.semibold"),
+          },
+          h3: {
+            fontSize: theme("fontSize.h3"),
+            lineHeight: theme("lineHeight.h3"),
+            color: theme("colors.text_dark"),
+            fontWeight: theme("fontWeight.medium"),
+          },
+          h4: {
+            fontSize: theme("fontSize.h4"),
+            lineHeight: theme("lineHeight.h3"),
+            color: theme("colors.text_light"),
+            fontWeight: theme("fontWeight.normal"),
+          },
+          h5: {
+            fontSize: theme("fontSize.h4"),
+            lineHeight: theme("lineHeight.h3"),
+            color: theme("colors.text_dark"),
+            fontWeight: theme("fontWeight.normal"),
+          },
+        },
       };
       addBase(headingStyles);
     }),

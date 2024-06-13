@@ -23,20 +23,20 @@ const Page = () => {
     <div className="bg-white sm:pt-4 lg:py-10 pb-12">
       <div className="max-w-screen-2xl mx-auto  xl:px-40 md:px-16 px-10">
         <div className="mx-auto text-center max-w-4xl">
-          <h1 className="text-[#424242] mx-auto font-medium text-center  leading-tight">
-            Meet our <span className="text-[#424242]">NRI Ambassadors</span>{" "}
+          <h1 className="mx-auto text-center">
+            Meet our <span className="text-text_dark">NRI Ambassadors</span>{" "}
             across the Globe
           </h1>
-          <p className="font-medium mt-4 mb-4 text-[#424242] text-center max-w-2xl mx-auto">
+          <h5 className="mt-4 mb-4 text-center max-w-2xl mx-auto">
             {`If you are a non-resident Indian (NRI) who shares our vision of India
           becoming the world's largest economy, we invite you to join our
           prestigious 'Ambassador' program. As an Ambassador, you will enjoy
           exclusive perks and benefits. Apply now to become a part of India's
           growth story and help shape its promising future.`}
-          </p>
-          <p className="font-medium mt-10 text-[#424242] text-center">
+          </h5>
+          <h5 className="font-medium mt-10 text-center">
             Trusted by People working in reputed companies across the globe
-          </p>
+          </h5>
           <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-2  max-w-md mx-auto">
             <Image
               src="/assets/apple.png"
@@ -69,20 +69,18 @@ const Page = () => {
           </div>
         </div>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md bg-white md:px-8 border-gray-200 md:border-2 md:shadow-md rounded-lg py-6">
-          <h2 className="font-semibold tracking-tight text-[#424242] text-center leading-tight">
-            Apply in 20 seconds
-          </h2>
-          <p className="mt-1 text-base text-[#666] text-center mb-10">
+          <h3 className="text-center">Apply in 20 seconds</h3>
+          <h4 className="mt-1 text-center mb-10">
             50,000+ Nris applied in last 6 months
-          </p>
+          </h4>
           <form
-            className="space-y-6 text-base text-[#424242]"
+            className="space-y-6 text-base text-text_dark"
             onSubmit={submit}
           >
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-[#424242]"
+                className="block text-xs font-medium leading-6 text-text_dark"
               >
                 Your name
               </label>
@@ -93,7 +91,7 @@ const Page = () => {
                   type="name"
                   placeholder="Fullname as per passport"
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                 />
               </div>
             </div>
@@ -101,7 +99,7 @@ const Page = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-[#424242]"
+                className="block text-xs font-medium leading-6 text-text_dark"
               >
                 Your Email address
               </label>
@@ -112,14 +110,14 @@ const Page = () => {
                   type="email"
                   placeholder="Enter Email"
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                 />
               </div>
             </div>
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium leading-6 text-[#424242]"
+                className="block text-xs font-medium leading-6 text-text_dark"
               >
                 Country
               </label>
@@ -133,7 +131,7 @@ const Page = () => {
                     setCode(getCodes[e.target.value]);
                   }}
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 appearance-none"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6 appearance-none"
                 >
                   <option disabled>Choose your country</option>
                   <option value="US">United States</option>
@@ -142,27 +140,27 @@ const Page = () => {
                   <option value="GE">Germany</option>
                   <option value="IND">India</option>
                 </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                {/* <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                   <IoChevronDownOutline />
-                </div>
+                </div> */}
               </div>
             </div>
             <div>
               <label
                 htmlFor="phone"
-                className="block text-sm font-medium leading-6 text-[#424242]"
+                className="block text-xs font-medium leading-6 text-text_dark"
               >
                 Whatsapp Number
               </label>
               <div className="mt-2">
-                <div className="flex w-full rounded-md border-0 py-0.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
+                <div className="flex w-full rounded-md border-0 py-0.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
                   <p className="border-r-2 px-4 py-1">{code}</p>
                   <input
                     id="whatsapp_number"
                     name="whatsapp_number"
                     type="phone"
                     autoComplete="phone"
-                    className="block w-full placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                    className="block w-full placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                     required
                   />
                 </div>
@@ -172,16 +170,16 @@ const Page = () => {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 Start Process Now
               </button>
             </div>
-            <p className="mt-1 text-sm text-gray-400 text-left font-light">
+            <p className="mt-1 text-xs text-gray-400 text-left font-light">
               I have checked all the details and these details can be used for
               my account opening
             </p>
-            <p className="mt-1 text-sm text-gray-400 text-left font-light">
+            <p className="mt-1 text-xs text-gray-400 text-left font-light">
               You will recieve call from bank on your whatsapp number
             </p>
           </form>

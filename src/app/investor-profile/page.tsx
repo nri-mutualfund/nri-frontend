@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import { FaLock } from "react-icons/fa";
 import { addProfileDetails } from "../profile/api";
 import { toast } from "react-toastify";
+import { IoMdEye } from "react-icons/io";
 const Page = () => {
   const router = useRouter();
   const [image1, setImage1] = useState<File | null>(null);
@@ -44,12 +45,12 @@ const Page = () => {
       setErrorStatus("image1");
     } else if (!image2) {
       setErrorStatus("image2");
+    } else if (!image5) {
+      setErrorStatus("image5");
     } else if (!image3) {
       setErrorStatus("image3");
     } else if (!image4) {
       setErrorStatus("image4");
-    } else if (!image5) {
-      setErrorStatus("image5");
     } else {
       setErrorStatus("");
       const data = {
@@ -151,13 +152,11 @@ const Page = () => {
       <div className="border rounded-lg p-14 mt-10 bg-white shadow-sm">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-x-20 border-b border-gray-900/10 pb-0 ">
           <div className="pb-12 sm:col-span-2">
-            <h2 className="text-base font-semibold leading-7 text-gray-900">
-              Create your investor profile
-            </h2>
-            <p className="mt-1 text-sm leading-6 text-gray-600">
+            <h3 className="font-semibold">Create your investor profile</h3>
+            <p className="mt-1 text-sm leading-6 text-text_dark">
               Upload files with supported types - jpg, jpeg, png, pdf
             </p>
-            <p className="mt-1 text-sm leading-6 text-gray-600 flex items-center gap-2">
+            <p className="mt-1 text-sm leading-6 text-text_dark flex items-center gap-2">
               <FaLock color="#000" /> Your information is always protected
             </p>
           </div>
@@ -165,31 +164,31 @@ const Page = () => {
             <div className="pb-12">
               <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-3">
-                  <h2 className="text-base font-semibold leading-7 text-gray-900">
+                  <h5 className="font-semibold">
                     <span className="text-red-500">*</span> Hand Signature Photo
-                  </h2>
-                  <p className="mt-1 text-xs text-gray-600 font-light">
-                    On a clear and white background Ensure it matches your PAN
-                    and Passport
+                  </h5>
+                  <p className="mt-1 text-xs text-text_dark font-light">
+                    On a clear and white background. Ensure it matches your PAN
+                    and Passport.
                   </p>
+                  <Link
+                    href={
+                      "https://drive.google.com/file/d/149gBV4Fd4giw_KyJEmiZPoB4wctWW8_j/view"
+                    }
+                    target="_blank"
+                  >
+                    <p className="mt-1 text-xs text-text_dark underline underline-offset-2 font-light hover:text-primary">
+                      See Sample
+                    </p>
+                  </Link>
                 </div>
 
                 <div className="sm:col-span-3 ">
                   <div className="flex gap-10 items-center">
-                    <label htmlFor="hand_signature_media">
-                      <p className="cursor-pointer">Upload</p>
-                      <input
-                        id="hand_signature_media"
-                        type="file"
-                        required
-                        onChange={handleFileChange}
-                        className="hidden"
-                        accept="image/png, image/jpeg, .pdf"
-                      />
-                    </label>
                     {previewSrc1 && (
                       <button
                         type="button"
+                        className="text-primary flex items-center gap-2"
                         onClick={() => {
                           if (image1?.type === "application/pdf") {
                             openPdfInNewTab(image1);
@@ -200,8 +199,27 @@ const Page = () => {
                         }}
                       >
                         Preview
+                        <IoMdEye size={20} />
                       </button>
                     )}
+                    <label htmlFor="hand_signature_media">
+                      {previewSrc1 ? (
+                        <p className="text-primary cursor-pointer">Update</p>
+                      ) : (
+                        <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                          <p>Upload</p>
+                        </div>
+                      )}
+
+                      <input
+                        id="hand_signature_media"
+                        type="file"
+                        required
+                        onChange={handleFileChange}
+                        className="hidden"
+                        accept="image/png, image/jpeg, .pdf"
+                      />
+                    </label>
                   </div>
 
                   {errorStatus === "image1" && (
@@ -211,27 +229,28 @@ const Page = () => {
                   )}
                 </div>
                 <div className="sm:col-span-3">
-                  <h2 className="text-base font-semibold leading-7 text-gray-900">
-                    <span className="text-red-500">*</span> Passport Front Page
-                  </h2>
+                  <h5 className="font-semibold">
+                    <span className="text-red-500">*</span>Passport Front Page
+                    (Self-Attested)
+                  </h5>
+                  <Link
+                    href={
+                      "https://drive.google.com/file/d/1Hg1QX9gX02fuM-vM2WsOmibL0ZBSiUUj/view"
+                    }
+                    target="_blank"
+                  >
+                    <p className="mt-1 text-xs text-text_dark underline underline-offset-2 font-light hover:text-primary">
+                      See Sample
+                    </p>
+                  </Link>
                 </div>
 
                 <div className="sm:col-span-3 ">
                   <div className="flex gap-10 items-center">
-                    <label htmlFor="passport_front_page_media">
-                      <p className="cursor-pointer">Upload</p>
-                      <input
-                        id="passport_front_page_media"
-                        type="file"
-                        required
-                        className="hidden"
-                        onChange={handleFileChange2}
-                        accept="image/png, image/jpeg, .pdf"
-                      />
-                    </label>
                     {previewSrc2 && (
                       <button
                         type="button"
+                        className="text-primary flex items-center gap-2"
                         onClick={() => {
                           if (image2?.type === "application/pdf") {
                             openPdfInNewTab(image2);
@@ -242,8 +261,26 @@ const Page = () => {
                         }}
                       >
                         Preview
+                        <IoMdEye size={20} />
                       </button>
                     )}
+                    <label htmlFor="passport_front_page_media">
+                      {previewSrc2 ? (
+                        <p className="text-primary cursor-pointer">Update</p>
+                      ) : (
+                        <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                          <p>Upload</p>
+                        </div>
+                      )}
+                      <input
+                        id="passport_front_page_media"
+                        type="file"
+                        required
+                        className="hidden"
+                        onChange={handleFileChange2}
+                        accept="image/png, image/jpeg, .pdf"
+                      />
+                    </label>
                   </div>
 
                   {errorStatus === "image2" && (
@@ -253,18 +290,109 @@ const Page = () => {
                   )}
                 </div>
                 <div className="sm:col-span-3">
-                  <h2 className="text-base font-semibold leading-7 text-gray-900">
-                    <span className="text-red-500">*</span> Indian PAN Card
-                  </h2>
-                  <p className="mt-1 text-xs text-gray-600 font-light">
-                    sample
-                  </p>
+                  <h5 className="font-semibold">
+                    <span className="text-red-500">*</span> Passport Back Page
+                    (Self-Attested)
+                  </h5>
+                  <Link
+                    href={
+                      "https://drive.google.com/file/d/1Nn4FmYTCzK_aoWJEKqXfLP8OpVHJOGL6/view"
+                    }
+                    target="_blank"
+                  >
+                    <p className="mt-1 text-xs text-text_dark underline underline-offset-2 font-light hover:text-primary">
+                      See Sample
+                    </p>
+                  </Link>
                 </div>
 
                 <div className="sm:col-span-3 ">
                   <div className="flex gap-10 items-center">
+                    {previewSrc5 && (
+                      <button
+                        type="button"
+                        className="text-primary flex items-center gap-2"
+                        onClick={() => {
+                          if (image2?.type === "application/pdf") {
+                            openPdfInNewTab(image5);
+                          } else {
+                            setCurrentURL(previewSrc5);
+                            setShow(true);
+                          }
+                        }}
+                      >
+                        Preview
+                        <IoMdEye size={20} />
+                      </button>
+                    )}
+                    <label htmlFor="oci_card_media">
+                      {previewSrc5 ? (
+                        <p className="text-primary cursor-pointer">Update</p>
+                      ) : (
+                        <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                          <p>Upload</p>
+                        </div>
+                      )}
+                      <input
+                        id="oci_card_media"
+                        type="file"
+                        required
+                        className="hidden"
+                        onChange={handleFileChange5}
+                        accept="image/png, image/jpeg, .pdf"
+                      />
+                    </label>
+                  </div>
+                  {errorStatus === "image5" && (
+                    <p className="text-red-500 text-xs mt-1">
+                      This field is required!
+                    </p>
+                  )}
+                </div>
+                <div className="sm:col-span-3">
+                  <h5 className="font-semibold">
+                    <span className="text-red-500">*</span> Indian PAN Card
+                  </h5>
+                  <Link
+                    href={
+                      "https://drive.google.com/file/d/1jTqAfIWCI4Ncr-N9qvl0AAqwBML0T5me/view"
+                    }
+                    target="_blank"
+                  >
+                    <p className="mt-1 text-xs text-text_dark underline underline-offset-2 font-light hover:text-primary">
+                      See Sample
+                    </p>
+                  </Link>
+                </div>
+
+                <div className="sm:col-span-3 ">
+                  <div className="flex gap-10 items-center">
+                    {previewSrc3 && (
+                      <button
+                        type="button"
+                        className="text-primary flex items-center gap-2"
+                        onClick={() => {
+                          if (image1?.type === "application/pdf") {
+                            openPdfInNewTab(image3);
+                          } else {
+                            setCurrentURL(previewSrc3);
+                            setShow(true);
+                          }
+                        }}
+                      >
+                        Preview
+                        <IoMdEye size={20} />
+                      </button>
+                    )}
+
                     <label htmlFor="indian_pan_card_media">
-                      <p className="cursor-pointer">Upload</p>
+                      {previewSrc3 ? (
+                        <p className="text-primary cursor-pointer">Update</p>
+                      ) : (
+                        <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                          <p>Upload</p>
+                        </div>
+                      )}
                       <input
                         id="indian_pan_card_media"
                         type="file"
@@ -274,21 +402,6 @@ const Page = () => {
                         accept="image/png, image/jpeg, .pdf"
                       />
                     </label>
-                    {previewSrc3 && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          if (image3?.type === "application/pdf") {
-                            openPdfInNewTab(image3);
-                          } else {
-                            setCurrentURL(previewSrc3);
-                            setShow(true);
-                          }
-                        }}
-                      >
-                        Preview
-                      </button>
-                    )}
                   </div>
                   {errorStatus === "image3" && (
                     <p className="text-red-500 text-xs mt-1">
@@ -297,18 +410,51 @@ const Page = () => {
                   )}
                 </div>
                 <div className="sm:col-span-3">
-                  <h2 className="text-base font-semibold leading-7 text-gray-900">
+                  <h5 className="font-semibold">
                     <span className="text-red-500">*</span> Passport Size Photo
-                  </h2>
-                  <p className="mt-1 text-xs text-gray-600 font-light">
-                    A clear and a recent picture
+                  </h5>
+                  <p className="mt-1 text-xs text-text_dark font-light">
+                    A clear & recent picture
                   </p>
+                  <Link
+                    href={
+                      "https://drive.google.com/file/d/170f8w7Qc8I2kGWqJd5MYVVJ7_1kxbPod/view"
+                    }
+                    target="_blank"
+                  >
+                    <p className="mt-1 text-xs text-text_dark underline underline-offset-2 font-light hover:text-primary">
+                      (See Specifications)
+                    </p>
+                  </Link>
                 </div>
 
                 <div className="sm:col-span-3 ">
                   <div className="flex gap-10 items-center">
+                    {previewSrc4 && (
+                      <button
+                        type="button"
+                        className="text-primary flex items-center gap-2"
+                        onClick={() => {
+                          if (image2?.type === "application/pdf") {
+                            openPdfInNewTab(image4);
+                          } else {
+                            setCurrentURL(previewSrc4);
+                            setShow(true);
+                          }
+                        }}
+                      >
+                        Preview
+                        <IoMdEye size={20} />
+                      </button>
+                    )}
                     <label htmlFor="passport_size_photo_media">
-                      <p className="cursor-pointer">Upload</p>
+                      {previewSrc4 ? (
+                        <p className="text-primary cursor-pointer">Update</p>
+                      ) : (
+                        <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                          <p>Upload</p>
+                        </div>
+                      )}
                       <input
                         id="passport_size_photo_media"
                         name="passport_size_photo_media"
@@ -319,65 +465,8 @@ const Page = () => {
                         accept="image/png, image/jpeg, .pdf"
                       />
                     </label>
-                    {previewSrc4 && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          if (image4?.type === "application/pdf") {
-                            openPdfInNewTab(image4);
-                          } else {
-                            setCurrentURL(previewSrc4);
-                            setShow(true);
-                          }
-                        }}
-                      >
-                        Preview
-                      </button>
-                    )}
                   </div>
                   {errorStatus === "image4" && (
-                    <p className="text-red-500 text-xs mt-1">
-                      This field is required!
-                    </p>
-                  )}
-                </div>
-                <div className="sm:col-span-3">
-                  <h2 className="text-base font-semibold leading-7 text-gray-900">
-                    <span className="text-red-500">*</span> Overseas Citizen of
-                    India (OCI) Card
-                  </h2>
-                </div>
-
-                <div className="sm:col-span-3 ">
-                  <div className="flex gap-10 items-center">
-                    <label htmlFor="oci_card_media">
-                      <p className="cursor-pointer">Upload</p>
-                      <input
-                        id="oci_card_media"
-                        type="file"
-                        required
-                        className="hidden"
-                        onChange={handleFileChange5}
-                        accept="image/png, image/jpeg, .pdf"
-                      />
-                    </label>
-                    {previewSrc5 && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          if (image5?.type === "application/pdf") {
-                            openPdfInNewTab(image5);
-                          } else {
-                            setCurrentURL(previewSrc5);
-                            setShow(true);
-                          }
-                        }}
-                      >
-                        Preview
-                      </button>
-                    )}
-                  </div>
-                  {errorStatus === "image5" && (
                     <p className="text-red-500 text-xs mt-1">
                       This field is required!
                     </p>

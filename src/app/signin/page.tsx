@@ -44,10 +44,10 @@ const SignIn = () => {
             src="https://tailwindui.com/img/logos/mark.svg?color=green&shade=700"
             alt="Your Company"
           />
-          <h2 className="mt-10 text-center font-bold leading-9 tracking-tight text-gray-900">
+          <h1 className="mt-10 text-center font-bold leading-9 tracking-tight">
             Sign in to your account
-          </h2>
-          <p className="mt-4  text-sm text-gray-600 text-center">
+          </h1>
+          <h4 className="mt-4 text-center">
             Not a member?{" "}
             <a
               href="/signup"
@@ -55,7 +55,7 @@ const SignIn = () => {
             >
               Sign Up
             </a>
-          </p>
+          </h4>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white md:px-10 py-10 rounded-md md:shadow-md md:border border-gray-200">
@@ -63,7 +63,7 @@ const SignIn = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-xs font-medium leading-6 text-text_dark"
               >
                 Email address
               </label>
@@ -77,7 +77,7 @@ const SignIn = () => {
                   }}
                   autoComplete="email"
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -86,7 +86,7 @@ const SignIn = () => {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-xs font-medium leading-6 text-text_dark"
                 >
                   Password
                 </label>
@@ -101,7 +101,7 @@ const SignIn = () => {
                     setError(false);
                   }}
                   required
-                  className=" px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className=" px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
               {error && (
