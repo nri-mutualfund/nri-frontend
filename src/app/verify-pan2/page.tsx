@@ -259,7 +259,7 @@ const Page = () => {
                   Why do we ask this?
                 </p>
               </Link>
-              <p className="text-xs mt-4 md:max-w-[60%] text-gray-500">{`It's a mandatory request from SEBI. All
+              <p className="text-xs mt-4  text-gray-500">{`It's a mandatory request from SEBI. All
                  investors must provide their PAN details to
                  open investment account.`}</p>
 

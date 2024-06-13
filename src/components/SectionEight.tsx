@@ -9,7 +9,7 @@ interface SectionEightProps {
 const SectionEight = ({ data }: SectionEightProps) => {
   return (
     <section className=" px-4 md:px-20 lg:px-40 py-14 md:py-24">
-      <div className="w-full flex flex-col justify-center items-center">
+      <div className="w-full flex flex-col justify-center items-center text-center">
         <h1 className="">
           Frequently <span className="text-text_dark">Asked</span> Questions
         </h1>

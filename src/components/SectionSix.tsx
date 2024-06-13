@@ -34,7 +34,7 @@ const SectionSix = ({ data }: SectionOneProps) => {
   };
   return (
     <section className="px-4 md:px-20 lg:px-10 py-14 md:py-24">
-      <div className="w-full flex flex-col justify-center items-center">
+      <div className="w-full flex flex-col justify-center items-center text-center">
         <h1 className="">
           {data?.pre_heading}{" "}
           <span className="text-text_dark">{data?.highlightned}</span>{" "}
