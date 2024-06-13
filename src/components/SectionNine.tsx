@@ -35,7 +35,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 nProgress.start();
               }}
             >
-              <h3 className="mt-2">{data?.data[0]?.blog_heading}</h3>
+              <h3 className="mt-2 mb-2 ">{data?.data[0]?.blog_heading}</h3>
             </Link>
 
             <div className="h-full overflow-hidden relative">
@@ -86,7 +86,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   nProgress.start();
                 }}
               >
-                <h3 className="mt-2">{data?.data[1]?.blog_heading}</h3>
+                <h3 className="mt-2 mb-2">{data?.data[1]?.blog_heading}</h3>
               </Link>
               <div className="h-full overflow-hidden relative">
       <div
@@ -119,7 +119,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   nProgress.start();
                 }}
               >
-                <h3 className="mt-2">{data?.data[2]?.blog_heading}</h3>
+                <h3 className="mt-2 mb-2">{data?.data[2]?.blog_heading}</h3>
               </Link>
               <div className="h-full overflow-hidden relative">
       <div
