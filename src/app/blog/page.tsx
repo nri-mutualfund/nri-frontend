@@ -69,7 +69,7 @@ const Page = () => {
 
             <div className="flex gap-10">
               <div className="hidden md:block">
-                <div className="w-[250px] xl:w-[280px] border shadow-sm rounded-lg mt-28 ">
+                <div className="w-[250px] xl:w-[280px] border shadow-md rounded-lg mt-28 ">
                   <div className="p-4 border-b">
                     <h3 className="">Categories</h3>
                   </div>
@@ -97,7 +97,7 @@ const Page = () => {
                     className="flex max-w-xl flex-col items-center"
                   >
                     <div className="group relative h-64">
-                      <h3 className="mt-3 group-hover:text-gray-600">
+                      <h3 className="mt-3 group-hover:text-gray-600 mb-2">
                         <span className="absolute inset-0" />
                         {post.blog_heading}
                       </h3>
