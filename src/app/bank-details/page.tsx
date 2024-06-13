@@ -110,6 +110,12 @@ const Page = () => {
                         <option value={""}>Select Account Type</option>
                         <option value={"NRE"}>NRE</option>
                         <option value={"NRO"}>NRO</option>
+                        <option value={"Resident Individual"}>
+                          Resident Individual
+                        </option>
+                        <option value={"Resident Joint Account"}>
+                          Resident Joint Account
+                        </option>
                       </select>
                       <Link
                         href={"https://cleartax.in/s/nre-nro-accounts"}
@@ -176,8 +182,10 @@ const Page = () => {
                         className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                       >
                         <option value={""}>Select Document</option>
-                        <option value={"PAN"}>PAN</option>
-                        <option value={"Adhar"}>Adhar</option>
+                        <option value={"Bank Statement"}>Bank Statement</option>
+                        <option value={"Cancelled Cheque"}>
+                          Cancelled Cheque
+                        </option>
                       </select>
                       <Link
                         href={

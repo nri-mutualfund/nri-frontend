@@ -257,7 +257,7 @@ const Page = () => {
                 </div>
                 <div className="sm:col-span-3">
                   <div
-                    className={`w-full flex rounded-md border py-2 px-4  h-14 items-center ${
+                    className={`w-full flex rounded-md border py-2 px-4 cursor-pointer  h-14 items-center ${
                       status?.includes("1") ? "border-primary" : ""
                     }`}
                     onClick={() => {
@@ -275,7 +275,7 @@ const Page = () => {
                 </div>
                 <div className="sm:col-span-3">
                   <div
-                    className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
+                    className={`w-full flex rounded-md border py-2 px-4 cursor-pointer h-14 items-center ${
                       status?.includes("2") ? "border-primary" : ""
                     }`}
                     onClick={() => {
@@ -294,7 +294,7 @@ const Page = () => {
                 </div>
                 <div className="sm:col-span-3">
                   <div
-                    className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
+                    className={`w-full flex rounded-md border py-2 px-4 cursor-pointer h-14 items-center ${
                       status?.includes("3") ? "border-primary" : ""
                     }`}
                     onClick={() => {
@@ -312,7 +312,7 @@ const Page = () => {
                 </div>
                 <div className="sm:col-span-3">
                   <div
-                    className={`w-full flex rounded-md border py-2 px-4 h-14 items-center ${
+                    className={`w-full flex rounded-md border py-2 px-4 cursor-pointer h-14 items-center ${
                       status?.includes("4") ? "border-primary" : ""
                     }`}
                     onClick={() => {

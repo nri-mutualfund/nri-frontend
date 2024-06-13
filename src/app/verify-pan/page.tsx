@@ -124,7 +124,7 @@ const Page = () => {
                       type="phone"
                       autoComplete="phone"
                       required
-                      className="block w-[70%] placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                      className="block w-[70%] placeholder:text-gray-400 px-4 py-1 focus:ring-0 border-none focus:ring-inset sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -241,7 +241,7 @@ const Page = () => {
                         type="phone"
                         autoComplete="phone"
                         required
-                        className="block w-[70%] placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                        className="block w-[70%] placeholder:text-gray-400 px-4 py-1 focus:ring-0 focus:ring-inset border-none sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>

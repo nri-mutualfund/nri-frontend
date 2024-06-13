@@ -1,4 +1,5 @@
 "use client";
+import { countryCodes } from "@/utility/values";
 import Image from "next/image";
 import React, { useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
@@ -37,7 +38,7 @@ const Page = () => {
           <h5 className="font-medium mt-10 text-center">
             Trusted by People working in reputed companies across the globe
           </h5>
-          <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-2  max-w-md mx-auto">
+          <div className="grid grid-cols-4 items-center gap-2  max-w-md mx-auto">
             <Image
               src="/assets/apple.png"
               alt="Your Image Alt Text"
@@ -73,10 +74,7 @@ const Page = () => {
           <h4 className="mt-1 text-center mb-10">
             50,000+ Nris applied in last 6 months
           </h4>
-          <form
-            className="space-y-6 text-base text-text_dark"
-            onSubmit={submit}
-          >
+          <form className="space-y-6 text-text_dark" onSubmit={submit}>
             <div>
               <label
                 htmlFor="email"
@@ -91,7 +89,7 @@ const Page = () => {
                   type="name"
                   placeholder="Fullname as per passport"
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6"
                 />
               </div>
             </div>
@@ -110,7 +108,7 @@ const Page = () => {
                   type="email"
                   placeholder="Enter Email"
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6"
                 />
               </div>
             </div>
@@ -131,21 +129,21 @@ const Page = () => {
                     setCode(getCodes[e.target.value]);
                   }}
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6 appearance-none"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6 appearance-none"
                 >
-                  <option disabled>Choose your country</option>
-                  <option value="US">United States</option>
-                  <option value="UK">United Kingdom</option>
-                  <option value="FR">France</option>
-                  <option value="GE">Germany</option>
-                  <option value="IND">India</option>
+                  <option value={""}>Choose your country</option>
+                  {countryCodes?.map((item, index) => (
+                    <option value={item} key={index}>
+                      {item}
+                    </option>
+                  ))}
                 </select>
                 {/* <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                   <IoChevronDownOutline />
                 </div> */}
               </div>
             </div>
-            <div>
+            {/* <div>
               <label
                 htmlFor="phone"
                 className="block text-xs font-medium leading-6 text-text_dark"
@@ -160,8 +158,43 @@ const Page = () => {
                     name="whatsapp_number"
                     type="phone"
                     autoComplete="phone"
-                    className="block w-full placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
+                    className="block w-full placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6"
                     required
+                  />
+                </div>
+              </div>
+            </div> */}
+            <div>
+              <label
+                htmlFor="whatsapp_number"
+                className="block text-xs font-medium leading-6 text-text_dark"
+              >
+                Whatsapp Number
+              </label>
+              <div className="mt-2">
+                <div className="flex w-full rounded-md border-0 py-0.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
+                  <select
+                    id="contry_code"
+                    name="country_code"
+                    defaultValue={""}
+                    required
+                    className="px-2 block w-[30%] border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
+                  >
+                    <option value={""}>code</option>
+                    {countryCodes?.map((item, index) => (
+                      <option value={item} key={index}>
+                        {item}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    id="whatsapp_number"
+                    name="whatsapp_number"
+                    type="text"
+                    autoComplete="phone"
+                    required
+                    maxLength={16}
+                    className="block w-[70%] placeholder:text-gray-400 px-4 py-1 border-none focus:ring-0 focus:ring-inset sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>

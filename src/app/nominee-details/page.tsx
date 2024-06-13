@@ -9,6 +9,8 @@ import { addNomineeDetails, getNomineeDetails } from "./api";
 import nProgress from "nprogress";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { familyRelations } from "@/utility/values";
+import { it } from "node:test";
 type NomineeDetail = {
   full_legal_name: string;
   relation: string;
@@ -204,10 +206,11 @@ const Page = () => {
                               value={item?.relation}
                             >
                               <option value={""}>Select</option>
-                              <option value={"Father"}>Father</option>
-                              <option value={"Mother"}>Mother</option>
-                              <option value={"Brother"}>Brother</option>
-                              <option value={"Sister"}>Sister</option>
+                              {familyRelations?.map((item, index) => (
+                                <option value={item} key={index}>
+                                  {item}
+                                </option>
+                              ))}
                             </select>
                           </td>
                           <td className="pt-2">
