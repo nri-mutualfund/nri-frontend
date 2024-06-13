@@ -1,5 +1,6 @@
 "use client";
 import MultiSelect from "@/components/MultipleSelect";
+import { countryCodes } from "@/utility/values";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { IoIosCheckmarkCircle } from "react-icons/io";
@@ -16,11 +17,11 @@ const Page = () => {
   const [code, setCode] = useState("+1");
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const options = [
-    { value: "US", label: "United States" },
-    { value: "GE", label: "Germany" },
-    { value: "CA", label: "Canada" },
-    { value: "FR", label: "France" },
-    { value: "UK", label: "United Kingdom" },
+    { value: "Investing in India", label: "Investing in India" },
+    { value: "Home Loan", label: "Home Loan" },
+    { value: "Savings", label: "Savings" },
+    { value: "Family Use", label: "Family Use" },
+    { value: "Fixed Deposit", label: "Fixed Deposit" },
   ];
 
   const getCodes: { [key: string]: string } = {
@@ -247,23 +248,37 @@ const Page = () => {
                     </div> */}
                   </div>
 
-                  <div className="mb-4">
+                  <div>
                     <label
-                      htmlFor="phone"
+                      htmlFor="whatsapp_number"
                       className="block text-xs font-medium leading-6 text-text_dark"
                     >
                       Whatsapp Number
                     </label>
                     <div className="mt-2">
                       <div className="flex w-full rounded-md border-0 py-0.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
-                        <p className="border-r-2 px-4 py-1">{code}</p>
+                        <select
+                          id="contry_code"
+                          name="country_code"
+                          defaultValue={""}
+                          required
+                          className="px-2 block w-[30%] border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
+                        >
+                          <option value={""}>code</option>
+                          {countryCodes?.map((item, index) => (
+                            <option value={item} key={index}>
+                              {item}
+                            </option>
+                          ))}
+                        </select>
                         <input
                           id="whatsapp_number"
                           name="whatsapp_number"
-                          type="phone"
+                          type="text"
                           autoComplete="phone"
-                          className="block w-full placeholder:text-text_light px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                           required
+                          maxLength={16}
+                          className="block w-[70%] placeholder:text-gray-400 px-4 py-1 border-none focus:ring-0 focus:ring-inset sm:text-sm sm:leading-6"
                         />
                       </div>
                     </div>
