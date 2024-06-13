@@ -103,7 +103,7 @@ const Page = () => {
                       </h3>
                       <div className=" h-full overflow-hidden relative">
               <div className="line-clamp-5" dangerouslySetInnerHTML={{ __html: post?.richText }} />
-              <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white to-transparent"></div>
+              {/* <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white to-transparent"></div> */}
             </div>
                     </div>
                     <div className="flex w-full items-center justify-between mt-4">
