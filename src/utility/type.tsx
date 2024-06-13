@@ -13,6 +13,7 @@ export interface DataProps {
     user_name: string;
     blog_heading: string;
     blog_content: string;
+    richText: string;
     created_at: string;
     rating: string;
     id: string;

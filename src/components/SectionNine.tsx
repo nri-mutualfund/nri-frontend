@@ -21,8 +21,8 @@ const SectionNine = ({ data }: SectionOneProps) => {
       </h1>
       <p className="mt-4 mb-4">{data?.detail}</p>
       {data?.data?.length && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-end">
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
+          <div className="">
             <p className="font-light text-sm text-text_light">
               {moment(data?.data[0]?.created_at).format("MMM DD, YYYY")}
             </p>
@@ -38,10 +38,12 @@ const SectionNine = ({ data }: SectionOneProps) => {
               <h3 className="mt-2">{data?.data[0]?.blog_heading}</h3>
             </Link>
 
-            <h5 className="mt-3">
-              {data?.data[0]?.blog_content} {data?.data[0]?.blog_content}{" "}
-              {data?.data[0]?.blog_content} {data?.data[0]?.blog_content}
-            </h5>
+            <div className="h-full overflow-hidden relative">
+      <div
+        className="line-clamp-none "
+        dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
+      />
+    </div>
             <Link
               href={{
                 pathname: "/blog-details",
@@ -86,8 +88,13 @@ const SectionNine = ({ data }: SectionOneProps) => {
               >
                 <h3 className="mt-2">{data?.data[1]?.blog_heading}</h3>
               </Link>
-              <h5 className="mt-3">{data?.data[1]?.blog_content}</h5>
-              <div className="flex items-center gap-4 mt-6">
+              <div className="h-full overflow-hidden relative">
+      <div
+        className="line-clamp-5 "
+        dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
+      />
+    </div>              
+    <div className="flex items-center gap-4 mt-6">
                 <Image
                   src={"/assets/male.png"}
                   alt="cots"
@@ -114,8 +121,13 @@ const SectionNine = ({ data }: SectionOneProps) => {
               >
                 <h3 className="mt-2">{data?.data[2]?.blog_heading}</h3>
               </Link>
-              <h5 className="mt-3">{data?.data[2]?.blog_content}</h5>
-              <div className="flex items-center gap-4 mt-6">
+              <div className="h-full overflow-hidden relative">
+      <div
+        className="line-clamp-5 "
+        dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
+      />
+    </div>   
+                  <div className="flex items-center gap-4 mt-6">
                 <Image
                   src={"/assets/male.png"}
                   alt="cots"
