@@ -462,3 +462,12 @@ export const incomeBrackets: string[] = [
   "ABOVE_25_LAC_UPTO_1_CORE",
   "ABOVE_1_CORE",
 ];
+export const familyRelations: string[] = [
+  "SPOUSE",
+  "SON",
+  "DAUGHTER",
+  "MOTHER",
+  "FATHER",
+  "BROTHER",
+  "SISTER",
+];

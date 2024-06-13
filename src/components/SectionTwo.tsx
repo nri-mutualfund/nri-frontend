@@ -24,7 +24,7 @@ const SectionTwo = ({ data }: SectionOneProps) => {
             <dl className="grid max-w-xl grid-cols-1 gap-x-10 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16 relative">
               <div className="relative pl-16">
                 <dt className="text-2xl font-medium  text-text_dark">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center  bg-primary justify-center rounded-lg  cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center  bg-primary justify-center rounded-lg  cursor-pointer">
                     <FaHandHoldingDollar
                       className="h-6 w-6 text-white"
                       aria-hidden="true"
@@ -38,7 +38,7 @@ const SectionTwo = ({ data }: SectionOneProps) => {
               </div>
               <div className="relative pl-16">
                 <dt className="text-2xl font-medium  ">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center  bg-primary justify-center rounded-lg  cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center  bg-primary justify-center rounded-lg  cursor-pointer">
                     <PiChartLineUp
                       className="h-6 w-6 text-white"
                       aria-hidden="true"
@@ -52,7 +52,7 @@ const SectionTwo = ({ data }: SectionOneProps) => {
               </div>
               <div className="relative pl-16">
                 <dt className="text-2xl font-medium  ">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center  bg-primary justify-center rounded-lg  cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center  bg-primary justify-center rounded-lg  cursor-pointer">
                     <PiBankBold
                       className="h-6 w-6 text-white"
                       aria-hidden="true"
@@ -66,7 +66,7 @@ const SectionTwo = ({ data }: SectionOneProps) => {
               </div>
               <div className="relative pl-16">
                 <dt className="text-2xl font-medium  ">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center  bg-primary justify-center rounded-lg  cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center  bg-primary justify-center rounded-lg  cursor-pointer">
                     <LuFileType
                       className="h-6 w-6 text-white"
                       aria-hidden="true"
