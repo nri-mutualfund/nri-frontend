@@ -14,6 +14,7 @@ import ImageModal from "@/components/ImageModal";
 import Loader from "@/components/Loader";
 import { countryNamesForProfile } from "@/utility/values";
 import { IoMdEye } from "react-icons/io";
+import Link from "next/link";
 
 const Page = () => {
   const router = useRouter();
@@ -412,6 +413,16 @@ const Page = () => {
                       months) Note: Credit card statement is not an acceptable
                       document
                     </p>
+                    <Link
+                      href={
+                        "https://drive.google.com/file/d/1vAZXdgobaK441spUcv6s4Jrl3bbJ-Mb8/view"
+                      }
+                      target="_blank"
+                    >
+                      <p className="mt-1 text-xs text-text_dark underline underline-offset-2 font-light hover:text-primary">
+                        See Sample
+                      </p>
+                    </Link>
                   </div>
                   {/* <div className="sm:col-span-3">
                   <div className="mt-2">
