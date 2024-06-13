@@ -27,7 +27,7 @@ const Header = () => {
         <nav className="flex items-center text-base gap-12 ">
           <Link
             href={"/"}
-            className={`cursor-pointer hover:text-primary ${
+            className={`cursor-pointer hover:text-primary text-[16px] ${
               pathname === "/" ? "text-primary" : "text-[#424242]"
             }`}
             onClick={() => {
@@ -42,7 +42,7 @@ const Header = () => {
           <ul className="gap-12 md:flex items-center hidden">
             <Link
               href={"/"}
-              className={`cursor-pointer hover:text-primary ${
+              className={`cursor-pointer hover:text-primary text-[16px] ${
                 pathname === "/" ? "text-primary" : "text-[#424242]"
               }`}
               onClick={() => {
@@ -55,7 +55,7 @@ const Header = () => {
             </Link>
             <Link
               href={"/join-the-community"}
-              className={`cursor-pointer hover:text-primary ${
+              className={`cursor-pointer hover:text-primary text-[16px] ${
                 pathname === "/join-the-community"
                   ? "text-primary"
                   : "text-[#424242]"
@@ -70,7 +70,7 @@ const Header = () => {
             </Link>
             <Link
               href={"/faq"}
-              className={`cursor-pointer hover:text-primary ${
+              className={`cursor-pointer hover:text-primary text-[16px] ${
                 pathname === "/faq" ? "text-primary" : "text-[#424242]"
               }`}
               onClick={() => {
@@ -83,7 +83,7 @@ const Header = () => {
             </Link>
             <Link
               href={"/blog"}
-              className={`cursor-pointer hover:text-primary ${
+              className={`cursor-pointer hover:text-primary text-[16px] ${
                 pathname === "/blog" ? "text-primary" : "text-[#424242]"
               }`}
               onClick={() => {
@@ -99,7 +99,7 @@ const Header = () => {
         <div className="items-center md:flex hidden gap-12">
           {/* <Link
             href={"/login"}
-            className="cursor-pointer hover:text-primary "
+            className="cursor-pointer hover:text-primary text-[16px] "
           >
             Sign in
           </Link> */}
@@ -169,7 +169,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-primary text-[#424242]"
+              className="cursor-pointer hover:text-primary text-[16px] text-[#424242]"
             >
               Home
             </Link>
@@ -181,7 +181,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-primary text-[#424242]"
+              className="cursor-pointer hover:text-primary text-[16px] text-[#424242]"
             >
               Join the Community
             </Link>
@@ -193,7 +193,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-primary text-[#424242]"
+              className="cursor-pointer hover:text-primary text-[16px] text-[#424242]"
             >
               FAQ
             </Link>
@@ -205,7 +205,7 @@ const Header = () => {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-primary text-[#424242]"
+              className="cursor-pointer hover:text-primary text-[16px] text-[#424242]"
             >
               Blog
             </Link>

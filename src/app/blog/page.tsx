@@ -50,31 +50,36 @@ const Page = () => {
         <div className="bg-white sm:pt-4 lg:py-10 pb-12">
           <div className="mx-auto xl:px-40 md:px-16 px-10 ">
             <div className="max-w-2xl mx-auto">
-              <h1 className="">
+              <h1 className="my-4">
                 {/* {data?.pre_heading}{" "}
               <span className="text-text_dark">{data?.highlightned}</span>{" "}
               {data?.post_heading} */}
                 Feed your brain in 5 minutes every week, for free.
               </h1>
-              <h5 className="mt-4 mb-4 max-w-sm">
-                Join over 650,000 subscribers of Brain Food and add timeless
-                insights and actionable ideas to your inbox.
-              </h5>
-              <h5 className="mt-4 mb-4 max-w-sm">
-                <strong>Bonus:</strong> Download the first chapter of my instant
-                New York Times bestseller, Clear Thinking, and start turning
-                ordinary moments into extraordinary results.
-              </h5>
-              <div className="flex gap-4 rounded-lg mt-3 w-full max-w-sm">
-                <input
-                  className="bg-transparent text_dark placeholder_dark outline-none w-full border border-text_light rounded-sm focus:ring-2 focus:ring-primary focus:border-none"
-                  type="text"
-                  placeholder="Enter your email"
-                />
-                <button className="bg-primary text-white px-4 py-2  rounded-lg transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-                  {" "}
-                  Subscribe
-                </button>
+              <div className="flex flex-col gap-x-8 gap-y-4 md:flex-row">
+                <div className="w-16 border-t mt-6 border-gray-400"></div>
+                <div className="pt-4">
+                  <h5 className="mb-4 max-w-sm">
+                    Join over 650,000 subscribers of Brain Food and add timeless
+                    insights and actionable ideas to your inbox.
+                  </h5>
+                  <h5 className="mt-4 mb-4 max-w-sm">
+                    <strong>Bonus:</strong> Download the first chapter of my
+                    instant New York Times bestseller, Clear Thinking, and start
+                    turning ordinary moments into extraordinary results.
+                  </h5>
+                  <div className="flex gap-4 rounded-lg mt-3 w-full max-w-sm">
+                    <input
+                      className="bg-transparent text_dark placeholder_dark outline-none w-full border border-text_light rounded-sm focus:ring-2 focus:ring-primary focus:border-none"
+                      type="text"
+                      placeholder="Enter your email"
+                    />
+                    <button className="bg-primary text-white px-4 py-2  rounded-lg transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                      {" "}
+                      Subscribe
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -111,6 +116,9 @@ const Page = () => {
                         {post.blog_heading}
                       </h3>
                       <h5 className="mt-5">{post.blog_content}</h5>
+                      {/* <div
+                        dangerouslySetInnerHTML={{ __html: post?.richText }}
+                      /> */}
                     </div>
                     <div className="flex w-full items-center justify-between mt-4">
                       <Link

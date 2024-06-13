@@ -9,6 +9,8 @@ import React, { useState } from "react";
 import { addBankDetails, getBankDetails } from "./api";
 import { toast } from "react-toastify";
 import Loader from "@/components/Loader";
+import { IoMdEye } from "react-icons/io";
+
 const Page = () => {
   const [status, setStatus] = useState("");
   const [errorStatus, setErrorStatus] = useState("");
@@ -84,9 +86,7 @@ const Page = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-5 gap-x-20 border-b border-gray-900/10 pb-0">
             <div className="pb-12 col-span-2">
-              <h2 className="text-base font-semibold leading-7 text-gray-900">
-                Add Bank Account
-              </h2>
+              <h3 className="font-semibold">Add Bank Account</h3>
             </div>
             <div className="col-span-3">
               <div className="pb-12">
@@ -94,7 +94,7 @@ const Page = () => {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="account_type"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-xs font-medium leading-6 text-text_dark"
                     >
                       <span className="text-red-500">*</span> Bank Account Type
                     </label>
@@ -105,7 +105,7 @@ const Page = () => {
                         autoComplete="account_type"
                         required
                         defaultValue={bankData?.account_type}
-                        className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                       >
                         <option value={""}>Select Account Type</option>
                         <option value={"NRE"}>NRE</option>
@@ -115,7 +115,7 @@ const Page = () => {
                         href={"https://cleartax.in/s/nre-nro-accounts"}
                         target="_blank"
                       >
-                        <p className="underline underline-offset-4 text-xs font-light mt-1 text-gray-400">
+                        <p className="underline underline-offset-4 text-xs font-light mt-1 text-text_light">
                           What is NRE/NRO?
                         </p>
                       </Link>
@@ -125,7 +125,7 @@ const Page = () => {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="account_number"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-xs font-medium leading-6 text-text_dark"
                     >
                       <span className="text-red-500">*</span> Account Number
                     </label>
@@ -136,14 +136,14 @@ const Page = () => {
                         autoComplete="account_number"
                         required
                         defaultValue={bankData?.account_number}
-                        className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="ifsc_code"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-xs font-medium leading-6 text-text_dark"
                     >
                       <span className="text-red-500">*</span> IFSC Code
                     </label>
@@ -154,14 +154,14 @@ const Page = () => {
                         autoComplete="ifsc_code"
                         required
                         defaultValue={bankData?.ifsc_code}
-                        className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="verification_document"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-xs font-medium leading-6 text-text_dark"
                     >
                       <span className="text-red-500">*</span> Verification
                       Document
@@ -173,7 +173,7 @@ const Page = () => {
                         autoComplete="verification_document"
                         required
                         defaultValue={bankData?.verification_document}
-                        className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                       >
                         <option value={""}>Select Document</option>
                         <option value={"PAN"}>PAN</option>
@@ -184,7 +184,7 @@ const Page = () => {
                   {/* <div className="sm:col-span-3">
                   <label
                     htmlFor="verification_document_media"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    className="block text-xs font-medium leading-6 text-text_dark"
                   >
                     <br />
                   </label>
@@ -195,25 +195,16 @@ const Page = () => {
                       autoComplete="verification_document_media"
                       type="file"
                       required
-                      className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div> */}
                   <div className="sm:col-span-3 ">
                     <div className="flex gap-10 items-center pt-10">
-                      <label htmlFor="verification_document_media">
-                        <p className="cursor-pointer">Upload</p>
-                        <input
-                          id="verification_document_media"
-                          type="file"
-                          onChange={handleFileChange}
-                          className="hidden"
-                          accept="image/png, image/jpeg, .pdf"
-                        />
-                      </label>
                       {previewSrc1 && (
                         <button
                           type="button"
+                          className="text-primary flex items-center gap-2"
                           onClick={() => {
                             if (image1?.type === "application/pdf") {
                               openPdfInNewTab(image1);
@@ -223,8 +214,26 @@ const Page = () => {
                           }}
                         >
                           Preview
+                          <IoMdEye size={20} />
                         </button>
                       )}
+
+                      <label htmlFor="verification_document_media">
+                        {previewSrc1 ? (
+                          <p className="text-primary cursor-pointer">Update</p>
+                        ) : (
+                          <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                            <p>Upload</p>
+                          </div>
+                        )}
+                        <input
+                          id="verification_document_media"
+                          type="file"
+                          onChange={handleFileChange}
+                          className="hidden"
+                          accept="image/png, image/jpeg, .pdf"
+                        />
+                      </label>
                     </div>
 
                     {errorStatus === "image1" && (

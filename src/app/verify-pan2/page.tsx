@@ -113,20 +113,20 @@ const Page = () => {
             src="https://tailwindui.com/img/logos/mark.svg?color=green&shade=700"
             alt="Your Company"
           />
-          {/* <h2 className="mt-10 text-start font-bold leading-9 tracking-tight text-gray-900">
+          {/* <h2 className="mt-10 text-start font-bold leading-9 tracking-tight text-text_dark">
               Create an account
             </h2> */}
         </div>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white md:px-10 py-10 rounded-md md:shadow-md md:border border-gray-200">
           <form className="space-y-6" onSubmit={submit} id="pan-form">
             <div>
-              <label className="block text-sm font-medium leading-6 text-gray-900">
+              <label className="block text-xs font-medium leading-6 text-text_dark">
                 Please add your PAN and Date of Birth
               </label>
               <div className="mt-2 relative">
                 <select
                   disabled
-                  className="px-4 pr-10 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 appearance-none"
+                  className="px-4 pr-10 block w-full rounded-md border-0 py-2.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 appearance-none"
                 >
                   <option>{data?.located_at}</option>
                 </select>
@@ -142,7 +142,7 @@ const Page = () => {
               </div>
             </div>
             <div className="mt-4">
-              <label className="block text-sm font-medium leading-6 text-gray-900">
+              <label className="block text-xs font-medium leading-6 text-text_dark">
                 Date of Birth
               </label>
               <div className="mt-2 flex items-center gap-2">
@@ -158,7 +158,7 @@ const Page = () => {
                   disabled={checked}
                   onChange={handleDateChange}
                   onKeyDown={(e) => handleKeyDown(e, dateRef, monthRef)}
-                  className=" px-2 block w-12 rounded-md border-0 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className=" px-2 block w-12 rounded-md border-0 py-1.5 text-center text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
                 <div className="h-[1px] bg-gray-300 w-4"></div>
                 <input
@@ -173,7 +173,7 @@ const Page = () => {
                   disabled={checked}
                   onChange={handleMonthChange}
                   onKeyDown={(e) => handleKeyDown(e, monthRef, dateRef)}
-                  className=" px-2 block w-12 rounded-md border-0 py-1.5 text-gray-900 text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className=" px-2 block w-12 rounded-md border-0 py-1.5 text-text_dark text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
                 <div className="h-[1px] bg-gray-300 w-4"></div>
                 <input
@@ -188,18 +188,18 @@ const Page = () => {
                   ref={yearRef}
                   disabled={checked}
                   onKeyDown={(e) => handleKeyDown(e, yearRef, monthRef)}
-                  className=" px-2 block w-24 rounded-md border-0 py-1.5 text-gray-900 text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className=" px-2 block w-24 rounded-md border-0 py-1.5 text-text_dark text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div className="mt-4">
-              <label className="block text-sm font-medium leading-6 text-gray-900">
+              <label className="block text-xs font-medium leading-6 text-text_dark">
                 PAN
               </label>
               <div className="mt-2 flex gap-4">
                 <div
                   className={`px-2 w-[70%] rounded-md border py-1   shadow-sm  placeholder:text-gray-400  focus:ring-primary sm:text-sm sm:leading-6 flex gap-2  items-center justify-between ${
-                    error ? "border-red-500 text-red-500" : "text-gray-900"
+                    error ? "border-red-500 text-red-500" : "text-text_dark"
                   }`}
                 >
                   <input

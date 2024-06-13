@@ -12,6 +12,8 @@ import { useRouter } from "next/navigation";
 import ProgressBar from "@/components/ProgressBar";
 import ImageModal from "@/components/ImageModal";
 import Loader from "@/components/Loader";
+import { countryNamesForProfile } from "@/utility/values";
+import { IoMdEye } from "react-icons/io";
 
 const Page = () => {
   const router = useRouter();
@@ -152,9 +154,11 @@ const Page = () => {
                         className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6"
                       >
                         <option value={""}>Select Country</option>
-                        <option value={"United States"}>United States</option>
-                        <option value={"Canada"}>Canada</option>
-                        <option value={"Mexico"}>Mexico</option>
+                        {countryNamesForProfile?.map((item, index) => (
+                          <option value={item} key={index}>
+                            {item}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </div>
@@ -389,9 +393,11 @@ const Page = () => {
                         className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6"
                       >
                         <option value={""}>Select Country</option>
-                        <option value={"United States"}>United States</option>
-                        <option value={"Canada"}>Canada</option>
-                        <option value={"Mexico"}>Mexico</option>
+                        {countryNamesForProfile?.map((item, index) => (
+                          <option value={item} key={index}>
+                            {item}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </div>
@@ -420,19 +426,10 @@ const Page = () => {
                 </div> */}
                   <div className="sm:col-span-3 ">
                     <div className="flex gap-10 items-center">
-                      <label htmlFor="address_proof">
-                        <p className="cursor-pointer">Upload</p>
-                        <input
-                          id="address_proof"
-                          type="file"
-                          onChange={handleFileChange}
-                          className="hidden"
-                          accept="image/png, image/jpeg, .pdf"
-                        />
-                      </label>
                       {previewSrc1 && (
                         <button
                           type="button"
+                          className="text-primary flex items-center gap-2"
                           onClick={() => {
                             if (image1?.type === "application/pdf") {
                               openPdfInNewTab(image1);
@@ -442,8 +439,26 @@ const Page = () => {
                           }}
                         >
                           Preview
+                          <IoMdEye size={20} />
                         </button>
                       )}
+
+                      <label htmlFor="address_proof">
+                        {previewSrc1 ? (
+                          <p className="text-primary cursor-pointer">Update</p>
+                        ) : (
+                          <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                            <p>Upload</p>
+                          </div>
+                        )}
+                        <input
+                          id="address_proof"
+                          type="file"
+                          onChange={handleFileChange}
+                          className="hidden"
+                          accept="image/png, image/jpeg, .pdf"
+                        />
+                      </label>
                     </div>
 
                     {errorStatus === "image1" && (
