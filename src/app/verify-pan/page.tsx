@@ -7,39 +7,14 @@ import { IoChevronDownOutline } from "react-icons/io5";
 import { addDetails } from "./api";
 import Section11 from "@/components/Section11";
 import nProgress from "nprogress";
-interface NewData {
-  located_at: string;
-  phone_number: string;
-  residency_status?: string;
-  is_usa_or_canada?: boolean;
-}
+import { countryCodes, countryNamesForPan } from "@/utility/values";
+
 const Page = () => {
   const router = useRouter();
   const [country, setCountry] = useState<string>("");
   const [residentialStatus, setStaus] = useState<string>("");
   const [isFromCanadaOrUS, setOrigin] = useState<boolean>(false);
-  const getCodes: {
-    US: string;
-    GE: string;
-    CA: string;
-    FR: string;
-    UK: string;
-    IND: string;
-  } = {
-    US: "+1",
-    GE: "+33",
-    CA: "+49",
-    FR: "+35",
-    UK: "+44",
-    IND: "+91",
-  };
-  const getFullName: { [key: string]: string } = {
-    US: "United States",
-    GE: "Germany",
-    IND: "India",
-    FR: "France",
-    UK: "United Kingdom",
-  };
+
   const { mutate } = useMutation({
     mutationKey: ["key1"],
     mutationFn: addDetails,
@@ -54,8 +29,8 @@ const Page = () => {
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
     let newData: any = {
-      located_at: (getFullName as any)[data?.country as any],
-      phone_number: (getCodes as any)[data?.country as any] + data.phone,
+      located_at: data?.country,
+      phone_number: data?.country_code?.toString() + data.phone?.toString(),
     };
     if (country !== "IND") {
       newData = {
@@ -70,6 +45,7 @@ const Page = () => {
         };
       }
     }
+    console.log("newData", newData);
     mutate(newData as any);
   };
   return (
@@ -81,7 +57,7 @@ const Page = () => {
             src="https://tailwindui.com/img/logos/mark.svg?color=green&shade=700"
             alt="Your Company"
           />
-          {/* <h2 className="mt-10 text-start font-bold leading-9 tracking-tight text-gray-900">
+          {/* <h2 className="mt-10 text-start font-bold leading-9 tracking-tight text-text_dark">
               Create an account
             </h2> */}
         </div>
@@ -91,7 +67,7 @@ const Page = () => {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-xs font-medium leading-6 text-text_dark"
               >
                 Hey, where are you located?
               </label>
@@ -103,14 +79,14 @@ const Page = () => {
                   onChange={(e) => {
                     setCountry(e.target.value);
                   }}
-                  className="px-4 pr-10 block w-full rounded-md border-0 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 appearance-none"
+                  className="px-4 pr-10 block w-full rounded-md border-0 py-2.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 appearance-none"
                 >
                   <option disabled>Choose your country</option>
-                  <option value="US">United States</option>
-                  <option value="UK">United Kingdom</option>
-                  <option value="FR">France</option>
-                  <option value="GE">Germany</option>
-                  <option value="IND">India</option>
+                  {countryNamesForPan?.map((item, index) => (
+                    <option value={item} key={index}>
+                      {item}
+                    </option>
+                  ))}
                 </select>
                 {/* <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                   <IoChevronDownOutline />
@@ -118,35 +94,48 @@ const Page = () => {
               </div>
             </div>
 
-            {country !== "" && country === "IND" && (
+            {country !== "" && country === "India" && (
               <div>
                 <label
                   htmlFor="phone"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-xs font-medium leading-6 text-text_dark"
                 >
                   Phone Number
                 </label>
                 <div className="mt-2">
-                  <div className="flex w-full rounded-md border-0 py-0.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
-                    <p className="border-r-2 px-4 py-1">{getCodes[country]}</p>
+                  <div className="flex w-full rounded-md border-0 py-0.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
+                    <select
+                      id="contry_code"
+                      name="country_code"
+                      defaultValue={""}
+                      required
+                      className="px-2 block w-[30%] border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
+                    >
+                      <option value={""}>code</option>
+                      {countryCodes?.map((item, index) => (
+                        <option value={item} key={index}>
+                          {item}
+                        </option>
+                      ))}
+                    </select>
                     <input
                       id="phone"
                       name="phone"
                       type="phone"
                       autoComplete="phone"
                       required
-                      className="block w-full placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                      className="block w-[70%] placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
               </div>
             )}
-            {country !== "" && country !== "IND" && (
+            {country !== "" && country !== "India" && (
               <>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    className="block text-xs font-medium leading-6 text-text_dark"
                   >
                     Please select your residency status
                   </label>
@@ -207,47 +196,52 @@ const Page = () => {
                   <div className="mt-3">
                     <div
                       onClick={() => {
-                        setStaus("Mariner/Seafarer/Sailor");
+                        setStaus("Foreign Citizen");
                       }}
                       className={`px-2 block w-full text-xs rounded-md border-0 py-2.5 ${
-                        residentialStatus === "Mariner/Seafarer/Sailor"
+                        residentialStatus === "Foreign Citizen"
                           ? "text-gray-700"
                           : "text-gray-300"
                       } shadow-sm ring-1 ring-inset  ${
-                        residentialStatus === "Mariner/Seafarer/Sailor"
+                        residentialStatus === "Foreign Citizen"
                           ? "ring-gray-700"
                           : "ring-gray-300"
                       }`}
                     >
-                      <p>Mariner/Seafarer/Sailor</p>
+                      <p>Foreign Citizen</p>
                     </div>
                   </div>
                 </div>
                 <div>
                   <label
-                    htmlFor="phone2"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    htmlFor="phone"
+                    className="block text-xs font-medium leading-6 text-text_dark"
                   >
-                    {residentialStatus === "NRI" ||
-                    residentialStatus === "PIO/OCI - Non Resident"
-                      ? "Overseas Phone Number"
-                      : "Phone Number"}
+                    Phone Number
                   </label>
                   <div className="mt-2">
-                    <div className="flex w-full rounded-md border-0 py-0.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
-                      <p className="border-r-2 px-4 py-1">
-                        {getCodes[country as keyof typeof getCodes] ||
-                          "Invalid Country"}{" "}
-                        {/* Conditional check for valid key */}
-                      </p>
+                    <div className="flex w-full rounded-md border-0 py-0.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
+                      <select
+                        id="contry_code"
+                        name="country_code"
+                        defaultValue={""}
+                        required
+                        className="px-2 block w-[30%] border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
+                      >
+                        <option value={""}>code</option>
+                        {countryCodes?.map((item, index) => (
+                          <option value={item} key={index}>
+                            {item}
+                          </option>
+                        ))}
+                      </select>
                       <input
                         id="phone"
                         name="phone"
                         type="phone"
                         autoComplete="phone"
-                        maxLength={15}
                         required
-                        className="block w-full placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                        className="block w-[70%] placeholder:text-gray-400 px-4 py-1 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>
@@ -258,7 +252,7 @@ const Page = () => {
                     id="default-checkbox"
                     type="checkbox"
                     name="isFromCanadaOrUS"
-                    className="w-4 h-4 text-primary bg-primary border-gray-300 rounded"
+                    className="w-4 h-4 text-primary border-gray-300 rounded"
                   />
                   <label
                     htmlFor="default-checkbox"

@@ -10,12 +10,12 @@ const SectionEight = ({ data }: SectionEightProps) => {
   return (
     <section className=" px-4 md:px-20 lg:px-40 py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center">
-        <h1 className="font-semibold text-text_dark  leading-tight text-center">
+        <h1 className="">
           Frequently <span className="text-text_dark">Asked</span> Questions
         </h1>
-        <p className="text-text_light font-normal leading-normal mt-4 mb-4 text-center">
+        <h5 className="mt-4 mb-4 ">
           Learn about us and check out these frequently asked questions.
-        </p>
+        </h5>
       </div>
       {data?.length && (
         <div className="flex flex-wrap justify-between gap-6 mt-10">

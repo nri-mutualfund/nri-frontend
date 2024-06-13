@@ -46,4 +46,5 @@ export interface BlogPost {
   blog_content: string;
   created_at: string;
   id: string;
+  richText: string;
 }
