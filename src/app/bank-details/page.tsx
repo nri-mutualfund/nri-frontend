@@ -179,6 +179,16 @@ const Page = () => {
                         <option value={"PAN"}>PAN</option>
                         <option value={"Adhar"}>Adhar</option>
                       </select>
+                      <Link
+                        href={
+                          "https://drive.google.com/file/d/1Wg_CgaLA6y67v09_2PIFsbtUHVuBJ6Uu/view"
+                        }
+                        target="_blank"
+                      >
+                        <p className="mt-1 text-xs text-text_dark underline underline-offset-2 font-light hover:text-primary">
+                          See Sample
+                        </p>
+                      </Link>
                     </div>
                   </div>
                   {/* <div className="sm:col-span-3">
