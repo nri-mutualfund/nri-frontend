@@ -81,10 +81,10 @@ const Page = () => {
             src="https://tailwindui.com/img/logos/mark.svg?color=green&shade=700"
             alt="Your Company"
           />
-          <h2 className="mt-10 text-center font-bold leading-9 tracking-tight text-[#424242]">
+          <h1 className="mt-10 text-center font-bold leading-9 ">
             Create an account
-          </h2>
-          <p className="mt-4  text-sm text-gray-600 text-center">
+          </h1>
+          <h4 className="mt-4 text-center">
             Already have an account?{" "}
             <Link
               href="/signin"
@@ -92,15 +92,15 @@ const Page = () => {
             >
               Sign In
             </Link>
-          </p>
+          </h4>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white md:px-10 py-10 rounded-md md:shadow-md md:border border-gray-200">
-          <form className="space-y-6 text-[#424242]" onSubmit={submit}>
+          <form className="space-y-6 text-text_dark" onSubmit={submit}>
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium leading-6 text-[#424242]"
+                className="block text-xs font-medium leading-6 text-text_dark"
               >
                 Your Name
               </label>
@@ -114,14 +114,14 @@ const Page = () => {
                   value={name}
                   disabled
                   // onChange={(e) => setName(e.target.value)}
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-[#424242]"
+                className="block text-xs font-medium leading-6 text-text_dark"
               >
                 Your Email address
               </label>
@@ -134,14 +134,14 @@ const Page = () => {
                   required
                   value={email}
                   disabled
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
             <div>
               <label
                 htmlFor="code"
-                className="block text-sm font-medium leading-6 text-[#424242]"
+                className="block text-xs font-medium leading-6 text-text_dark"
               >
                 Please enter verification code sent to your email
               </label>
@@ -165,7 +165,7 @@ const Page = () => {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-[#424242]"
+                  className="block text-xs font-medium leading-6 text-text_dark"
                 >
                   Password
                 </label>
@@ -178,7 +178,7 @@ const Page = () => {
                   autoComplete="new-password"
                   required
                   minLength={8}
-                  className=" px-2 block w-full rounded-md border-0 py-1.5 text-[#424242] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className=" px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
