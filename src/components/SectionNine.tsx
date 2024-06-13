@@ -40,7 +40,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
 
             <div className="h-full overflow-hidden relative">
       <div
-        className="line-clamp-none "
+        className="line-clamp-6 "
         dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
       />
     </div>
