@@ -47,4 +47,13 @@ export interface BlogPost {
   created_at: string;
   id: string;
   richText: string;
+  blogCategory: 
+    { category_name: string; },
+}
+export interface Category {
+  id: number;
+  category_name: string;
+  description: string;
+  created_at: string;
+  updated_at: string;
 }

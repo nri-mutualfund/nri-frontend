@@ -108,3 +108,14 @@ export const getPostData = async () => {
     console.log(error);
   }
 };
+export const getAllCategories = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/homePage/blogCategory`,
+     {}
+    )
+    return response
+  } catch (error) {
+    console.log(error)
+  }
+}
