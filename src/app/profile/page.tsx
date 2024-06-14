@@ -22,6 +22,7 @@ const Page = () => {
     queryKey: ["profile"],
     queryFn: getProfileDetails,
   });
+  console.log(data, 'jhhjkjhj')
   const { data: profileData, isLoading } = useQuery({
     queryKey: ["investorProfile1"],
     queryFn: getInvestorProfileDetails,
@@ -176,7 +177,7 @@ const Page = () => {
                         id="email"
                         name="email"
                         type="email"
-                        defaultValue={data?.email}
+                        defaultValue={data?.investorProfileDetail.email? data?.investorProfileDetail.email:data?.email}
                         autoComplete="email"
                         required
                         disabled
