@@ -104,27 +104,27 @@ const Page = () => {
                     ref={formRef}
                   >
                     <div className="mb-4">
-                      <label className="block text-xs leading-6 mb-1 text-text_dark font-medium">
+                      <label className="block text-h4 leading-6 mb-1 text-text_dark font-medium">
                         Name
                       </label>
                       <input
                         type="name"
                         id="name"
                         name="name"
-                        className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        className="shadow-sm rounded-md w-full text-xs px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Full name as per Passport"
                         required
                       />
                     </div>
                     <div className="mb-4">
-                      <label className="block text-xs leading-6 mb-1 text-text_dark font-medium ">
+                      <label className="block text-h4 leading-6 mb-1 text-text_dark font-medium ">
                         Email
                       </label>
                       <input
                         type="Email"
                         id="Email"
                         name="email"
-                        className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        className="shadow-sm rounded-md text-xs w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Enter email"
                         required
                       />
@@ -132,7 +132,7 @@ const Page = () => {
                     <div className="mb-4">
                       <label
                         htmlFor="name"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         Country
                       </label>
@@ -142,7 +142,7 @@ const Page = () => {
                           name="country"
                           defaultValue={"Choose your country"}
                           required
-                          className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6 appearance-none"
+                          className="px-2 block w-full text-xs rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6 appearance-none"
                         >
                           <option value={""}>Choose your country</option>
                           {countryNamesForProfile?.map((item, index) => (
@@ -160,7 +160,7 @@ const Page = () => {
                     <div className="mb-4">
                       <label
                         htmlFor="whatsapp_number"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         Whatsapp Number
                       </label>
@@ -171,7 +171,7 @@ const Page = () => {
                             name="country_code"
                             defaultValue={""}
                             required
-                            className="px-2 block w-[30%] border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
+                            className="px-2 block w-[30%] border-0 text-xs sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
                           >
                             <option value={""}>code</option>
                             {countryCodes?.map((item, index) => (
@@ -187,13 +187,13 @@ const Page = () => {
                             autoComplete="phone"
                             required
                             maxLength={16}
-                            className="block w-[70%] placeholder:text-gray-400 px-4 py-1 border-none focus:ring-0 focus:ring-inset sm:text-sm sm:leading-6"
+                            className="block w-[70%] text-xs placeholder:text-gray-400 px-4 py-1 border-none focus:ring-0 focus:ring-inset sm:text-sm sm:leading-6"
                           />
                         </div>
                       </div>
                     </div>
                     <div className="mb-4">
-                      <label className="block text-xs leading-6 mb-1 text-text_dark font-medium ">
+                      <label className="block text-h4 leading-6 mb-1 text-text_dark font-medium ">
                         Reasons for account opening(You can select multiple)
                       </label>
                       <MultiSelect
