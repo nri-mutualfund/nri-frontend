@@ -22,7 +22,7 @@ const Page = () => {
     queryKey: ["profile"],
     queryFn: getProfileDetails,
   });
-  console.log(data, 'jhhjkjhj')
+  console.log(data, "jhhjkjhj");
   const { data: profileData, isLoading } = useQuery({
     queryKey: ["investorProfile1"],
     queryFn: getInvestorProfileDetails,
@@ -166,25 +166,29 @@ const Page = () => {
                       </div>
                     </div>
 
-                  <div className="sm:col-span-3">
-                    <label
-                      htmlFor="email"
-                      className="block text-xs font-medium leading-6 text-text_dark"
-                    >
-                      <span className="text-red-500">*</span> Email
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        defaultValue={data?.investorProfileDetail.email? data?.investorProfileDetail.email:data?.email}
-                        autoComplete="email"
-                        required
-                        disabled
-                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-                      />
-
+                    <div className="sm:col-span-3">
+                      <label
+                        htmlFor="email"
+                        className="block text-xs font-medium leading-6 text-text_dark"
+                      >
+                        <span className="text-red-500">*</span> Email
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          defaultValue={
+                            data?.investorProfileDetail.email
+                              ? data?.investorProfileDetail.email
+                              : data?.email
+                          }
+                          autoComplete="email"
+                          required
+                          disabled
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                        />
+                      </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
