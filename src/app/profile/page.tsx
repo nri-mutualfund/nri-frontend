@@ -15,6 +15,7 @@ import Loader from "@/components/Loader";
 import { countryNamesForProfile } from "@/utility/values";
 import { IoMdEye } from "react-icons/io";
 import Link from "next/link";
+import { CustomError } from "@/utility/type";
 
 const Page = () => {
   const router = useRouter();
@@ -40,9 +41,15 @@ const Page = () => {
       nProgress.start();
       router.push("/investor-profile");
     },
-    onError: (error) => {
-      console.log("error", error);
-      toast("error occured");
+    onError: (error: CustomError) => {
+      if (error?.response?.status === 401) {
+        nProgress.start();
+        toast("user unauthorized");
+        router.push("/signin");
+      } else {
+        console.log("error", error);
+        toast("error occured");
+      }
     },
   });
   const submit = (event: React.FormEvent<HTMLFormElement>) => {

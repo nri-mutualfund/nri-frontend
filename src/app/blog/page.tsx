@@ -136,6 +136,14 @@ const Page = () => {
                     key={index}
                     className="flex max-w-xl flex-col items-center"
                   >
+                    <div className="flex w-full gap-6 items-center">
+                      <p className="text-text_light text-sm">
+                        {moment(post?.created_at).format("MMM DD, YYYY")}
+                      </p>
+                      <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                        {post?.blogCategory?.category_name}
+                      </span>
+                    </div>
                     <div className="group relative h-64">
                       <Link
                         href={{
@@ -147,20 +155,20 @@ const Page = () => {
                           NProgress.start();
                         }}
                       >
-                        <h3 className="mt-3 group-hover:text-gray-600 mb-2">
+                        <h3 className="mt-3 mb-2 hover:text-primary">
                           <span className="absolute inset-0" />
                           {post.blog_heading}
                         </h3>
                       </Link>
-                      <div className=" h-full overflow-hidden relative">
+                      <div className=" h-full overflow-hidden relative mt-4">
                         <div
-                          className="line-clamp-5"
+                          className="line-clamp-5 text-text_dark"
                           dangerouslySetInnerHTML={{ __html: post?.richText }}
                         />
                       </div>
                     </div>
                     <div className="flex w-full items-center justify-between mt-4">
-                      <Link
+                      {/* <Link
                         href={{
                           pathname: "/blog-details",
                           query: { id: post?.id },
@@ -172,24 +180,10 @@ const Page = () => {
                       >
                         Learn More
                         <RxArrowRight />
-                      </Link>
-                      <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                        {post?.blogCategory?.category_name}
-                      </span>
+                      </Link> */}
+                      <h5 className="font-medium">{post?.user_name}</h5>
                     </div>
-                    <div className="relative mt-4 flex justify-between items-center gap-x-4 border-t border-gray-300 w-full py-4">
-                      <div className="flex gap-x-4">
-                        <div className=" text-sm leading-6">
-                          <h5 className="font-medium">
-                            <span className="absolute inset-0" />
-                            {post?.user_name}
-                          </h5>
-                        </div>
-                      </div>
-                      <p className="text-text_light text-sm">
-                        {moment(post?.created_at).format("MMM DD, YYYY")}
-                      </p>
-                    </div>
+                    <div className=" w-full border-t mt-10"></div>
                   </article>
                 ))}
               </div>

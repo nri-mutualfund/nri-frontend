@@ -10,6 +10,7 @@ import { FaLock } from "react-icons/fa";
 import { addProfileDetails } from "../profile/api";
 import { toast } from "react-toastify";
 import { IoMdEye } from "react-icons/io";
+import { CustomError } from "@/utility/type";
 const Page = () => {
   const router = useRouter();
   const [image1, setImage1] = useState<File | null>(null);
@@ -33,11 +34,12 @@ const Page = () => {
       nProgress.start();
       router.push("income-details");
     },
-    onError: (error) => {
-      console.log("error", error);
-      toast("error occured");
-      nProgress.start();
-      router.push("income-details");
+    onError: (error: CustomError) => {
+      if (error?.response?.status === 401) {
+        nProgress.start();
+        toast("user unauthorized");
+        router.push("/signin");
+      }
     },
   });
   const validate = () => {

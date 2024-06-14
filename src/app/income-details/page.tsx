@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import Loader from "@/components/Loader";
 import { incomeBrackets, incomeTypes } from "@/utility/values";
+import { CustomError } from "@/utility/type";
 
 type NomineeDetail = {
   tax_residency: string;
@@ -44,9 +45,12 @@ const Page = () => {
       nProgress.start();
       router.push("/bank-details");
     },
-    onError: (error) => {
-      console.log("error", error);
-      toast("error occured");
+    onError: (error: CustomError) => {
+      if (error?.response?.status === 401) {
+        nProgress.start();
+        toast("user unauthorized");
+        router.push("/signin");
+      }
     },
   });
   const getStatus = [
