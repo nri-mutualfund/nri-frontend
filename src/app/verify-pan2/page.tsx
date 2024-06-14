@@ -13,7 +13,20 @@ import { toast } from "react-toastify";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import { addDetails } from "../verify-pan/api";
 import { useRouter } from "next/navigation";
-
+interface ErrorState {
+  dobError: string;
+  others: string;
+}
+interface CustomError extends Error {
+  response?: {
+    data?: {
+      data?:{
+        status:number;
+        message:string;
+      }
+    };
+  };
+}
 const Page = () => {
   const router = useRouter();
   const [country, setCountry] = useState("");
@@ -21,6 +34,7 @@ const Page = () => {
   const [checked, setChecked] = useState(false);
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
+  const [dobError, setDobError] = useState<ErrorState>({dobError:'',others:''});
   const dateRef = useRef<HTMLInputElement>(null);
   const monthRef = useRef<HTMLInputElement>(null);
   const yearRef = useRef<HTMLInputElement>(null);
@@ -62,6 +76,8 @@ const Page = () => {
   const { mutate, data: panDetails } = useMutation({
     mutationFn: addDetails2,
     onSuccess: (data) => {
+      console.log(data, 'lkjhjk')
+      setDobError({dobError:'',others:''})
       if (data?.number) {
         setChecked(true);
       } else {
@@ -69,7 +85,19 @@ const Page = () => {
         setError(true);
       }
     },
-    onError: (error) => {
+    onError: (error: CustomError) => {
+      setDobError({dobError:'',others:''})
+      if (error?.response?.data?.data?.status === 403) {
+        setDobError(prevErrors => ({
+          ...prevErrors,
+          dobError: 'Incorrect DOB'
+        }));
+     }else{
+          setDobError(prevErrors => ({
+            ...prevErrors,
+            others: 'Unable to process your request, please try after sometime'
+          })); 
+        }
       console.log("error", error);
     },
   });
@@ -90,7 +118,7 @@ const Page = () => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    const newDate = `${data?.date}/${data?.month}/${data?.year}`;
+    const newDate = `${data?.date}-${data?.month}-${data?.year}`;
     const newData = {
       pan: data.pan,
       dob: newDate,
@@ -142,11 +170,81 @@ const Page = () => {
                   </p>
                 </div>
               </div>
-              <div className="mt-4">
-                <label className="block text-xs font-medium leading-6 text-text_dark">
-                  Date of Birth
-                </label>
-                <div className="mt-2 flex items-center gap-2">
+
+              <div className="mt-2 flex gap-2 items-center">
+                <FaLock />
+                <p className="text-xs text-gray-500">
+                  Your information is always protected
+                </p>
+              </div>
+            </div>
+            <div className="mt-4">
+              <label className="block text-xs font-medium leading-6 text-text_dark">
+                Date of Birth
+              </label>
+              <div className="mt-2 flex items-center gap-2">
+                
+                <input
+                  id="date"
+                  type="text"
+                  name="date"
+                  autoComplete="off"
+                  maxLength={2}
+                  required
+                  placeholder="DD"
+                  ref={dateRef}
+                  disabled={checked}
+                  onChange={handleDateChange}
+                  onKeyDown={(e) => handleKeyDown(e, dateRef, monthRef)}
+                  className={`px-2 block w-12 rounded-md  py-1.5 text-center shadow-sm ring-1 ring-inset  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6
+                    ${dobError?.dobError ? "ring-red-500 text-red-500 border-0" : "text-text_dark ring-gray-300"}`}
+                />
+                <div className="h-[1px] bg-gray-300 w-4"></div>
+                <input
+                  id="month"
+                  type="text"
+                  name="month"
+                  autoComplete="off"
+                  maxLength={2}
+                  required
+                  placeholder="MM"
+                  ref={monthRef}
+                  disabled={checked}
+                  onChange={handleMonthChange}
+                  onKeyDown={(e) => handleKeyDown(e, monthRef, dateRef)}
+                  className={`px-2 block w-12 rounded-md  py-1.5 text-center shadow-sm ring-1 ring-inset  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6
+                    ${dobError?.dobError ? "ring-red-500 text-red-500 border-0" : "text-text_dark ring-gray-300"}`}                />
+                <div className="h-[1px] bg-gray-300 w-4"></div>
+                <input
+                  id="year"
+                  type="text"
+                  name="year"
+                  autoComplete="off"
+                  minLength={4}
+                  maxLength={4}
+                  required
+                  placeholder="YYYY"
+                  ref={yearRef}
+                  disabled={checked}
+                  onKeyDown={(e) => handleKeyDown(e, yearRef, monthRef)}
+                  className={`px-2 block w-24 rounded-md  py-1.5 text-center shadow-sm ring-1 ring-inset  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6
+                    ${dobError?.dobError ? "ring-red-500 text-red-500 border-0" : "text-text_dark ring-gray-300"}`}
+               />
+              </div>
+              {dobError.dobError && (
+              <p className="text-red-500 text-xs">{dobError.dobError}</p>
+            )}
+            </div>
+            <div className="mt-4">
+              <label className="block text-xs font-medium leading-6 text-text_dark">
+                PAN
+              </label>
+              <div className="mt-2 flex gap-4">
+                <div
+                  className={`px-2 w-[70%] rounded-md border py-1   shadow-sm  placeholder:text-gray-400  focus:ring-primary sm:text-sm sm:leading-6 flex gap-2  items-center justify-between ${
+                    error ? "border-red-500 text-red-500" : "text-text_dark"
+                  }`}
+                >
                   <input
                     id="date"
                     type="text"
@@ -293,8 +391,66 @@ const Page = () => {
                   </Link>
                 )}
               </div>
-            </form>
-          </div>
+
+              {checked && (
+                <label className="block text-sm font-medium leading-6 text-primary mt-2">
+                  Great, your PAN {panDetails?.data?.pan} is KYC complaint!
+                </label>
+              )}
+              {error && (
+              <p className="text-red-500 text-xs">Invalid pan details</p>
+            )}
+            {dobError.others && (
+              <p className="text-red-500 text-xs">{dobError.others}</p>
+            )}
+            </div>
+            
+            <div className="mt-4 w-full rounded-md bg-secondary px-4 py-4 relative">
+              <Link
+                href={
+                  "https://www.amfiindia.com/investor-corner/investor-center/kyc.html"
+                }
+                target="_blank"
+              >
+                <p className="underline underline-offset-4 text-gray-700">
+                  Why do we ask this?
+                </p>
+              </Link>
+              <p className="text-xs mt-4  text-gray-500">{`It's a mandatory request from SEBI. All
+                 investors must provide their PAN details to
+                 open investment account.`}</p>
+
+              <BsFillFlagFill className="absolute right-4 top-4" size={30} />
+            </div>
+            <div className="">
+              {checked ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    submitData();
+                  }}
+                  className="flex w-1/3 justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                >
+                  Continue
+                </button>
+              ) : (
+                <Link
+                  href={"/skip"}
+                  onClick={() => {
+                    nProgress.start();
+                  }}
+                >
+                  <button
+                    type="button"
+                    className="flex w-1/3 justify-center rounded-md border-primary border px-3 py-1.5 text-sm font-semibold leading-6 text-primary shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ml-auto"
+                  >
+                    Skip
+                  </button>
+                </Link>
+              )}
+            </div>
+          </form>
+
         </div>
       </div>
     </>
