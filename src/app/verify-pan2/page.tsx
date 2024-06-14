@@ -13,7 +13,20 @@ import { toast } from "react-toastify";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import { addDetails } from "../verify-pan/api";
 import { useRouter } from "next/navigation";
-
+interface ErrorState {
+  dobError: string;
+  others: string;
+}
+interface CustomError extends Error {
+  response?: {
+    data?: {
+      data?:{
+        status:number;
+        message:string;
+      }
+    };
+  };
+}
 const Page = () => {
   const router = useRouter();
   const [country, setCountry] = useState("");
@@ -21,6 +34,7 @@ const Page = () => {
   const [checked, setChecked] = useState(false);
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
+  const [dobError, setDobError] = useState<ErrorState>({dobError:'',others:''});
   const dateRef = useRef<HTMLInputElement>(null);
   const monthRef = useRef<HTMLInputElement>(null);
   const yearRef = useRef<HTMLInputElement>(null);
@@ -62,14 +76,27 @@ const Page = () => {
   const { mutate, data: panDetails } = useMutation({
     mutationFn: addDetails2,
     onSuccess: (data) => {
+      console.log(data, 'lkjhjk')
       if (data?.number) {
         setChecked(true);
+        setDobError({dobError:'',others:''})
       } else {
         // toast("failed to verify!");
         setError(true);
       }
     },
-    onError: (error) => {
+    onError: (error: CustomError) => {
+      if (error?.response?.data?.data?.status === 403) {
+        setDobError(prevErrors => ({
+          ...prevErrors,
+          dobError: 'Incorrect DOB'
+        }));
+     }else{
+          setDobError(prevErrors => ({
+            ...prevErrors,
+            others: 'Unable to process your request, please try after sometime'
+          })); 
+        }
       console.log("error", error);
     },
   });
@@ -90,7 +117,7 @@ const Page = () => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    const newDate = `${data?.date}/${data?.month}/${data?.year}`;
+    const newDate = `${data?.date}-${data?.month}-${data?.year}`;
     const newData = {
       pan: data.pan,
       dob: newDate,
@@ -191,6 +218,9 @@ const Page = () => {
                   className=" px-2 block w-24 rounded-md border-0 py-1.5 text-text_dark text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 />
               </div>
+              {dobError.dobError && (
+              <p className="text-red-500 text-sm">{dobError.dobError}</p>
+            )}
             </div>
             <div className="mt-4">
               <label className="block text-xs font-medium leading-6 text-text_dark">
@@ -247,6 +277,9 @@ const Page = () => {
             </div>
             {error && (
               <p className="text-red-500 text-sm">Invalid pan details!</p>
+            )}
+            {dobError.others && (
+              <p className="text-red-500 text-sm">{dobError.others}</p>
             )}
             <div className="mt-4 w-full rounded-md bg-secondary px-4 py-4 relative">
               <Link
