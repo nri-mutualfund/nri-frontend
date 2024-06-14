@@ -64,8 +64,8 @@ const Page = () => {
     <>
       <div className="max-w-screen-2xl mx-auto">
         <section className="xl:px-40 md:px-16 px-10 py-14 bg-[#f2f8f24d]">
-          <div className="grid grid-cols-2 lg:grid-cols-5 items-start justify-center gap-y-20 gap-x-4">
-            <div className="col-span-3 order-2 lg:order-1">
+          <div className="grid grid-cols-2 md:grid-cols-5 items-start justify-center gap-y-20 gap-x-4">
+            <div className="col-span-3">
               <div className="">
                 <div className="max-w-lg">
                   <h1 className="mx-auto">
@@ -91,6 +91,164 @@ const Page = () => {
                     Industry high FD & savings rate
                   </li>
                 </ul>
+              </div>
+              <div className=" block md:hidden mt-10">
+                <div className="bg-white border-gray-200 border-2 shadow-md rounded-lg  px-4 lg:px-8 py-6 md:max-w-sm">
+                  <h3 className="text-center">Apply in 20 seconds</h3>
+                  <h4 className="text-center mb-4">
+                    50,000+ NRIs applied in last 6 months
+                  </h4>
+                  <form
+                    onSubmit={submit}
+                    className="text-text_dark"
+                    ref={formRef}
+                  >
+                    <div className="mb-4">
+                      <label className="block text-h4 leading-6 mb-1 text-text_dark font-medium">
+                        Name
+                      </label>
+                      <input
+                        type="name"
+                        id="name"
+                        name="name"
+                        className="shadow-sm rounded-md w-full text-xs px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        placeholder="Full name as per Passport"
+                        required
+                      />
+                    </div>
+                    <div className="mb-4">
+                      <label className="block text-h4 leading-6 mb-1 text-text_dark font-medium ">
+                        Email
+                      </label>
+                      <input
+                        type="Email"
+                        id="Email"
+                        name="email"
+                        className="shadow-sm rounded-md text-xs w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        placeholder="Enter email"
+                        required
+                      />
+                    </div>
+                    <div className="mb-4">
+                      <label
+                        htmlFor="name"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
+                      >
+                        Country
+                      </label>
+                      <div className="mt-2 relative">
+                        <select
+                          id="country"
+                          name="country"
+                          defaultValue={"Choose your country"}
+                          required
+                          className="px-2 block w-full text-xs rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6 appearance-none"
+                        >
+                          <option value={""}>Choose your country</option>
+                          {countryNamesForProfile?.map((item, index) => (
+                            <option value={item} key={index}>
+                              {item}
+                            </option>
+                          ))}
+                        </select>
+                        {/* <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                  <IoChevronDownOutline />
+                </div> */}
+                      </div>
+                    </div>
+
+                    <div className="mb-4">
+                      <label
+                        htmlFor="whatsapp_number"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
+                      >
+                        Whatsapp Number
+                      </label>
+                      <div className="mt-2">
+                        <div className="flex w-full rounded-md border-0 py-0.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 pr-1">
+                          <select
+                            id="contry_code"
+                            name="country_code"
+                            defaultValue={""}
+                            required
+                            className="px-2 block w-[30%] border-0 text-xs sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
+                          >
+                            <option value={""}>code</option>
+                            {countryCodes?.map((item, index) => (
+                              <option value={item} key={index}>
+                                {item}
+                              </option>
+                            ))}
+                          </select>
+                          <input
+                            id="whatsapp_number"
+                            name="whatsapp_number"
+                            type="text"
+                            autoComplete="phone"
+                            required
+                            maxLength={16}
+                            className="block w-[70%] text-xs placeholder:text-gray-400 px-4 py-1 border-none focus:ring-0 focus:ring-inset sm:text-sm sm:leading-6"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mb-4">
+                      <label className="block text-h4 leading-6 mb-1 text-text_dark font-medium ">
+                        Reasons for account opening(You can select multiple)
+                      </label>
+                      <MultiSelect
+                        options={options}
+                        selectedOptions={selectedOptions}
+                        setSelectedOptions={setSelectedOptions}
+                      />
+                      {error && (
+                        <p className="text-red-500 text-xs mt-2">
+                          This field is required!
+                        </p>
+                      )}
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 "
+                    >
+                      Start Process Now
+                    </button>
+                  </form>
+                  <ul className="pt-4 list-disc list-inside space-y-2">
+                    <li className="text-gray-300 text-xs font-thin">
+                      I have checked all the details and these details can be
+                      used for my bank account opening.
+                    </li>
+                    <li className="text-gray-300 text-xs font-thin">
+                      You will receive call from bank on the entered WhatsApp
+                      number.
+                    </li>
+                  </ul>
+                </div>
+                <div className="flex justify-center items-center gap-6  max-w-sm mt-4">
+                  <Image
+                    src="/assets/AXIS_LOGO2.png"
+                    alt="Your Image Alt Text"
+                    className="w-[80px] lg:w-[100px] transition-all duration-300 hover:scale-110"
+                    width={500}
+                    height={1}
+                  />
+                  <Image
+                    src="/assets/HDFC_LOGO2.png"
+                    alt="Your Image Alt Text"
+                    className="w-[80px] lg:w-[100px] transition-all duration-300 hover:scale-110"
+                    width={500}
+                    height={1}
+                  />
+                  <Image
+                    src="/assets/IDFC_LOGO2.png"
+                    alt="Your Image Alt Text"
+                    className="w-[80px] lg:w-[100px] transition-all duration-300 hover:scale-110"
+                    width={500}
+                    height={1}
+                  />
+                </div>
               </div>
               <div className="bg-white border-gray-200 border shadow-sm rounded-lg mt-10 hidden md:block">
                 <div className="flex gap-4 items-center px-8 py-6">
@@ -332,10 +490,10 @@ const Page = () => {
             </div>
 
             <div
-              className={`col-span-3 md:col-span-2 flex justify-center lg:justify-end items-start lg:sticky ${"top-32"} z-40 order-1 lg:order-2`}
+              className={`col-span-3 md:col-span-2  justify-center lg:justify-end hidden md:flex items-start md:sticky ${"top-32"} z-40 `}
             >
-              <div className="">
-                <div className="bg-white border-gray-200 border-2 shadow-md rounded-lg  px-4 lg:px-8 py-6 md:max-w-sm">
+              <div className=" ">
+                <div className="bg-white border-gray-200 border-2 shadow-md rounded-lg  px-4 lg:px-8 py-6 ">
                   <h3 className="text-center">Apply in 20 seconds</h3>
                   <h4 className="text-center mb-4">
                     50,000+ NRIs applied in last 6 months
@@ -384,9 +542,11 @@ const Page = () => {
                           name="country"
                           defaultValue={"Choose your country"}
                           required
-                          className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6 appearance-none"
+                          className="px-2 block w-full text-xs rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6 appearance-none"
                         >
-                          <option value={""}>Choose your country</option>
+                          <option value={""} className="text-text_light">
+                            Choose your country
+                          </option>
                           {countryNamesForProfile?.map((item, index) => (
                             <option value={item} key={index}>
                               {item}
@@ -413,7 +573,7 @@ const Page = () => {
                             name="country_code"
                             defaultValue={""}
                             required
-                            className="px-2 block w-[30%] border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
+                            className="px-2 block w-[30%] text-xs border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
                           >
                             <option value={""}>code</option>
                             {countryCodes?.map((item, index) => (
@@ -458,37 +618,37 @@ const Page = () => {
                     </button>
                   </form>
                   <ul className="pt-4 list-disc list-inside space-y-2">
-  <li className="text-[#1F3151] text-xs font-thin flex items-start">
-    <span className="inline-block mt-0.5 mr-2">•</span>
-    I have checked all the details and these details can be
-    used for my bank account opening.
-  </li>
-  <li className="text-[#1F3151] text-xs font-thin flex items-start">
-    <span className="inline-block mt-0.5 mr-2">•</span>
-    You will receive call from bank on the entered WhatsApp
-    number.
-  </li>
-</ul>
+                    <li className="text-text_light text-xs font-thin flex items-start">
+                      <span className="inline-block mt-0.5 mr-2">•</span>I have
+                      checked all the details and these details can be used for
+                      my bank account opening.
+                    </li>
+                    <li className="text-text_light text-xs font-thin flex items-start">
+                      <span className="inline-block mt-0.5 mr-2">•</span>You
+                      will receive call from bank on the entered WhatsApp
+                      number.
+                    </li>
+                  </ul>
                 </div>
-                <div className="flex justify-center items-center gap-6  max-w-sm mt-4">
+                <div className="flex justify-center items-center gap-6  w-full mt-4">
                   <Image
                     src="/assets/AXIS_LOGO2.png"
                     alt="Your Image Alt Text"
-                    className="w-[100px] transition-all duration-300 hover:scale-110"
+                    className="w-[80px] lg:w-[100px] transition-all duration-300 hover:scale-110"
                     width={500}
                     height={1}
                   />
                   <Image
                     src="/assets/HDFC_LOGO2.png"
                     alt="Your Image Alt Text"
-                    className="w-[100px] transition-all duration-300 hover:scale-110"
+                    className="w-[80px] lg:w-[100px] transition-all duration-300 hover:scale-110"
                     width={500}
                     height={1}
                   />
                   <Image
                     src="/assets/IDFC_LOGO2.png"
                     alt="Your Image Alt Text"
-                    className="w-[100px] transition-all duration-300 hover:scale-110"
+                    className="w-[80px] lg:w-[100px] transition-all duration-300 hover:scale-110"
                     width={500}
                     height={1}
                   />

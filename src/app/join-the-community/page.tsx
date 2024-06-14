@@ -155,7 +155,7 @@ const Page = () => {
                     setCode(getCodes[e.target.value]);
                   }}
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6 appearance-none"
+                  className="px-2 block w-full text-xs rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6 appearance-none"
                 >
                   <option value={""}>Choose your country</option>
                   {countryNamesForProfile?.map((item, index) => (
@@ -204,7 +204,7 @@ const Page = () => {
                     name="country_code"
                     defaultValue={""}
                     required
-                    className="px-2 block w-[30%] border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
+                    className="px-2 block w-[30%] text-xs border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
                   >
                     <option value={""}>code</option>
                     {countryCodes?.map((item, index) => (

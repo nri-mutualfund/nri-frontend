@@ -21,11 +21,15 @@ const SectionNine = ({ data }: SectionOneProps) => {
       </h1>
       <p className="mt-4 mb-4">{data?.detail}</p>
       {data?.data?.length && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-start">
           <div className="">
-            <p className="font-light text-sm text-text_light">
-              {moment(data?.data[0]?.created_at).format("MMM DD, YYYY")}
-            </p>
+            <div className="flex justify-between items-center gap-4">
+              <p className="font-light text-sm text-text_light">
+                {moment(data?.data[0]?.created_at).format("MMM DD, YYYY")}
+              </p>
+              <h4 className="">{data?.data[0]?.user_name}</h4>
+            </div>
+
             <Link
               href={{
                 pathname: "/blog-details",
@@ -35,16 +39,17 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 nProgress.start();
               }}
             >
-              <h3 className="mt-2 mb-2 ">{data?.data[0]?.blog_heading}</h3>
+              <h1 className="mt-2 mb-2">{data?.data[0]?.blog_heading}</h1>
             </Link>
 
             <div className="h-full overflow-hidden relative">
               <div
-                className="line-clamp-6 "
+                className="line-clamp-6"
                 dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
               />
             </div>
-            <Link
+
+            {/* <Link
               href={{
                 pathname: "/blog-details",
                 query: { id: data?.data[0]?.id },
@@ -57,19 +62,21 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 <p>Continue reading</p>
                 <FaArrowRight />
               </button>
-            </Link>
+            </Link> */}
 
             <div className="border-[0.5px] mt-8 hidden lg:block" />
-            <div className="flex items-center gap-4 mt-6">
-              <h4 className="">{data?.data[0]?.user_name}</h4>
-            </div>
+
             <div className="border-[0.5px] mt-8 block lg:hidden" />
           </div>
           <div className="flex flex-col gap-8">
             <div>
-              <p className="font-light text-sm text-text_light">
-                {moment(data?.data[1]?.created_at).format("MMM DD, YYYY")}
-              </p>
+              <div className="flex items-center gap-4 justify-between">
+                <p className="font-light text-sm text-text_light">
+                  {moment(data?.data[1]?.created_at).format("MMM DD, YYYY")}
+                </p>
+                <h5>{data?.data[1]?.user_name}</h5>
+              </div>
+
               <Link
                 href={{
                   pathname: "/blog-details",
@@ -87,22 +94,16 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
                 />
               </div>
-              <div className="flex items-center gap-4 mt-6">
-                {/* <Image
-                  src={"/assets/male.png"}
-                  alt="cots"
-                  className="w-[30px]"
-                  width={500}
-                  height={1}
-                /> */}
-                <h5>{data?.data[1]?.user_name}</h5>
-              </div>
             </div>
             <div className="border-[0.5px]" />
             <div>
-              <p className="font-light text-sm text-text_light">
-                {moment(data?.data[2]?.created_at).format("MMM DD, YYYY")}
-              </p>
+              <div className="flex items-center justify-between gap-4 ">
+                <p className="font-light text-sm text-text_light">
+                  {moment(data?.data[2]?.created_at).format("MMM DD, YYYY")}
+                </p>
+                <h5>{data?.data[2]?.user_name}</h5>
+              </div>
+
               <Link
                 href={{
                   pathname: "/blog-details",
@@ -119,9 +120,6 @@ const SectionNine = ({ data }: SectionOneProps) => {
                   className="line-clamp-5 "
                   dangerouslySetInnerHTML={{ __html: data?.data[2]?.richText }}
                 />
-              </div>
-              <div className="flex items-center gap-4 mt-6">
-                <h5>{data?.data[2]?.user_name}</h5>
               </div>
             </div>
           </div>
