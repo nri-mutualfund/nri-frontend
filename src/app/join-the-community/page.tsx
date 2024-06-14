@@ -1,5 +1,5 @@
 "use client";
-import { countryCodes } from "@/utility/values";
+import { countryCodes, countryNamesForProfile } from "@/utility/values";
 import Image from "next/image";
 import React, { useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
@@ -132,7 +132,7 @@ const Page = () => {
                   className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6 appearance-none"
                 >
                   <option value={""}>Choose your country</option>
-                  {countryCodes?.map((item, index) => (
+                  {countryNamesForProfile?.map((item, index) => (
                     <option value={item} key={index}>
                       {item}
                     </option>
