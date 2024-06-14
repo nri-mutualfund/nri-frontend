@@ -173,13 +173,6 @@ const Page = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="mt-2 flex gap-2 items-center">
-                <FaLock />
-                <p className="text-xs text-gray-500">
-                  Your information is always protected
-                </p>
-              </div>
               <div className="mt-4">
                 <label className="block text-xs font-medium leading-6 text-text_dark">
                   Date of Birth
@@ -305,11 +298,7 @@ const Page = () => {
                 </div>
               </div>
 
-              {checked && (
-                <label className="block text-sm font-medium leading-6 text-primary mt-2">
-                  Great, your PAN {panDetails?.data?.pan} is KYC complaint!
-                </label>
-              )}
+             
               {error && (
                 <p className="text-red-500 text-xs">Invalid pan details</p>
               )}
