@@ -174,6 +174,7 @@ const Page = () => {
                 Date of Birth
               </label>
               <div className="mt-2 flex items-center gap-2">
+                
                 <input
                   id="date"
                   type="text"
@@ -186,7 +187,8 @@ const Page = () => {
                   disabled={checked}
                   onChange={handleDateChange}
                   onKeyDown={(e) => handleKeyDown(e, dateRef, monthRef)}
-                  className=" px-2 block w-12 rounded-md border-0 py-1.5 text-center text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className={`px-2 block w-12 rounded-md  py-1.5 text-center shadow-sm ring-1 ring-inset  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6
+                    ${dobError?.dobError ? "ring-red-500 text-red-500 border-0" : "text-text_dark ring-gray-300"}`}
                 />
                 <div className="h-[1px] bg-gray-300 w-4"></div>
                 <input
@@ -201,8 +203,8 @@ const Page = () => {
                   disabled={checked}
                   onChange={handleMonthChange}
                   onKeyDown={(e) => handleKeyDown(e, monthRef, dateRef)}
-                  className=" px-2 block w-12 rounded-md border-0 py-1.5 text-text_dark text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-                />
+                  className={`px-2 block w-12 rounded-md  py-1.5 text-center shadow-sm ring-1 ring-inset  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6
+                    ${dobError?.dobError ? "ring-red-500 text-red-500 border-0" : "text-text_dark ring-gray-300"}`}                />
                 <div className="h-[1px] bg-gray-300 w-4"></div>
                 <input
                   id="year"
@@ -216,11 +218,12 @@ const Page = () => {
                   ref={yearRef}
                   disabled={checked}
                   onKeyDown={(e) => handleKeyDown(e, yearRef, monthRef)}
-                  className=" px-2 block w-24 rounded-md border-0 py-1.5 text-text_dark text-center shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-                />
+                  className={`px-2 block w-24 rounded-md  py-1.5 text-center shadow-sm ring-1 ring-inset  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6
+                    ${dobError?.dobError ? "ring-red-500 text-red-500 border-0" : "text-text_dark ring-gray-300"}`}
+               />
               </div>
               {dobError.dobError && (
-              <p className="text-red-500 text-sm">{dobError.dobError}</p>
+              <p className="text-red-500 text-xs">{dobError.dobError}</p>
             )}
             </div>
             <div className="mt-4">
@@ -276,10 +279,10 @@ const Page = () => {
                 </label>
               )}
               {error && (
-              <p className="text-red-500 text-sm">Invalid pan details!</p>
+              <p className="text-red-500 text-xs">Invalid pan details</p>
             )}
             {dobError.others && (
-              <p className="text-red-500 text-sm">{dobError.others}</p>
+              <p className="text-red-500 text-xs">{dobError.others}</p>
             )}
             </div>
             
