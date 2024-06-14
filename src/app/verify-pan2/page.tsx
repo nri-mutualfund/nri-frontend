@@ -15,7 +15,7 @@ import { addDetails } from "../verify-pan/api";
 import { useRouter } from "next/navigation";
 interface ErrorState {
   dobError: string;
-  others: string;
+  others: string | undefined;
 }
 interface CustomError extends Error {
   response?: {
@@ -99,6 +99,11 @@ const Page = () => {
           ...prevErrors,
           dobError: "Incorrect DOB",
         }));
+      } else if (error?.response?.data?.data?.status === 429) {
+        setDobError((prevErrors) => ({
+          ...prevErrors,
+          others: error?.response?.data?.data?.message,
+        }));
       } else {
         setDobError((prevErrors) => ({
           ...prevErrors,
@@ -180,13 +185,6 @@ const Page = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="mt-2 flex gap-2 items-center">
-                <FaLock />
-                <p className="text-xs text-gray-500">
-                  Your information is always protected
-                </p>
-              </div>
               <div className="mt-4">
                 <label className="block text-xs font-medium leading-6 text-text_dark">
                   Date of Birth
@@ -264,7 +262,7 @@ const Page = () => {
                   <div className="mt-2 flex gap-4">
                     <div
                       className={`px-2 w-[70%] rounded-md border py-1   shadow-sm  placeholder:text-gray-400  focus:ring-primary sm:text-sm sm:leading-6 flex gap-2  items-center justify-between ${
-                        error ? "border-red-500 text-red-500" : "text-text_dark"
+                        dobError.others || error ? "border-red-500 text-red-500" : "text-text_dark"
                       }`}
                     >
                       <input
@@ -304,25 +302,22 @@ const Page = () => {
                       </button>
                     )}
                   </div>
-                  {/* {checked && (
+                  {checked && (
                     <label className="block text-sm font-medium leading-6 text-primary mt-2">
                       Great, your PAN {panDetails?.data?.pan} is KYC complaint!
                     </label>
-                  )} */}
-                </div>
-              </div>
-
-              {checked && (
-                <label className="block text-sm font-medium leading-6 text-primary mt-2">
-                  Great, your PAN {panDetails?.data?.pan} is KYC complaint!
-                </label>
-              )}
-              {error && (
+                  )}
+                   {error && (
                 <p className="text-red-500 text-xs">Invalid pan details</p>
               )}
               {dobError.others && (
                 <p className="text-red-500 text-xs">{dobError.others}</p>
               )}
+                </div>
+              </div>
+
+             
+             
 
               <div className="mt-4 w-full rounded-md bg-secondary px-4 py-4 relative">
                 <Link
