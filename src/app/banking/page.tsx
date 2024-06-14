@@ -1,6 +1,6 @@
 "use client";
 import MultiSelect from "@/components/MultipleSelect";
-import { countryCodes } from "@/utility/values";
+import { countryCodes, countryNamesForProfile } from "@/utility/values";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { IoIosCheckmarkCircle } from "react-icons/io";
@@ -13,9 +13,8 @@ interface Option {
   disabled?: boolean;
 }
 const Page = () => {
-  const [country, setCountry] = useState("");
-  const [code, setCode] = useState("+1");
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const [error, setError] = useState(false);
   const options = [
     { value: "Investing in India", label: "Investing in India" },
     { value: "Home Loan", label: "Home Loan" },
@@ -24,20 +23,18 @@ const Page = () => {
     { value: "Fixed Deposit", label: "Fixed Deposit" },
   ];
 
-  const getCodes: { [key: string]: string } = {
-    US: "+1",
-    GE: "+49",
-    CA: "+1",
-    FR: "+33",
-    UK: "+44",
-  };
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    console.log("data", data);
+    if (selectedOptions?.length) {
+      const newData = { ...data, reasons: selectedOptions };
+      console.log("data", newData);
+    } else {
+      setError(true);
+    }
   };
-  console.log("selected", selectedOptions);
+
   return (
     <>
       <section className="xl:px-40 md:px-16 px-10 py-14 bg-[#f2f8f24d]">
@@ -221,34 +218,35 @@ const Page = () => {
                       required
                     />
                   </div>
-                  <div className="mb-4 relative">
-                    <label className="block text-xs leading-6 mb-1 text-text_dark font-medium ">
+                  <div className="mb-4">
+                    <label
+                      htmlFor="name"
+                      className="block text-xs font-medium leading-6 text-text_dark"
+                    >
                       Country
                     </label>
-                    <select
-                      id="countries"
-                      name="country"
-                      defaultValue={"Choose your country"}
-                      onChange={(e) => {
-                        setCountry(e.target.value);
-                        setCode(getCodes[e.target.value]);
-                      }}
-                      className="bg-gray-50 border border-gray-300 rounded-lg  block w-full p-2.5  placeholder-gray-400 text-black focus:ring-blue-50 "
-                    >
-                      <option selected disabled>
-                        Choose a country
-                      </option>
-                      <option value="US">United States</option>
-                      <option value="CA">Canada</option>
-                      <option value="FR">France</option>
-                      <option value="GE">Germany</option>
-                    </select>
-                    {/* <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 top-4">
-                      <IoChevronDownOutline />
-                    </div> */}
+                    <div className="mt-2 relative">
+                      <select
+                        id="country"
+                        name="country"
+                        defaultValue={"Choose your country"}
+                        required
+                        className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6 appearance-none"
+                      >
+                        <option value={""}>Choose your country</option>
+                        {countryNamesForProfile?.map((item, index) => (
+                          <option value={item} key={index}>
+                            {item}
+                          </option>
+                        ))}
+                      </select>
+                      {/* <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                  <IoChevronDownOutline />
+                </div> */}
+                    </div>
                   </div>
 
-                  <div>
+                  <div className="mb-4">
                     <label
                       htmlFor="whatsapp_number"
                       className="block text-xs font-medium leading-6 text-text_dark"
@@ -292,6 +290,11 @@ const Page = () => {
                       selectedOptions={selectedOptions}
                       setSelectedOptions={setSelectedOptions}
                     />
+                    {error && (
+                      <p className="text-red-500 text-xs mt-2">
+                        This field is required!
+                      </p>
+                    )}
                   </div>
 
                   <button
