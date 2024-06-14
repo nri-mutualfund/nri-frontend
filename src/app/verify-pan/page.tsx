@@ -8,6 +8,8 @@ import { addDetails } from "./api";
 import Section11 from "@/components/Section11";
 import nProgress from "nprogress";
 import { countryCodes, countryNamesForPan } from "@/utility/values";
+import { CustomError } from "@/utility/type";
+import { toast } from "react-toastify";
 
 const Page = () => {
   const router = useRouter();
@@ -22,7 +24,12 @@ const Page = () => {
       router.push("verify-pan2");
       nProgress.start();
     },
-    onError: (error) => {},
+    onError: (error: CustomError) => {
+      if (error?.response?.status === 401) {
+        toast("user unauthorized");
+        router.push("/signin");
+      }
+    },
   });
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
