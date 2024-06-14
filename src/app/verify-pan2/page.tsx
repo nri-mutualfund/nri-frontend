@@ -120,6 +120,7 @@ const Page = () => {
     },
     onError: (error: CustomError) => {
       if (error?.response?.status === 401) {
+        nProgress.start();
         toast("user unauthorized");
         router.push("/signin");
       }

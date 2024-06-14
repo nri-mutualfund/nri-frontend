@@ -61,7 +61,7 @@ const Section12 = () => {
             </div>
           </div>
         </div>
-        <div className="w-full order-1 lg:order-2">
+        <div className="w-full order-1 lg:order-2 hidden lg:block">
           <div>
             <Swiper
               slidesPerView={1}

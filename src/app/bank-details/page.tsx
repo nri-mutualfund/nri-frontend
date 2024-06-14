@@ -10,6 +10,7 @@ import { addBankDetails, getBankDetails } from "./api";
 import { toast } from "react-toastify";
 import Loader from "@/components/Loader";
 import { IoMdEye } from "react-icons/io";
+import { CustomError } from "@/utility/type";
 
 const Page = () => {
   const [status, setStatus] = useState("");
@@ -29,9 +30,12 @@ const Page = () => {
       nProgress.start();
       router.push("/nominee-details");
     },
-    onError: (error) => {
-      console.log("error", error);
-      toast("error occured");
+    onError: (error: CustomError) => {
+      if (error?.response?.status === 401) {
+        nProgress.start();
+        toast("user unauthorized");
+        router.push("/signin");
+      }
     },
   });
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
