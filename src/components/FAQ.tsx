@@ -25,7 +25,7 @@ const FAQ = ({ question, answer }: FAQProps) => {
     <div className="flex flex-col items-center justify-center border-t px-6 bg-white">
       <div onClick={toggleAccordion} className="cursor-pointer w-full">
         <div className="flex items-start justify-between text-left mt-6">
-          <h3 className="">{question}</h3>
+          <h5 className="font-medium">{question}</h5>
 
           <div
             className={`transform transition-transform duration-500 ${
@@ -55,7 +55,7 @@ const FAQ = ({ question, answer }: FAQProps) => {
             }`}
           style={{ maxHeight: "0px" }}
         >
-          <h5 className="text-justify">{answer}</h5>
+          <h5 className="text-justify font-normal">{answer}</h5>
         </div>
       </div>
     </div>

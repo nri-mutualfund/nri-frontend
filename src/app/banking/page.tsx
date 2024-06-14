@@ -504,27 +504,27 @@ const Page = () => {
                     ref={formRef}
                   >
                     <div className="mb-4">
-                      <label className="block text-xs leading-6 mb-1 text-text_dark font-medium">
+                      <label className="block text-h4 leading-6 mb-1 text-text_dark font-medium">
                         Name
                       </label>
                       <input
                         type="name"
                         id="name"
                         name="name"
-                        className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        className="shadow-sm text-xs rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Full name as per Passport"
                         required
                       />
                     </div>
                     <div className="mb-4">
-                      <label className="block text-xs leading-6 mb-1 text-text_dark font-medium ">
+                      <label className="block text-h4 leading-6 mb-1 text-text_dark font-medium ">
                         Email
                       </label>
                       <input
                         type="Email"
                         id="Email"
                         name="email"
-                        className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        className="shadow-sm rounded-md text-xs w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                         placeholder="Enter email"
                         required
                       />
@@ -532,7 +532,7 @@ const Page = () => {
                     <div className="mb-4">
                       <label
                         htmlFor="name"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         Country
                       </label>
@@ -562,7 +562,7 @@ const Page = () => {
                     <div className="mb-4">
                       <label
                         htmlFor="whatsapp_number"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         Whatsapp Number
                       </label>
@@ -589,13 +589,13 @@ const Page = () => {
                             autoComplete="phone"
                             required
                             maxLength={16}
-                            className="block w-[70%] placeholder:text-gray-400 px-4 py-1 border-none focus:ring-0 focus:ring-inset sm:text-sm sm:leading-6"
+                            className="block w-[70%] text-xs placeholder:text-gray-400 px-4 py-1 border-none focus:ring-0 focus:ring-inset sm:text-sm sm:leading-6"
                           />
                         </div>
                       </div>
                     </div>
                     <div className="mb-4">
-                      <label className="block text-xs leading-6 mb-1 text-text_dark font-medium ">
+                      <label className="block text-h4 leading-6 mb-1 text-text_dark font-medium ">
                         Reasons for account opening(You can select multiple)
                       </label>
                       <MultiSelect
