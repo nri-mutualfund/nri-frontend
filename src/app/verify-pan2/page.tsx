@@ -19,6 +19,7 @@ interface ErrorState {
 }
 interface CustomError extends Error {
   response?: {
+    status: number;
     data?: {
       data?: {
         status: number;
@@ -90,7 +91,10 @@ const Page = () => {
     },
     onError: (error: CustomError) => {
       setDobError({ dobError: "", others: "" });
-      if (error?.response?.data?.data?.status === 403) {
+      if (error?.response?.status === 401) {
+        toast("user unauthorized");
+        router.push("/signin");
+      } else if (error?.response?.data?.data?.status === 403) {
         setDobError((prevErrors) => ({
           ...prevErrors,
           dobError: "Incorrect DOB",
@@ -101,7 +105,6 @@ const Page = () => {
           others: "Unable to process your request, please try after sometime",
         }));
       }
-      console.log("error", error);
     },
   });
   const { mutate: submitPanDetail } = useMutation({
@@ -110,8 +113,11 @@ const Page = () => {
       nProgress.start();
       router.push("/profile");
     },
-    onError: (error) => {
-      console.log("error", error);
+    onError: (error: CustomError) => {
+      if (error?.response?.status === 401) {
+        toast("user unauthorized");
+        router.push("/signin");
+      }
     },
   });
   const submitData = () => {
@@ -297,11 +303,11 @@ const Page = () => {
                       </button>
                     )}
                   </div>
-                  {checked && (
+                  {/* {checked && (
                     <label className="block text-sm font-medium leading-6 text-primary mt-2">
                       Great, your PAN {panDetails?.data?.pan} is KYC complaint!
                     </label>
-                  )}
+                  )} */}
                 </div>
               </div>
 
