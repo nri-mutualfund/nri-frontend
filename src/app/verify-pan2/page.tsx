@@ -77,15 +77,16 @@ const Page = () => {
     mutationFn: addDetails2,
     onSuccess: (data) => {
       console.log(data, 'lkjhjk')
+      setDobError({dobError:'',others:''})
       if (data?.number) {
         setChecked(true);
-        setDobError({dobError:'',others:''})
       } else {
         // toast("failed to verify!");
         setError(true);
       }
     },
     onError: (error: CustomError) => {
+      setDobError({dobError:'',others:''})
       if (error?.response?.data?.data?.status === 403) {
         setDobError(prevErrors => ({
           ...prevErrors,
@@ -274,13 +275,14 @@ const Page = () => {
                   Great, your PAN {panDetails?.data?.pan} is KYC complaint!
                 </label>
               )}
-            </div>
-            {error && (
+              {error && (
               <p className="text-red-500 text-sm">Invalid pan details!</p>
             )}
             {dobError.others && (
               <p className="text-red-500 text-sm">{dobError.others}</p>
             )}
+            </div>
+            
             <div className="mt-4 w-full rounded-md bg-secondary px-4 py-4 relative">
               <Link
                 href={
