@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { familyRelations } from "@/utility/values";
 import { it } from "node:test";
+import { CustomError } from "@/utility/type";
 type NomineeDetail = {
   full_legal_name: string;
   relation: string;
@@ -33,9 +34,12 @@ const Page = () => {
       nProgress.start();
       router.push("/finish");
     },
-    onError: (error) => {
-      console.log("error", error);
-      toast("error occured");
+    onError: (error: CustomError) => {
+      if (error?.response?.status === 401) {
+        nProgress.start();
+        toast("user unauthorized");
+        router.push("/signin");
+      }
     },
   });
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
