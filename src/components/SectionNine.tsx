@@ -14,12 +14,14 @@ const SectionNine = ({ data }: SectionOneProps) => {
   const [showArrow, setShowArrow] = useState(false);
   return (
     <section className="bg-secondary px-4 md:px-20 lg:px-40 py-14 md:py-24">
+      <div className="w-full flex flex-col justify-center items-center text-center">
       <h1 className="text-center">
         {data?.pre_heading}{" "}
         <span className="text-text_dark">{data?.highlightned}</span>{" "}
         {data?.post_heading}
       </h1>
-      <p className="mt-4 mb-4">{data?.detail}</p>
+      <h5 className="mt-4 mb-4">{data?.detail}</h5>
+      </div>      
       {data?.data?.length && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-start">
           <div className="">
@@ -39,7 +41,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 nProgress.start();
               }}
             >
-              <h1 className="mt-2 mb-2">{data?.data[0]?.blog_heading}</h1>
+              <h3 className="mt-2 mb-2">{data?.data[0]?.blog_heading}</h3>
             </Link>
 
             <div className="h-full overflow-hidden relative">

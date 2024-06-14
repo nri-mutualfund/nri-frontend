@@ -16,9 +16,9 @@ const Page = () => {
 
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="mt-14 max-w-screen-2xl mx-auto">
         <div className="mx-auto xl:px-40 md:px-16 px-10">
-          <div className="max-w-lg mx-auto">
+          <div className="max-w-xl mx-auto">
             <div className="flex justify-center">
               <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
                 {currentData?.blogCategory?.category_name}
@@ -38,14 +38,15 @@ const Page = () => {
                 {moment(currentData?.created_at).format("MMM DD, YYYY")}
               </p>
             </div>
-            <div className="py-10">
+            
+          </div>
+        </div>
+      </div>
+      <div className=" max-w-2xl mx-auto py-10">
               <div
                 dangerouslySetInnerHTML={{ __html: currentData?.richText }}
               />
             </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 };
