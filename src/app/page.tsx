@@ -80,7 +80,7 @@ const Page = () => {
           </div>
         </section>
       ) : (
-        <div className="max-w-screen-2xl mx-auto ">
+        <div className="max-w-screen-2xl mx-auto">
           {/* sectin 1 */}
           <SectionOne data={data} />
           {/* section 2 */}

@@ -1,18 +1,40 @@
 "use client";
 import { countryCodes, countryNamesForProfile } from "@/utility/values";
+import { useMutation } from "@tanstack/react-query";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
+import { addToCommunity } from "./api";
+import { toast } from "react-toastify";
 const Page = () => {
   const [country, setCountry] = useState("");
   const [code, setCode] = useState("+91");
-
+  const formRef = useRef<HTMLFormElement | null>(null);
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    console.log("data", data);
+    const newData = {
+      name: data?.name,
+      email: data?.email,
+      country: data?.country,
+      whatsAppNumber:
+        data?.country_code?.toString() + data?.whatsapp_number?.toString(),
+    };
+    console.log("data2", newData);
+    mutate(newData);
   };
+  const { mutate } = useMutation({
+    mutationKey: ["joinToCommunity"],
+    mutationFn: addToCommunity,
+    onSuccess: (data) => {
+      toast("Submitted");
+      formRef?.current?.reset();
+    },
+    onError: (error) => {
+      console.log("error");
+    },
+  });
   const getCodes: { [key: string]: string } = {
     US: "+1",
     GE: "+49",
@@ -74,7 +96,11 @@ const Page = () => {
           <h4 className="mt-1 text-center mb-10">
             50,000+ Nris applied in last 6 months
           </h4>
-          <form className="space-y-6 text-text_dark" onSubmit={submit}>
+          <form
+            className="space-y-6 text-text_dark"
+            onSubmit={submit}
+            ref={formRef}
+          >
             <div>
               <label
                 htmlFor="email"
