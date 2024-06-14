@@ -65,7 +65,7 @@ const Page = () => {
       <div className="max-w-screen-2xl mx-auto">
         <section className="xl:px-40 md:px-16 px-10 py-14 bg-[#f2f8f24d]">
           <div className="grid grid-cols-2 lg:grid-cols-5 items-start justify-center gap-y-20 gap-x-4">
-            <div className="col-span-3">
+            <div className="col-span-3 order-2 lg:order-1">
               <div className="">
                 <div className="max-w-lg">
                   <h1 className="mx-auto">
@@ -92,7 +92,7 @@ const Page = () => {
                   </li>
                 </ul>
               </div>
-              <div className="bg-white border-gray-200 border shadow-sm rounded-lg mt-10">
+              <div className="bg-white border-gray-200 border shadow-sm rounded-lg mt-10 hidden md:block">
                 <div className="flex gap-4 items-center px-8 py-6">
                   <Image
                     src="/assets/HDFC_LOGO.png"
@@ -124,7 +124,7 @@ const Page = () => {
                       </div>
                     </div>
                     <ul className="pt-4 list-disc list-inside space-y-2">
-                      <li className="text-[16px] font-medium text-text_light">
+                      <li className="text-sm font-medium text-text_light">
                         Savings Account Interest Rate – Up to 3.0% p.a
                       </li>
                     </ul>
@@ -162,7 +162,7 @@ const Page = () => {
                     </div>
 
                     <ul className="pt-4 list-disc list-inside space-y-2">
-                      <li className="text-[16px] font-medium text-text_light">
+                      <li className="text-sm font-medium text-text_light">
                         Savings Account Interest Rate – Up to 3.0% p.a
                       </li>
                     </ul>
@@ -199,7 +199,130 @@ const Page = () => {
                       </div>
                     </div>
                     <ul className="pt-4 list-disc list-inside space-y-2">
-                      <li className="text-[16px] font-medium text-text_light">
+                      <li className="text-sm font-medium text-text_light">
+                        Savings Account Interest Rate – Up to 3.5% p.a
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white border-gray-200 border shadow-sm rounded-lg mt-10 block md:hidden">
+                <div className="px-8 py-6">
+                  <div className="flex gap-4 items-center">
+                    <Image
+                      src="/assets/HDFC_LOGO.png"
+                      alt="Your Image Alt Text"
+                      className="w-[40px] transition-all duration-300 hover:scale-110"
+                      width={500}
+                      height={1}
+                    />
+                    <h3 className="">HDFC Bank</h3>
+                  </div>
+
+                  <div className="mt-6">
+                    <div className="flex items-center gap-2 mt-3 flex-wrap">
+                      <div className="flex items-center gap-1">
+                        <MdOutlinePercent color="#424242" />
+                        <p className="text-sm font-semibold text-text_dark">
+                          Up to 7.60% p.a. FD Rate
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MdLocationOn color="#424242" />
+                        <p className="text-sm font-semibold text-text_dark">
+                          8700+ Branches
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <RxCountdownTimer color="#424242" />
+                        <p className="text-sm font-semibold text-text_dark">
+                          Medium Process Time
+                        </p>
+                      </div>
+                    </div>
+                    <ul className="pt-4 list-disc list-inside space-y-2">
+                      <li className="text-sm font-medium text-text_light">
+                        Savings Account Interest Rate – Up to 3.0% p.a
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="border-t px-8 py-6">
+                  <div className="flex gap-4 items-center">
+                    <Image
+                      src="/assets/IDFC_LOGO.png"
+                      alt="Your Image Alt Text"
+                      className="w-[40px] transition-all duration-300 hover:scale-110"
+                      width={500}
+                      height={1}
+                    />
+                    <h3 className="">IDFC Bank</h3>
+                  </div>
+
+                  <div className="mt-6">
+                    <div className="flex items-center gap-2 mt-3 flex-wrap">
+                      <div className="flex items-center gap-1">
+                        <MdOutlinePercent color="#424242" />
+                        <p className="text-sm font-semibold text-text_dark">
+                          Up to 7.25% p.a. FD Rate
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MdLocationOn color="#424242" />
+                        <p className="text-sm font-semibold text-text_dark">
+                          800+ Branches
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <RxCountdownTimer color="#424242" />
+                        <p className="text-sm font-semibold text-text_dark">
+                          Fast Process Time
+                        </p>
+                      </div>
+                    </div>
+
+                    <ul className="pt-4 list-disc list-inside space-y-2">
+                      <li className="text-sm font-medium text-text_light">
+                        Savings Account Interest Rate – Up to 3.0% p.a
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="border-t px-8 py-6 ">
+                  <div className="flex gap-4 items-center">
+                    <Image
+                      src="/assets/axis.png"
+                      alt="Your Image Alt Text"
+                      className="w-[40px] transition-all duration-300 hover:scale-110"
+                      width={500}
+                      height={1}
+                    />
+                    <h3 className="">Axis Bank</h3>
+                  </div>
+
+                  <div className="mt-6">
+                    <div className="flex items-center gap-2 mt-3 flex-wrap">
+                      <div className="flex items-center gap-1">
+                        <MdOutlinePercent color="#424242" />
+                        <p className="text-sm font-semibold text-text_dark">
+                          Up to 7.4% p.a. FD Rate
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MdLocationOn color="#424242" />
+                        <p className="text-sm font-semibold text-text_dark">
+                          5000+ Branches
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <RxCountdownTimer color="#424242" />
+                        <p className="text-sm font-semibold text-text_dark">
+                          Medium Process Time
+                        </p>
+                      </div>
+                    </div>
+                    <ul className="pt-4 list-disc list-inside space-y-2">
+                      <li className="text-sm font-medium text-text_light">
                         Savings Account Interest Rate – Up to 3.5% p.a
                       </li>
                     </ul>
@@ -209,10 +332,10 @@ const Page = () => {
             </div>
 
             <div
-              className={`col-span-2 flex justify-center lg:justify-end items-start sticky ${"top-32"} z-40`}
+              className={`col-span-3 md:col-span-2 flex justify-center lg:justify-end items-start lg:sticky ${"top-32"} z-40 order-1 lg:order-2`}
             >
               <div className="">
-                <div className="bg-white border-gray-200 border-2 shadow-md rounded-lg px-8 py-6 max-w-sm">
+                <div className="bg-white border-gray-200 border-2 shadow-md rounded-lg  px-4 lg:px-8 py-6 md:max-w-sm">
                   <h3 className="text-center">Apply in 20 seconds</h3>
                   <h4 className="text-center mb-4">
                     50,000+ NRIs applied in last 6 months
