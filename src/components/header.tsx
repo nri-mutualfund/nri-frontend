@@ -24,7 +24,7 @@ const Header = () => {
           height={1}
         /> */}
 
-        <nav className="flex items-center text-base gap-12 ">
+        <nav className="flex items-center text-base gap-8 ">
           <Link
             href={"/"}
             className={`cursor-pointer hover:text-primary text-[16px] ${
@@ -39,7 +39,7 @@ const Header = () => {
             {/* <Image src={Logo} width={70} alt="logo" /> */}
             Logo
           </Link>
-          <ul className="gap-12 md:flex items-center hidden">
+          <ul className="gap-8 lg:flex items-center hidden">
             <Link
               href={"/"}
               className={`cursor-pointer hover:text-primary text-[16px] ${
@@ -54,6 +54,19 @@ const Header = () => {
               Home
             </Link>
             <Link
+              href={"/banking"}
+              className={`cursor-pointer hover:text-primary text-[16px] ${
+                pathname === "/banking" ? "text-primary" : "text-[#424242]"
+              }`}
+              onClick={() => {
+                if (pathname !== "/banking") {
+                  NProgress.start();
+                }
+              }}
+            >
+              Banking
+            </Link>
+            <Link
               href={"/join-the-community"}
               className={`cursor-pointer hover:text-primary text-[16px] ${
                 pathname === "/join-the-community"
@@ -66,7 +79,35 @@ const Header = () => {
                 }
               }}
             >
-              Join the Community
+              Community
+            </Link>
+            <Link
+              href={"/partner-with-us"}
+              className={`cursor-pointer hover:text-primary text-[16px] ${
+                pathname === "/partner-with-us"
+                  ? "text-primary"
+                  : "text-[#424242]"
+              }`}
+              onClick={() => {
+                if (pathname !== "/partner-with-us") {
+                  NProgress.start();
+                }
+              }}
+            >
+              Partner with Us
+            </Link>
+            <Link
+              href={"/blog"}
+              className={`cursor-pointer hover:text-primary text-[16px] ${
+                pathname === "/blog" ? "text-primary" : "text-[#424242]"
+              }`}
+              onClick={() => {
+                if (pathname !== "/blog") {
+                  NProgress.start();
+                }
+              }}
+            >
+              Resource
             </Link>
             <Link
               href={"/faq"}
@@ -81,22 +122,9 @@ const Header = () => {
             >
               FAQ
             </Link>
-            <Link
-              href={"/blog"}
-              className={`cursor-pointer hover:text-primary text-[16px] ${
-                pathname === "/blog" ? "text-primary" : "text-[#424242]"
-              }`}
-              onClick={() => {
-                if (pathname !== "/blog") {
-                  NProgress.start();
-                }
-              }}
-            >
-              Blog
-            </Link>
           </ul>
         </nav>
-        <div className="items-center md:flex hidden gap-12">
+        <div className="items-center lg:flex hidden gap-12">
           {/* <Link
             href={"/login"}
             className="cursor-pointer hover:text-primary text-[16px] "
@@ -117,7 +145,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="items-center flex gap-8 md:hidden" onClick={handleNav}>
+        <div className="items-center flex gap-8 lg:hidden" onClick={handleNav}>
           <Link
             href={"/signup"}
             onClick={() => {
@@ -163,53 +191,94 @@ const Header = () => {
           <ul className="flex flex-col gap-10 my-32">
             <Link
               href={"/"}
+              className={`cursor-pointer hover:text-primary text-[16px] ${
+                pathname === "/" ? "text-primary" : "text-[#424242]"
+              }`}
               onClick={() => {
                 handleNav();
                 if (pathname !== "/") {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-primary text-[16px] text-[#424242]"
             >
               Home
             </Link>
             <Link
+              href={"/banking"}
+              className={`cursor-pointer hover:text-primary text-[16px] ${
+                pathname === "/banking" ? "text-primary" : "text-[#424242]"
+              }`}
+              onClick={() => {
+                handleNav();
+                if (pathname !== "/banking") {
+                  NProgress.start();
+                }
+              }}
+            >
+              Banking
+            </Link>
+            <Link
               href={"/join-the-community"}
+              className={`cursor-pointer hover:text-primary text-[16px] ${
+                pathname === "/join-the-community"
+                  ? "text-primary"
+                  : "text-[#424242]"
+              }`}
               onClick={() => {
                 handleNav();
                 if (pathname !== "/join-the-community") {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-primary text-[16px] text-[#424242]"
             >
-              Join the Community
+              Community
             </Link>
             <Link
-              href={"/faq"}
+              href={"/partner-with-us"}
+              className={`cursor-pointer hover:text-primary text-[16px] ${
+                pathname === "/partner-with-us"
+                  ? "text-primary"
+                  : "text-[#424242]"
+              }`}
               onClick={() => {
                 handleNav();
-                if (pathname !== "/faq") {
+                if (pathname !== "/partner-with-us") {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-primary text-[16px] text-[#424242]"
             >
-              FAQ
+              Partner with Us
             </Link>
             <Link
               href={"/blog"}
+              className={`cursor-pointer hover:text-primary text-[16px] ${
+                pathname === "/blog" ? "text-primary" : "text-[#424242]"
+              }`}
               onClick={() => {
                 handleNav();
                 if (pathname !== "/blog") {
                   NProgress.start();
                 }
               }}
-              className="cursor-pointer hover:text-primary text-[16px] text-[#424242]"
             >
-              Blog
+              Resource
+            </Link>
+            <Link
+              href={"/faq"}
+              className={`cursor-pointer hover:text-primary text-[16px] ${
+                pathname === "/faq" ? "text-primary" : "text-[#424242]"
+              }`}
+              onClick={() => {
+                handleNav();
+                if (pathname !== "/faq") {
+                  NProgress.start();
+                }
+              }}
+            >
+              FAQ
             </Link>
           </ul>
+
           {/* <div className="items-center">
             <Link href={"/login"}>
               <button className="px-4 py-2   font-bold text-white  transition-all duration-150 bg-primary rounded-md shadow active:bg-primary hover:shadow-md focus:outline-none ease">

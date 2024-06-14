@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FiBarChart } from "react-icons/fi";
 import { BsTwitterX, BsInstagram } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import { useMutation } from "@tanstack/react-query";
+import { addNewsLetter } from "../app/api/api";
+import { toast } from "react-toastify";
 const Footer = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const { mutate } = useMutation({
+    mutationKey: ["addNewsLetter"],
+    mutationFn: addNewsLetter,
+    onSuccess: (data) => {
+      toast("Submitted");
+      formRef?.current?.reset();
+    },
+    onError: (error) => {
+      console.log("error");
+    },
+  });
+  const submit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+    // console.log("data", data);
+    mutate(data);
+  };
   return (
     <div className="w-full bg-secondary">
       <div className="max-w-screen-2xl mx-auto py-6 xl:px-40 md:px-16 px-10">
@@ -42,17 +64,23 @@ const Footer = () => {
               Let's do it!`}
             </p>
             <div className="flex justify-center mt-6">
-              <div className="bg-gray-100 flex justify-between rounded-lg mt-3 w-full  pl-4 pr-2 py-2">
-                <input
-                  className="bg-transparent text-black placeholder-black outline-none w-full border-none rounded-sm focus:ring-0 focus:outline-none"
-                  type="text"
-                  placeholder="Enter your email"
-                />
-                <button className="bg-primary text-white px-4 py-2  rounded-lg transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-                  {" "}
-                  Subscribe
-                </button>
-              </div>
+              <form onSubmit={submit} ref={formRef}>
+                <div className="bg-gray-100 flex justify-between rounded-lg mt-3 w-full  pl-4 pr-2 py-2">
+                  <label className="sr-only">Email</label>
+                  <input
+                    className="bg-transparent text-black placeholder-black outline-none w-full border-none rounded-sm focus:ring-0 focus:outline-none"
+                    type="email"
+                    placeholder="Enter your email"
+                    id="Email"
+                    name="email"
+                    required
+                  />
+                  <button className="bg-primary text-white px-4 py-2  rounded-lg transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                    {" "}
+                    Subscribe
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <div className="w-full md:w-[45%] lg:w-[20%] px-4 flex justify-start lg:justify-end">
