@@ -64,11 +64,11 @@ const SectionOne = ({ data }: SectionOneProps) => {
               width={400}
               height={1}
             />
-            <p className="text-center text-[12px] text-text_dark">
+            <h5 className="text-text_dark text-left text-xs md:text-[16px] leading-normal">
               NRI is a certified Mutual Fund distributor registered with
               Association of Mutual Funds in India (AMFI) with Reg. No. 000000
-            </p>
-            <GoArrowUpRight
+            </h5>
+            {/* <GoArrowUpRight
               size={100}
               color="#008000"
               className="block md:hidden"
@@ -77,7 +77,7 @@ const SectionOne = ({ data }: SectionOneProps) => {
               size={25}
               color="#008000"
               className="hidden md:block"
-            />
+            /> */}
           </button>
         </Link>
       </section>
