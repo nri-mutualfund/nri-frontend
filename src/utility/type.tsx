@@ -48,8 +48,7 @@ export interface BlogPost {
   created_at: string;
   id: string;
   richText: string;
-  blogCategory: 
-    { category_name: string; },
+  blogCategory: { category_name: string };
 }
 export interface Category {
   id: number;
@@ -57,4 +56,15 @@ export interface Category {
   description: string;
   created_at: string;
   updated_at: string;
+}
+export interface CustomError {
+  response?: {
+    status: number;
+    data?: {
+      data?: {
+        status: number;
+        message: string;
+      };
+    };
+  };
 }
