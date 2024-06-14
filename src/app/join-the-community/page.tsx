@@ -104,7 +104,7 @@ const Page = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-xs font-medium leading-6 text-text_dark"
+                className="block text-h4 font-medium leading-6 text-text_dark"
               >
                 Your name
               </label>
@@ -115,7 +115,7 @@ const Page = () => {
                   type="name"
                   placeholder="Fullname as per passport"
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6"
+                  className="px-2 block text-sm w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6"
                 />
               </div>
             </div>
@@ -123,7 +123,7 @@ const Page = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-xs font-medium leading-6 text-text_dark"
+                className="block text-h4 font-medium leading-6 text-text_dark"
               >
                 Your Email address
               </label>
@@ -134,14 +134,14 @@ const Page = () => {
                   type="email"
                   placeholder="Enter Email"
                   required
-                  className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6"
+                  className="px-2 block w-full text-sm rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:leading-6"
                 />
               </div>
             </div>
             <div>
               <label
                 htmlFor="name"
-                className="block text-xs font-medium leading-6 text-text_dark"
+                className="block text-h4 font-medium leading-6 text-text_dark"
               >
                 Country
               </label>
@@ -193,7 +193,7 @@ const Page = () => {
             <div>
               <label
                 htmlFor="whatsapp_number"
-                className="block text-xs font-medium leading-6 text-text_dark"
+                className="block text-h4 font-medium leading-6 text-text_dark"
               >
                 Whatsapp Number
               </label>
@@ -220,7 +220,7 @@ const Page = () => {
                     autoComplete="phone"
                     required
                     maxLength={16}
-                    className="block w-[70%] placeholder:text-gray-400 px-4 py-1 border-none focus:ring-0 focus:ring-inset sm:text-sm sm:leading-6"
+                    className="block w-[70%] text-sm placeholder:text-gray-400 px-4 py-1 border-none focus:ring-0 focus:ring-inset sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
