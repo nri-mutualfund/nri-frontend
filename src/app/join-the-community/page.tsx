@@ -234,11 +234,11 @@ const Page = () => {
                 Start Process Now
               </button>
             </div>
-            <p className="mt-1 text-xs text-gray-400 text-left font-light">
+            <p className="mt-1 text-xs text-[#1F3151] text-left font-light">
               I have checked all the details and these details can be used for
               my account opening
             </p>
-            <p className="mt-1 text-xs text-gray-400 text-left font-light">
+            <p className="mt-1 text-xs text-[#1F3151] text-left font-light">
               You will recieve call from bank on your whatsapp number
             </p>
           </form>

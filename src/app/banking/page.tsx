@@ -335,15 +335,17 @@ const Page = () => {
                     </button>
                   </form>
                   <ul className="pt-4 list-disc list-inside space-y-2">
-                    <li className="text-gray-300 text-xs font-thin">
-                      I have checked all the details and these details can be
-                      used for my bank account opening.
-                    </li>
-                    <li className="text-gray-300 text-xs font-thin">
-                      You will receive call from bank on the entered WhatsApp
-                      number.
-                    </li>
-                  </ul>
+  <li className="text-[#1F3151] text-xs font-thin flex items-start">
+    <span className="inline-block mt-0.5 mr-2">•</span>
+    I have checked all the details and these details can be
+    used for my bank account opening.
+  </li>
+  <li className="text-[#1F3151] text-xs font-thin flex items-start">
+    <span className="inline-block mt-0.5 mr-2">•</span>
+    You will receive call from bank on the entered WhatsApp
+    number.
+  </li>
+</ul>
                 </div>
                 <div className="flex justify-center items-center gap-6  max-w-sm mt-4">
                   <Image
