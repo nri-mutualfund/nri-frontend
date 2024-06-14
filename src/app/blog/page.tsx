@@ -155,7 +155,7 @@ const Page = () => {
                           NProgress.start();
                         }}
                       >
-                        <h3 className="mt-3 mb-2 hover:text-primary">
+                        <h3 className="mt-3 mb-2 hover:text-primary line-clamp-2">
                           <span className="absolute inset-0" />
                           {post.blog_heading}
                         </h3>
@@ -167,7 +167,7 @@ const Page = () => {
                         />
                       </div>
                     </div>
-                    <div className="flex w-full items-center justify-between mt-4">
+                    <div className="flex w-full items-center justify-between -mt-4s">
                       {/* <Link
                         href={{
                           pathname: "/blog-details",
@@ -183,7 +183,7 @@ const Page = () => {
                       </Link> */}
                       <h5 className="font-medium">{post?.user_name}</h5>
                     </div>
-                    <div className=" w-full border-t mt-10"></div>
+                    <div className=" w-full border-t mt-4"></div>
                   </article>
                 ))}
               </div>
