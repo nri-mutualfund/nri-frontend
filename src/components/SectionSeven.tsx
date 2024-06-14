@@ -15,7 +15,7 @@ const SectionSeven = () => {
         </h4>
       </div>
 
-      <div className="flex flex-wrap  gap-4 md:gap-0   justify-between  items-start mt-10">
+      <div className="flex flex-wrap  gap-4 md:gap-0  justify-between  items-start mt-10">
         <div className="w-full md:w-[25%] flex sm:flex-row md:flex-col gap-4 justify-center items-center ">
           <div className="md:h-[180px] w-[50%] md:w-full">
             <Image
@@ -29,9 +29,9 @@ const SectionSeven = () => {
 
           <div className="flex md:justify-center md:items-center flex-col gap-3">
             <h3 className="md:text-center">From your Foreign Bank</h3>
-            <p className="font-normal md:text-center leading-6 text-text_light">
+            <h5 className="md:text-center">
               Convert to INR through your preferred remittance partner
-            </p>
+            </h5>
           </div>
         </div>
         <div className="w-[30%]  md:w-[12.5%] flex flex-col md:flex-row  gap-2  justify-between items-center mt-0 md:mt-6 lg:mt-12">

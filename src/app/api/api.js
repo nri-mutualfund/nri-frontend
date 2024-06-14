@@ -112,10 +112,22 @@ export const getAllCategories = async () => {
   try {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/homePage/blogCategory`,
-     {}
-    )
-    return response
+      {}
+    );
+    return response?.data;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
+export const addNewsLetter = async (values) => {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/googleSheet/addNewsletterData`,
+      values
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};

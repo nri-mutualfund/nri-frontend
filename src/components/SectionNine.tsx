@@ -39,11 +39,11 @@ const SectionNine = ({ data }: SectionOneProps) => {
             </Link>
 
             <div className="h-full overflow-hidden relative">
-      <div
-        className="line-clamp-6 "
-        dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
-      />
-    </div>
+              <div
+                className="line-clamp-6 "
+                dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
+              />
+            </div>
             <Link
               href={{
                 pathname: "/blog-details",
@@ -61,13 +61,6 @@ const SectionNine = ({ data }: SectionOneProps) => {
 
             <div className="border-[0.5px] mt-8 hidden lg:block" />
             <div className="flex items-center gap-4 mt-6">
-              <Image
-                src={"/assets/male.png"}
-                alt="cots"
-                className="w-[30px]"
-                width={500}
-                height={1}
-              />
               <h4 className="">{data?.data[0]?.user_name}</h4>
             </div>
             <div className="border-[0.5px] mt-8 block lg:hidden" />
@@ -89,19 +82,19 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 <h3 className="mt-2 mb-2">{data?.data[1]?.blog_heading}</h3>
               </Link>
               <div className="h-full overflow-hidden relative">
-      <div
-        className="line-clamp-5 "
-        dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
-      />
-    </div>              
-    <div className="flex items-center gap-4 mt-6">
-                <Image
+                <div
+                  className="line-clamp-5 "
+                  dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
+                />
+              </div>
+              <div className="flex items-center gap-4 mt-6">
+                {/* <Image
                   src={"/assets/male.png"}
                   alt="cots"
                   className="w-[30px]"
                   width={500}
                   height={1}
-                />
+                /> */}
                 <h5>{data?.data[1]?.user_name}</h5>
               </div>
             </div>
@@ -122,19 +115,12 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 <h3 className="mt-2 mb-2">{data?.data[2]?.blog_heading}</h3>
               </Link>
               <div className="h-full overflow-hidden relative">
-      <div
-        className="line-clamp-5 "
-        dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
-      />
-    </div>   
-                  <div className="flex items-center gap-4 mt-6">
-                <Image
-                  src={"/assets/male.png"}
-                  alt="cots"
-                  className="w-[30px]"
-                  width={500}
-                  height={1}
+                <div
+                  className="line-clamp-5 "
+                  dangerouslySetInnerHTML={{ __html: data?.data[2]?.richText }}
                 />
+              </div>
+              <div className="flex items-center gap-4 mt-6">
                 <h5>{data?.data[2]?.user_name}</h5>
               </div>
             </div>
