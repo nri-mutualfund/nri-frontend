@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 import { familyRelations } from "@/utility/values";
 import { it } from "node:test";
 import { CustomError } from "@/utility/type";
-type NomineeDetail = {
+export type NomineeDetail = {
   full_legal_name: string;
   relation: string;
   pan: string;

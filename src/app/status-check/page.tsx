@@ -21,6 +21,9 @@ const Page = () => {
     if (data?.stage === "kyc") {
       nProgress.start();
       router.push("/verify-pan");
+    } else if (data?.stage === "settings") {
+        nProgress.start();
+        router.push("/settings");
     } else if (data?.stage === "investor_profile") {
       if (profileData?.country_of_birth) {
         nProgress.start();
