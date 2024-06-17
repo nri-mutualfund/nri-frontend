@@ -128,7 +128,7 @@ const Page = () => {
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="full_name"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Legal Full Name
                       </label>
@@ -142,7 +142,7 @@ const Page = () => {
                           id="full_name"
                           autoComplete="given-name"
                           required
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
@@ -150,7 +150,7 @@ const Page = () => {
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="country_of_birth"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Country of Birth
                       </label>
@@ -161,7 +161,7 @@ const Page = () => {
                           autoComplete="country_of_birth"
                           required
                           defaultValue={profileData?.country_of_birth}
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-xs sm:leading-6"
                         >
                           <option value={""}>Select Country</option>
                           {countryNamesForProfile?.map((item, index) => (
@@ -176,7 +176,7 @@ const Page = () => {
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="email"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Email
                       </label>
@@ -193,14 +193,14 @@ const Page = () => {
                           autoComplete="email"
                           required
                           disabled
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="city_of_birth"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> City of Birth
                       </label>
@@ -212,14 +212,14 @@ const Page = () => {
                           autoComplete="city_of_birth"
                           required
                           defaultValue={profileData?.city_of_birth}
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="phone"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Phone Number
                       </label>
@@ -230,14 +230,14 @@ const Page = () => {
                           defaultValue={data?.phone_number}
                           autoComplete="phone"
                           required
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="father_or_spouse_name"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Father’s or
                         Spouse’s Name
@@ -250,14 +250,14 @@ const Page = () => {
                           autoComplete="father_or_spouse_name"
                           required
                           defaultValue={profileData?.father_or_spouse_name}
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="gender"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Gender
                       </label>
@@ -267,7 +267,7 @@ const Page = () => {
                           name="gender"
                           autoComplete="gender"
                           defaultValue={profileData?.gender}
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-xs sm:leading-6"
                         >
                           <option value={""}>Select Gender</option>
                           <option value={"Male"}>Male</option>
@@ -294,7 +294,7 @@ const Page = () => {
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="address_line1"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Address - Line 1
                       </label>
@@ -308,14 +308,14 @@ const Page = () => {
                           defaultValue={
                             profileData?.residential_address?.address1
                           }
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="address_line2"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Address - Line 2
                       </label>
@@ -329,14 +329,14 @@ const Page = () => {
                           defaultValue={
                             profileData?.residential_address?.address2
                           }
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="city"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> City
                       </label>
@@ -348,14 +348,14 @@ const Page = () => {
                           autoComplete="given-name"
                           required
                           defaultValue={profileData?.residential_address?.city}
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="state"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> State
                       </label>
@@ -367,14 +367,14 @@ const Page = () => {
                           autoComplete="given-name"
                           required
                           defaultValue={profileData?.residential_address?.state}
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="zipcode"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Zip Code
                       </label>
@@ -388,14 +388,14 @@ const Page = () => {
                             profileData?.residential_address?.zipcode
                           }
                           autoComplete="given-name"
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="country"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Country
                       </label>
@@ -408,7 +408,7 @@ const Page = () => {
                             profileData?.residential_address?.country
                           }
                           autoComplete="country-name"
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-xs sm:leading-6"
                         >
                           <option value={""}>Select Country</option>
                           {countryNamesForProfile?.map((item, index) => (

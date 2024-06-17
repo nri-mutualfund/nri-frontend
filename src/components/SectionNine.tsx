@@ -1,4 +1,4 @@
-import { DataProps } from "@/utility/type";
+import { BlogPost, DataProps } from "@/utility/type";
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,120 +13,55 @@ interface SectionOneProps {
 const SectionNine = ({ data }: SectionOneProps) => {
   const [showArrow, setShowArrow] = useState(false);
   return (
-    <section className="bg-secondary px-4 md:px-20 lg:px-40 py-14 md:py-24">
+    <section className="bg-secondary px-8 md:px-20 lg:px-40 py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center text-center">
-      <h1 className="text-center">
-        {data?.pre_heading}{" "}
-        <span className="text-text_dark">{data?.highlightned}</span>{" "}
-        {data?.post_heading}
-      </h1>
-      <h5 className="mt-4 mb-4">{data?.detail}</h5>
-      </div>      
-      {data?.data?.length && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-8 mt-20 items-start">
-          <div className="">
-            <div className="flex justify-between items-center gap-4">
-              <p className="font-light text-sm text-text_light">
-                {moment(data?.data[0]?.created_at).format("MMM DD, YYYY")}
+        <h1 className="text-center">
+          {data?.pre_heading}{" "}
+          <span className="text-text_dark">{data?.highlightned}</span>{" "}
+          {data?.post_heading}
+        </h1>
+        <h5 className="mt-4 mb-4">{data?.detail}</h5>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 mt-10 gap-x-6 gap-y-12">
+        {data?.data?.slice(0, 3)?.map((post, index: number) => (
+          <article key={index} className="flex max-w-xl flex-col items-center">
+            <div className="flex w-full gap-6 items-center">
+              <p className="text-text_light text-sm">
+                {moment(post?.created_at).format("MMM DD, YYYY")}
               </p>
-              <h4 className="">{data?.data[0]?.user_name}</h4>
+              <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                {post?.blogCategory?.category_name}
+              </span>
             </div>
-
-            <Link
-              href={{
-                pathname: "/blog-details",
-                query: { id: data?.data[0]?.id },
-              }}
-              onClick={() => {
-                nProgress.start();
-              }}
-            >
-              <h3 className="mt-2 mb-2">{data?.data[0]?.blog_heading}</h3>
-            </Link>
-
-            <div className="h-full overflow-hidden relative">
-              <div
-                className="line-clamp-6"
-                dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
-              />
-            </div>
-
-            {/* <Link
-              href={{
-                pathname: "/blog-details",
-                query: { id: data?.data[0]?.id },
-              }}
-              onClick={() => {
-                nProgress.start();
-              }}
-            >
-              <button className="flex items-center gap-2 text-primary mt-6">
-                <p>Continue reading</p>
-                <FaArrowRight />
-              </button>
-            </Link> */}
-
-            <div className="border-[0.5px] mt-8 hidden lg:block" />
-
-            <div className="border-[0.5px] mt-8 block lg:hidden" />
-          </div>
-          <div className="flex flex-col gap-8">
-            <div>
-              <div className="flex items-center gap-4 justify-between">
-                <p className="font-light text-sm text-text_light">
-                  {moment(data?.data[1]?.created_at).format("MMM DD, YYYY")}
-                </p>
-                <h5>{data?.data[1]?.user_name}</h5>
-              </div>
-
+            <div className="group relative h-64">
               <Link
                 href={{
                   pathname: "/blog-details",
-                  query: { id: data?.data[1]?.id },
+                  query: { id: post?.id },
                 }}
+                className="flex text-primary items-center gap-2"
                 onClick={() => {
-                  nProgress.start();
+                  NProgress.start();
                 }}
               >
-                <h3 className="mt-2 mb-2">{data?.data[1]?.blog_heading}</h3>
+                <h3 className="mt-3 mb-2 hover:text-primary line-clamp-2">
+                  <span className="absolute inset-0" />
+                  {post.blog_heading}
+                </h3>
               </Link>
-              <div className="h-full overflow-hidden relative">
+              <div className=" h-full overflow-hidden relative mt-4">
                 <div
-                  className="line-clamp-5 "
-                  dangerouslySetInnerHTML={{ __html: data?.data[0]?.richText }}
+                  className="line-clamp-6 text-text_dark"
+                  dangerouslySetInnerHTML={{ __html: post?.richText }}
                 />
               </div>
             </div>
-            <div className="border-[0.5px]" />
-            <div>
-              <div className="flex items-center justify-between gap-4 ">
-                <p className="font-light text-sm text-text_light">
-                  {moment(data?.data[2]?.created_at).format("MMM DD, YYYY")}
-                </p>
-                <h5>{data?.data[2]?.user_name}</h5>
-              </div>
-
-              <Link
-                href={{
-                  pathname: "/blog-details",
-                  query: { id: data?.data[2]?.id },
-                }}
-                onClick={() => {
-                  nProgress.start();
-                }}
-              >
-                <h3 className="mt-2 mb-2">{data?.data[2]?.blog_heading}</h3>
-              </Link>
-              <div className="h-full overflow-hidden relative">
-                <div
-                  className="line-clamp-5 "
-                  dangerouslySetInnerHTML={{ __html: data?.data[2]?.richText }}
-                />
-              </div>
+            <div className="flex w-full items-center justify-between -mt-4s">
+              <h5 className="font-medium">{post?.user_name}</h5>
             </div>
-          </div>
-        </div>
-      )}
+          </article>
+        ))}
+      </div>
 
       <div className=" flex justify-center items-center w-full py-10">
         <Link

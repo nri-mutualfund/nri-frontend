@@ -11,7 +11,7 @@ interface SectionOneProps {
 const SectionOne = ({ data }: SectionOneProps) => {
   return (
     <>
-      <section className="flex-col px-2 py-14 md:py-24 ">
+      <section className="flex-col py-14 md:py-24 xl:px-40 md:px-16 px-4">
         <div className="flex justify-center align-middle ">
           <div className="relative text-center max-w-2xl lg:max-w-2xl">
             <svg
