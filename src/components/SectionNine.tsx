@@ -59,6 +59,9 @@ const SectionNine = ({ data }: SectionOneProps) => {
             <div className="flex w-full items-center justify-between -mt-4s">
               <h5 className="font-medium">{post?.user_name}</h5>
             </div>
+            {index !== 2 && (
+              <div className="border  w-full mt-6 block md:hidden" />
+            )}
           </article>
         ))}
       </div>

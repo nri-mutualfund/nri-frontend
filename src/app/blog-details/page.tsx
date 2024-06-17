@@ -38,15 +38,12 @@ const Page = () => {
                 {moment(currentData?.created_at).format("MMM DD, YYYY")}
               </p>
             </div>
-            
           </div>
         </div>
       </div>
-      <div className=" max-w-2xl mx-auto py-10">
-              <div
-                dangerouslySetInnerHTML={{ __html: currentData?.richText }}
-              />
-            </div>
+      <div className="md:max-w-2xl mx-auto py-10 xl:px-40 md:px-16 px-10">
+        <div dangerouslySetInnerHTML={{ __html: currentData?.richText }} />
+      </div>
     </>
   );
 };
