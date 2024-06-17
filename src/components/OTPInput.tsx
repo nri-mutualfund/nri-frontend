@@ -3,9 +3,10 @@ import React, { useRef, useState, useEffect } from "react";
 interface OTPInputProps {
   length: number; // Number of code input fields
   onChange: (otp: string) => void; // Callback function to handle OTP changes
+  hasError: boolean;
 }
 
-const OTPInput: React.FC<OTPInputProps> = ({ length, onChange }) => {
+const OTPInput: React.FC<OTPInputProps> = ({ length, onChange, hasError }) => {
   const [otp, setOtp] = useState<string>(""); // State to store the OTP value
 
   // Refs for each input field
@@ -79,7 +80,11 @@ const OTPInput: React.FC<OTPInputProps> = ({ length, onChange }) => {
             type="text"
             maxLength={1}
             id={`code-${index + 1}`}
-            className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-[#424242] bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+            className={`block w-9 h-9 py-3 text-xs ${
+              hasError
+                ? "border-red-500 text-red-500"
+                : "text-text_dark border-1"
+            } font-extrabold text-center bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
             ref={inputRefs[index]}
             value={otp[index] || ""}
             onChange={(e) => handleInput(e, index)}

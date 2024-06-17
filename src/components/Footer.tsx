@@ -31,7 +31,7 @@ const Footer = () => {
     <div className="w-full bg-secondary">
       <div className="max-w-screen-2xl mx-auto py-6 xl:px-40 md:px-16 px-10">
         <div className="w-full flex flex-wrap items-start gap-20 md:gap-10 lg:gap-0 justify-between mt-20">
-          <div className="w-full lg:w-[45%] px-4">
+          <div className="w-full lg:w-[45%] ">
             <FiBarChart size={30} className="rotate-180" />
             <div className="flex gap-4 mt-6">
               <Link
@@ -58,7 +58,7 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div className="w-full md:w-[45%] lg:w-[30%] px-4">
+          <div className="w-full md:w-[45%] lg:w-[30%] ">
             <p className="font-extralight ">
               {`Subscribe to stay tuned for new web design and latest updates.
               Let's do it!`}
@@ -75,7 +75,7 @@ const Footer = () => {
                     name="email"
                     required
                   />
-                  <button className="bg-primary text-white px-4 py-2  rounded-lg transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                  <button className="bg-primary text-white  px-4 py-2  rounded-lg transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
                     {" "}
                     Subscribe
                   </button>
@@ -83,7 +83,7 @@ const Footer = () => {
               </form>
             </div>
           </div>
-          <div className="w-full md:w-[45%] lg:w-[20%] px-4 flex justify-start lg:justify-end">
+          <div className="w-full md:w-[45%] lg:w-[20%]  flex justify-start lg:justify-end">
             <div className="">
               <div className="">
                 <p className="font-semibold mb-4 ">Call us</p>

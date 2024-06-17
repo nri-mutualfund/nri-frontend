@@ -17,6 +17,7 @@ export interface DataProps {
     created_at: string;
     rating: string;
     id: string;
+    blogCategory: { category_name: string };
   }>;
   content_one: string[];
   content_two: string[];

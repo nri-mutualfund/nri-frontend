@@ -166,7 +166,7 @@ const Page = () => {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="income_source"
-                      className="block text-xs font-medium leading-6 text-text_dark"
+                      className="block text-h4 font-medium leading-6 text-text_dark"
                     >
                       <span className="text-red-500">*</span> Income Source
                     </label>
@@ -177,7 +177,7 @@ const Page = () => {
                         autoComplete="income_source"
                         required
                         defaultValue={profileData?.income_source}
-                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-xs sm:leading-6"
                       >
                         <option value={""}>Select Income Source</option>
                         {incomeTypes?.map((item, index) => (
@@ -191,7 +191,7 @@ const Page = () => {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="occupation"
-                      className="block text-xs font-medium leading-6 text-text_dark"
+                      className="block text-h4 font-medium leading-6 text-text_dark"
                     >
                       <span className="text-red-500">*</span> Occupation
                     </label>
@@ -202,7 +202,7 @@ const Page = () => {
                         autoComplete="occupation"
                         required
                         defaultValue={profileData?.occupation}
-                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-xs sm:leading-6"
                       >
                         <option value={""}>Select Occupation</option>
                         <option value={"Job"}>Job</option>
@@ -214,7 +214,7 @@ const Page = () => {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="income_slab"
-                      className="block text-xs font-medium leading-6 text-text_dark"
+                      className="block text-h4 font-medium leading-6 text-text_dark"
                     >
                       <span className="text-red-500">*</span> Income Slab
                     </label>
@@ -225,7 +225,7 @@ const Page = () => {
                         autoComplete="income_slab"
                         required
                         defaultValue={profileData?.income_slab}
-                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-xs sm:leading-6"
                       >
                         <option value={""}>Select Income Slab</option>
                         {incomeBrackets?.map((item, index) => (
@@ -248,7 +248,7 @@ const Page = () => {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="income_slab"
-                      className="block text-xs font-medium leading-6 text-text_dark"
+                      className="block text-h4 font-medium leading-6 text-text_dark"
                     >
                       <span className="text-red-500">*</span> Select if any of
                       these apply to you
@@ -353,7 +353,7 @@ const Page = () => {
                         <div className="sm:col-span-3">
                           <label
                             // htmlFor="tax_residency"
-                            className="block text-xs font-medium leading-6 text-text_dark"
+                            className="block text-h4 font-medium leading-6 text-text_dark"
                           >
                             <span className="text-red-500">*</span> TAX
                             Residency
@@ -372,7 +372,7 @@ const Page = () => {
                               autoComplete="tax_residency"
                               required
                               value={item?.tax_residency}
-                              className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                              className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-xs sm:leading-6"
                             >
                               <option value={""}>Select TAX Residency</option>
                               <option value={"India"}>India</option>
@@ -388,7 +388,7 @@ const Page = () => {
                         <div className="sm:col-span-3 ">
                           <label
                             // htmlFor="tin_or_pan"
-                            className="block text-xs font-medium leading-6 text-text_dark"
+                            className="block text-h4 font-medium leading-6 text-text_dark"
                           >
                             <span className="text-red-500">*</span> TIN/PAN
                             Details
@@ -410,7 +410,7 @@ const Page = () => {
                               maxLength={10}
                               minLength={10}
                               value={item?.tin_or_pan}
-                              className="block w-[85%] rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                              className="block w-[85%] rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-xs sm:leading-6"
                             />
                             {index !== 0 && (
                               <button

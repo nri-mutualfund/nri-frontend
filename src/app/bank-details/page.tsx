@@ -99,7 +99,7 @@ const Page = () => {
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="account_type"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Bank Account
                         Type
@@ -111,7 +111,7 @@ const Page = () => {
                           autoComplete="account_type"
                           required
                           defaultValue={bankData?.account_type}
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-xs sm:leading-6"
                         >
                           <option value={""}>Select Account Type</option>
                           <option value={"NRE"}>NRE</option>
@@ -137,7 +137,7 @@ const Page = () => {
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="account_number"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Account Number
                       </label>
@@ -148,14 +148,14 @@ const Page = () => {
                           autoComplete="account_number"
                           required
                           defaultValue={bankData?.account_number}
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="ifsc_code"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> IFSC Code
                       </label>
@@ -166,14 +166,14 @@ const Page = () => {
                           autoComplete="ifsc_code"
                           required
                           defaultValue={bankData?.ifsc_code}
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3">
                       <label
                         htmlFor="verification_document"
-                        className="block text-xs font-medium leading-6 text-text_dark"
+                        className="block text-h4 font-medium leading-6 text-text_dark"
                       >
                         <span className="text-red-500">*</span> Verification
                         Document
@@ -185,7 +185,7 @@ const Page = () => {
                           autoComplete="verification_document"
                           required
                           defaultValue={bankData?.verification_document}
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                          className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-xs sm:leading-6"
                         >
                           <option value={""}>Select Document</option>
                           <option value={"Bank Statement"}>

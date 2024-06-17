@@ -85,7 +85,7 @@ const SignUp = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-xs font-medium leading-6 text-text_dark"
+                  className="block text-h4 font-medium leading-6 text-text_dark"
                 >
                   Your name
                 </label>
@@ -98,7 +98,7 @@ const SignUp = () => {
                     type="name"
                     placeholder="Name"
                     required
-                    className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                    className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -106,7 +106,7 @@ const SignUp = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-xs font-medium leading-6 text-text_dark"
+                  className="block text-h4 font-medium leading-6 text-text_dark"
                 >
                   Your Email address
                 </label>
@@ -123,7 +123,7 @@ const SignUp = () => {
                       error
                         ? "border-1 border-red-500 text-red-500"
                         : "border-0 text-text_dark"
-                    } py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6`}
+                    } py-1.5  shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6`}
                   />
                   <span className="absolute inset-y-0 right-0 flex items-center pr-3 ">
                     {isValidEmail && (
@@ -140,8 +140,8 @@ const SignUp = () => {
                   </span>
                 </div>
                 {error && (
-                  <p className="text-red-500 text-xs mt-2">
-                    This email already exist!
+                  <p className="text-red-500 text-xs mt-1">
+                    This email already exist
                   </p>
                 )}
               </div>
