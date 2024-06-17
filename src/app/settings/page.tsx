@@ -28,10 +28,10 @@ const Settings = () => {
   };
   return (
     <div className="max-w-screen-2xl mx-auto">
-      <div className="px-10 md:px-20 lg:px-40  py-14">
+      <div className="px-10 md:px-20 lg:px-40  md:py-14">
         <div className="md:border md:rounded-lg md:p-14 mt-10 md:bg-white md:shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-4 justify-center">
-            <section className="flex justify-start flex-col  md:border-r border-gray-400  bg-white col-span-1 py-8  rounded-l-xl">
+            <section className="flex justify-start flex-col  md:border-r border-gray-400  bg-white col-span-1 py-4  rounded-l-xl">
               <button
                 className={`flex items-center gap-4 justify-start mb-2  px-6 py-2  ${
                   activeTab === "profile"
