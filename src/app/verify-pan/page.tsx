@@ -76,7 +76,7 @@ const Page = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-xs font-medium leading-6 text-text_dark"
+                  className="block text-h4 font-medium leading-6 text-text_dark"
                 >
                   Hey, where are you located?
                 </label>
@@ -88,7 +88,7 @@ const Page = () => {
                     onChange={(e) => {
                       setCountry(e.target.value);
                     }}
-                    className="px-4 pr-10 block w-full rounded-md border-0 py-2.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 appearance-none"
+                    className="px-4 pr-10 block w-full rounded-md border-0 py-2.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6 appearance-none"
                   >
                     <option disabled>Choose your country</option>
                     {countryNamesForPan?.map((item, index) => (
@@ -107,7 +107,7 @@ const Page = () => {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-xs font-medium leading-6 text-text_dark"
+                    className="block text-h4 font-medium leading-6 text-text_dark"
                   >
                     Phone Number
                   </label>
@@ -118,7 +118,7 @@ const Page = () => {
                         name="country_code"
                         defaultValue={""}
                         required
-                        className="px-2 block w-[30%] border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
+                        className="px-2 block w-[30%] border-0 sm:text-xs sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
                       >
                         <option value={""}>code</option>
                         {countryCodes?.map((item, index) => (
@@ -133,7 +133,7 @@ const Page = () => {
                         type="phone"
                         autoComplete="phone"
                         required
-                        className="block w-[70%] placeholder:text-gray-400 px-4 py-1 focus:ring-0 border-none focus:ring-inset sm:text-sm sm:leading-6"
+                        className="block w-[70%] placeholder:text-gray-400 px-4 py-1 focus:ring-0 border-none focus:ring-inset sm:text-xs sm:leading-6"
                       />
                     </div>
                   </div>
@@ -144,7 +144,7 @@ const Page = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-xs font-medium leading-6 text-text_dark"
+                      className="block text-h4 font-medium leading-6 text-text_dark"
                     >
                       Please select your residency status
                     </label>
@@ -224,7 +224,7 @@ const Page = () => {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-xs font-medium leading-6 text-text_dark"
+                      className="block text-h4 font-medium leading-6 text-text_dark"
                     >
                       Phone Number
                     </label>
@@ -235,7 +235,7 @@ const Page = () => {
                           name="country_code"
                           defaultValue={""}
                           required
-                          className="px-2 block w-[30%] border-0 sm:text-sm sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
+                          className="px-2 block w-[30%] border-0 sm:text-xs sm:leading-6 appearance-none ml-1 border-r-2 border-r-gray-300 focus:ring-0 "
                         >
                           <option value={""}>code</option>
                           {countryCodes?.map((item, index) => (
@@ -250,7 +250,7 @@ const Page = () => {
                           type="phone"
                           autoComplete="phone"
                           required
-                          className="block w-[70%] placeholder:text-gray-400 px-4 py-1 focus:ring-0 focus:ring-inset border-none sm:text-sm sm:leading-6"
+                          className="block w-[70%] placeholder:text-gray-400 px-4 py-1 focus:ring-0 focus:ring-inset border-none sm:text-xs sm:leading-6"
                         />
                       </div>
                     </div>

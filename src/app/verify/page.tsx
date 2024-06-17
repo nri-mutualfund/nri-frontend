@@ -101,7 +101,7 @@ const Page = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-xs font-medium leading-6 text-text_dark"
+                  className="block text-h4 font-medium leading-6 text-text_dark"
                 >
                   Your Name
                 </label>
@@ -115,14 +115,14 @@ const Page = () => {
                     value={name}
                     disabled
                     // onChange={(e) => setName(e.target.value)}
-                    className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                    className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-xs font-medium leading-6 text-text_dark"
+                  className="block text-h4 font-medium leading-6 text-text_dark"
                 >
                   Your Email address
                 </label>
@@ -135,30 +135,34 @@ const Page = () => {
                     required
                     value={email}
                     disabled
-                    className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                    className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
               <div>
                 <label
                   htmlFor="code"
-                  className="block text-xs font-medium leading-6 text-text_dark"
+                  className="block text-h4 font-medium leading-6 text-text_dark"
                 >
                   Please enter verification code sent to your email
                 </label>
               </div>
               <div className="">
-                <OTPInput length={6} onChange={(e) => setCode(e)} />
+                <OTPInput
+                  length={6}
+                  onChange={(e) => setCode(e)}
+                  hasError={error || error2}
+                />
                 {error && (
-                  <p className="text-red-500 text-xs mt-2">
-                    Incorrect verification code!
+                  <p className="text-red-500 text-xs mt-1">
+                    Incorrect verification code
                   </p>
                 )}
                 {error2 && (
-                  <p className="text-red-500 text-xs mt-2">
+                  <p className="text-red-500 text-xs mt-1">
                     {code?.length > 0
-                      ? "verification code should be in 6 digit!"
-                      : "This field is required!"}
+                      ? "verification code should be in 6 digit"
+                      : "This field is required"}
                   </p>
                 )}
               </div>
@@ -166,7 +170,7 @@ const Page = () => {
                 <div className="flex items-center justify-between">
                   <label
                     htmlFor="password"
-                    className="block text-xs font-medium leading-6 text-text_dark"
+                    className="block text-h4 font-medium leading-6 text-text_dark"
                   >
                     Password
                   </label>
@@ -179,7 +183,7 @@ const Page = () => {
                     autoComplete="new-password"
                     required
                     minLength={8}
-                    className=" px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                    className=" px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>

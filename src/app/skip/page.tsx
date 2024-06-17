@@ -13,7 +13,7 @@ const page = () => {
           Your Profile is created Complete your KYC to start investing.
         </h2>
         <Link
-          href={"/verify-pan2"}
+          href={"/verify-pan"}
           onClick={() => {
             nProgress.start();
           }}

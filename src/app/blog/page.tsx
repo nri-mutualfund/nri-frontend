@@ -12,6 +12,7 @@ import CustomPagination from "@/components/CustomPagination";
 import { toast } from "react-toastify";
 const Page = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [categoryName, setCategoryName] = useState("");
   // const [category, setCategory] = useState<Category[]>([]);
   const formRef = useRef<HTMLFormElement | null>(null);
   const { mutate } = useMutation({
@@ -49,7 +50,7 @@ const Page = () => {
   //     setCategory(response.data);
   //   });
   // }, []);
-
+  console.log("category", categoryName);
   return (
     <div className="max-w-screen-2xl mx-auto">
       {isLoading ? (
@@ -57,8 +58,8 @@ const Page = () => {
       ) : (
         <div className="bg-white sm:pt-4 lg:py-10 pb-12">
           <div className="mx-auto xl:px-40 md:px-16 px-10 ">
-            <div className="max-w-2xl mx-auto">
-              <h1 className="my-4 text-justify">
+            <div className="w-full md:max-w-2xl mx-auto">
+              <h1 className="my-4 ">
                 {/* {data?.pre_heading}{" "}
               <span className="text-text_dark">{data?.highlightned}</span>{" "}
               {data?.post_heading} */}
@@ -66,7 +67,7 @@ const Page = () => {
               </h1>
               <div className="flex flex-col gap-x-8 gap-y-4 md:flex-row">
                 <div className="w-[15%] border-t mt-6 border-gray-400"></div>
-                <div className="pt-4 w-[85%]">
+                <div className="pt-4 w-full md:w-[85%]">
                   <h5 className="mb-4 text-justify">
                     Join over 650,000 subscribers of Brain Food and add timeless
                     insights and actionable ideas to your inbox.
@@ -77,17 +78,20 @@ const Page = () => {
                     turning ordinary moments into extraordinary results.
                   </h5>
                   <form onSubmit={submit} ref={formRef}>
-                    <div className="flex gap-4 rounded-lg mt-3 w-full">
-                      <label className="sr-only">Email</label>
-                      <input
-                        className="bg-transparent text_dark placeholder_dark outline-none w-full border border-text_light rounded-sm focus:ring-2 focus:ring-primary focus:border-none"
-                        type="email"
-                        placeholder="Enter your email"
-                        id="Email"
-                        name="email"
-                        required
-                      />
-                      <button className="bg-primary text-white px-4 py-2  rounded-lg transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+                    <div className="grid col-span-1 md:grid-cols-5 gap-4 rounded-lg mt-3 w-full">
+                      <div className="col-span-3">
+                        <label className="sr-only">Email</label>
+                        <input
+                          className="bg-transparent text_dark placeholder_dark outline-none w-full border rounded-sm focus:ring-2 focus:ring-primary focus:border-none"
+                          type="email"
+                          placeholder="Enter your email"
+                          id="Email"
+                          name="email"
+                          required
+                        />
+                      </div>
+
+                      <button className="bg-primary col-span-3 md:col-span-2 text-white px-4 py-2  rounded-lg transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
                         {" "}
                         Subscribe
                       </button>
@@ -114,9 +118,19 @@ const Page = () => {
                   <div className="p-4 border-b">
                     <h3 className="">Categories</h3>
                   </div>
-                  <div className="p-4">
+                  <div className="">
                     {category?.map((item: Category, index: number) => (
-                      <h5 key={index} className="mb-4">
+                      <h5
+                        key={index}
+                        className={`border-b px-4 py-2 hover:bg-secondary cursor-pointer ${
+                          categoryName === item?.category_name
+                            ? "bg-secondary"
+                            : ""
+                        }`}
+                        onClick={() => {
+                          setCategoryName(item?.category_name);
+                        }}
+                      >
                         {item?.category_name}
                       </h5>
                     ))}
@@ -124,10 +138,12 @@ const Page = () => {
                 </div>
               </div>
               <div className="mx-auto my-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 mt-6 lg:mt-28">
-                <select className="block md:hidden w-2/3 rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6 ">
+                <select className="block md:hidden mt-10 w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6 ">
                   <option value={""}>Categories</option>
                   {category?.map((item: Category, index: number) => (
-                    <option key={index}>{item.category_name}</option>
+                    <option key={index} className="">
+                      {item.category_name}
+                    </option>
                   ))}
                 </select>
 
@@ -136,7 +152,7 @@ const Page = () => {
                     key={index}
                     className="flex max-w-xl flex-col items-center"
                   >
-                    <div className="flex w-full gap-6 items-center">
+                    <div className="flex flex-wrap w-full gap-2 items-center">
                       <p className="text-text_light text-sm">
                         {moment(post?.created_at).format("MMM DD, YYYY")}
                       </p>
