@@ -1,7 +1,32 @@
-import React from "react";
+
+import { getBankDetails } from '@/app/bank-details/api';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react'
+import nProgress from "nprogress";
+import { useRouter } from "next/navigation";
+
 
 const BankAccount = () => {
+  const router = useRouter();
+
+  const { data: bankData, isLoading } = useQuery({
+    queryKey: ["bankDetails"],
+    queryFn: getBankDetails,
+  });
+  const hasBankDetails = !!bankData?.id;
+  const goToAddNew = () => {
+    console.log('clocked ort')
+    nProgress.start();
+    router.push("/bank-details");
+  }
+  const maskAccountNumber = (accountNumber: string) => {
+    if (!accountNumber) return ''; // handle case where accountNumber is undefined or null
+    const lastFourDigits = accountNumber.slice(-4); // get the last 4 digits
+    const maskedDigits = 'x'.repeat(accountNumber.length - 4); // create a string of 'x' with the length of the account number minus 4
+    return maskedDigits + lastFourDigits; // concatenate the masked part with the last 4 digits
+  };
   return (
+
     <div className="md:p-6 lg:col-span-9">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
@@ -57,6 +82,7 @@ const BankAccount = () => {
           </button>
         </div>
       </div>
+
     </div>
   );
 };
