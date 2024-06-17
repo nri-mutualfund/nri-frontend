@@ -25,6 +25,11 @@ const Page = () => {
   const [previewSrc5, setPreviewSrc5] = useState<string | null>(null);
   const [currentURL, setCurrentURL] = useState<string | null>(null);
   const [errorStatus, setErrorStatus] = useState("");
+  const [uplaod1, setUploading1] = useState(false);
+  const [uplaod2, setUploading2] = useState(false);
+  const [uplaod3, setUploading3] = useState(false);
+  const [uplaod4, setUploading4] = useState(false);
+  const [uplaod5, setUploading5] = useState(false);
 
   const [show, setShow] = useState(false);
   const { mutate } = useMutation({
@@ -85,6 +90,10 @@ const Page = () => {
       };
     }
     setErrorStatus("");
+    setUploading1(true);
+    setTimeout(() => {
+      setUploading1(false);
+    }, 3000);
   };
   const handleFileChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -99,6 +108,10 @@ const Page = () => {
       };
     }
     setErrorStatus("");
+    setUploading2(true);
+    setTimeout(() => {
+      setUploading2(false);
+    }, 3000);
   };
   const handleFileChange3 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -113,6 +126,10 @@ const Page = () => {
       };
     }
     setErrorStatus("");
+    setUploading3(true);
+    setTimeout(() => {
+      setUploading3(false);
+    }, 3000);
   };
   const handleFileChange4 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -127,6 +144,10 @@ const Page = () => {
       };
     }
     setErrorStatus("");
+    setUploading4(true);
+    setTimeout(() => {
+      setUploading4(false);
+    }, 3000);
   };
   const handleFileChange5 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -141,6 +162,10 @@ const Page = () => {
       };
     }
     setErrorStatus("");
+    setUploading5(true);
+    setTimeout(() => {
+      setUploading5(false);
+    }, 3000);
   };
   const openPdfInNewTab = (pdfFile: File | null) => {
     if (pdfFile) {
@@ -151,8 +176,46 @@ const Page = () => {
   return (
     <div className="max-w-screen-2xl mx-auto">
       <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary">
-        <ProgressBar widthPercentage={44} />
-        <div className="border rounded-lg p-14 mt-10 bg-white shadow-sm">
+        <div className="hidden md:block">
+          <ProgressBar widthPercentage={33} />
+        </div>
+        <div className="block md:hidden">
+          <div className="px-2">
+            <ol className="flex items-center w-full mx-auto">
+              <li className="flex w-full items-center text-primary after:content-[''] after:w-full after:h-1 after:border-b after:border-primary after:border-4 after:inline-block">
+                <span className="flex items-center justify-center w-10 h-10 bg-primary rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5 className="text-white">1</h5>
+                </span>
+              </li>
+              <li className="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+                <span className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5>2</h5>
+                </span>
+              </li>
+              <li className="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+                <span className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5>3</h5>
+                </span>
+              </li>
+
+              <li className="flex items-center ">
+                <span className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5>4</h5>
+                </span>
+              </li>
+            </ol>
+          </div>
+          <div className="flex justify-between mt-2 px-2">
+            <h5 className="text-primary font-medium">KYC</h5>
+            <h5 className="text-center font-medium pl-6">
+              Investor
+              <br /> Profile
+            </h5>
+            <h5 className="font-medium pl-4">Bank</h5>
+            <h5 className="font-medium">Nominee</h5>
+          </div>
+        </div>
+        <div className="md:border md:rounded-lg md:p-14 mt-10 md:bg-white md:shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-x-20 border-b border-gray-900/10 pb-0 ">
             <div className="pb-12 sm:col-span-2">
               <h3 className="font-semibold">Create your investor profile</h3>
@@ -189,7 +252,7 @@ const Page = () => {
 
                   <div className="sm:col-span-3 ">
                     <div className="flex gap-10 items-center">
-                      {previewSrc1 && (
+                      {previewSrc1 && !uplaod1 && (
                         <button
                           type="button"
                           className="text-primary flex items-center gap-2"
@@ -207,13 +270,19 @@ const Page = () => {
                         </button>
                       )}
                       <label htmlFor="hand_signature_media">
-                        {previewSrc1 ? (
-                          <p className="text-primary cursor-pointer">Update</p>
-                        ) : (
-                          <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                        <div
+                          className={`bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
+                            uplaod1 ? "border border-primary" : ""
+                          }`}
+                        >
+                          {uplaod1 ? (
+                            <p>Uploading...</p>
+                          ) : previewSrc1 ? (
+                            <p>Update</p>
+                          ) : (
                             <p>Upload</p>
-                          </div>
-                        )}
+                          )}
+                        </div>
 
                         <input
                           id="hand_signature_media"
@@ -251,7 +320,7 @@ const Page = () => {
 
                   <div className="sm:col-span-3 ">
                     <div className="flex gap-10 items-center">
-                      {previewSrc2 && (
+                      {previewSrc2 && !uplaod2 && (
                         <button
                           type="button"
                           className="text-primary flex items-center gap-2"
@@ -269,13 +338,20 @@ const Page = () => {
                         </button>
                       )}
                       <label htmlFor="passport_front_page_media">
-                        {previewSrc2 ? (
-                          <p className="text-primary cursor-pointer">Update</p>
-                        ) : (
-                          <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                        <div
+                          className={`bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
+                            uplaod2 ? "border border-primary" : ""
+                          }`}
+                        >
+                          {uplaod2 ? (
+                            <p>Uploading...</p>
+                          ) : previewSrc2 ? (
+                            <p>Update</p>
+                          ) : (
                             <p>Upload</p>
-                          </div>
-                        )}
+                          )}
+                        </div>
+
                         <input
                           id="passport_front_page_media"
                           type="file"
@@ -312,7 +388,7 @@ const Page = () => {
 
                   <div className="sm:col-span-3 ">
                     <div className="flex gap-10 items-center">
-                      {previewSrc5 && (
+                      {previewSrc5 && !uplaod5 && (
                         <button
                           type="button"
                           className="text-primary flex items-center gap-2"
@@ -330,13 +406,19 @@ const Page = () => {
                         </button>
                       )}
                       <label htmlFor="oci_card_media">
-                        {previewSrc5 ? (
-                          <p className="text-primary cursor-pointer">Update</p>
-                        ) : (
-                          <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                        <div
+                          className={`bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
+                            uplaod5 ? "border border-primary" : ""
+                          }`}
+                        >
+                          {uplaod5 ? (
+                            <p>Uploading...</p>
+                          ) : previewSrc5 ? (
+                            <p>Update</p>
+                          ) : (
                             <p>Upload</p>
-                          </div>
-                        )}
+                          )}
+                        </div>
                         <input
                           id="oci_card_media"
                           type="file"
@@ -371,7 +453,7 @@ const Page = () => {
 
                   <div className="sm:col-span-3 ">
                     <div className="flex gap-10 items-center">
-                      {previewSrc3 && (
+                      {previewSrc3 && !uplaod3 && (
                         <button
                           type="button"
                           className="text-primary flex items-center gap-2"
@@ -390,13 +472,20 @@ const Page = () => {
                       )}
 
                       <label htmlFor="indian_pan_card_media">
-                        {previewSrc3 ? (
-                          <p className="text-primary cursor-pointer">Update</p>
-                        ) : (
-                          <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                        <div
+                          className={`bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
+                            uplaod3 ? "border border-primary" : ""
+                          }`}
+                        >
+                          {uplaod3 ? (
+                            <p>Uploading...</p>
+                          ) : previewSrc3 ? (
+                            <p>Update</p>
+                          ) : (
                             <p>Upload</p>
-                          </div>
-                        )}
+                          )}
+                        </div>
+
                         <input
                           id="indian_pan_card_media"
                           type="file"
@@ -435,7 +524,7 @@ const Page = () => {
 
                   <div className="sm:col-span-3 ">
                     <div className="flex gap-10 items-center">
-                      {previewSrc4 && (
+                      {previewSrc4 && !uplaod4 && (
                         <button
                           type="button"
                           className="text-primary flex items-center gap-2"
@@ -453,13 +542,19 @@ const Page = () => {
                         </button>
                       )}
                       <label htmlFor="passport_size_photo_media">
-                        {previewSrc4 ? (
-                          <p className="text-primary cursor-pointer">Update</p>
-                        ) : (
-                          <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                        <div
+                          className={`bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
+                            uplaod4 ? "border border-primary" : ""
+                          }`}
+                        >
+                          {uplaod4 ? (
+                            <p>Uploading...</p>
+                          ) : previewSrc4 ? (
+                            <p>Update</p>
+                          ) : (
                             <p>Upload</p>
-                          </div>
-                        )}
+                          )}
+                        </div>
                         <input
                           id="passport_size_photo_media"
                           name="passport_size_photo_media"
@@ -483,7 +578,7 @@ const Page = () => {
           </div>
           <div className="mt-10 flex items-center justify-end gap-x-6">
             <Link href={"/profile"}>
-              <button className="bg-white text-primary  px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+              <button className="bg-white text-primary  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
                 Back
               </button>
             </Link>
@@ -491,7 +586,7 @@ const Page = () => {
             <button
               type="button"
               onClick={validate}
-              className="bg-primary text-white  px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+              className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
             >
               Save & Next
             </button>

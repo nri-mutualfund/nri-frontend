@@ -46,12 +46,12 @@ const Page = () => {
         residency_status: residentialStatus,
       };
 
-      if (data?.isFromCanadaOrUS === "on") {
-        newData = {
-          ...newData,
-          is_usa_or_canada: true,
-        };
-      }
+      // if (data?.isFromCanadaOrUS === "on") {
+      //   newData = {
+      //     ...newData,
+      //     is_usa_or_canada: true,
+      //   };
+      // }
     }
     console.log("newData", newData);
     mutate(newData as any);
@@ -155,11 +155,11 @@ const Page = () => {
                         }}
                         className={`px-2 block w-full text-xs rounded-md border-0 py-2.5 ${
                           residentialStatus === "NRI"
-                            ? "text-gray-700"
+                            ? "text-primary"
                             : "text-gray-300"
                         } shadow-sm ring-1 ring-inset ${
                           residentialStatus === "NRI"
-                            ? "ring-gray-700"
+                            ? "ring-primary"
                             : "ring-gray-300"
                         }`}
                       >
@@ -173,11 +173,11 @@ const Page = () => {
                         }}
                         className={`px-2 block w-full text-xs rounded-md border-0 py-2.5 ${
                           residentialStatus === "PIO/OCI - Non Resident"
-                            ? "text-gray-700"
+                            ? "text-primary"
                             : "text-gray-300"
                         } shadow-sm ring-1 ring-inset  ${
                           residentialStatus === "PIO/OCI - Non Resident"
-                            ? "ring-gray-700"
+                            ? "ring-primary"
                             : "ring-gray-300"
                         }`}
                       >
@@ -191,11 +191,11 @@ const Page = () => {
                         }}
                         className={`px-2 block w-full text-xs rounded-md border-0 py-2.5 ${
                           residentialStatus === "PIO/OCI - Resident Indian"
-                            ? "text-gray-700"
+                            ? "text-primary"
                             : "text-gray-300"
                         } shadow-sm ring-1 ring-inset  ${
                           residentialStatus === "PIO/OCI - Resident Indian"
-                            ? "ring-gray-700"
+                            ? "ring-primary"
                             : "ring-gray-300"
                         }`}
                       >
@@ -209,11 +209,11 @@ const Page = () => {
                         }}
                         className={`px-2 block w-full text-xs rounded-md border-0 py-2.5 ${
                           residentialStatus === "Foreign Citizen"
-                            ? "text-gray-700"
+                            ? "text-primary"
                             : "text-gray-300"
                         } shadow-sm ring-1 ring-inset  ${
                           residentialStatus === "Foreign Citizen"
-                            ? "ring-gray-700"
+                            ? "ring-primary"
                             : "ring-gray-300"
                         }`}
                       >
@@ -256,7 +256,7 @@ const Page = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center mb-4">
+                  {/* <div className="flex items-center mb-4">
                     <input
                       id="default-checkbox"
                       type="checkbox"
@@ -269,7 +269,7 @@ const Page = () => {
                     >
                       I’m from US / Canada
                     </label>
-                  </div>
+                  </div> */}
                 </>
               )}
 

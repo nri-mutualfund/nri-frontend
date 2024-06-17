@@ -25,7 +25,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
       <div className="grid grid-cols-1 lg:grid-cols-3 mt-10 gap-x-6 gap-y-12">
         {data?.data?.slice(0, 3)?.map((post, index: number) => (
           <article key={index} className="flex max-w-xl flex-col items-center">
-            <div className="flex w-full gap-6 items-center">
+            <div className="flex w-full gap-2 items-center">
               <p className="text-text_light text-sm">
                 {moment(post?.created_at).format("MMM DD, YYYY")}
               </p>
@@ -59,6 +59,9 @@ const SectionNine = ({ data }: SectionOneProps) => {
             <div className="flex w-full items-center justify-between -mt-4s">
               <h5 className="font-medium">{post?.user_name}</h5>
             </div>
+            {index !== 2 && (
+              <div className="border  w-full mt-6 block md:hidden" />
+            )}
           </article>
         ))}
       </div>

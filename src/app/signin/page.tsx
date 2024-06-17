@@ -64,7 +64,7 @@ const SignIn = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-xs font-medium leading-6 text-text_dark"
+                  className="block text-h4 font-medium leading-6 text-text_dark"
                 >
                   Email address
                 </label>
@@ -78,7 +78,7 @@ const SignIn = () => {
                     }}
                     autoComplete="email"
                     required
-                    className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                    className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                   />
                 </div>
               </div>
@@ -87,7 +87,7 @@ const SignIn = () => {
                 <div className="flex items-center justify-between">
                   <label
                     htmlFor="password"
-                    className="block text-xs font-medium leading-6 text-text_dark"
+                    className="block text-h4 font-medium leading-6 text-text_dark"
                   >
                     Password
                   </label>
@@ -102,7 +102,7 @@ const SignIn = () => {
                       setError(false);
                     }}
                     required
-                    className={` px-2 block w-full border rounded-md py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 ${
+                    className={` px-2 block w-full border rounded-md py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6 ${
                       error
                         ? "border-1 border-red-500 text-red-500"
                         : "border-0"
@@ -122,7 +122,9 @@ const SignIn = () => {
                       id="remember"
                       name="remember"
                     />
-                    <span className="text-sm">&nbsp; &nbsp; Remember me</span>
+                    <span className="text-sm -ml-2">
+                      &nbsp; &nbsp; Remember me
+                    </span>
                   </label>
                   <div className="text-sm">
                     <a
@@ -149,7 +151,7 @@ const SignIn = () => {
               <p>Or continue with</p>
               <hr className=" border-[#e1e1e1] border-[.5px] w-1/5" />
             </div>
-            <div className="flex justify-center mt-6">
+            <div className="flex justify-center mt-10">
               <GoogleAuthButton />
             </div>
           </div>

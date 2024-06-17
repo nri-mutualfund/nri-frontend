@@ -1,3 +1,4 @@
+
 import { getProfilegDataInSettings } from '@/app/settings/api';
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react'
@@ -200,4 +201,5 @@ const SettingProfile = () => {
     )
 }
 
-export default SettingProfile
+
+export default SettingProfile;

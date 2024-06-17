@@ -1,9 +1,11 @@
+
 import { getNomineeDetails } from '@/app/nominee-details/api';
 import { NomineeDetail } from '@/app/nominee-details/page';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react'
 import { useRouter } from "next/navigation";
 import nProgress from "nprogress";
+
 
 
 const Nominiees = () => {
@@ -19,6 +21,7 @@ const Nominiees = () => {
       router.push("/nominee-details");
       }
   return (
+
     <div className="p-6 lg:col-span-9">
         <div className="sm:flex sm:items-center">
             <div className="flex justify-between w-full">
@@ -111,8 +114,9 @@ const Nominiees = () => {
             </div>
             }
 
-    </div>
-  )
-}
 
-export default Nominiees
+    </div>
+  );
+};
+
+export default Nominiees;
