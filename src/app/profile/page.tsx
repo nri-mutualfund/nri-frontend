@@ -424,12 +424,12 @@ const Page = () => {
                         <span className="text-red-500">*</span> Current Address
                         Proof
                       </p>
-                      <p className="text-sm font-light text-gray-300 mt-4">
+                      <h4 className="text-xs mt-4">
                         Driver/Learner License/ID Card (Unexpired) or Utility
                         Bill (dated within 3 months) or Bank Statement (dated
                         within 3 months) Note: Credit card statement is not an
                         acceptable document
-                      </p>
+                      </h4>
                       <Link
                         href={
                           "https://drive.google.com/file/d/1vAZXdgobaK441spUcv6s4Jrl3bbJ-Mb8/view"

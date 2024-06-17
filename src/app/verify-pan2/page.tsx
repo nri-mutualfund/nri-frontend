@@ -167,23 +167,20 @@ const Page = () => {
                 <label className="block text-h4 font-medium leading-6 text-text_dark">
                   Please add your PAN and Date of Birth
                 </label>
-                <div className="mt-2 relative">
+                {/* <div className="mt-2 relative">
                   <select
                     disabled
                     className="px-4 pr-10 block w-full rounded-md border-0 py-2.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6 appearance-none"
                   >
                     <option>{data?.located_at}</option>
                   </select>
-                  {/* <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                  <IoChevronDownOutline color="#8898aa" />
                 </div> */}
-                </div>
-                <div className="mt-2 flex gap-2 items-center">
+                {/* <div className="mt-2 flex gap-2 items-center">
                   <FaLock />
                   <p className="text-xs text-gray-500">
                     Your information is always protected
                   </p>
-                </div>
+                </div> */}
               </div>
               <div className="mt-4">
                 <label className="block text-h4 font-medium leading-6 text-text_dark">
