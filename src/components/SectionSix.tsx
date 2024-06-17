@@ -48,7 +48,7 @@ const SectionSix = ({ data }: SectionOneProps) => {
             <button className="hidden md:block" onClick={handlePrevClick}>
               <FaChevronLeft color="#6C6C6C" size={40} />
             </button>
-            <div className="max-w-[250px] sm:max-w-sm md:max-w-xl lg:max-w-[600px] bg-white">
+            <div className="max-w-[320px] sm:max-w-sm md:max-w-xl lg:max-w-[600px]">
               <Swiper
                 slidesPerView={1}
                 spaceBetween={20}

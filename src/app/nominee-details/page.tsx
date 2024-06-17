@@ -156,22 +156,22 @@ const Page = () => {
                   <table className="table-auto w-full text-sm text-left rtl:text-right ">
                     <thead>
                       <tr className="border-b-gray-200 border-b-2 ">
-                        <th className="pb-2 text-xs text-text_dark">
+                        <th className="pb-2 text-h4 text-text_dark">
                           FULL LEGAL NAME
                         </th>
-                        <th className="pb-2 text-xs text-text_dark">
+                        <th className="pb-2 text-h4 text-text_dark">
                           RELATION
                         </th>
-                        <th className="pb-2 text-xs text-text_dark">
+                        <th className="pb-2 text-h4 text-text_dark">
                           NOMINEE’S PAN
                         </th>
-                        <th className="pb-2 text-xs text-text_dark">
+                        <th className="pb-2 text-h4 text-text_dark">
                           NOMINEE’S DOB
                         </th>
-                        <th className="pb-2 text-xs text-text_dark">
+                        <th className="pb-2 text-h4 text-text_dark">
                           NOMINEE’S Address
                         </th>
-                        <th className="pb-2 text-xs text-text_dark">% SHARE</th>
+                        <th className="pb-2 text-h4 text-text_dark">% SHARE</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -181,7 +181,7 @@ const Page = () => {
                             <td className="pt-2">
                               <input
                                 type="text"
-                                className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                                className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                                 onChange={(e) =>
                                   handleNomineeDetailListUpdate(
                                     item,
@@ -199,9 +199,8 @@ const Page = () => {
                                                             className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                                                             onChange={e => handleNomineeDetailListUpdate(item, 'relation', e.target.value)}
                                                             value={item?.relation} /> */}
-
                               <select
-                                className="block w-32 mr-3 rounded-md border-0  py-[9px] px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6"
+                                className="block w-32 mr-3 rounded-md border-0  py-[9px] px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-xs sm:leading-6"
                                 onChange={(e) =>
                                   handleNomineeDetailListUpdate(
                                     item,
@@ -223,7 +222,7 @@ const Page = () => {
                             <td className="pt-2">
                               <input
                                 type="text"
-                                className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                                className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                                 onChange={(e) =>
                                   handleNomineeDetailListUpdate(
                                     item,
@@ -239,7 +238,7 @@ const Page = () => {
                             <td className="pt-2">
                               <input
                                 type="date"
-                                className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                                className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                                 onChange={(e) =>
                                   handleNomineeDetailListUpdate(
                                     item,
@@ -254,7 +253,7 @@ const Page = () => {
                             <td className="pt-2">
                               <input
                                 type="text"
-                                className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                                className="block w-11/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                                 onChange={(e) =>
                                   handleNomineeDetailListUpdate(
                                     item,
@@ -270,7 +269,7 @@ const Page = () => {
                             <td className="pt-2 flex gap-1">
                               <input
                                 type="number"
-                                className="block w-10/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                                className="block w-10/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                                 onChange={(e) => {
                                   // const val = e.target.valueAsNumber;
                                   // // val + total <= 100

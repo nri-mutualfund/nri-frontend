@@ -102,12 +102,16 @@ const SignIn = () => {
                       setError(false);
                     }}
                     required
-                    className=" px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                    className={` px-2 block w-full border rounded-md py-1.5 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 ${
+                      error
+                        ? "border-1 border-red-500 text-red-500"
+                        : "border-0"
+                    }`}
                   />
                 </div>
                 {error && (
-                  <p className="text-red-500 text-xs mt-2">
-                    Invalid email or password!
+                  <p className="text-red-500 text-xs mt-1">
+                    Invalid email or password
                   </p>
                 )}
                 <div className="flex items-center justify-between pt-5">
