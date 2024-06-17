@@ -123,7 +123,7 @@ const Documents = () => {
     }
   };
   return (
-    <div className="p-6 lg:col-span-9">
+    <div className="md:px-6 py-6 lg:col-span-9">
       <ImageModal isOpen={show} onClose={() => setShow(false)}>
         <div className="flex justify-between items-center">
           {currentURL && (
