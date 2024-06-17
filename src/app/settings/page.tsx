@@ -12,6 +12,7 @@ type Tab = "profile" | "documents" | "bankAccounts" | "nominees";
 const Settings = () => {
   const [activeTab, setActiveTab] = useState<Tab>("profile");
 
+
   const renderContent = () => {
     switch (activeTab) {
       case "profile":
@@ -86,5 +87,6 @@ const Settings = () => {
     </div>
   );
 };
+
 
 export default Settings;
