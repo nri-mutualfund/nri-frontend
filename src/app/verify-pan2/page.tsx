@@ -35,6 +35,7 @@ const Page = () => {
   const [checked, setChecked] = useState(false);
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [dobError, setDobError] = useState<ErrorState>({
     dobError: "",
     others: "",
@@ -77,10 +78,13 @@ const Page = () => {
     queryKey: ["key22"],
     queryFn: getDetails,
   });
-  const { mutate, data: panDetails } = useMutation({
+  const {
+    mutate,
+    data: panDetails,
+    isPending,
+  } = useMutation({
     mutationFn: addDetails2,
     onSuccess: (data) => {
-      console.log(data, "lkjhjk");
       setDobError({ dobError: "", others: "" });
       if (data?.number) {
         setChecked(true);
@@ -143,8 +147,7 @@ const Page = () => {
     mutate(newData);
   };
   const resetForm = () => {
-    const form = document.getElementById("pan-form") as HTMLFormElement;
-    form?.reset();
+    formRef?.current?.reset();
     setChecked(false);
   };
   return (
@@ -162,7 +165,7 @@ const Page = () => {
             </h2> */}
           </div>
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-white md:px-10 py-10 rounded-md md:shadow-md md:border border-gray-200">
-            <form className="space-y-6" onSubmit={submit} id="pan-form">
+            <form className="space-y-6" onSubmit={submit} ref={formRef}>
               <div>
                 <label className="block text-h4 font-medium leading-6 text-text_dark">
                   Please add your PAN and Date of Birth
@@ -295,9 +298,10 @@ const Page = () => {
                     ) : (
                       <button
                         type="submit"
+                        disabled={isPending}
                         className="flex px-6 justify-center items-center rounded-md bg-primary py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                       >
-                        Check
+                        {isPending ? "Checking..." : "Check"}
                       </button>
                     )}
                   </div>
