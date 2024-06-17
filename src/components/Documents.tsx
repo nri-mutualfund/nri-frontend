@@ -1,3 +1,4 @@
+
 import { getInvestorProfileDetails } from '@/app/profile/api';
 import ImageModal from "@/components/ImageModal";
 import ProgressBar from "@/components/ProgressBar";
@@ -518,4 +519,5 @@ const Documents = () => {
     )
 }
 
-export default Documents
+
+export default Documents;

@@ -33,6 +33,7 @@ const Page = () => {
   const [image1, setImage1] = useState<File | null>(null);
   const [previewSrc1, setPreviewSrc1] = useState<string | null>(null);
   const [show, setShow] = useState(false);
+  const [uplaod1, setUploading1] = useState(false);
 
   const { isSuccess, mutate } = useMutation({
     mutationKey: ["investorProfile1"],
@@ -93,6 +94,10 @@ const Page = () => {
       };
     }
     setErrorStatus("");
+    setUploading1(true);
+    setTimeout(() => {
+      setUploading1(false);
+    }, 3000);
   };
   const openPdfInNewTab = (pdfFile: File | null) => {
     if (pdfFile) {
@@ -104,12 +109,51 @@ const Page = () => {
   return (
     <div className="max-w-screen-2xl mx-auto">
       <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary">
-        <ProgressBar widthPercentage={33} />
+        <div className="hidden md:block">
+          <ProgressBar widthPercentage={33} />
+        </div>
+        <div className="block md:hidden">
+          <div className="px-2">
+            <ol className="flex items-center w-full mx-auto">
+              <li className="flex w-full items-center text-primary after:content-[''] after:w-full after:h-1 after:border-b after:border-primary after:border-4 after:inline-block">
+                <span className="flex items-center justify-center w-10 h-10 bg-primary rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5 className="text-white">1</h5>
+                </span>
+              </li>
+              <li className="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+                <span className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5>2</h5>
+                </span>
+              </li>
+              <li className="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+                <span className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5>3</h5>
+                </span>
+              </li>
+
+              <li className="flex items-center ">
+                <span className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5>4</h5>
+                </span>
+              </li>
+            </ol>
+          </div>
+          <div className="flex justify-between mt-2 px-2">
+            <h5 className="text-primary font-medium">KYC</h5>
+            <h5 className="text-center font-medium pl-6">
+              Investor
+              <br /> Profile
+            </h5>
+            <h5 className="font-medium pl-4">Bank</h5>
+            <h5 className="font-medium">Nominee</h5>
+          </div>
+        </div>
+
         {isLoading ? (
           <Loader />
         ) : (
           <form
-            className="border rounded-lg p-14 mt-10 bg-white shadow-sm"
+            className="md:border rounded-lg md:p-14 mt-10 md:bg-white md:shadow-sm"
             onSubmit={submit}
           >
             <div className="grid grid-cols-1 md:grid-cols-5 gap-x-20 border-b border-gray-900/10 pb-0">
@@ -422,13 +466,7 @@ const Page = () => {
                     <div className="sm:col-span-3">
                       <p>
                         <span className="text-red-500">*</span> Current Address
-                        Proof
-                      </p>
-                      <p className="text-sm font-light text-gray-300 mt-4">
-                        Driver/Learner License/ID Card (Unexpired) or Utility
-                        Bill (dated within 3 months) or Bank Statement (dated
-                        within 3 months) Note: Credit card statement is not an
-                        acceptable document
+                        Proof (Self-Attested)
                       </p>
                       <Link
                         href={
@@ -440,6 +478,12 @@ const Page = () => {
                           See Sample
                         </p>
                       </Link>
+                      <h4 className="text-xs mt-4">
+                        Driver/Learner License/ID Card (Unexpired) or Utility
+                        Bill (dated within 3 months) or Bank Statement (dated
+                        within 3 months) Note: Credit card statement is not an
+                        acceptable document
+                      </h4>
                     </div>
                     {/* <div className="sm:col-span-3">
                   <div className="mt-2">
@@ -454,7 +498,7 @@ const Page = () => {
                 </div> */}
                     <div className="sm:col-span-3 ">
                       <div className="flex gap-10 items-center">
-                        {previewSrc1 && (
+                        {previewSrc1 && !uplaod1 && (
                           <button
                             type="button"
                             className="text-primary flex items-center gap-2"
@@ -472,15 +516,19 @@ const Page = () => {
                         )}
 
                         <label htmlFor="address_proof">
-                          {previewSrc1 ? (
-                            <p className="text-primary cursor-pointer">
-                              Update
-                            </p>
-                          ) : (
-                            <div className="bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                          <div
+                            className={`bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
+                              uplaod1 ? "border border-primary" : ""
+                            }`}
+                          >
+                            {uplaod1 ? (
+                              <p>Uploading...</p>
+                            ) : previewSrc1 ? (
+                              <p>Update</p>
+                            ) : (
                               <p>Upload</p>
-                            </div>
-                          )}
+                            )}
+                          </div>
                           <input
                             id="address_proof"
                             type="file"
@@ -504,7 +552,7 @@ const Page = () => {
             <div className="mt-10 flex items-center justify-end gap-x-6">
               <button
                 type="submit"
-                className="bg-primary text-white  px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+                className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
               >
                 Save & Next
               </button>

@@ -151,7 +151,7 @@ const SignUp = () => {
               <p>Or continue with</p>
               <hr className=" border-[#e1e1e1] border-[.5px] w-1/5" />
             </div>
-            <div className="flex justify-center mt-6">
+            <div className="flex justify-center mt-10">
               <GoogleAuthButton />
             </div>
           </div>

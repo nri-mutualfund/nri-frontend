@@ -127,12 +127,50 @@ const Page = () => {
   return (
     <div className="max-w-screen-2xl mx-auto">
       <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary min-h-screen">
-        <ProgressBar widthPercentage={100} />
+        <div className="hidden md:block">
+          <ProgressBar widthPercentage={33} />
+        </div>
+        <div className="block md:hidden">
+          <div className="px-2">
+            <ol className="flex items-center w-full mx-auto">
+              <li className="flex w-full items-center text-primary after:content-[''] after:w-full after:h-1 after:border-b after:border-primary after:border-4 after:inline-block">
+                <span className="flex items-center justify-center w-10 h-10 bg-primary rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5 className="text-white">1</h5>
+                </span>
+              </li>
+              <li className="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-primary after:border-4 after:inline-block">
+                <span className="flex items-center justify-center w-10 h-10 bg-primary rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5 className="text-white">2</h5>
+                </span>
+              </li>
+              <li className="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-primary after:border-4 after:inline-block">
+                <span className="flex items-center justify-center w-10 h-10 bg-primary rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5 className="text-white">3</h5>
+                </span>
+              </li>
+
+              <li className="flex items-center ">
+                <span className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
+                  <h5>4</h5>
+                </span>
+              </li>
+            </ol>
+          </div>
+          <div className="flex justify-between mt-2 px-2">
+            <h5 className="text-primary font-medium">KYC</h5>
+            <h5 className="text-center font-medium pl-6 text-primary">
+              Investor
+              <br /> Profile
+            </h5>
+            <h5 className="font-medium pl-4 text-primary">Bank</h5>
+            <h5 className="font-medium">Nominee</h5>
+          </div>
+        </div>
         <form
-          className="border rounded-lg p-14 mt-10 bg-white shadow-sm"
+          className="md:border md:rounded-lg md:p-14 mt-10 md:bg-white md:shadow-sm"
           onSubmit={submit}
         >
-          <div className="grid grid-cols-1 gap-x-20 border-b border-gray-900/10 pb-0">
+          <div className="grid grid-cols-1 gap-x-20 border-b border-gray-900/10 pb-0 ">
             <div className="pb-10 col-span-2 flex gap-2 ">
               <h3 className="font-semibold">
                 Add Nominee(s) for your Investment
@@ -152,26 +190,28 @@ const Page = () => {
             </div>
             {canAddNominee && (
               <div className="col-span-3">
-                <div className="pb-10">
+                <div className="pb-10 overflow-x-auto">
                   <table className="table-auto w-full text-sm text-left rtl:text-right ">
                     <thead>
-                      <tr className="border-b-gray-200 border-b-2 ">
-                        <th className="pb-2 text-h4 text-text_dark">
+                      <tr className="border-b-gray-200 border-b-2">
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
                           FULL LEGAL NAME
                         </th>
-                        <th className="pb-2 text-h4 text-text_dark">
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
                           RELATION
                         </th>
-                        <th className="pb-2 text-h4 text-text_dark">
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
                           NOMINEE’S PAN
                         </th>
-                        <th className="pb-2 text-h4 text-text_dark">
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
                           NOMINEE’S DOB
                         </th>
-                        <th className="pb-2 text-h4 text-text_dark">
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
                           NOMINEE’S Address
                         </th>
-                        <th className="pb-2 text-h4 text-text_dark">% SHARE</th>
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
+                          % SHARE
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -248,6 +288,7 @@ const Page = () => {
                                 }
                                 value={item?.dob}
                                 placeholder="DD-MM-YYYY"
+                                required
                               />
                             </td>
                             <td className="pt-2">
@@ -318,7 +359,7 @@ const Page = () => {
             <Link href={"/bank-details"}>
               <button
                 type="submit"
-                className="bg-white text-primary  px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary"
+                className="bg-white text-primary  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary"
               >
                 Back
               </button>
@@ -329,7 +370,7 @@ const Page = () => {
           > */}
             <button
               type="submit"
-              className="bg-primary text-white  px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+              className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
             >
               Complete
             </button>
