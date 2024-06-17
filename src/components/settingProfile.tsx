@@ -21,7 +21,7 @@ const SettingProfile = () => {
           e.preventDefault();
         }}
       >
-        <div className="py-6 px-4 sm:p-6 lg:pb-8 text-gray-900">
+        <div className="py-6 md:px-4 md:p-6 lg:pb-8 text-gray-900">
           <h3 className="text-md font-medium">Personal details</h3>
           <div className="mt-6 grid grid-cols-12 gap-6">
             <div className="col-span-12 sm:col-span-12">
@@ -87,7 +87,7 @@ const SettingProfile = () => {
             </div>
           </div>
         </div>
-        <div className="py-6 px-4 sm:p-6 lg:pb-8 text-gray-900">
+        <div className="py-6 md:px-4 md:p-6 lg:pb-8 text-gray-900">
           <h3 className="text-md font-medium">Document numbers</h3>
           <div className="mt-6 grid grid-cols-12 gap-6">
             <div className="col-span-12 sm:col-span-6">
@@ -154,7 +154,7 @@ const SettingProfile = () => {
             </div>
           </div>
         </div>
-        <div className="py-6 px-4 sm:p-6 lg:pb-8 text-gray-900">
+        <div className="py-6 md:px-4 md:p-6 lg:pb-8 text-gray-900">
           <h3 className="text-md font-medium">Current Residential address</h3>
           <div className="mt-6 grid grid-cols-12 gap-6">
             <div className="-mt-4 col-span-12 sm:col-span-6">
@@ -291,7 +291,7 @@ const SettingProfile = () => {
                 console.log("clicked");
               }}
               // type="submit"
-              className="ml-5 inline-flex justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-primary700 focus:outline-none focus:ring-2 focus:ring-primary500 focus:ring-offset-2 disabled:bg-gray-300"
+              className="ml-5 inline-flex justify-center rounded-md border border-transparent bg-primary py-2 px-8 text-sm font-medium text-white shadow-sm hover:bg-primary700 focus:outline-none focus:ring-2 focus:ring-primary500 focus:ring-offset-2 disabled:bg-gray-300"
             >
               Save
             </button>
