@@ -316,7 +316,7 @@ const Page = () => {
                                   // // val + total <= 100
                                   // console.log('val',val,100 - totalPercentage + 1 , 100 - totalPercentage + 1 < val)
                                   // console.log('rem val',100 - totalPercentage + 1 , 100 - totalPercentage + 1 < val)
-                                  if(val > 100) return
+                                  if (val > 100) return;
                                   handleNomineeDetailListUpdate(
                                     item,
                                     "percentage_share",
@@ -358,7 +358,7 @@ const Page = () => {
           <div className="mt-10 flex items-center justify-end gap-x-6">
             <Link href={"/bank-details"}>
               <button
-                type="submit"
+                type="button"
                 className="bg-white text-primary  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary"
               >
                 Back
