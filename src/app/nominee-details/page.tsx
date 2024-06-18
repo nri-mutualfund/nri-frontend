@@ -194,19 +194,19 @@ const Page = () => {
                   <table className="table-auto w-full text-sm text-left rtl:text-right ">
                     <thead>
                       <tr className="border-b-gray-200 border-b-2">
-                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap pr-6 ">
                           FULL LEGAL NAME
                         </th>
-                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap pr-6 ">
                           RELATION
                         </th>
-                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap pr-6 ">
                           NOMINEE’S PAN
                         </th>
-                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap pr-6 ">
                           NOMINEE’S DOB
                         </th>
-                        <th className="pb-2 text-h4 text-text_dark text-nowrap">
+                        <th className="pb-2 text-h4 text-text_dark text-nowrap pr-6">
                           NOMINEE’S Address
                         </th>
                         <th className="pb-2 text-h4 text-text_dark text-nowrap">
@@ -341,15 +341,15 @@ const Page = () => {
                       })}
                     </tbody>
                   </table>
-                  <div className=" mt-2 font-medium leading-7 text-text_dark flex justify-between pr-10">
-                    <button className="" onClick={addNominee}>
-                      {" "}
-                      Add more
-                    </button>
-                    <div className="flex gap-5">
-                      <p>Total</p>
-                      <p>{totalPercentage}%</p>
-                    </div>
+                </div>
+                <div className="mt-2 font-medium leading-7 text-text_dark flex justify-between ">
+                  <button className="" onClick={addNominee}>
+                    {" "}
+                    Add more
+                  </button>
+                  <div className="flex gap-5">
+                    <p>Total</p>
+                    <p>{totalPercentage}%</p>
                   </div>
                 </div>
               </div>
