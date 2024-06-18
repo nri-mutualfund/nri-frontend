@@ -21,6 +21,8 @@ const Page = () => {
   const [show, setShow] = useState(false);
   const [uplaod1, setUploading1] = useState(false);
   const [doc, setDoc] = useState("");
+  const [maxSizeLimit, setMaxSizeLimit] = useState(false);
+
   const router = useRouter();
   const { data: bankData, isLoading } = useQuery({
     queryKey: ["bankDetails"],
@@ -54,7 +56,7 @@ const Page = () => {
       form.append("account_type", data?.account_type);
       form.append("ifsc_code", data?.ifsc_code);
       form.append("verification_document", data?.verification_document);
-      // form.append("verification_doc", image1);
+      form.append("verification_doc", image1);
 
       // console.log("data", data);
 
@@ -75,10 +77,13 @@ const Page = () => {
           setPreviewSrc1(reader.result as string);
         };
         setErrorStatus("");
+        setMaxSizeLimit(false);
         setUploading1(true);
         setTimeout(() => {
           setUploading1(false);
         }, 3000);
+      } else {
+        setMaxSizeLimit(true);
       }
     }
   };
@@ -308,7 +313,7 @@ const Page = () => {
 
                         <label htmlFor="verification_document_media">
                           <div
-                            className={`bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
+                            className={`bg-white text-primary  px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
                               uplaod1 ? "border border-primary" : ""
                             }`}
                           >
@@ -340,22 +345,32 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-10 flex items-center justify-end gap-x-6">
-              <Link href={"/income-details"}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+              {maxSizeLimit && (
+                <div className="bg-red-100 rounded-lg mt-10 p-4">
+                  <h4 className="text-red-500 text-center text-sm">
+                    File size should not exceed 244 KB
+                  </h4>
+                </div>
+              )}
+              {!maxSizeLimit && <div></div>}
+              <div className="mt-10 flex items-center justify-end gap-x-6">
+                <Link href={"/income-details"}>
+                  <button
+                    type="submit"
+                    className="bg-white text-primary  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary"
+                  >
+                    Back
+                  </button>
+                </Link>
+
                 <button
                   type="submit"
-                  className="bg-white text-primary  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary"
+                  className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
                 >
-                  Back
+                  Save & Next
                 </button>
-              </Link>
-
-              <button
-                type="submit"
-                className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
-              >
-                Save & Next
-              </button>
+              </div>
             </div>
           </form>
         )}
