@@ -190,7 +190,11 @@ const Page = () => {
                           type="text"
                           // value={name}
                           // onChange={(e) => setName(e.target.value)}
-                          defaultValue={data?.first_name}
+                          defaultValue={
+                            data?.panDetails?.name
+                              ? data?.panDetails?.name
+                              : data?.first_name
+                          }
                           name="full_name"
                           id="full_name"
                           autoComplete="given-name"
@@ -239,8 +243,8 @@ const Page = () => {
                           name="email"
                           type="email"
                           defaultValue={
-                            data?.investorProfileDetail?.email
-                              ? data?.investorProfileDetail?.email
+                            data?.panDetails?.emailId
+                              ? data?.panDetails?.emailId
                               : data?.email
                           }
                           autoComplete="email"
@@ -280,7 +284,11 @@ const Page = () => {
                         <input
                           id="phone"
                           name="phone"
-                          defaultValue={data?.phone_number}
+                          defaultValue={
+                            data?.panDetails?.mobileNumber
+                              ? data?.panDetails?.mobileNumber
+                              : data?.phone_number
+                          }
                           autoComplete="phone"
                           required
                           className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
