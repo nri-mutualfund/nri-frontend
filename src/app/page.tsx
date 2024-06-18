@@ -54,7 +54,7 @@ const Page = () => {
   });
   const sectionBlog = useQuery({
     queryKey: ["blog"],
-    queryFn: () => getSectionBlog(1),
+    queryFn: () => getSectionBlog(1, "All"),
   });
   const checkLoading = () => {
     return (

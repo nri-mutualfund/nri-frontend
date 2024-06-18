@@ -25,7 +25,7 @@ const SettingProfile = () => {
           <h3 className="text-md font-medium">Personal details</h3>
           <div className="mt-6 grid grid-cols-12 gap-6">
             <div className="col-span-12 sm:col-span-12">
-              <label className="block text-sm font-medium text-gray-600">
+              <label className="block text-h4 font-medium text-text_dark">
                 Legal Full name
               </label>
               <input
@@ -35,16 +35,16 @@ const SettingProfile = () => {
                 required
                 disabled
                 defaultValue={settingProfileData?.userDetails?.first_name}
-                className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-sm placeholder:text-gray-400 placeholder:italic"
+                className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic"
                 placeholder="John"
               />
             </div>
             {/* <div className="col-span-12 sm:col-span-6">
-                            <label className="block text-sm font-medium text-gray-600">Legal Last name</label>
+                            <label className="block text-sm font-medium text-text_dark">Legal Last name</label>
                             <input type="text" name="last-name" id="last-name" required className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-sm placeholder:text-gray-400 placeholder:italic" placeholder="Doe" />
                         </div> */}
             <div className="col-span-12 sm:col-span-6">
-              <label className="block text-sm font-medium text-gray-600">
+              <label className="block text-h4 font-medium text-text_dark">
                 Email
               </label>
               <input
@@ -53,13 +53,13 @@ const SettingProfile = () => {
                 id="email"
                 defaultValue={settingProfileData?.userDetails?.email}
                 required
-                className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-sm placeholder:text-gray-400 placeholder:italic disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500"
                 disabled
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
               <div className="relative rounded-md shadow-sm">
-                <label className="block text-sm font-medium leading-6 text-gray-600">
+                <label className="block text-h4 font-medium leading-6 text-text_dark">
                   Mobile
                 </label>
                 <input
@@ -68,12 +68,12 @@ const SettingProfile = () => {
                   id="mobile"
                   defaultValue={settingProfileData?.userDetails?.phone_number}
                   // pl-28
-                  className="block w-full rounded-md  border border-gray-300 py-1.5 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-sm placeholder:text-gray-400 placeholder:italic sm:leading-6 "
+                  className="block w-full rounded-md  border border-gray-300 py-1.5 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic sm:leading-6 "
                 ></input>
               </div>
             </div>
             <div className="col-span-12 sm:col-span-6">
-              <label className="block text-sm font-medium text-gray-600">
+              <label className="block text-h4 font-medium text-text_dark">
                 Date of Birth
               </label>
               <input
@@ -81,7 +81,7 @@ const SettingProfile = () => {
                 name="dob"
                 disabled
                 defaultValue={settingProfileData?.kycDetails?.dob}
-                className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-sm placeholder:text-gray-400 placeholder:italic disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500"
                 placeholder="00-00-0000"
               ></input>
             </div>
@@ -91,7 +91,7 @@ const SettingProfile = () => {
           <h3 className="text-md font-medium">Document numbers</h3>
           <div className="mt-6 grid grid-cols-12 gap-6">
             <div className="col-span-12 sm:col-span-6">
-              <label className="block text-sm font-medium text-gray-600">
+              <label className="block text-h4 font-medium text-text_dark">
                 PAN (Permanent Account Number)
               </label>
               {/* <input 
@@ -109,7 +109,7 @@ const SettingProfile = () => {
                   id="pan"
                   defaultValue={settingProfileData?.kycDetails?.pan}
                   type={showPassword ? "text" : "password"}
-                  className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                  className="py-3 px-4 block w-full border-gray-200 rounded-lg text-xs focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 />
                 <button
                   type="button"
@@ -158,7 +158,7 @@ const SettingProfile = () => {
           <h3 className="text-md font-medium">Current Residential address</h3>
           <div className="mt-6 grid grid-cols-12 gap-6">
             <div className="-mt-4 col-span-12 sm:col-span-6">
-              <label className="block text-sm font-medium text-gray-600">
+              <label className="block text-h4 font-medium text-text_dark">
                 Address - Line 1
               </label>
               <input
@@ -170,12 +170,12 @@ const SettingProfile = () => {
                 name="address1"
                 id="address1"
                 required
-                className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-sm placeholder:text-gray-400 placeholder:italic"
+                className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic"
                 placeholder="123 Main St"
               ></input>
             </div>
             <div className="sm:-mt-4 col-span-12 sm:col-span-6">
-              <label className="block text-sm font-medium text-gray-600">
+              <label className="block text-h4 font-medium text-text_dark">
                 Address - Line 2
               </label>
               <div className="relative">
@@ -188,13 +188,13 @@ const SettingProfile = () => {
                   name="address2"
                   id="address2"
                   required
-                  className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-sm placeholder:text-gray-400 placeholder:italic"
+                  className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic"
                   placeholder="Apt 789"
                 ></input>
               </div>
             </div>
             <div className="col-span-12 sm:col-span-6">
-              <label className="block text-sm font-medium text-gray-600">
+              <label className="block text-h4 font-medium text-text_dark">
                 City
               </label>
               <input
@@ -205,12 +205,12 @@ const SettingProfile = () => {
                 name="city"
                 id="city"
                 required
-                className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-sm placeholder:text-gray-400 placeholder:italic"
+                className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic"
                 placeholder="New York"
               ></input>
             </div>
             <div className="col-span-12 sm:col-span-6">
-              <label className="block text-sm font-medium text-gray-600">
+              <label className="block text-h4 font-medium text-text_dark">
                 State
               </label>
               <div className="relative">
@@ -223,13 +223,13 @@ const SettingProfile = () => {
                   name="state"
                   id="state"
                   required
-                  className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-sm placeholder:text-gray-400 placeholder:italic"
+                  className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic"
                   placeholder="New York"
                 ></input>
               </div>
             </div>
             <div className="col-span-12 sm:col-span-6">
-              <label className="block text-sm font-medium text-gray-600">
+              <label className="block text-h4 font-medium text-text_dark">
                 Zip Code
               </label>
               <div className="relative">
@@ -242,17 +242,17 @@ const SettingProfile = () => {
                   name="zipcode"
                   id="zipcode"
                   required
-                  className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-sm placeholder:text-gray-400 placeholder:italic"
+                  className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic"
                   placeholder="10001"
                 ></input>
               </div>
             </div>
             <div className="col-span-12 sm:col-span-6">
-              <label className="block text-sm font-medium text-gray-600">
+              <label className="block text-h4 font-medium text-text_dark">
                 Country of Residence
               </label>
               <div className="relative mt-1">
-                <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-sm border border-gray-300 focus:border-primary500 focus:outline-none focus:ring-primary500 focus:ring-1 sm:text-sm">
+                <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-sm border border-gray-300 focus:border-primary500 focus:outline-none focus:ring-primary500 focus:ring-1 sm:text-xs text-text_dark">
                   <input
                     type="text"
                     defaultValue={
@@ -290,7 +290,7 @@ const SettingProfile = () => {
               onClick={() => {
                 console.log("clicked");
               }}
-              // type="submit"
+              type="submit"
               className="ml-5 inline-flex justify-center rounded-md border border-transparent bg-primary py-2 px-8 text-sm font-medium text-white shadow-sm hover:bg-primary700 focus:outline-none focus:ring-2 focus:ring-primary500 focus:ring-offset-2 disabled:bg-gray-300"
             >
               Save
