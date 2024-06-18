@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import Loader from "@/components/Loader";
 import { IoMdEye } from "react-icons/io";
 import { CustomError } from "@/utility/type";
+import { isFileSizeValid } from "@/utility/helper";
 
 const Page = () => {
   const [status, setStatus] = useState("");
@@ -64,19 +65,22 @@ const Page = () => {
     const files = e.target.files;
     if (files && files.length > 0) {
       const file = files[0];
-      setImage1(file);
+      if (isFileSizeValid(file.size)) {
+        const file = files[0];
+        setImage1(file);
 
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setPreviewSrc1(reader.result as string);
-      };
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          setPreviewSrc1(reader.result as string);
+        };
+        setErrorStatus("");
+        setUploading1(true);
+        setTimeout(() => {
+          setUploading1(false);
+        }, 3000);
+      }
     }
-    setErrorStatus("");
-    setUploading1(true);
-    setTimeout(() => {
-      setUploading1(false);
-    }, 3000);
   };
   const openPdfInNewTab = (pdfFile: File | null) => {
     if (pdfFile) {

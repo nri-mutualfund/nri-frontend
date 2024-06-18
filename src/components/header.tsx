@@ -1,17 +1,25 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import NProgress from "nprogress";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { FaRegUserCircle } from "react-icons/fa";
 const Header = () => {
   const pathname = usePathname();
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
   const handleNav = () => {
     setMenuOpen(!isMenuOpen);
   };
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedToken = localStorage.getItem("token");
+      setToken(storedToken);
+    }
+  }, []);
 
   return (
     <header className="w-full  text-gray-700 bg-white border-t body-font sticky top-0 z-50">
@@ -131,33 +139,59 @@ const Header = () => {
           >
             Sign in
           </Link> */}
-          <Link
-            href={"/signup"}
-            onClick={() => {
-              if (pathname !== "/signup") {
+          {token && pathname === "/settings" ? (
+            <Link
+              href={"/"}
+              onClick={() => {
                 NProgress.start();
-              }
-            }}
-          >
-            <button className="px-4 py-2 text-white  transition-all duration-300 bg-primary rounded-md shadow active:bg-primary  focus:outline-none ease cursor-pointer hover:shadow-lg hover:-translate-y-1">
-              <span>Sign Up For Free</span>
-            </button>
-          </Link>
+              }}
+            >
+              <FaRegUserCircle
+                size={25}
+                className="text-text_dark hover:text-primary"
+              />
+            </Link>
+          ) : (
+            <Link
+              href={"/signup"}
+              onClick={() => {
+                if (pathname !== "/signup") {
+                  NProgress.start();
+                }
+              }}
+            >
+              <button className="px-4 py-2 text-white  transition-all duration-300 bg-primary rounded-md shadow active:bg-primary  focus:outline-none ease cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                <span>Sign Up For Free</span>
+              </button>
+            </Link>
+          )}
         </div>
 
         <div className="items-center flex gap-8 lg:hidden" onClick={handleNav}>
-          <Link
-            href={"/signup"}
-            onClick={() => {
-              if (pathname !== "/signup") {
+          {token && pathname === "/settings" ? (
+            <Link
+              href={"/"}
+              onClick={() => {
                 NProgress.start();
-              }
-            }}
-          >
-            <button className="px-4 py-2   font-medium text-white  transition-all duration-300 bg-primary rounded-md shadow active:bg-primary  focus:outline-none ease cursor-pointer hover:shadow-lg hover:-translate-y-1">
-              Sign Up For Free
-            </button>
-          </Link>
+              }}
+            >
+              <FaRegUserCircle size={25} />
+            </Link>
+          ) : (
+            <Link
+              href={"/signup"}
+              onClick={() => {
+                if (pathname !== "/signup") {
+                  NProgress.start();
+                }
+              }}
+            >
+              <button className="px-4 py-2   font-medium text-white  transition-all duration-300 bg-primary rounded-md shadow active:bg-primary  focus:outline-none ease cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                Sign Up For Free
+              </button>
+            </Link>
+          )}
+
           {isMenuOpen ? <RxCross2 size={30} /> : <IoMenu size={30} />}
         </div>
         <div

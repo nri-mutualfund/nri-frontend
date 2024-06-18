@@ -41,7 +41,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="md:max-w-2xl mx-auto py-10 xl:px-40 md:px-16 px-10">
+      <div className="md:max-w-xl mx-auto py-10 px-10 md:px-2">
         <div dangerouslySetInnerHTML={{ __html: currentData?.richText }} />
       </div>
     </>
