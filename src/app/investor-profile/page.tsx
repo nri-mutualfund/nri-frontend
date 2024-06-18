@@ -35,6 +35,7 @@ const Page = () => {
   const [uplaod3, setUploading3] = useState(false);
   const [uplaod4, setUploading4] = useState(false);
   const [uplaod5, setUploading5] = useState(false);
+  const [maxSizeLimit, setMaxSizeLimit] = useState(false);
 
   const [show, setShow] = useState(false);
   // const { data: kycDetails } = useQuery({
@@ -108,10 +109,13 @@ const Page = () => {
           setPreviewSrc0(reader.result as string);
         };
         setErrorStatus("");
+        setMaxSizeLimit(false);
         setUploading0(true);
         setTimeout(() => {
           setUploading0(false);
         }, 3000);
+      } else {
+        setMaxSizeLimit(true);
       }
     }
   };
@@ -128,10 +132,13 @@ const Page = () => {
           setPreviewSrc1(reader.result as string);
         };
         setErrorStatus("");
+        setMaxSizeLimit(false);
         setUploading1(true);
         setTimeout(() => {
           setUploading1(false);
         }, 3000);
+      } else {
+        setMaxSizeLimit(true);
       }
     }
   };
@@ -148,10 +155,13 @@ const Page = () => {
           setPreviewSrc2(reader.result as string);
         };
         setErrorStatus("");
+        setMaxSizeLimit(false);
         setUploading2(true);
         setTimeout(() => {
           setUploading2(false);
         }, 3000);
+      } else {
+        setMaxSizeLimit(true);
       }
     }
   };
@@ -168,10 +178,13 @@ const Page = () => {
           setPreviewSrc3(reader.result as string);
         };
         setErrorStatus("");
+        setMaxSizeLimit(false);
         setUploading3(true);
         setTimeout(() => {
           setUploading3(false);
         }, 3000);
+      } else {
+        setMaxSizeLimit(true);
       }
     }
   };
@@ -188,10 +201,13 @@ const Page = () => {
           setPreviewSrc4(reader.result as string);
         };
         setErrorStatus("");
+        setMaxSizeLimit(false);
         setUploading4(true);
         setTimeout(() => {
           setUploading4(false);
         }, 3000);
+      } else {
+        setMaxSizeLimit(true);
       }
     }
   };
@@ -208,10 +224,13 @@ const Page = () => {
           setPreviewSrc5(reader.result as string);
         };
         setErrorStatus("");
+        setMaxSizeLimit(false);
         setUploading5(true);
         setTimeout(() => {
           setUploading5(false);
         }, 3000);
+      } else {
+        setMaxSizeLimit(true);
       }
     }
   };
@@ -699,20 +718,30 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="mt-10 flex items-center justify-end gap-x-6">
-            <Link href={"/profile"}>
-              <button className="bg-white text-primary  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
-                Back
-              </button>
-            </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+            {maxSizeLimit && (
+              <div className="bg-red-100 rounded-lg mt-10 p-4">
+                <h4 className="text-red-500 text-center text-sm">
+                  File size should not exceed 244 KB
+                </h4>
+              </div>
+            )}
+            {!maxSizeLimit && <div></div>}
+            <div className="mt-10 flex items-center justify-end gap-x-6">
+              <Link href={"/profile"}>
+                <button className="bg-white text-primary  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary">
+                  Back
+                </button>
+              </Link>
 
-            <button
-              type="button"
-              onClick={validate}
-              className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
-            >
-              Save & Next
-            </button>
+              <button
+                type="button"
+                onClick={validate}
+                className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+              >
+                Save & Next
+              </button>
+            </div>
           </div>
         </div>
         <ImageModal isOpen={show} onClose={() => setShow(false)}>

@@ -479,7 +479,7 @@ const Page = () => {
             <div className="mt-10 flex items-center justify-end gap-x-6">
               <Link href={"/investor-profile"}>
                 <button
-                  type="submit"
+                  type="button"
                   className="bg-white text-primary  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-primary"
                 >
                   Back

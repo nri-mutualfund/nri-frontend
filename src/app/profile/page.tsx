@@ -35,6 +35,7 @@ const Page = () => {
   const [previewSrc1, setPreviewSrc1] = useState<string | null>(null);
   const [show, setShow] = useState(false);
   const [uplaod1, setUploading1] = useState(false);
+  const [maxSizeLimit, setMaxSizeLimit] = useState(false);
 
   const { isSuccess, mutate } = useMutation({
     mutationKey: ["investorProfile1"],
@@ -82,6 +83,7 @@ const Page = () => {
       mutate(form);
     }
   };
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files && files.length > 0) {
@@ -96,10 +98,13 @@ const Page = () => {
           setPreviewSrc1(reader.result as string);
         };
         setErrorStatus("");
+        setMaxSizeLimit(false);
         setUploading1(true);
         setTimeout(() => {
           setUploading1(false);
         }, 3000);
+      } else {
+        setMaxSizeLimit(true);
       }
     }
   };
@@ -553,13 +558,23 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-10 flex items-center justify-end gap-x-6">
-              <button
-                type="submit"
-                className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
-              >
-                Save & Next
-              </button>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+              {maxSizeLimit && (
+                <div className="bg-red-100 rounded-lg mt-10 p-4">
+                  <h4 className="text-red-500 text-center text-sm">
+                    File size should not exceed 244 KB
+                  </h4>
+                </div>
+              )}
+              {!maxSizeLimit && <div></div>}
+              <div className="mt-10 flex items-center justify-end gap-x-6">
+                <button
+                  type="submit"
+                  className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+                >
+                  Save & Next
+                </button>
+              </div>
             </div>
           </form>
         )}
