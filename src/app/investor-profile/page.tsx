@@ -1,18 +1,21 @@
 "use client";
 import ImageModal from "@/components/ImageModal";
 import ProgressBar from "@/components/ProgressBar";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import nProgress from "nprogress";
 import React, { useState } from "react";
 import { FaLock } from "react-icons/fa";
-import { addProfileDetails } from "../profile/api";
+import { addProfileDetails, getInvestorProfileDetails } from "../profile/api";
 import { toast } from "react-toastify";
 import { IoMdEye } from "react-icons/io";
 import { CustomError } from "@/utility/type";
+import { getDetails } from "../verify-pan2/api";
 const Page = () => {
   const router = useRouter();
+  const [image0, setImage0] = useState<File | null>(null);
+  const [previewSrc0, setPreviewSrc0] = useState<string | null>(null);
   const [image1, setImage1] = useState<File | null>(null);
   const [previewSrc1, setPreviewSrc1] = useState<string | null>(null);
   const [image2, setImage2] = useState<File | null>(null);
@@ -25,6 +28,7 @@ const Page = () => {
   const [previewSrc5, setPreviewSrc5] = useState<string | null>(null);
   const [currentURL, setCurrentURL] = useState<string | null>(null);
   const [errorStatus, setErrorStatus] = useState("");
+  const [uplaod0, setUploading0] = useState(false);
   const [uplaod1, setUploading1] = useState(false);
   const [uplaod2, setUploading2] = useState(false);
   const [uplaod3, setUploading3] = useState(false);
@@ -32,6 +36,15 @@ const Page = () => {
   const [uplaod5, setUploading5] = useState(false);
 
   const [show, setShow] = useState(false);
+  // const { data: kycDetails } = useQuery({
+  //   queryKey: ["key22"],
+  //   queryFn: getDetails,
+  // });
+  const { data: profileData } = useQuery({
+    queryKey: ["investorProfile1"],
+    queryFn: getInvestorProfileDetails,
+  });
+  const hasIndianOrigin = profileData?.country_of_birth === 'India';
   const { mutate } = useMutation({
     mutationKey: ["investorProfile1"],
     mutationFn: addProfileDetails,
@@ -48,7 +61,9 @@ const Page = () => {
     },
   });
   const validate = () => {
-    if (!image1) {
+    if (!image0) {
+      setErrorStatus("image0");
+    } else if (!image1) {
       setErrorStatus("image1");
     } else if (!image2) {
       setErrorStatus("image2");
@@ -76,6 +91,24 @@ const Page = () => {
       console.log("file", data);
       mutate(formData);
     }
+  };
+  const handleFileChange0 = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      const file = files[0];
+      setImage0(file);
+
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setPreviewSrc0(reader.result as string);
+      };
+    }
+    setErrorStatus("");
+    setUploading0(true);
+    setTimeout(() => {
+      setUploading0(false);
+    }, 3000);
   };
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -229,6 +262,81 @@ const Page = () => {
             <div className="sm:col-span-3">
               <div className="pb-12">
                 <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                  {
+                    hasIndianOrigin && 
+                    <>
+                  
+                  <div className="sm:col-span-3">
+                    <h5 className="font-semibold">
+                      <span className="text-red-500">*</span> Aadhaar Card (Masked)
+                    </h5>
+                    <p className="mt-1 text-xs text-text_dark font-light">
+                    Name and address must be visible.
+                    </p>
+                    <Link
+                      href={
+                        "https://drive.google.com/file/d/19aU0V6ZhD2tAwy2XR2thAL_TGU6EvpWi/view?usp=sharing"
+                      }
+                      target="_blank"
+                    >
+                      <p className="mt-1 text-xs text-text_dark underline underline-offset-2 font-light hover:text-primary">
+                        See Sample
+                      </p>
+                    </Link>
+                  </div>
+                  <div className="sm:col-span-3 ">
+                    <div className="flex gap-10 items-center">
+                      {previewSrc0 && !uplaod0 && (
+                        <button
+                          type="button"
+                          className="text-primary flex items-center gap-2"
+                          onClick={() => {
+                            if (image0?.type === "application/pdf") {
+                              openPdfInNewTab(image0);
+                            } else {
+                              setCurrentURL(previewSrc0);
+                              setShow(true);
+                            }
+                          }}
+                        >
+                          Preview
+                          <IoMdEye size={20} />
+                        </button>
+                      )}
+                      <label htmlFor="aadhaar_media">
+                        <div
+                          className={`bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
+                            uplaod0 ? "border border-primary" : ""
+                          }`}
+                        >
+                          {uplaod0 ? (
+                            <p>Uploading...</p>
+                          ) : previewSrc0 ? (
+                            <p>Update</p>
+                          ) : (
+                            <p>Upload</p>
+                          )}
+                        </div>
+
+                        <input
+                          id="aadhaar_media"
+                          type="file"
+                          required
+                          onChange={handleFileChange0}
+                          className="hidden"
+                          accept="image/png, image/jpeg, .pdf"
+                        />
+                      </label>
+                    </div>
+
+                    {errorStatus === "image0" && (
+                      <p className="text-red-500 text-xs mt-1">
+                        This field is required!
+                      </p>
+                    )}
+                  </div>
+                  </>
+                  }
                   <div className="sm:col-span-3">
                     <h5 className="font-semibold">
                       <span className="text-red-500">*</span> Hand Signature
