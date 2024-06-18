@@ -312,11 +312,11 @@ const Page = () => {
                                 type="number"
                                 className="block w-10/12 rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                                 onChange={(e) => {
-                                  // const val = e.target.valueAsNumber;
+                                  const val = e.target.valueAsNumber;
                                   // // val + total <= 100
                                   // console.log('val',val,100 - totalPercentage + 1 , 100 - totalPercentage + 1 < val)
                                   // console.log('rem val',100 - totalPercentage + 1 , 100 - totalPercentage + 1 < val)
-                                  // if(val + totalPercentage > 100) return
+                                  if(val > 100) return
                                   handleNomineeDetailListUpdate(
                                     item,
                                     "percentage_share",
@@ -370,7 +370,8 @@ const Page = () => {
           > */}
             <button
               type="submit"
-              className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+              disabled={totalPercentage !== 100}
+              className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 disabled:cursor-not-allowed disabled:opacity-70"
             >
               Complete
             </button>

@@ -230,8 +230,8 @@ const Page = () => {
                           name="email"
                           type="email"
                           defaultValue={
-                            data?.investorProfileDetail.email
-                              ? data?.investorProfileDetail.email
+                            data?.investorProfileDetail?.email
+                              ? data?.investorProfileDetail?.email
                               : data?.email
                           }
                           autoComplete="email"
