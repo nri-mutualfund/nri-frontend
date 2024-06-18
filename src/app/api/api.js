@@ -78,10 +78,14 @@ export const getSectionFAQ = async (query) => {
     console.log(error);
   }
 };
-export const getSectionBlog = async (query) => {
+export const getSectionBlog = async (query, category) => {
+  let query2 = "";
+  if (category !== "" && category !== "All") {
+    query2 = `&category=${category}`;
+  }
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/homePage/blog?pageNumber=${query}`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/homePage/blog?pageNumber=${query}${query2}`
     );
     return response.data;
   } catch (error) {
