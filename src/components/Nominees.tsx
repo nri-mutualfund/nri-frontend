@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useRouter } from "next/navigation";
 import nProgress from "nprogress";
+import { getInvestorProfileDetails, getProfileDetails } from "@/app/profile/api";
 
 const Nominiees = () => {
   const router = useRouter();
@@ -13,10 +14,44 @@ const Nominiees = () => {
     queryFn: getNomineeDetails,
   });
   const hasNominee = !!nomineeData?.length;
-  const goToAdd = () => {
+  
+  const { data, status } = useQuery({
+    queryKey: ["profile"],
+    queryFn: getProfileDetails,
+  });
+  const { data: profileData } = useQuery({
+    queryKey: ["investorProfile1"],
+    queryFn: getInvestorProfileDetails,
+  });
+  const goToCompleteKyc = () => {
+    if (status === "success") {
+      nProgress.start();
+      // router.push("/profile");
+      nProgress.start();
+      if (data?.tab === "kyc") {
+        router.push("/verify-pan");
+      } else if (data?.tab === "investor_profile") {
+        if (profileData?.country_of_birth) {
+          router.push("/investor-profile");
+        } else if (profileData?.hand_signature_media) {
+          router.push("/income-details");
+        } else {
+          router.push("/profile");
+        }
+      } else if (data?.tab === "bank") {
+        router.push("/bank-details");
+      } else if (data?.tab === "nominee") {
+        router.push("/nominee-details");
+      } else if (data?.stage === "ready") {
+        router.push("/finish");
+      }
+    }
+  };
+  const gotoNominee = () => {
     nProgress.start();
     router.push("/nominee-details");
-  };
+
+  }
   return (
     <div className="md:px-6 py-6 lg:col-span-9">
       <div className="sm:flex sm:items-center">
@@ -24,9 +59,9 @@ const Nominiees = () => {
           <h3 className="text-lg font-medium leading-6 text-gray-700 block">
             Nominees
           </h3>
-          {!!hasNominee && (
+          {hasNominee && (
             <button
-              onClick={goToAdd}
+              onClick={gotoNominee}
               className="ml-5 inline-flex justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-primary700 focus:outline-none focus:ring-2 focus:ring-primary500 focus:ring-offset-2 disabled:bg-gray-300"
             >
               Update
@@ -97,7 +132,7 @@ const Nominiees = () => {
           </h3>
           <div className="mt-6">
             <button
-              onClick={goToAdd}
+              onClick={goToCompleteKyc}
               className="inline-flex items-center rounded-md bg-primary px-4 py-3 text-md font-semibold text-white shadow-sm hover:bg-primary500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               Finish onboarding{" "}
