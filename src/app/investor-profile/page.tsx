@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import { IoMdEye } from "react-icons/io";
 import { CustomError } from "@/utility/type";
 import { getDetails } from "../verify-pan2/api";
+import { isFileSizeValid } from "@/utility/helper";
 const Page = () => {
   const router = useRouter();
   const [image0, setImage0] = useState<File | null>(null);
@@ -57,6 +58,8 @@ const Page = () => {
         nProgress.start();
         toast("user unauthorized");
         router.push("/signin");
+      } else {
+        toast("something went wrong");
       }
     },
   });
@@ -96,109 +99,121 @@ const Page = () => {
     const files = e.target.files;
     if (files && files.length > 0) {
       const file = files[0];
-      setImage0(file);
+      if (isFileSizeValid(file.size)) {
+        setImage0(file);
 
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setPreviewSrc0(reader.result as string);
-      };
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          setPreviewSrc0(reader.result as string);
+        };
+        setErrorStatus("");
+        setUploading0(true);
+        setTimeout(() => {
+          setUploading0(false);
+        }, 3000);
+      }
     }
-    setErrorStatus("");
-    setUploading0(true);
-    setTimeout(() => {
-      setUploading0(false);
-    }, 3000);
   };
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files && files.length > 0) {
       const file = files[0];
-      setImage1(file);
+      if (isFileSizeValid(file.size)) {
+        setImage1(file);
 
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setPreviewSrc1(reader.result as string);
-      };
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          setPreviewSrc1(reader.result as string);
+        };
+        setErrorStatus("");
+        setUploading1(true);
+        setTimeout(() => {
+          setUploading1(false);
+        }, 3000);
+      }
     }
-    setErrorStatus("");
-    setUploading1(true);
-    setTimeout(() => {
-      setUploading1(false);
-    }, 3000);
   };
   const handleFileChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files && files.length > 0) {
       const file = files[0];
-      setImage2(file);
+      if (isFileSizeValid(file.size)) {
+        setImage2(file);
 
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setPreviewSrc2(reader.result as string);
-      };
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          setPreviewSrc2(reader.result as string);
+        };
+        setErrorStatus("");
+        setUploading2(true);
+        setTimeout(() => {
+          setUploading2(false);
+        }, 3000);
+      }
     }
-    setErrorStatus("");
-    setUploading2(true);
-    setTimeout(() => {
-      setUploading2(false);
-    }, 3000);
   };
   const handleFileChange3 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files && files.length > 0) {
       const file = files[0];
-      setImage3(file);
+      if (isFileSizeValid(file.size)) {
+        setImage3(file);
 
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setPreviewSrc3(reader.result as string);
-      };
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          setPreviewSrc3(reader.result as string);
+        };
+        setErrorStatus("");
+        setUploading3(true);
+        setTimeout(() => {
+          setUploading3(false);
+        }, 3000);
+      }
     }
-    setErrorStatus("");
-    setUploading3(true);
-    setTimeout(() => {
-      setUploading3(false);
-    }, 3000);
   };
   const handleFileChange4 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files && files.length > 0) {
       const file = files[0];
-      setImage4(file);
+      if (isFileSizeValid(file.size)) {
+        setImage4(file);
 
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setPreviewSrc4(reader.result as string);
-      };
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          setPreviewSrc4(reader.result as string);
+        };
+        setErrorStatus("");
+        setUploading4(true);
+        setTimeout(() => {
+          setUploading4(false);
+        }, 3000);
+      }
     }
-    setErrorStatus("");
-    setUploading4(true);
-    setTimeout(() => {
-      setUploading4(false);
-    }, 3000);
   };
   const handleFileChange5 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files && files.length > 0) {
       const file = files[0];
-      setImage5(file);
+      if (isFileSizeValid(file.size)) {
+        setImage5(file);
 
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setPreviewSrc5(reader.result as string);
-      };
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          setPreviewSrc5(reader.result as string);
+        };
+        setErrorStatus("");
+        setUploading5(true);
+        setTimeout(() => {
+          setUploading5(false);
+        }, 3000);
+      }
     }
-    setErrorStatus("");
-    setUploading5(true);
-    setTimeout(() => {
-      setUploading5(false);
-    }, 3000);
   };
   const openPdfInNewTab = (pdfFile: File | null) => {
     if (pdfFile) {
@@ -329,7 +344,7 @@ const Page = () => {
                           </label>
                         </div>
 
-                        {errorStatus !== "image0" && (
+                        {errorStatus === "image0" && (
                           <p className="text-red-500 text-xs mt-1">
                             This field is required!
                           </p>
@@ -411,8 +426,8 @@ const Page = () => {
                   </div>
                   <div className="sm:col-span-3">
                     <h5 className="font-semibold">
-                      <span className="text-red-500">*</span>Passport Front Page
-                      (Self-Attested)
+                      <span className="text-red-500">*</span> Passport Front
+                      Page (Self-Attested)
                     </h5>
                     <Link
                       href={

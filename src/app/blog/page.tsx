@@ -50,7 +50,12 @@ const Page = () => {
   //     setCategory(response.data);
   //   });
   // }, []);
-  console.log("category", categoryName);
+  useEffect(() => {
+    window.scrollTo({
+      top: 380,
+      behavior: "smooth",
+    });
+  }, [categoryName, currentPage]);
   return (
     <div className="max-w-screen-2xl mx-auto">
       {isLoading ? (
