@@ -38,8 +38,8 @@ const Page = () => {
     setCurrentPage(page);
   };
   const { data, isLoading } = useQuery({
-    queryKey: ["blog", currentPage],
-    queryFn: () => getSectionBlog(currentPage),
+    queryKey: ["blog", currentPage, categoryName],
+    queryFn: () => getSectionBlog(currentPage, categoryName),
   });
   const { data: category, isLoading: isLoading2 } = useQuery({
     queryKey: ["blogCategory"],
@@ -119,6 +119,17 @@ const Page = () => {
                     <h3 className="">Categories</h3>
                   </div>
                   <div className="">
+                    <h5
+                      className={`border-b px-4 py-2 hover:bg-secondary cursor-pointer ${
+                        categoryName === "All" ? "bg-secondary" : ""
+                      }`}
+                      onClick={() => {
+                        setCurrentPage(1);
+                        setCategoryName("All");
+                      }}
+                    >
+                      All
+                    </h5>
                     {category?.map((item: Category, index: number) => (
                       <h5
                         key={index}
@@ -128,6 +139,7 @@ const Page = () => {
                             : ""
                         }`}
                         onClick={() => {
+                          setCurrentPage(1);
                           setCategoryName(item?.category_name);
                         }}
                       >
@@ -138,10 +150,20 @@ const Page = () => {
                 </div>
               </div>
               <div className="mx-auto my-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 mt-6 lg:mt-28">
-                <select className="block md:hidden mt-10 w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6 ">
-                  <option value={""}>Categories</option>
+                <select
+                  value={categoryName}
+                  onChange={(e) => {
+                    setCategoryName(e.target.value);
+                    setCurrentPage(1);
+                  }}
+                  className="block md:hidden mt-10 w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6 "
+                >
+                  <option value={""} disabled>
+                    Categories
+                  </option>
+                  <option value={"All"}>All</option>
                   {category?.map((item: Category, index: number) => (
-                    <option key={index} className="">
+                    <option key={index} value={item.category_name}>
                       {item.category_name}
                     </option>
                   ))}
