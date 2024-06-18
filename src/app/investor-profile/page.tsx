@@ -44,7 +44,7 @@ const Page = () => {
     queryKey: ["investorProfile1"],
     queryFn: getInvestorProfileDetails,
   });
-  const hasIndianOrigin = profileData?.country_of_birth === 'India';
+  const hasIndianOrigin = profileData?.country_of_birth === "India";
   const { mutate } = useMutation({
     mutationKey: ["investorProfile1"],
     mutationFn: addProfileDetails,
@@ -61,7 +61,7 @@ const Page = () => {
     },
   });
   const validate = () => {
-    if (!image0) {
+    if (hasIndianOrigin && !image0) {
       setErrorStatus("image0");
     } else if (!image1) {
       setErrorStatus("image1");
@@ -206,6 +206,7 @@ const Page = () => {
       window.open(pdfUrl, "_blank");
     }
   };
+  console.log("error status", errorStatus);
   return (
     <div className="max-w-screen-2xl mx-auto">
       <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary">
@@ -262,81 +263,80 @@ const Page = () => {
             <div className="sm:col-span-3">
               <div className="pb-12">
                 <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                  {
-                    hasIndianOrigin && 
+                  {hasIndianOrigin && (
                     <>
-                  
-                  <div className="sm:col-span-3">
-                    <h5 className="font-semibold">
-                      <span className="text-red-500">*</span> Aadhaar Card (Masked)
-                    </h5>
-                    <p className="mt-1 text-xs text-text_dark font-light">
-                    Name and address must be visible.
-                    </p>
-                    <Link
-                      href={
-                        "https://drive.google.com/file/d/19aU0V6ZhD2tAwy2XR2thAL_TGU6EvpWi/view?usp=sharing"
-                      }
-                      target="_blank"
-                    >
-                      <p className="mt-1 text-xs text-text_dark underline underline-offset-2 font-light hover:text-primary">
-                        See Sample
-                      </p>
-                    </Link>
-                  </div>
-                  <div className="sm:col-span-3 ">
-                    <div className="flex gap-10 items-center">
-                      {previewSrc0 && !uplaod0 && (
-                        <button
-                          type="button"
-                          className="text-primary flex items-center gap-2"
-                          onClick={() => {
-                            if (image0?.type === "application/pdf") {
-                              openPdfInNewTab(image0);
-                            } else {
-                              setCurrentURL(previewSrc0);
-                              setShow(true);
-                            }
-                          }}
+                      <div className="sm:col-span-3">
+                        <h5 className="font-semibold">
+                          <span className="text-red-500">*</span> Aadhaar Card
+                          (Masked)
+                        </h5>
+                        <p className="mt-1 text-xs text-text_dark font-light">
+                          Name and address must be visible.
+                        </p>
+                        <Link
+                          href={
+                            "https://drive.google.com/file/d/19aU0V6ZhD2tAwy2XR2thAL_TGU6EvpWi/view?usp=sharing"
+                          }
+                          target="_blank"
                         >
-                          Preview
-                          <IoMdEye size={20} />
-                        </button>
-                      )}
-                      <label htmlFor="aadhaar_media">
-                        <div
-                          className={`bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
-                            uplaod0 ? "border border-primary" : ""
-                          }`}
-                        >
-                          {uplaod0 ? (
-                            <p>Uploading...</p>
-                          ) : previewSrc0 ? (
-                            <p>Update</p>
-                          ) : (
-                            <p>Upload</p>
+                          <p className="mt-1 text-xs text-text_dark underline underline-offset-2 font-light hover:text-primary">
+                            See Sample
+                          </p>
+                        </Link>
+                      </div>
+                      <div className="sm:col-span-3 ">
+                        <div className="flex gap-10 items-center">
+                          {previewSrc0 && !uplaod0 && (
+                            <button
+                              type="button"
+                              className="text-primary flex items-center gap-2"
+                              onClick={() => {
+                                if (image0?.type === "application/pdf") {
+                                  openPdfInNewTab(image0);
+                                } else {
+                                  setCurrentURL(previewSrc0);
+                                  setShow(true);
+                                }
+                              }}
+                            >
+                              Preview
+                              <IoMdEye size={20} />
+                            </button>
                           )}
+                          <label htmlFor="aadhaar_media">
+                            <div
+                              className={`bg-white text-primary  px-2 md:px-8 py-1 rounded-2xl cursor-pointer hover:border hover:border-primary ${
+                                uplaod0 ? "border border-primary" : ""
+                              }`}
+                            >
+                              {uplaod0 ? (
+                                <p>Uploading...</p>
+                              ) : previewSrc0 ? (
+                                <p>Update</p>
+                              ) : (
+                                <p>Upload</p>
+                              )}
+                            </div>
+
+                            <input
+                              id="aadhaar_media"
+                              type="file"
+                              required
+                              onChange={handleFileChange0}
+                              className="hidden"
+                              accept="image/png, image/jpeg, .pdf"
+                            />
+                          </label>
                         </div>
 
-                        <input
-                          id="aadhaar_media"
-                          type="file"
-                          required
-                          onChange={handleFileChange0}
-                          className="hidden"
-                          accept="image/png, image/jpeg, .pdf"
-                        />
-                      </label>
-                    </div>
-
-                    {errorStatus === "image0" && (
-                      <p className="text-red-500 text-xs mt-1">
-                        This field is required!
-                      </p>
-                    )}
-                  </div>
-                  </>
-                  }
+                        {errorStatus !== "image0" && (
+                          <p className="text-red-500 text-xs mt-1">
+                            This field is required!
+                          </p>
+                        )}
+                      </div>
+                    </>
+                  )}
                   <div className="sm:col-span-3">
                     <h5 className="font-semibold">
                       <span className="text-red-500">*</span> Hand Signature

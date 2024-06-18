@@ -19,6 +19,7 @@ const Page = () => {
   const [previewSrc1, setPreviewSrc1] = useState<string | null>(null);
   const [show, setShow] = useState(false);
   const [uplaod1, setUploading1] = useState(false);
+  const [doc, setDoc] = useState("");
   const router = useRouter();
   const { data: bankData, isLoading } = useQuery({
     queryKey: ["bankDetails"],
@@ -228,6 +229,7 @@ const Page = () => {
                           autoComplete="verification_document"
                           required
                           defaultValue={bankData?.verification_document}
+                          onChange={(e) => setDoc(e.target.value)}
                           className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-xs sm:leading-6"
                         >
                           <option value={""}>Select Document</option>
@@ -238,6 +240,7 @@ const Page = () => {
                             Cancelled Cheque
                           </option>
                         </select>
+
                         <Link
                           href={
                             "https://drive.google.com/file/d/1Wg_CgaLA6y67v09_2PIFsbtUHVuBJ6Uu/view"
@@ -248,6 +251,18 @@ const Page = () => {
                             See Sample
                           </p>
                         </Link>
+                        {doc === "Cancelled Cheque" && (
+                          <p className="mt-2 text-xs text-text_dark">
+                            Please upload an unblurred clear copy and ensure
+                            your name is mentioned on the cheque
+                          </p>
+                        )}
+                        {doc === "Bank Statement" && (
+                          <p className="mt-2 text-xs text-text_dark">
+                            {`Account number, IFSC code, Account Type "SAVINGS"
+                            must be clearly visible`}
+                          </p>
+                        )}
                       </div>
                     </div>
                     {/* <div className="sm:col-span-3">
