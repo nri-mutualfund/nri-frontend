@@ -91,6 +91,7 @@ const Verify: React.FC<VerifyProps> = () => {
                 <OTPInput
                   length={6}
                   onChange={handleOTPChange}
+                  hasError={error}
                 />
               </div>
             </div>
