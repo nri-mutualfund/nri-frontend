@@ -28,7 +28,7 @@ const SectionFive = ({ data }: SectionOneProps) => {
         <h4 className="text-center mt-4 mb-4">{data?.detail}</h4>
       </div>
 
-      <div className="max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-14 mx-auto mt-10">
+      <div className="max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-16 mx-auto mt-10">
         <div className="w-full bg-white drop-shadow-lg rounded-[20px]">
           <div className="flex flex-row items-center justify-between pl-12 pr-6 pt-10">
             <div className="flex justify-start">

@@ -119,6 +119,11 @@ const SignUp = () => {
                     required
                     onChange={handleEmailChange}
                     value={email}
+                    onKeyDown={() => {
+                      if (isValidEmail) {
+                        VerifyEmailForOtp();
+                      }
+                    }}
                     className={`px-2 block w-full rounded-md ${
                       error
                         ? "border-1 border-red-500 text-red-500"

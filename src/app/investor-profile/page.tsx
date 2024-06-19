@@ -245,7 +245,7 @@ const Page = () => {
     <div className="max-w-screen-2xl mx-auto">
       <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary">
         <div className="hidden md:block">
-          <ProgressBar widthPercentage={33} />
+          <ProgressBar widthPercentage={44} />
         </div>
         <div className="block md:hidden">
           <div className="px-2">

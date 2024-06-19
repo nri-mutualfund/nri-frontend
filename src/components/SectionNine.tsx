@@ -51,7 +51,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
               </Link>
               <div className=" h-full overflow-hidden relative mt-4">
                 <div
-                  className="line-clamp-6 text-text_dark"
+                  className="line-clamp-6 text-text_light text-[14px]"
                   dangerouslySetInnerHTML={{ __html: post?.richText }}
                 />
               </div>

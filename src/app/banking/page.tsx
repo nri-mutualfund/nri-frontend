@@ -64,7 +64,7 @@ const Page = () => {
     <>
       <div className="max-w-screen-2xl mx-auto">
         <section className="xl:px-40 md:px-16 px-10 py-14 bg-[#f2f8f24d]">
-          <div className="grid grid-cols-2 md:grid-cols-5 items-start justify-center gap-y-20 gap-x-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 items-start justify-center gap-y-20 gap-x-12">
             <div className="col-span-3">
               <div className="">
                 <div className="max-w-lg">
