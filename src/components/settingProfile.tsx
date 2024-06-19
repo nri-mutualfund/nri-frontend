@@ -1,3 +1,4 @@
+import { getProfileDetails } from "@/app/profile/api";
 import { getProfilegDataInSettings } from "@/app/settings/api";
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
@@ -6,6 +7,10 @@ const SettingProfile = () => {
   const { data: settingProfileData, isLoading } = useQuery({
     queryKey: ["settting-profile"],
     queryFn: getProfilegDataInSettings,
+  });
+  const { data } = useQuery({
+    queryKey: ["profile"],
+    queryFn: getProfileDetails,
   });
   const [showPassword, setShowPassword] = useState(false);
 
@@ -34,7 +39,11 @@ const SettingProfile = () => {
                 id="first-name"
                 required
                 disabled
-                defaultValue={settingProfileData?.userDetails?.first_name}
+                defaultValue={
+                  data?.panDetails?.name
+                    ? data?.panDetails?.name
+                    : settingProfileData?.userDetails?.first_name
+                }
                 className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic"
                 placeholder="John"
               />
@@ -51,7 +60,11 @@ const SettingProfile = () => {
                 type="email"
                 name="email"
                 id="email"
-                defaultValue={settingProfileData?.userDetails?.email}
+                defaultValue={
+                  data?.panDetails?.emailId
+                    ? data?.panDetails?.emailId
+                    : settingProfileData?.userDetails?.email
+                }
                 required
                 className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500"
                 disabled
@@ -66,7 +79,11 @@ const SettingProfile = () => {
                   type="text"
                   name="mobile"
                   id="mobile"
-                  defaultValue={settingProfileData?.userDetails?.phone_number}
+                  defaultValue={
+                    data?.panDetails?.mobileNumber
+                      ? data?.panDetails?.mobileNumber
+                      : settingProfileData?.userDetails?.phone_number
+                  }
                   // pl-28
                   className="block w-full rounded-md  border border-gray-300 py-1.5 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic sm:leading-6 "
                 ></input>
