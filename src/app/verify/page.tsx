@@ -110,7 +110,6 @@ const Page = () => {
                     id="name"
                     name="name"
                     type="name"
-                    autoComplete="name"
                     required
                     value={name}
                     disabled
@@ -130,12 +129,11 @@ const Page = () => {
                   <input
                     id="email"
                     name="email"
-                    type="email"
-                    autoComplete="email"
+                    type="text"
                     required
                     value={email}
                     disabled
-                    className="px-2 block w-full rounded-md border-0 py-1.5 text-text_dark shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                    className="px-2 block w-full rounded-md border-0 py-1.5 bg-gray-50 text-text_dark shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>

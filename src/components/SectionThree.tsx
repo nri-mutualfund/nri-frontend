@@ -101,7 +101,7 @@ const SectionThree = ({ data }: SectionOneProps) => {
         ))}
       </div>
 
-      <div className="flex gap-12 justify-between mt-8">
+      <div className="flex gap-16 justify-between mt-8">
         <div className="w-full lg:w-[48%]  flex-col gap-4 hidden lg:flex">
           {data?.data?.map((item, index) => (
             <div

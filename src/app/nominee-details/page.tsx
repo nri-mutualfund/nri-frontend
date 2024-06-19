@@ -23,6 +23,7 @@ export type NomineeDetail = {
 const Page = () => {
   const router = useRouter();
   const [canAddNominee, setCanAddNominee] = useState(false);
+  const [error, setError] = useState(false);
   const { data: nomineeData, isLoading } = useQuery({
     queryKey: ["nomineeDetails"],
     queryFn: getNomineeDetails,
@@ -46,11 +47,15 @@ const Page = () => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    console.log("data", nomineeDetailList);
-    const newData = {
-      nomineeList: nomineeDetailList,
-    };
-    mutate(newData);
+    if (totalPercentage !== 100) {
+      setError(true);
+    } else {
+      console.log("data", nomineeDetailList);
+      const newData = {
+        nomineeList: nomineeDetailList,
+      };
+      mutate(newData);
+    }
   };
   const [nomineeDetailList, setNomineeDetailList] = useState<NomineeDetail[]>([
     {
@@ -128,7 +133,7 @@ const Page = () => {
     <div className="max-w-screen-2xl mx-auto">
       <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary min-h-screen">
         <div className="hidden md:block">
-          <ProgressBar widthPercentage={33} />
+          <ProgressBar widthPercentage={100} />
         </div>
         <div className="block md:hidden">
           <div className="px-2">
@@ -347,14 +352,21 @@ const Page = () => {
                     {" "}
                     Add more
                   </button>
-                  <div className="flex gap-5">
-                    <p>Total</p>
-                    <p>{totalPercentage}%</p>
+                  <div>
+                    <div className="flex gap-5">
+                      <p>Total</p>
+                      <p>{totalPercentage}%</p>
+                    </div>
                   </div>
                 </div>
               </div>
             )}
           </div>
+          {error && (
+            <p className="text-xs text-red-500 mt-2 text-right">
+              Total percentage should be 100
+            </p>
+          )}
           <div className="mt-10 flex items-center justify-end gap-x-6">
             <Link href={"/bank-details"}>
               <button
@@ -368,13 +380,25 @@ const Page = () => {
             {/* <Link
           href={"/finish"}
           > */}
-            <button
-              type="submit"
-              disabled={totalPercentage !== 100}
-              className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 disabled:cursor-not-allowed disabled:opacity-70"
-            >
-              Complete
-            </button>
+            {canAddNominee ? (
+              <button
+                type="submit"
+                // disabled={totalPercentage !== 100}
+                className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                Complete
+              </button>
+            ) : (
+              <Link href={"/finish"}>
+                <button
+                  type="button"
+                  className="bg-primary text-white  px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  Complete
+                </button>
+              </Link>
+            )}
+
             {/* </Link> */}
           </div>
         </form>

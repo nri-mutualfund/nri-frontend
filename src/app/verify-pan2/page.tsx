@@ -341,7 +341,7 @@ const Page = () => {
                 <BsFillFlagFill className="absolute right-4 top-4" size={30} />
               </div>
               <div className="">
-                {checked ? (
+                {checked && (
                   <button
                     type="button"
                     onClick={() => {
@@ -351,20 +351,6 @@ const Page = () => {
                   >
                     Continue
                   </button>
-                ) : (
-                  <Link
-                    href={"/skip"}
-                    onClick={() => {
-                      nProgress.start();
-                    }}
-                  >
-                    <button
-                      type="button"
-                      className="flex w-1/3 justify-center rounded-md border-primary border px-3 py-1.5 text-sm font-semibold leading-6 text-primary shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ml-auto"
-                    >
-                      Skip
-                    </button>
-                  </Link>
                 )}
               </div>
             </form>

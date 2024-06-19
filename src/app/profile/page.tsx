@@ -1,6 +1,6 @@
 "use client";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   getProfileDetails,
   addProfileDetails,
@@ -36,6 +36,10 @@ const Page = () => {
   const [show, setShow] = useState(false);
   const [uplaod1, setUploading1] = useState(false);
   const [maxSizeLimit, setMaxSizeLimit] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [fName, setFName] = useState("");
 
   const { isSuccess, mutate } = useMutation({
     mutationKey: ["investorProfile1"],
@@ -75,6 +79,7 @@ const Page = () => {
     form.append("residential_address", address);
     form.append("phone_number", data?.phone);
     form.append("full_name", data?.full_name);
+    form.append("email", data?.email);
 
     // form.append("address_proof_media",image1);
     if (!image1) {
@@ -114,7 +119,18 @@ const Page = () => {
       window.open(pdfUrl, "_blank");
     }
   };
-
+  useEffect(() => {
+    if (data) {
+      setName(data?.panDetails?.name ? data?.panDetails?.name : "");
+      setEmail(data?.panDetails?.emailId ? data?.panDetails?.emailId : "");
+      setPhone(
+        data?.panDetails?.mobileNumber ? data?.panDetails?.mobileNumber : ""
+      );
+      setFName(
+        data?.panDetails?.fatherName ? data?.panDetails?.fatherName : ""
+      );
+    }
+  }, [data]);
   return (
     <div className="max-w-screen-2xl mx-auto">
       <div className="px-10 md:px-20 lg:px-40  py-14 bg-secondary">
@@ -190,11 +206,8 @@ const Page = () => {
                           type="text"
                           // value={name}
                           // onChange={(e) => setName(e.target.value)}
-                          defaultValue={
-                            data?.panDetails?.name
-                              ? data?.panDetails?.name
-                              : data?.first_name
-                          }
+                          defaultValue={name}
+                          onChange={(e) => setName(e.target.value)}
                           name="full_name"
                           id="full_name"
                           autoComplete="given-name"
@@ -242,14 +255,11 @@ const Page = () => {
                           id="email"
                           name="email"
                           type="email"
-                          defaultValue={
-                            data?.panDetails?.emailId
-                              ? data?.panDetails?.emailId
-                              : data?.email
-                          }
+                          defaultValue={email}
+                          onChange={(e) => setEmail(e.target.value)}
                           autoComplete="email"
                           required
-                          disabled
+                          // disabled={data?.panDetails?.mobileNumber !== ""}
                           className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
@@ -284,11 +294,8 @@ const Page = () => {
                         <input
                           id="phone"
                           name="phone"
-                          defaultValue={
-                            data?.panDetails?.mobileNumber
-                              ? data?.panDetails?.mobileNumber
-                              : data?.phone_number
-                          }
+                          defaultValue={phone}
+                          onChange={(e) => setPhone(e.target.value)}
                           autoComplete="phone"
                           required
                           className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
@@ -310,7 +317,8 @@ const Page = () => {
                           type="text"
                           autoComplete="father_or_spouse_name"
                           required
-                          defaultValue={profileData?.father_or_spouse_name}
+                          value={fName}
+                          onChange={(e) => setFName(e.target.value)}
                           className="block w-full rounded-md border-0 py-1.5 px-2 text-text_dark shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-xs sm:leading-6"
                         />
                       </div>
