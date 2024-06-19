@@ -36,6 +36,8 @@ export default function RootLayout({
             "/income-details",
             "/bank-details",
             "/nominee-details",
+            "/forgotPassword",
+            "/forgotPassword/:transId"
           ]}
         >
           {children}

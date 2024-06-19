@@ -128,7 +128,7 @@ const SignIn = () => {
                   </label>
                   <div className="text-sm">
                     <a
-                      href="#"
+                      href="/forgotPassword"
                       className="font-semibold text-primary hover:text-green-600"
                     >
                       Forgot password?
