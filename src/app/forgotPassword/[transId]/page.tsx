@@ -5,9 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useParams, useRouter } from "next/navigation";
 import nProgress from "nprogress";
 import { changePassword } from "../api";
-interface VerifyProps {
-  transId: string;
-}
+
 interface CustomError extends Error {
   response?: {
     data?: {
@@ -15,14 +13,14 @@ interface CustomError extends Error {
     };
   };
 }
-const Verify: React.FC<VerifyProps> = () => {
+const Verify = () => {
   const router = useRouter();
   const params = useParams();
   const { transId } = params;
   console.log(transId, 'kjhjklkjh')
   const [otp, setOTP] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<string | boolean>(false); // Adjust error state to handle strings
 
   const { mutate } = useMutation({
     mutationKey: ['changePassword'],
@@ -91,7 +89,7 @@ const Verify: React.FC<VerifyProps> = () => {
                 <OTPInput
                   length={6}
                   onChange={handleOTPChange}
-                  hasError={error}
+                  hasError={false}
                 />
               </div>
             </div>
