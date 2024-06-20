@@ -98,8 +98,8 @@ const ForgotPassword = () => {
                 />
               </div>
               {error && (
-            <div className="mt-2 text-center text-red-500">
-              {isValidEmail ? 'Email not found!' : 'Invalid email address'}
+            <div className="mt-1 text-xs text-red-500">
+              {isValidEmail ? 'Email not found' : 'Invalid email address'}
             </div>
           )}
             </div>
