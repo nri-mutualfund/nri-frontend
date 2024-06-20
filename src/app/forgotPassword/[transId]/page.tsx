@@ -97,7 +97,7 @@ const Verify = () => {
                 />
               </div>
               {errorMessage && (
-              <div className="mt-2 text-center text-red-500">
+              <div className="mt-1 text-sx text-red-500">
                 {errorMessage}
               </div>
             )}
@@ -125,7 +125,7 @@ const Verify = () => {
             </div>
 
             {error && (
-              <div className="mt-2 text-center text-red-500">
+              <div className="mt-1 text-xs text-red-500">
                 {error}
               </div>
             )}
