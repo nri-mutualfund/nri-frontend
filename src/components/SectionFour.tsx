@@ -43,7 +43,7 @@ const SectionFour = ({ data }: SectionOneProps) => {
               }}
             >
               Contact us
-              {showArrow && <GoArrowRight size={20} color="#008000" />}
+              {showArrow && <GoArrowRight size={20} color=" #00965A" />}
             </button>
           </div>
         </div>
