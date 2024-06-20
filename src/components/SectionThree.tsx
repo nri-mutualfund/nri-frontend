@@ -23,11 +23,11 @@ const SectionThree = ({ data }: SectionOneProps) => {
     "/assets/bond.png",
   ];
   const icons = [
-    { icon: <MdSavings size={40} color="#008000" /> },
-    { icon: <BsHouseCheck size={40} color="#008000" /> },
-    { icon: <RiLuggageDepositLine size={40} color="#008000" /> },
-    { icon: <BsGraphUpArrow size={40} color="#008000" /> },
-    { icon: <HiOutlineDocumentMinus size={40} color="#008000" /> },
+    { icon: <MdSavings size={40} color=" #00965A" /> },
+    { icon: <BsHouseCheck size={40} color=" #00965A" /> },
+    { icon: <RiLuggageDepositLine size={40} color=" #00965A" /> },
+    { icon: <BsGraphUpArrow size={40} color=" #00965A" /> },
+    { icon: <HiOutlineDocumentMinus size={40} color=" #00965A" /> },
   ];
   return (
     <section className=" px-4 md:px-20 lg:px-40 py-14 md:py-24 ">
@@ -44,7 +44,7 @@ const SectionThree = ({ data }: SectionOneProps) => {
           <div key={index}>
             {expandIndex === index ? (
               <div
-                className="w-full bg-[#F2F8F2] px-2 rounded-[20px] py-2"
+                className="w-full bg-secondary px-2 rounded-[20px] py-2"
                 onClick={() => {
                   setExpand(6);
                 }}
@@ -82,9 +82,9 @@ const SectionThree = ({ data }: SectionOneProps) => {
             ) : (
               <div
                 className={`flex gap-6 ${
-                  index === 0 ? "bg-[#F2F8F2]" : "bg-[#F7F6F4]"
+                  index === expandIndex ? "bg-secondary" : "bg-[#F7F6F4]"
                 } items-center  w-90%  px-4 mx-2 py-4 rounded-lg ${
-                  index === 0 ? "drop-shadow-sm" : "drop-shadow-lg"
+                  index === expandIndex ? "drop-shadow-sm" : "drop-shadow-lg"
                 }`}
                 onClick={() => {
                   setExpand(index);
@@ -107,7 +107,7 @@ const SectionThree = ({ data }: SectionOneProps) => {
             <div
               key={index}
               className={`flex gap-10 w-full ${
-                activeIndex === index ? "bg-[#F2F8F2]" : "bg-[#F7F6F4]"
+                activeIndex === index ? "bg-secondary" : "bg-[#F7F6F4]"
               } items-center px-8 py-4 rounded-lg ${
                 activeIndex === index ? "drop-shadow-sm" : "drop-shadow-lg"
               }`}
@@ -123,7 +123,7 @@ const SectionThree = ({ data }: SectionOneProps) => {
             </div>
           ))}
         </div>
-        <div className="w-full lg:w-[48%] bg-[#F2F8F2] px-6 rounded-[20px] py-6 hidden lg:block">
+        <div className="w-full lg:w-[48%] bg-secondary px-6 rounded-[20px] py-6 hidden lg:block">
           <div className="bg-white flex flex-col gap-4 rounded-[20px] h-full">
             <Image
               src="/assets/long-term-wealth.png"

@@ -281,7 +281,7 @@ const Page = () => {
                         }}
                       />
                       {checked && (
-                        <IoCheckmarkCircleOutline size={20} color="#008000" />
+                        <IoCheckmarkCircleOutline size={20} color=" #00965A" />
                       )}
                     </div>
 
