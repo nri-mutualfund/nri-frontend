@@ -119,8 +119,8 @@ const SignUp = () => {
                     required
                     onChange={handleEmailChange}
                     value={email}
-                    onKeyDown={() => {
-                      if (isValidEmail) {
+                    onKeyDown={(e) => {
+                      if (isValidEmail && e.key === "Enter") {
                         VerifyEmailForOtp();
                       }
                     }}
