@@ -33,7 +33,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 {post?.blogCategory?.category_name}
               </span>
             </div>
-            <div className="group relative h-64">
+            <div className="group relative">
               <Link
                 href={{
                   pathname: "/blog-details",
@@ -56,7 +56,7 @@ const SectionNine = ({ data }: SectionOneProps) => {
                 />
               </div>
             </div>
-            <div className="flex w-full items-center justify-between -mt-4s">
+            <div className="flex w-full items-center justify-between mt-6">
               <h5 className="font-medium">{post?.user_name}</h5>
             </div>
             {index !== 2 && (

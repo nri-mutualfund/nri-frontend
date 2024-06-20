@@ -8,7 +8,7 @@ const page = () => {
   return (
     <div className="max-w-screen-2xl mx-auto">
       <div className="flex flex-col justify-center items-center h-screen bg-white px-4 md:px-20 lg:px-40">
-        <BsCheckCircle size={150} color="#008000" />
+        <BsCheckCircle size={150} color=" #00965A" />
         <h2 className="md:max-w-[60%] text-center mt-14 text-gray-800 font-medium  leading-[45px]">
           Your Profile is created We will get back to you shortly.
         </h2>
