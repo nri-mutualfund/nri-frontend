@@ -50,7 +50,7 @@ const Page = () => {
         <div className="my-10 w-full">
           <CustomPagination
             currentPage={currentPage}
-            total={100}
+            total={data?.pagination?.pageCount}
             onPageChange={onPageChange}
           />
         </div>
