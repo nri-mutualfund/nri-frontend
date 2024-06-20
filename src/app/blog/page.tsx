@@ -187,7 +187,7 @@ const Page = () => {
                         {post?.blogCategory?.category_name}
                       </span>
                     </div>
-                    <div className="group relative h-64">
+                    <div className="group relative">
                       <Link
                         href={{
                           pathname: "/blog-details",
@@ -210,7 +210,7 @@ const Page = () => {
                         />
                       </div>
                     </div>
-                    <div className="flex w-full items-center justify-between -mt-4s">
+                    <div className="flex w-full items-center justify-between mt-6">
                       {/* <Link
                         href={{
                           pathname: "/blog-details",
