@@ -52,7 +52,7 @@ const Page = () => {
   // }, []);
   useEffect(() => {
     window.scrollTo({
-      top: 380,
+      top: 0,
       behavior: "smooth",
     });
   }, [categoryName, currentPage]);

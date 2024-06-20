@@ -22,8 +22,8 @@ const Page = () => {
       nProgress.start();
       router.push("/verify-pan");
     } else if (data?.stage === "settings") {
-        nProgress.start();
-        router.push("/settings");
+      nProgress.start();
+      router.push("/settings");
     } else if (data?.stage === "investor_profile") {
       if (profileData?.country_of_birth) {
         nProgress.start();
@@ -51,7 +51,7 @@ const Page = () => {
       <div className="flex items-center justify-center h-screen">
         <div className="relative">
           <div className="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200"></div>
-          <div className="absolute top-0 left-0 h-24 w-24 rounded-full border-t-8 border-b-8 border-[#008000] animate-spin"></div>
+          <div className="absolute top-0 left-0 h-24 w-24 rounded-full border-t-8 border-b-8 border-[ #00965A] animate-spin"></div>
         </div>
       </div>
     </section>
