@@ -52,7 +52,7 @@ const Page = () => {
   // }, []);
   useEffect(() => {
     window.scrollTo({
-      top: 380,
+      top: 0,
       behavior: "smooth",
     });
   }, [categoryName, currentPage]);
@@ -125,8 +125,8 @@ const Page = () => {
                   </div>
                   <div className="">
                     <h5
-                      className={`border-b px-4 py-2 hover:bg-secondary cursor-pointer ${
-                        categoryName === "All" ? "bg-secondary" : ""
+                      className={`border-b px-4 py-2 hover:bg-secondary cursor-pointer hover:text-text_dark  ${
+                        categoryName === "All" ? "bg-primary text-white" : ""
                       }`}
                       onClick={() => {
                         setCurrentPage(1);
@@ -138,9 +138,9 @@ const Page = () => {
                     {category?.map((item: Category, index: number) => (
                       <h5
                         key={index}
-                        className={`border-b px-4 py-2 hover:bg-secondary cursor-pointer ${
+                        className={`border-b px-4 py-2 hover:bg-secondary hover:text-text_dark cursor-pointer ${
                           categoryName === item?.category_name
-                            ? "bg-secondary"
+                            ? "bg-primary text-white"
                             : ""
                         }`}
                         onClick={() => {
@@ -237,7 +237,7 @@ const Page = () => {
       <div className="mb-10 mx-auto py-6 xl:px-40 md:px-16 px-10">
         <CustomPagination
           currentPage={currentPage}
-          total={100}
+          total={data?.pagination?.pageCount}
           onPageChange={onPageChange}
         />
       </div>
