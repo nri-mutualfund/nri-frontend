@@ -5,6 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useParams, useRouter } from "next/navigation";
 import nProgress from "nprogress";
 import { changePassword } from "../api";
+import { toast } from "react-toastify";
 
 interface CustomError extends Error {
   response?: {
@@ -20,8 +21,8 @@ const Verify = () => {
   console.log(transId, 'kjhjklkjh')
   const [otp, setOTP] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string | boolean>(false); // Adjust error state to handle strings
-
+  const [error, setError] = useState<boolean>(false); // Adjust error state to handle strings
+  const[errorMessage, setErrorMessage] = useState<string>('')
   const { mutate } = useMutation({
     mutationKey: ['changePassword'],
     mutationFn: changePassword,
@@ -29,14 +30,17 @@ const Verify = () => {
       console.log(data, 'data');
       if(data.statusCode === 200){
       nProgress.start();
+      toast.success("Password changed Successfully");
       router.push(`/signin`);
       }else{
         setError(true);
+        setErrorMessage('Incorrect OTP')
       }
     },
     onError: (error:CustomError) => {
       if (error?.response?.data?.data === 'Email not found') {
         setError(true);
+        toast.error("Password changed Successfully");
       }
     },
   });
@@ -89,9 +93,14 @@ const Verify = () => {
                 <OTPInput
                   length={6}
                   onChange={handleOTPChange}
-                  hasError={false}
+                  hasError={error}
                 />
               </div>
+              {errorMessage && (
+              <div className="mt-2 text-center text-red-500">
+                {errorMessage}
+              </div>
+            )}
             </div>
 
             <div>
