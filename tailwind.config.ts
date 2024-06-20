@@ -20,7 +20,7 @@ const config: Config = {
       },
       colors: {
         primary: "#00965A", // Set your primary color here
-        secondary: "rgba(141, 201, 171, 0.5)",
+        secondary: "rgba(141, 201, 171, 0.1)",
         "custom-black": "#181818",
         "custom-gray": "rgb(21, 20, 20)",
         text_dark: "#424242",
