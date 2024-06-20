@@ -59,7 +59,7 @@ const CustomPagination: React.FC<PaginationProps> = ({
           <li>
             <button
               onClick={() => handleClick(currentPage - 1)}
-              className={`flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white  border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
+              className={`flex items-center justify-center px-3 h-8 ms-0 leading-tight text-text_light bg-white  border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-text_dark ${
                 currentPage === 1 ? "cursor-not-allowed" : ""
               }`}
               disabled={currentPage === 1}
@@ -73,10 +73,10 @@ const CustomPagination: React.FC<PaginationProps> = ({
                 <li key={index}>
                   <button
                     onClick={() => handleClick(page)}
-                    className={`flex items-center justify-center px-3 h-8 leading-tight  border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
+                    className={`flex items-center justify-center px-3 h-8 leading-tight  border-gray-300 hover:bg-gray-100 hover:text-text_dark ${
                       currentPage === page
-                        ? "text-blue-600 bg-green-100 hover:bg-blue-100 hover:text-blue-700 dark:bg-gray-700 dark:text-white"
-                        : "text-gray-500 bg-white"
+                        ? "text-text_dark bg-green-100 hover:bg-blue-100 hover:text-text_dark"
+                        : "text-text_light bg-white"
                     }`}
                     aria-current={currentPage === page ? "page" : undefined}
                     disabled={page === "..."}
@@ -91,7 +91,7 @@ const CustomPagination: React.FC<PaginationProps> = ({
           <li>
             <button
               onClick={() => handleClick(currentPage + 1)}
-              className={`flex items-center justify-center px-3 h-8 rounded-e-lg leading-tight text-gray-500 bg-white  border-gray-300  hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
+              className={`flex items-center justify-center px-3 h-8 rounded-e-lg leading-tight text-text_light bg-white  border-gray-300  hover:bg-gray-100 hover:text-text_dark ${
                 currentPage === total ? "cursor-not-allowed" : ""
               }`}
               disabled={currentPage === total}
