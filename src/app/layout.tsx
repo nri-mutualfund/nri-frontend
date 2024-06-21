@@ -20,6 +20,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css?family=Inter:400,500.600&display=swap"
           rel="stylesheet"
         />
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
       </head>
 
       <body style={{ fontFamily: "'Inter', serif" }}>
@@ -37,7 +42,7 @@ export default function RootLayout({
             "/bank-details",
             "/nominee-details",
             "/forgotPassword",
-            "/forgotPassword/:transId"
+            "/forgotPassword/:transId",
           ]}
         >
           {children}
