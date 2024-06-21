@@ -16,7 +16,15 @@ const GoogleAuthButton = () => {
 
   return (
     <div className="flex w-full justify-center gap-2 rounded-md bg-white border-solid border-gray-300 border-[1px] px-3 py-1.5 ">
+    <div className="flex w-full justify-center gap-2 rounded-md bg-white border-solid border-gray-300 border-[1px] px-3 py-1.5 ">
       <img src="/assets/Google.png" width={30} alt="" />
+      <button
+        onClick={() => handleSignIn()}
+        className="   leading-6 text-black shadow-sm "
+      >
+        {" "} 
+        Google
+      </button>
       <button
         onClick={() => handleSignIn()}
         className="   leading-6 text-black shadow-sm "
@@ -27,5 +35,9 @@ const GoogleAuthButton = () => {
     </div>
   );
 };
+  );
+};
+
+export default GoogleAuthButton;
 
 export default GoogleAuthButton;

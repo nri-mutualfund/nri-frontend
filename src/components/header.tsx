@@ -10,9 +10,15 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { Menu, Transition } from "@headlessui/react";
 import nProgress from "nprogress";
 
+import { FaRegUserCircle } from "react-icons/fa";
+import { Menu, Transition } from "@headlessui/react";
+import nProgress from "nprogress";
+
 const Header = () => {
   const pathname = usePathname();
+  const pathname = usePathname();
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
   const [token, setToken] = useState<string | null>(null);
   const handleNav = () => {
     setMenuOpen(!isMenuOpen);
