@@ -18,9 +18,13 @@ const Header = () => {
     setMenuOpen(!isMenuOpen);
   };
   useEffect(() => {
+    console.log(typeof window, 'window check');
     if (typeof window !== "undefined") {
-      const storedToken = localStorage.getItem("token");
-      setToken(storedToken);
+      setTimeout(() => {
+        const storedToken = localStorage.getItem("token");
+        console.log(storedToken, 'stored token');
+        setToken(storedToken);
+      }, 100); // Adjust the delay as needed
     }
   }, []);
 
