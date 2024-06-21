@@ -8,9 +8,9 @@ const GoogleAuthButton = () => {
     const googleClientId = process.env.GOOGLE_CLIENT_ID;
     const googleRedirectUri = process.env.GOOGLE_REDIRECT_URI;
     const googleAuthState = process.env.GOOGLE_AUTH_STATE;
-
-    const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${googleClientId}&redirect_uri=${googleRedirectUri}&scope=email%20profile&state=${googleAuthState}`;
-    router.push(googleAuthUrl);
+console.log(googleClientId, googleRedirectUri, googleAuthState, 'checkinggg')
+    // const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${googleClientId}&redirect_uri=${googleRedirectUri}&scope=email%20profile&state=${googleAuthState}`;
+    // router.push(googleAuthUrl);
   };
 
   return (
