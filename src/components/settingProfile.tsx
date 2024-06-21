@@ -62,8 +62,8 @@ const SettingProfile = () => {
                 id="email"
                 defaultValue={
                   data?.panDetails?.emailId
-                    ? data?.panDetails?.emailId
-                    : settingProfileData?.userDetails?.email
+                    // ? data?.panDetails?.emailId
+                    // : settingProfileData?.userDetails?.email
                 }
                 required
                 className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary500 focus:outline-none focus:ring-primary500 sm:text-xs text-text_dark placeholder:text-gray-400 placeholder:italic disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500"
