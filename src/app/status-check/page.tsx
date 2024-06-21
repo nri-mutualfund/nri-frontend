@@ -1,11 +1,19 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useEffect } from "react";
 import { getInvestorProfileDetails, getProfileDetails } from "../profile/api";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import nProgress from "nprogress";
 
 const Page = () => {
+  const searchParams = useSearchParams();
+  const token = searchParams.get("token");
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem("token", token);
+    }
+  }, [token]);
+
   const router = useRouter();
   const { data, status } = useQuery({
     queryKey: ["profile"],

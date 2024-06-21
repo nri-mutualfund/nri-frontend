@@ -1,8 +1,8 @@
 "use client";
 import GoogleAuthButton from "@/components/googleAuthButton";
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { addDetails } from "./api";
 import Section11 from "@/components/Section11";
@@ -16,7 +16,7 @@ const Page = () => {
   const [country, setCountry] = useState<string>("");
   const [residentialStatus, setStaus] = useState<string>("");
   const [isFromCanadaOrUS, setOrigin] = useState<boolean>(false);
-
+ 
   const { mutate } = useMutation({
     mutationKey: ["key1"],
     mutationFn: addDetails,
