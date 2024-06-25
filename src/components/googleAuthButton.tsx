@@ -14,10 +14,9 @@ console.log(googleClientId, googleRedirectUri, googleAuthState, 'checkinggg')
   };
 
   return (
-    <div className="flex w-full justify-center gap-2 rounded-md bg-white border-solid border-gray-300 border-[1px] px-3 py-1.5 ">
+        <div className="flex w-full justify-center gap-2 rounded-md bg-white border-solid border-gray-300 border-[1px] px-3 py-1.5 cursor-pointer" onClick={() => handleSignIn()}>
       <img src="/assets/Google.png" width={30} alt="" />
       <button
-        onClick={() => handleSignIn()}
         className="   leading-6 text-black shadow-sm "
       >
         {" "} 

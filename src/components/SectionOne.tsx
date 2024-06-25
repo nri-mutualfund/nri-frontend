@@ -34,11 +34,15 @@ const SectionOne = ({ data }: SectionOneProps) => {
         </div>
 
         <div className="flex justify-center mt-10 gap-2 ">
-          <button className=" flex gap-2  items-center bg-primary text-white px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+          <Link href={'/talk'}   onClick={() => {
+              NProgress.start();
+            }}>
+          <button className=" flex gap-2  items-center bg-primary text-white px-2 md:px-8 py-2 rounded-lg cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 duration-300" >
             {" "}
             <span> Schedule a Meeting </span>
             <IoCalendarNumberOutline className="text-xl" />
           </button>
+          </Link>
           <Link
             href={"/signup"}
             onClick={() => {
