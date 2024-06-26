@@ -135,3 +135,23 @@ export const addNewsLetter = async (values) => {
     throw error;
   }
 };
+export const getMoneySectionData = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/homepage/moneySection`,
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const getReachSectionData = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/homepage/reachSection`,
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
