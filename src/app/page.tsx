@@ -12,6 +12,8 @@ import SectionNine from "@/components/SectionNine";
 import SectionTen from "@/components/SectionTen";
 import { useQuery } from "@tanstack/react-query";
 import {
+  getMoneySectionData,
+  getReachSectionData,
   getSectionBlog,
   getSectionFAQ,
   getSectionFive,
@@ -56,6 +58,14 @@ const Page = () => {
     queryKey: ["blog"],
     queryFn: () => getSectionBlog(1, "All"),
   });
+  const moneySection = useQuery({
+    queryKey: ["moneySection"],
+    queryFn: () => getMoneySectionData(),
+  });
+  const reactSection = useQuery({
+    queryKey: ["reactSection"],
+    queryFn: () => getReachSectionData(),
+  });
   const checkLoading = () => {
     return (
       isLoading &&
@@ -65,6 +75,8 @@ const Page = () => {
       sectionFive?.isLoading &&
       sectionSix?.isLoading &&
       sectionFAQ?.isLoading &&
+      moneySection?.isLoading &&
+      reactSection?.isLoading &&
       sectionBlog?.isLoading
     );
   };
@@ -94,13 +106,13 @@ const Page = () => {
           {/* {section 6} */}
           <SectionSix data={sectionSix.data} />
           {/* {section 7} */}
-          <SectionSeven />
+          <SectionSeven data={moneySection.data}/>
           {/* {section 8} */}
           <SectionEight data={sectionFAQ?.data?.data} />
           {/* {section 9} */}
           <SectionNine data={sectionBlog?.data} />
           {/* Section11 */}
-          <Section11 />
+          <Section11 data={reactSection?.data} />
           {/* Section 12 */}
           <Section12 />
           {/* {section 10} */}

@@ -69,3 +69,12 @@ export interface CustomError {
     };
   };
 }
+export interface MoneySectionType {
+  id: string;
+  post_heading: string;
+  pre_heading: string;
+  highlightned: string;
+  sub_heading: string;
+  created_at: string;
+  updated_at: string;
+}

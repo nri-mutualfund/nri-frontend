@@ -1,15 +1,16 @@
+import { MoneySectionType } from "@/utility/type";
 import React from "react";
-
-const Section11 = () => {
+interface SectionProps {
+  data: MoneySectionType;
+}
+const Section11 = ({ data }: SectionProps) => {
   return (
     <section className="bg-white px-4 md:px-20 lg:px-40 py-14 md:py-24">
       <h1 className="text-center mx-auto">
-        Serving <span className="text-text_dark">NRI</span> from across
-        countries
+        {data?.pre_heading}{" "} <span className="text-text_dark"> {data?.highlightned}{" "} </span> {data?.post_heading} 
       </h1>
       <h4 className="text-center my-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing fermentum ante eu
-        dignissim pulvinar.
+        {data?.sub_heading} 
       </h4>
       {/* <p className="font-extralight mt-1 text-sm text-center">{data?.detail}</p> */}
       <svg

@@ -1,17 +1,20 @@
+import { MoneySectionType } from "@/utility/type";
 import Image from "next/image";
 import React from "react";
-
-const SectionSeven = () => {
+interface SectionProps {
+  data: MoneySectionType;
+}
+const SectionSeven = ({ data }: SectionProps) => {
   return (
     <section className="px-4 md:px-20 lg:px-40 bg-secondary py-14 md:py-24">
       <div className="w-full flex flex-col justify-center items-center text-center">
         <h1 className="">
-          Your money will be{" "}
-          <span className="text-text_dark">safe & secure</span>
+          {data?.pre_heading}{" "}
+          <span className="text-text_dark">{data?.highlightned}</span>{" "}
+          {data?.post_heading}
         </h1>
         <h4 className="mt-4 mb-4">
-          Your money is regulated by mutual fund companies. NRI doesn’t keep or
-          handle your money
+          {data?.sub_heading}
         </h4>
       </div>
 
